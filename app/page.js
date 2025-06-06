@@ -50,6 +50,9 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <div className="bg-[#6be237]">Primary</div>
+        <div className="bg-[#22aa00]">Secodary</div>
+        <div className="bg-[#ade190]">Tertaiary</div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
