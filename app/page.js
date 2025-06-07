@@ -9,7 +9,7 @@ export default function Home() {
         {chapters.map((ch) => (
           <div
             key={ch.id}
-            className="w-full h-[380px] rounded-3xl overflow-hidden relative shadow-xl"
+            className="w-full h-[250px] rounded-3xl overflow-hidden relative shadow-xl"
           >
             <img
               src={ch.image}
@@ -18,7 +18,7 @@ export default function Home() {
             />
 
             {/* Title */}
-            <div className="absolute bottom-4 left-4 bg-white/80 px-4 py-2 rounded-xl text-[var(--primary)] text-lg font-semibold">
+            <div className="absolute bottom-4 left-4 bg-gray-100/90 px-4 py-2 rounded-xl text-[var(--secondary)] text-lg font-semibold">
               {ch.title}
             </div>
 
