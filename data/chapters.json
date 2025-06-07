@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "Alphabets",
+    "image": "/alphabets.JPG",
+    "unlocked": true
+  },
+  {
+    "id": "2",
+    "title": "Pronouns",
+    "image": "/pronouns.JPG",
+    "unlocked": false
+  }
+]
