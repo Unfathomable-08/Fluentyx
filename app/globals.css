@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
 @import "tailwindcss";
 
 .arabic {
-  font-family: 'Cairo', sans-serif;
-  direction: rtl; /* Right-to-left for Arabic */
+  font-family: 'Noto Nastaliq Urdu', sans-serif;
+  direction: rtl; /* Right-to-left for Arabic/Urdu */
   text-align: center;
+  font-size: 2rem; /* Larger for readability */
+  line-height: 2.5rem;
 }
 
 :root {
