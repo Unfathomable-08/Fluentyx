@@ -20,37 +20,17 @@ export default async function ChapterPage({ params }) {
     const chapterData = JSON.parse(fileContent);
 
     return (
-      <main className="px-6 py-20">
-        <h1 className="text-3xl font-bold mb-6">{chapterData.title}</h1>
-
-        <img
-          src={chapterData.image}
-          alt={chapterData.title}
-          className="w-full max-w-2xl h-auto object-cover rounded-xl shadow-lg mb-8"
-        />
-
-        <p className="text-lg text-gray-700">
-          This is the content for <strong>{chapter}</strong>.
-          {/* Add more chapter-specific content here, e.g., chapterData.description */}
-        </p>
-
-        {/* Example: If chapter is 'alphabets', display alphabet list */}
-        {chapter === 'alphabets' && chapterData.arabic_alphabets && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            {chapterData.arabic_alphabets.map((alphabet, index) => (
-              <div key={index} className="border p-4 rounded-lg text-center">
-                <img
-                  src={alphabet.image_url}
-                  alt={alphabet.letter}
-                  className="w-16 h-16 mx-auto mb-2"
-                />
-                <p className="text-xl font-semibold">{alphabet.letter}</p>
-                <p className="text-sm text-gray-600">{alphabet.name}</p>
-                <p className="text-sm text-gray-500">{alphabet.pronunciation}</p>
-              </div>
+      <main className="px-4 py-4 sm:px-16 md:px-20">
+        <h1 className="text-xl font-bold text-center mb-4 text-[var(--secondary)]">{chapter.charAt(0).toUpperCase() + chapter.slice(1).toLowerCase()}</h1>
+        <div className="grid grid-cols-4 sm:grid-cols-7 gap-3 px-4 py-4">
+            {chapterData.map(ch => (
+                <div className="w-full aspect-square arabic bg-white shadow-[0_0_10px_#00000055] rounded-lg flex juatify-center items-center">
+                    <span>
+                        { ch.letter }
+                    </span>
+                </div>
             ))}
-          </div>
-        )}
+        </div>
       </main>
     );
   } catch (error) {
@@ -62,15 +42,4 @@ export default async function ChapterPage({ params }) {
       </div>
     );
   }
-}
-
-// Generate static paths for known chapters (optional, for static generation)
-export async function generateStaticParams() {
-  // List of available chapters (folders in data/)
-  const chaptersDir = path.join(process.cwd(), 'data');
-  const chapterFolders = await fs.readdir(chaptersDir);
-
-  return chapterFolders.map((chapter) => ({
-    chapter,
-  }));
 }

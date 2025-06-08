@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 @import "tailwindcss";
 
+.arabic {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl; /* Right-to-left for Arabic */
+  text-align: center;
+}
+
 :root {
-  --primary: #70f338;
+  --primary:rgb(100, 216, 50);
   --secondary: #2c9910;
   --tertiary: #b4f192;
 }
