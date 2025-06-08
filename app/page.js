@@ -1,15 +1,26 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import chapters from '../data/chapters.json';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleClick = (title) => {
+    const slug = title.toLowerCase().replace(/\s+/g, '-');
+    router.push(`/${slug}`);
+  };
+
   return (
-    <main className="px-4 py-20 sm:px-8 md:px-20">
+    <main className="px-4 py-20 md:px-20">
       <h1 className="text-2xl font-bold mb-4">Chapters</h1>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4 overflow-x-auto pb-2">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 px-4 py-4 gap-x-4 gap-y-8 overflow-x-auto pb-2">
         {chapters.map((ch) => (
           <div
             key={ch.id}
-            className="w-full h-[250px] rounded-3xl overflow-hidden relative shadow-xl"
+            onClick={() => handleClick(ch.title)}
+            className="w-full h-[200px] sm:h-[230px] md:h-[250px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055]"
           >
             <img
               src={ch.image}
