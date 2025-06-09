@@ -31,7 +31,7 @@ export default function Chapter() {
       <h1 className="text-xl font-bold text-center mb-4 text-[var(--secondary)]">
         {chapter.charAt(0).toUpperCase() + chapter.slice(1).toLowerCase()}
       </h1>
-      <div className="grid grid-cols-4 sm:grid-cols-7 gap-4 px-4 py-4" style={{direction: 'rtl'}}>
+      <div className="grid grid-cols-4 sm:grid-cols-7 gap-4 px-4 py-4 max-w-2xl justify-center mx-auto cursor-pointer" style={{direction: 'rtl'}}>
         {chapterData.map((ch, i) => (
           <div
             key={i}
