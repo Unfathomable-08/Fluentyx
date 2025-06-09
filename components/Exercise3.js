@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
-export function Draw({chapter, index, setStep}){
+export function Draw({chapter, index, setStep, data}){
     const canvasRef = useRef(null);
     const [isSaving, setIsSaving] = useState(false);
 
@@ -32,9 +32,19 @@ export function Draw({chapter, index, setStep}){
         });
 
         if (res.ok) {
-            alert("Uploaded successfully!");
             const result = await res.json()
             console.log(result)
+
+            if (result.prediction == data[index - 1].prediction){
+                setStep(prev => prev + 1)
+                handleClear()
+            }
+            else {
+                const pred = data.filter(d => d.prediction == result.prediction)
+                console.log(pred)
+                alert("Your drawing is classified as: " + pred[0].pronounce)
+                handleClear()
+            }
         } else {
             alert("Upload failed.");
         }
@@ -65,7 +75,7 @@ export function Draw({chapter, index, setStep}){
             disabled={isSaving}
             className="px-4 py-2 bg-[var(--primary)] text-white rounded"
             >
-            {isSaving ? "Saving..." : "Save as JPG"}
+            {isSaving ? "Submitting..." : "Submit"}
             </button>
         </div>
         </div>
