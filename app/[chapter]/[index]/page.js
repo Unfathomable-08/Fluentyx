@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname, useParams } from 'next/navigation';
-import { ArToEn, EnToAr, MatchSound, Draw, SelectCorrect } from "../../../components/Exercise"
+import { ArToEn, EnToAr } from "../../../components/Exercise1-2"
+import { Draw } from "../../../components/Exercise3"
+import { MatchSound } from "../../../components/Exercise4"
+import { SelectCorrect } from "../../../components/Exercise5"
 
 export default function Alphabet() {
     const { index } = useParams();
@@ -37,7 +40,10 @@ export default function Alphabet() {
 
     return (
       <div>
-        {stepMod === 1 && <ArToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
+        <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
+            <div className="h-full rounded-full bg-[var(--primary)]" style={{width: `${100 * step / 15}%`}}></div>
+        </div>
+        {stepMod === 1 && <Draw data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
         {stepMod === 2 && <EnToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
         {stepMod === 3 && <MatchSound data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
         {stepMod === 4 && <Draw data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}

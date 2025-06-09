@@ -46,7 +46,7 @@ export function ArToEn({ chapter, index, data, setStep }) {
     return (
         <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">
             {/* Top Arabic Letter */}
-            <div className="bg-white md:mt-16 rounded-xl w-32 h-32 md:w-30 md:h-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055] arabic">
+            <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055] arabic">
                 <span className="text-6xl font-bold">{correct.letter}</span>
             </div>
 
@@ -80,7 +80,7 @@ export function ArToEn({ chapter, index, data, setStep }) {
 
 // EXERCISE NO. 02
 
-export function EnToAr({chapter, index, data}){
+export function EnToAr({chapter, index, data, setStep}){
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);
@@ -119,7 +119,7 @@ export function EnToAr({chapter, index, data}){
     return (
         <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">
             {/* Top Arabic Letter */}
-            <div className="bg-white md:mt-16 rounded-xl w-32 h-32 md:w-30 md:h-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055]">
+            <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055]">
                 <span className="text-3xl font-medium">{correct.pronounce}</span>
             </div>
 
@@ -146,35 +146,4 @@ export function EnToAr({chapter, index, data}){
             </div>
         </div>
     );
-}
-
-
-
-
-// EXERCISE NO. 03
-
-export function Draw({chapter, index}){
-    return (
-        <div></div>
-    )
-}
-
-
-
-// EXERCISE NO. 04
-
-export function MatchSound({chapter, index}){
-    return (
-        <div></div>
-    )
-}
-
-
-
-// EXERCISE NO. 05
-
-export function SelectCorrect({chapter, index}){
-    return (
-        <div></div>
-    )
 }

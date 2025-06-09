@@ -39,7 +39,7 @@ export default function Chapter() {
             onClick={() => handleClick(ch.index)}
           >
             <div>{ch.letter}</div>
-            <div className='bg-white border border-gray-600 rounded-full w-[80%] h-1 mt-3' style={{direction: 'ltr'}}>
+            <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-1 mt-3' style={{direction: 'ltr'}}>
               <div className={`bg-[var(--primary)] h-full rounded-full w-[60%]`}></div>
             </div>
           </div>
