@@ -4,7 +4,6 @@
 .arabic {
   font-family: 'Noto Nastaliq Urdu', sans-serif;
   direction: rtl; /* Right-to-left for Arabic/Urdu */
-  text-align: center;
   font-size: 2rem; /* Larger for readability */
   line-height: 2.5rem;
 }
