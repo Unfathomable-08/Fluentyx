@@ -82,10 +82,10 @@ const Login = () => {
                   <input
                     type="text"
                     placeholder="Full Name"
-                    {...register("fullName", { required: "Full Name is required" })}
+                    {...register("nam", { required: "Full Name is required" })}
                     className="pl-10 pr-4 py-2 w-full border border-gray-500 rounded-md focus:ring focus:ring-[var(--primary)]"
                   />
-                  {errors.fullName && <p className="text-red-600 text-start text-sm">{errors.fullName.message}</p>}
+                  {errors.nam && <p className="text-red-600 text-start text-sm">{errors.nam.message}</p>}
                 </div>
               </>
             )}
