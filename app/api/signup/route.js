@@ -1,6 +1,7 @@
 import connectDB from "@/lib/db";
 import redis from "@/lib/redis";
 import User from "@/models/user";
+import transporter from "@/lib/mailer"
 
 import bcrypt from "bcrypt";
 
