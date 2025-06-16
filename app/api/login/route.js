@@ -36,7 +36,7 @@ export async function POST(req) {
         name: user.name,
       },
       process.env.JWT_SECRET,
-      { expiresIn: "2h" }
+      { expiresIn: "7d" }
     );
 
     // Create cookie

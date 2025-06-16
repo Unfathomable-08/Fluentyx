@@ -2,8 +2,19 @@
 
 import { useRouter } from 'next/navigation';
 import chapters from '../data/chapters.json';
+import useAuth from "../hooks/useAuth";
 
 export default function Home() {
+  const { isAuthenticated, user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return null; // Redirect handled by useAuth
+  }
+  
   const router = useRouter();
 
   const handleClick = (title) => {

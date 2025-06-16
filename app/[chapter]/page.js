@@ -2,8 +2,19 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import useAuth from "../../hooks/useAuth";
 
 export default function Chapter() {
+  const { isAuthenticated, user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return null; // Redirect handled by useAuth
+  }
+  
   const { chapter } = useParams();
   const router = useRouter();
   const [chapterData, setChapterData] = useState([]);

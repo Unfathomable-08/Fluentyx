@@ -6,8 +6,19 @@ import { ArToEn, EnToAr } from "../../../components/Exercise1-2"
 import { Draw } from "../../../components/Exercise3"
 import { MatchSound } from "../../../components/Exercise4"
 import { SelectCorrect } from "../../../components/Exercise5"
+import useAuth from "../../../hooks/useAuth";
 
 export default function Alphabet() {
+  const { isAuthenticated, user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return null; // Redirect handled by useAuth
+  }
+  
     const { index } = useParams();
     const pathname = usePathname();
     const [chapterName, setChapterName] = useState('');
