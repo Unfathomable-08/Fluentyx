@@ -56,7 +56,7 @@ export default function Alphabet() {
         </div>
         {stepMod === 1 && <ArToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
         {stepMod === 2 && <EnToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
-        {stepMod === 3 && <Draw data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
+        {(stepMod === 3) && <Draw data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
         {/* {stepMod === 4 && <MatchSound data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />} */}
         {stepMod === 0 && <SelectCorrect data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} />}
       </div>
