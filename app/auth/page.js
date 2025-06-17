@@ -5,6 +5,7 @@ import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import Cloud from "../../components/Cloud";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
@@ -15,6 +16,7 @@ const Login = () => {
   const [verificationEmail, setVerificationEmail] = useState(email);
   const [verificationCode, setVerificationCode] = useState(["", "", "", "", "", ""]);
   const [verificationError, setVerificationError] = useState("");
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     console.log("Form submitted with data:", JSON.stringify(data, null, 2));
@@ -48,12 +50,13 @@ const Login = () => {
         });
         const result = await res.json();
         console.log("Login response:", result);
+        router.push("/");
       } catch (error) {
         console.error('Login failed:', error);
       }
     }
   };
-
+  
   const handleVerificationSubmit = async (e) => {
     e.preventDefault();
     console.log("Verification form submitted");
@@ -69,7 +72,7 @@ const Login = () => {
       setVerificationError("Verification code must be 6 digits");
       return;
     }
-
+    
     try {
       const payload = {
         email: verificationEmail,
@@ -85,6 +88,7 @@ const Login = () => {
       });
       const result = await res.json();
       console.log("Verification response:", result);
+      router.push("/");
     } catch (error) {
       console.error('Verification failed:', error);
       setVerificationError("Verification failed. Please try again.");

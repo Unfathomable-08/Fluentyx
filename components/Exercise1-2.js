@@ -43,6 +43,8 @@ export function ArToEn({ chapter, index, data, setStep }) {
         setSelected(i); // Track the selected option
     };
 
+    if (!isActive) return null;
+
     return (
         <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">
             {/* Top Arabic Letter */}
@@ -115,6 +117,8 @@ export function EnToAr({chapter, index, data, setStep}){
         }
         setSelected(i); // Track the selected option
     };
+
+    if (!isActive) return null;
 
     return (
         <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">

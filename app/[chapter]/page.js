@@ -7,18 +7,11 @@ import useAuth from "../../hooks/useAuth";
 export default function Chapter() {
   const { isAuthenticated, user, isLoading } = useAuth();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!isAuthenticated) {
-    return null; // Redirect handled by useAuth
-  }
   
   const { chapter } = useParams();
   const router = useRouter();
   const [chapterData, setChapterData] = useState([]);
-
+  
   useEffect(() => {
     const fetchChapterData = async () => {
       try {
@@ -32,10 +25,18 @@ export default function Chapter() {
 
     fetchChapterData();
   }, [chapter]);
-
+  
   const handleClick = (index) => {
     router.push(`/${chapter}/${index}`);
   };
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return null; // Redirect handled by useAuth
+  }
 
   return (
     <main className="px-4 py-4 sm:px-16 md:px-20">

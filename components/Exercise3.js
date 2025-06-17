@@ -55,6 +55,8 @@ export function Draw({chapter, index, setStep, data}){
         }
     };
 
+    if (!isActive) return null;
+
     return (
         <div className="flex flex-col items-center gap-4">
         <ReactSketchCanvas

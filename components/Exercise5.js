@@ -36,6 +36,8 @@ export function SelectCorrect({ chapter, index, setStep, data }) {
     }
   }, [isCorrect])
 
+  if (!isActive) return null;
+  
   return (
     <div className="text-center p-4">
       <h1 className="text-xl font-bold mb-4">

@@ -7,6 +7,13 @@ import useAuth from "../hooks/useAuth";
 export default function Home() {
   const { isAuthenticated, user, isLoading } = useAuth();
 
+  const router = useRouter();
+
+  const handleClick = (title) => {
+    const slug = title.toLowerCase().replace(/\s+/g, '-');
+    router.push(`/${slug}`);
+  };
+  
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -14,13 +21,6 @@ export default function Home() {
   if (!isAuthenticated) {
     return null; // Redirect handled by useAuth
   }
-  
-  const router = useRouter();
-
-  const handleClick = (title) => {
-    const slug = title.toLowerCase().replace(/\s+/g, '-');
-    router.push(`/${slug}`);
-  };
 
   return (
     <main className="px-4 py-4 md:px-20">

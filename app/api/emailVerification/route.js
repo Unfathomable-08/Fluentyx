@@ -1,6 +1,7 @@
 import connectDB from "@/lib/db";
 import redis from "@/lib/redis";
 import User from "@/models/user";
+import jwt from "jsonwebtoken";
 
 export async function POST(req) {
   try {
@@ -33,7 +34,23 @@ export async function POST(req) {
 
     await redis.del(`verify:${email}`); // Clean up used code
 
-    return Response.json({ message: "Email verified successfully" }, { status: 200 });
+    const token = jwt.sign(
+          {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+          },
+          process.env.JWT_SECRET,
+          { expiresIn: "7d" }
+        );
+    
+    // Create cookie
+    const cookie = `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${7 * 24 * 60 * 60}`;
+
+    const headers = new Headers();
+    headers.append("Set-Cookie", cookie);
+
+    return Response.json({ message: "Email verified successfully" }, { status: 200, headers });
   } catch (error) {
     console.error("Email verification error:", error);
     return Response.json({ error: "Internal Server Error" }, { status: 500 });
