@@ -54,11 +54,17 @@ export default function Alphabet() {
         <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
             <div className="h-full rounded-full bg-[var(--primary)]" style={{width: `${100 * step / 12}%`}}></div>
         </div>
-        <ArToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
-        <EnToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
-        <Draw data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
-        {/* <MatchSound data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 4} /> */}
-        <SelectCorrect data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 0} />
+        {chapterName == "alphabets" &&
+         (
+          <>
+            <ArToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
+            <EnToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
+            <Draw data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
+            {/* <MatchSound data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 4} /> */}
+            <SelectCorrect data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 0} />
+          </>
+          )
+        }
       </div>
     );
 }

@@ -18,6 +18,7 @@ export default function Chapter() {
         const res = await fetch(`/api/chapter/?chapter=${chapter}`);
         const data = await res.json();
         setChapterData(data);
+        console.log(data)
       } catch (err) {
         console.error('Failed to fetch chapter:', err);
       }
@@ -43,20 +44,38 @@ export default function Chapter() {
       <h1 className="text-xl font-bold text-center mb-4 text-[var(--secondary)]">
         {chapter.charAt(0).toUpperCase() + chapter.slice(1).toLowerCase()}
       </h1>
-      <div className="grid grid-cols-4 sm:grid-cols-7 gap-4 px-4 py-4 max-w-2xl justify-center mx-auto cursor-pointer" style={{direction: 'rtl'}}>
-        {chapterData.map((ch, i) => (
-          <div
-            key={i}
-            className="w-full aspect-[3/4] arabic bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-evenly items-center text-center"
-            onClick={() => handleClick(ch.index)}
-          >
-            <div>{ch.letter}</div>
-            <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-1 mt-3' style={{direction: 'ltr'}}>
-              <div className={`bg-[var(--primary)] h-full rounded-full w-[60%]`}></div>
+
+      {chapter === "alphabets" ? (
+        <div className="grid grid-cols-4 sm:grid-cols-7 gap-4 px-4 py-4 max-w-2xl justify-center mx-auto cursor-pointer" style={{ direction: 'rtl' }}>
+          {chapterData.map((ch, i) => (
+            <div
+              key={i}
+              className="w-full aspect-[3/4] arabic bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-evenly items-center text-center"
+              onClick={() => handleClick(ch.index)}
+            >
+              <div>{ch.letter}</div>
+              <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-1 mt-3' style={{ direction: 'ltr' }}>
+                <div className={`bg-[var(--primary)] h-full rounded-full w-[60%]`}></div>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-8 py-6">
+          {Object.entries(Object.assign({}, ...chapterData)).map(([title, data], index) => (
+            <div
+              key={title}
+              className="w-full h-40 bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-between items-center text-center cursor-pointer"
+              onClick={() => handleClick(index + 1)}
+            >
+              <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>{title}</div>
+              <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
+                <div className={`bg-[var(--primary)] h-full rounded-full w-[60%]`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   );
 }

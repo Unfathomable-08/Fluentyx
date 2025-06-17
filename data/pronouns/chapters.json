@@ -1,413 +1,726 @@
 [
-    {
-      "id": 1,
-      "arabic": "أنا",
-      "english": "I",
-      "roman": "ana",
-      "type": "singular",
-      "gender": "common",
-      "person": "1st",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "أنا طالب",
-          "pronounce": "ana taalib",
-          "translate": "I am a student",
-          "word2word": [
-            { "word": "أنا", "translate": "I", "pronounce": "ana" },
-            { "word": "طالب", "translate": "student", "pronounce": "taalib" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "أنا أحب القهوة",
-          "pronounce": "ana uhibbu al-qahwa",
-          "translate": "I love coffee",
-          "word2word": [
-            { "word": "أنا", "translate": "I", "pronounce": "ana" },
-            { "word": "أحب", "translate": "love", "pronounce": "uhibbu" },
-            { "word": "القهوة", "translate": "the coffee", "pronounce": "al-qahwa" }
-          ]
-        },
-        {
-          "id": 3,
-          "sentence": "أنا أعيش في باكستان",
-          "pronounce": "ana aeesh fi bakistan",
-          "translate": "I live in Pakistan",
-          "word2word": [
-            { "word": "أنا", "translate": "I", "pronounce": "ana" },
-            { "word": "أعيش", "translate": "live", "pronounce": "aeesh" },
-            { "word": "في", "translate": "in", "pronounce": "fi" },
-            { "word": "باكستان", "translate": "Pakistan", "pronounce": "bakistan" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "arabic": "نحن",
-      "english": "we",
-      "roman": "nahnu",
-      "type": "plural",
-      "gender": "common",
-      "person": "1st",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "نحن نقرأ الكتاب",
-          "pronounce": "nahnu naqra al-kitab",
-          "translate": "We read the book",
-          "word2word": [
-            { "word": "نحن", "translate": "we", "pronounce": "nahnu" },
-            { "word": "نقرأ", "translate": "read", "pronounce": "naqra" },
-            { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "نحن نعيش في مصر",
-          "pronounce": "nahnu naeesh fi misr",
-          "translate": "We live in Egypt",
-          "word2word": [
-            { "word": "نحن", "translate": "we", "pronounce": "nahnu" },
-            { "word": "نعيش", "translate": "live", "pronounce": "naeesh" },
-            { "word": "في", "translate": "in", "pronounce": "fi" },
-            { "word": "مصر", "translate": "Egypt", "pronounce": "misr" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "arabic": "أنتَ",
-      "english": "you",
-      "roman": "anta",
-      "type": "singular",
-      "gender": "masculine",
-      "person": "2nd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "أنتَ تشرب الماء",
-          "pronounce": "anta tashrab al-maa",
-          "translate": "You drink the water",
-          "word2word": [
-            { "word": "أنتَ", "translate": "you", "pronounce": "anta" },
-            { "word": "تشرب", "translate": "drink", "pronounce": "tashrab" },
-            { "word": "الماء", "translate": "the water", "pronounce": "al-maa" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "أنتَ تحب السفر",
-          "pronounce": "anta tuhibbu as-safar",
-          "translate": "You love to travel",
-          "word2word": [
-            { "word": "أنتَ", "translate": "you", "pronounce": "anta" },
-            { "word": "تحب", "translate": "love", "pronounce": "tuhibbu" },
-            { "word": "السفر", "translate": "the travel", "pronounce": "as-safar" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "arabic": "أنتِ",
-      "english": "you",
-      "roman": "anti",
-      "type": "singular",
-      "gender": "feminine",
-      "person": "2nd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "أنتِ طالبة",
-          "pronounce": "anti taaliba",
-          "translate": "You are a student",
-          "word2word": [
-            { "word": "أنتِ", "translate": "you", "pronounce": "anti" },
-            { "word": "طالبة", "translate": "student", "pronounce": "taaliba" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "أنتِ تقرئين الكتاب",
-          "pronounce": "anti taqraeena al-kitab",
-          "translate": "You read the book",
-          "word2word": [
-            { "word": "أنتِ", "translate": "you", "pronounce": "anti" },
-            { "word": "تقرئين", "translate": "read", "pronounce": "taqraeena" },
-            { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "arabic": "أنتما",
-      "english": "you two",
-      "roman": "antuma",
-      "type": "dual",
-      "gender": "common",
-      "person": "2nd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "أنتما تسافران",
-          "pronounce": "antuma tusafiraan",
-          "translate": "You two travel",
-          "word2word": [
-            { "word": "أنتما", "translate": "you two", "pronounce": "antuma" },
-            { "word": "تسافران", "translate": "travel", "pronounce": "tusafiraan" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "أنتما تحبان القهوة",
-          "pronounce": "antuma tuhibbaan al-qahwa",
-          "translate": "You two love coffee",
-          "word2word": [
-            { "word": "أنتما", "translate": "you two", "pronounce": "antuma" },
-            { "word": "تحبان", "translate": "love", "pronounce": "tuhibbaan" },
-            { "word": "القهوة", "translate": "the coffee", "pronounce": "al-qahwa" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "arabic": "أنتم",
-      "english": "you all",
-      "roman": "antum",
-      "type": "plural",
-      "gender": "masculine",
-      "person": "2nd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "أنتم تلعبون كرة القدم",
-          "pronounce": "antum talaboon kurat al-qadam",
-          "translate": "You all play football",
-          "word2word": [
-            { "word": "أنتم", "translate": "you all", "pronounce": "antum" },
-            { "word": "تلعبون", "translate": "play", "pronounce": "talaboon" },
-            { "word": "كرة القدم", "translate": "football", "pronounce": "kurat al-qadam" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "أنتم تسكنون في المدينة",
-          "pronounce": "antum taskunoon fi al-madina",
-          "translate": "You all live in the city",
-          "word2word": [
-            { "word": "أنتم", "translate": "you all", "pronounce": "antum" },
-            { "word": "تسكنون", "translate": "live", "pronounce": "taskunoon" },
-            { "word": "في", "translate": "in", "pronounce": "fi" },
-            { "word": "المدينة", "translate": "the city", "pronounce": "al-madina" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "arabic": "أنتن",
-      "english": "you all",
-      "roman": "antunna",
-      "type": "plural",
-      "gender": "feminine",
-      "person": "2nd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "أنتن تدرسن في الجامعة",
-          "pronounce": "antunna tadrusna fi al-jamia",
-          "translate": "You all study at the university",
-          "word2word": [
-            { "word": "أنتن", "translate": "you all", "pronounce": "antunna" },
-            { "word": "تدرسن", "translate": "study", "pronounce": "tadrusna" },
-            { "word": "في", "translate": "at", "pronounce": "fi" },
-            { "word": "الجامعة", "translate": "the university", "pronounce": "al-jamia" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "أنتن تحببن الموسيقى",
-          "pronounce": "antunna tuhibbna al-musiqa",
-          "translate": "You all love music",
-          "word2word": [
-            { "word": "أنتن", "translate": "you all", "pronounce": "antunna" },
-            { "word": "تحببن", "translate": "love", "pronounce": "tuhibbna" },
-            { "word": "الموسيقى", "translate": "the music", "pronounce": "al-musiqa" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "arabic": "هو",
-      "english": "he",
-      "roman": "huwa",
-      "type": "singular",
-      "gender": "masculine",
-      "person": "3rd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "هو يأكل التفاح",
-          "pronounce": "huwa yaakul at-tuffah",
-          "translate": "He eats the apple",
-          "word2word": [
-            { "word": "هو", "translate": "he", "pronounce": "huwa" },
-            { "word": "يأكل", "translate": "eats", "pronounce": "yaakul" },
-            { "word": "التفاح", "translate": "the apple", "pronounce": "at-tuffah" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "هو يعمل في المكتب",
-          "pronounce": "huwa yaamal fi al-maktab",
-          "translate": "He works in the office",
-          "word2word": [
-            { "word": "هو", "translate": "he", "pronounce": "huwa" },
-            { "word": "يعمل", "translate": "works", "pronounce": "yaamal" },
-            { "word": "في", "translate": "in", "pronounce": "fi" },
-            { "word": "المكتب", "translate": "the office", "pronounce": "al-maktab" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "arabic": "هي",
-      "english": "she",
-      "roman": "hiya",
-      "type": "singular",
-      "gender": "feminine",
-      "person": "3rd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "هي تكتب الرسالة",
-          "pronounce": "hiya taktub ar-risala",
-          "translate": "She writes the letter",
-          "word2word": [
-            { "word": "هي", "translate": "she", "pronounce": "hiya" },
-            { "word": "تكتب", "translate": "writes", "pronounce": "taktub" },
-            { "word": "الرسالة", "translate": "the letter", "pronounce": "ar-risala" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "هي تحب القراءة",
-          "pronounce": "hiya tuhibbu al-qiraa",
-          "translate": "She loves reading",
-          "word2word": [
-            { "word": "هي", "translate": "she", "pronounce": "hiya" },
-            { "word": "تحب", "translate": "loves", "pronounce": "tuhibbu" },
-            { "word": "القراءة", "translate": "the reading", "pronounce": "al-qiraa" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "arabic": "هما",
-      "english": "they two",
-      "roman": "huma",
-      "type": "dual",
-      "gender": "common",
-      "person": "3rd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "هما يلعبان في الحديقة",
-          "pronounce": "huma yalaban fi al-hadiqa",
-          "translate": "They two play in the park",
-          "word2word": [
-            { "word": "هما", "translate": "they two", "pronounce": "huma" },
-            { "word": "يلعبان", "translate": "play", "pronounce": "yalaban" },
-            { "word": "في", "translate": "in", "pronounce": "fi" },
-            { "word": "الحديقة", "translate": "the park", "pronounce": "al-hadiqa" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "هما يأكلان الفطور",
-          "pronounce": "huma yaakulan al-futur",
-          "translate": "They two eat breakfast",
-          "word2word": [
-            { "word": "هما", "translate": "they two", "pronounce": "huma" },
-            { "word": "يأكلان", "translate": "eat", "pronounce": "yaakulan" },
-            { "word": "الفطور", "translate": "the breakfast", "pronounce": "al-futur" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "arabic": "هم",
-      "english": "they",
-      "roman": "hum",
-      "type": "plural",
-      "gender": "masculine",
-      "person": "3rd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "هم يشاهدون التلفزيون",
-          "pronounce": "hum yushahidun at-talfizyun",
-          "translate": "They watch television",
-          "word2word": [
-            { "word": "هم", "translate": "they", "pronounce": "hum" },
-            { "word": "يشاهدون", "translate": "watch", "pronounce": "yushahidun" },
-            { "word": "التلفزيون", "translate": "the television", "pronounce": "at-talfizyun" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "هم يحبون السفر",
-          "pronounce": "hum yuhibbun as-safar",
-          "translate": "They love to travel",
-          "word2word": [
-            { "word": "هم", "translate": "they", "pronounce": "hum" },
-            { "word": "يحبون", "translate": "love", "pronounce": "yuhibbun" },
-            { "word": "السفر", "translate": "the travel", "pronounce": "as-safar" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "arabic": "هن",
-      "english": "they",
-      "roman": "hunna",
-      "type": "plural",
-      "gender": "feminine",
-      "person": "3rd",
-      "examples": [
-        {
-          "id": 1,
-          "sentence": "هن يطبخن الطعام",
-          "pronounce": "hunna yatbukhna at-taam",
-          "translate": "They cook the food",
-          "word2word": [
-            { "word": "هن", "translate": "they", "pronounce": "hunna" },
-            { "word": "يطبخن", "translate": "cook", "pronounce": "yatbukhna" },
-            { "word": "الطعام", "translate": "the food", "pronounce": "at-taam" }
-          ]
-        },
-        {
-          "id": 2,
-          "sentence": "هن يزرن المتحف",
-          "pronounce": "hunna yazurna al-matḥaf",
-          "translate": "They visit the museum",
-          "word2word": [
-            { "word": "هن", "translate": "they", "pronounce": "hunna" },
-            { "word": "يزرن", "translate": "visit", "pronounce": "yazurna" },
-            { "word": "المتحف", "translate": "the museum", "pronounce": "al-matḥaf" }
-          ]
-        }
-      ]
-    }
-  ]
-}
+  {"First Person Pronouns": [{
+    "id": 1,
+    "arabic": "أنا",
+    "english": "I",
+    "roman": "ana",
+    "type": "singular",
+    "gender": "common",
+    "person": "1st",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "أنا طالب",
+        "pronounce": "ana taalib",
+        "translate": "I am a student",
+        "word2word": [
+          {
+            "word": "أنا",
+            "translate": "I",
+            "pronounce": "ana"
+          },
+          {
+            "word": "طالب",
+            "translate": "student",
+            "pronounce": "taalib"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "أنا أحب القهوة",
+        "pronounce": "ana uhibbu al-qahwa",
+        "translate": "I love coffee",
+        "word2word": [
+          {
+            "word": "أنا",
+            "translate": "I",
+            "pronounce": "ana"
+          },
+          {
+            "word": "أحب",
+            "translate": "love",
+            "pronounce": "uhibbu"
+          },
+          {
+            "word": "القهوة",
+            "translate": "the coffee",
+            "pronounce": "al-qahwa"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "sentence": "أنا أعيش في باكستان",
+        "pronounce": "ana aeesh fi bakistan",
+        "translate": "I live in Pakistan",
+        "word2word": [
+          {
+            "word": "أنا",
+            "translate": "I",
+            "pronounce": "ana"
+          },
+          {
+            "word": "أعيش",
+            "translate": "live",
+            "pronounce": "aeesh"
+          },
+          {
+            "word": "في",
+            "translate": "in",
+            "pronounce": "fi"
+          },
+          {
+            "word": "باكستان",
+            "translate": "Pakistan",
+            "pronounce": "bakistan"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "arabic": "نحن",
+    "english": "we",
+    "roman": "nahnu",
+    "type": "plural",
+    "gender": "common",
+    "person": "1st",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "نحن نقرأ الكتاب",
+        "pronounce": "nahnu naqra al-kitab",
+        "translate": "We read the book",
+        "word2word": [
+          {
+            "word": "نحن",
+            "translate": "we",
+            "pronounce": "nahnu"
+          },
+          {
+            "word": "نقرأ",
+            "translate": "read",
+            "pronounce": "naqra"
+          },
+          {
+            "word": "الكتاب",
+            "translate": "the book",
+            "pronounce": "al-kitab"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "نحن نعيش في مصر",
+        "pronounce": "nahnu naeesh fi misr",
+        "translate": "We live in Egypt",
+        "word2word": [
+          {
+            "word": "نحن",
+            "translate": "we",
+            "pronounce": "nahnu"
+          },
+          {
+            "word": "نعيش",
+            "translate": "live",
+            "pronounce": "naeesh"
+          },
+          {
+            "word": "في",
+            "translate": "in",
+            "pronounce": "fi"
+          },
+          {
+            "word": "مصر",
+            "translate": "Egypt",
+            "pronounce": "misr"
+          }
+        ]
+      }
+    ]
+  }]},
+
+  {"Second Person Pronounce" :[{
+    "id": 3,
+    "arabic": "أنتَ",
+    "english": "you",
+    "roman": "anta",
+    "type": "singular",
+    "gender": "masculine",
+    "person": "2nd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "أنتَ تشرب الماء",
+        "pronounce": "anta tashrab al-maa",
+        "translate": "You drink the water",
+        "word2word": [
+          {
+            "word": "أنتَ",
+            "translate": "you",
+            "pronounce": "anta"
+          },
+          {
+            "word": "تشرب",
+            "translate": "drink",
+            "pronounce": "tashrab"
+          },
+          {
+            "word": "الماء",
+            "translate": "the water",
+            "pronounce": "al-maa"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "أنتَ تحب السفر",
+        "pronounce": "anta tuhibbu as-safar",
+        "translate": "You love to travel",
+        "word2word": [
+          {
+            "word": "أنتَ",
+            "translate": "you",
+            "pronounce": "anta"
+          },
+          {
+            "word": "تحب",
+            "translate": "love",
+            "pronounce": "tuhibbu"
+          },
+          {
+            "word": "السفر",
+            "translate": "the travel",
+            "pronounce": "as-safar"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "arabic": "أنتِ",
+    "english": "you",
+    "roman": "anti",
+    "type": "singular",
+    "gender": "feminine",
+    "person": "2nd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "أنتِ طالبة",
+        "pronounce": "anti taaliba",
+        "translate": "You are a student",
+        "word2word": [
+          {
+            "word": "أنتِ",
+            "translate": "you",
+            "pronounce": "anti"
+          },
+          {
+            "word": "طالبة",
+            "translate": "student",
+            "pronounce": "taaliba"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "أنتِ تقرئين الكتاب",
+        "pronounce": "anti taqraeena al-kitab",
+        "translate": "You read the book",
+        "word2word": [
+          {
+            "word": "أنتِ",
+            "translate": "you",
+            "pronounce": "anti"
+          },
+          {
+            "word": "تقرئين",
+            "translate": "read",
+            "pronounce": "taqraeena"
+          },
+          {
+            "word": "الكتاب",
+            "translate": "the book",
+            "pronounce": "al-kitab"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "arabic": "أنتما",
+    "english": "you two",
+    "roman": "antuma",
+    "type": "dual",
+    "gender": "common",
+    "person": "2nd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "أنتما تسافران",
+        "pronounce": "antuma tusafiraan",
+        "translate": "You two travel",
+        "word2word": [
+          {
+            "word": "أنتما",
+            "translate": "you two",
+            "pronounce": "antuma"
+          },
+          {
+            "word": "تسافران",
+            "translate": "travel",
+            "pronounce": "tusafiraan"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "أنتما تحبان القهوة",
+        "pronounce": "antuma tuhibbaan al-qahwa",
+        "translate": "You two love coffee",
+        "word2word": [
+          {
+            "word": "أنتما",
+            "translate": "you two",
+            "pronounce": "antuma"
+          },
+          {
+            "word": "تحبان",
+            "translate": "love",
+            "pronounce": "tuhibbaan"
+          },
+          {
+            "word": "القهوة",
+            "translate": "the coffee",
+            "pronounce": "al-qahwa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "arabic": "أنتم",
+    "english": "you all",
+    "roman": "antum",
+    "type": "plural",
+    "gender": "masculine",
+    "person": "2nd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "أنتم تلعبون كرة القدم",
+        "pronounce": "antum talaboon kurat al-qadam",
+        "translate": "You all play football",
+        "word2word": [
+          {
+            "word": "أنتم",
+            "translate": "you all",
+            "pronounce": "antum"
+          },
+          {
+            "word": "تلعبون",
+            "translate": "play",
+            "pronounce": "talaboon"
+          },
+          {
+            "word": "كرة القدم",
+            "translate": "football",
+            "pronounce": "kurat al-qadam"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "أنتم تسكنون في المدينة",
+        "pronounce": "antum taskunoon fi al-madina",
+        "translate": "You all live in the city",
+        "word2word": [
+          {
+            "word": "أنتم",
+            "translate": "you all",
+            "pronounce": "antum"
+          },
+          {
+            "word": "تسكنون",
+            "translate": "live",
+            "pronounce": "taskunoon"
+          },
+          {
+            "word": "في",
+            "translate": "in",
+            "pronounce": "fi"
+          },
+          {
+            "word": "المدينة",
+            "translate": "the city",
+            "pronounce": "al-madina"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "arabic": "أنتن",
+    "english": "you all",
+    "roman": "antunna",
+    "type": "plural",
+    "gender": "feminine",
+    "person": "2nd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "أنتن تدرسن في الجامعة",
+        "pronounce": "antunna tadrusna fi al-jamia",
+        "translate": "You all study at the university",
+        "word2word": [
+          {
+            "word": "أنتن",
+            "translate": "you all",
+            "pronounce": "antunna"
+          },
+          {
+            "word": "تدرسن",
+            "translate": "study",
+            "pronounce": "tadrusna"
+          },
+          {
+            "word": "في",
+            "translate": "at",
+            "pronounce": "fi"
+          },
+          {
+            "word": "الجامعة",
+            "translate": "the university",
+            "pronounce": "al-jamia"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "أنتن تحببن الموسيقى",
+        "pronounce": "antunna tuhibbna al-musiqa",
+        "translate": "You all love music",
+        "word2word": [
+          {
+            "word": "أنتن",
+            "translate": "you all",
+            "pronounce": "antunna"
+          },
+          {
+            "word": "تحببن",
+            "translate": "love",
+            "pronounce": "tuhibbna"
+          },
+          {
+            "word": "الموسيقى",
+            "translate": "the music",
+            "pronounce": "al-musiqa"
+          }
+        ]
+      }
+    ]
+  }]},
+
+  {"Third Person Pronounce" : [{
+    "id": 8,
+    "arabic": "هو",
+    "english": "he",
+    "roman": "huwa",
+    "type": "singular",
+    "gender": "masculine",
+    "person": "3rd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "هو يأكل التفاح",
+        "pronounce": "huwa yaakul at-tuffah",
+        "translate": "He eats the apple",
+        "word2word": [
+          {
+            "word": "هو",
+            "translate": "he",
+            "pronounce": "huwa"
+          },
+          {
+            "word": "يأكل",
+            "translate": "eats",
+            "pronounce": "yaakul"
+          },
+          {
+            "word": "التفاح",
+            "translate": "the apple",
+            "pronounce": "at-tuffah"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "هو يعمل في المكتب",
+        "pronounce": "huwa yaamal fi al-maktab",
+        "translate": "He works in the office",
+        "word2word": [
+          {
+            "word": "هو",
+            "translate": "he",
+            "pronounce": "huwa"
+          },
+          {
+            "word": "يعمل",
+            "translate": "works",
+            "pronounce": "yaamal"
+          },
+          {
+            "word": "في",
+            "translate": "in",
+            "pronounce": "fi"
+          },
+          {
+            "word": "المكتب",
+            "translate": "the office",
+            "pronounce": "al-maktab"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "arabic": "هي",
+    "english": "she",
+    "roman": "hiya",
+    "type": "singular",
+    "gender": "feminine",
+    "person": "3rd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "هي تكتب الرسالة",
+        "pronounce": "hiya taktub ar-risala",
+        "translate": "She writes the letter",
+        "word2word": [
+          {
+            "word": "هي",
+            "translate": "she",
+            "pronounce": "hiya"
+          },
+          {
+            "word": "تكتب",
+            "translate": "writes",
+            "pronounce": "taktub"
+          },
+          {
+            "word": "الرسالة",
+            "translate": "the letter",
+            "pronounce": "ar-risala"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "هي تحب القراءة",
+        "pronounce": "hiya tuhibbu al-qiraa",
+        "translate": "She loves reading",
+        "word2word": [
+          {
+            "word": "هي",
+            "translate": "she",
+            "pronounce": "hiya"
+          },
+          {
+            "word": "تحب",
+            "translate": "loves",
+            "pronounce": "tuhibbu"
+          },
+          {
+            "word": "القراءة",
+            "translate": "the reading",
+            "pronounce": "al-qiraa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "arabic": "هما",
+    "english": "they two",
+    "roman": "huma",
+    "type": "dual",
+    "gender": "common",
+    "person": "3rd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "هما يلعبان في الحديقة",
+        "pronounce": "huma yalaban fi al-hadiqa",
+        "translate": "They two play in the park",
+        "word2word": [
+          {
+            "word": "هما",
+            "translate": "they two",
+            "pronounce": "huma"
+          },
+          {
+            "word": "يلعبان",
+            "translate": "play",
+            "pronounce": "yalaban"
+          },
+          {
+            "word": "في",
+            "translate": "in",
+            "pronounce": "fi"
+          },
+          {
+            "word": "الحديقة",
+            "translate": "the park",
+            "pronounce": "al-hadiqa"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "هما يأكلان الفطور",
+        "pronounce": "huma yaakulan al-futur",
+        "translate": "They two eat breakfast",
+        "word2word": [
+          {
+            "word": "هما",
+            "translate": "they two",
+            "pronounce": "huma"
+          },
+          {
+            "word": "يأكلان",
+            "translate": "eat",
+            "pronounce": "yaakulan"
+          },
+          {
+            "word": "الفطور",
+            "translate": "the breakfast",
+            "pronounce": "al-futur"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "arabic": "هم",
+    "english": "they",
+    "roman": "hum",
+    "type": "plural",
+    "gender": "masculine",
+    "person": "3rd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "هم يشاهدون التلفزيون",
+        "pronounce": "hum yushahidun at-talfizyun",
+        "translate": "They watch television",
+        "word2word": [
+          {
+            "word": "هم",
+            "translate": "they",
+            "pronounce": "hum"
+          },
+          {
+            "word": "يشاهدون",
+            "translate": "watch",
+            "pronounce": "yushahidun"
+          },
+          {
+            "word": "التلفزيون",
+            "translate": "the television",
+            "pronounce": "at-talfizyun"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "هم يحبون السفر",
+        "pronounce": "hum yuhibbun as-safar",
+        "translate": "They love to travel",
+        "word2word": [
+          {
+            "word": "هم",
+            "translate": "they",
+            "pronounce": "hum"
+          },
+          {
+            "word": "يحبون",
+            "translate": "love",
+            "pronounce": "yuhibbun"
+          },
+          {
+            "word": "السفر",
+            "translate": "the travel",
+            "pronounce": "as-safar"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "arabic": "هن",
+    "english": "they",
+    "roman": "hunna",
+    "type": "plural",
+    "gender": "feminine",
+    "person": "3rd",
+    "examples": [
+      {
+        "id": 1,
+        "sentence": "هن يطبخن الطعام",
+        "pronounce": "hunna yatbukhna at-taam",
+        "translate": "They cook the food",
+        "word2word": [
+          {
+            "word": "هن",
+            "translate": "they",
+            "pronounce": "hunna"
+          },
+          {
+            "word": "يطبخن",
+            "translate": "cook",
+            "pronounce": "yatbukhna"
+          },
+          {
+            "word": "الطعام",
+            "translate": "the food",
+            "pronounce": "at-taam"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "sentence": "هن يزرن المتحف",
+        "pronounce": "hunna yazurna al-matḥaf",
+        "translate": "They visit the museum",
+        "word2word": [
+          {
+            "word": "هن",
+            "translate": "they",
+            "pronounce": "hunna"
+          },
+          {
+            "word": "يزرن",
+            "translate": "visit",
+            "pronounce": "yazurna"
+          },
+          {
+            "word": "المتحف",
+            "translate": "the museum",
+            "pronounce": "al-matḥaf"
+          }
+        ]
+      }
+    ]
+  }]}
+]
