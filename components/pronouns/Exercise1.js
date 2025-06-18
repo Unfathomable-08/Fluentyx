@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export function PronounToEn({ chapter, index, data, setStep, isActive }) {
   const [selected, setSelected] = useState(null);
@@ -7,19 +7,28 @@ export function PronounToEn({ chapter, index, data, setStep, isActive }) {
 
   if (!data || data.length === 0) return null;
 
-  // Flatten the dataset if it's nested
-  const allPronouns = [
-    ...data[index - 1]["First Person Pronouns"],
-    ...data[1]["Second Person Pronouns"],
-    ...data[2]["Third Person Pronouns"],
-  ];
+  // Map index to pronoun category
+  const pronounCategories = {
+    1: { key: "First Person Pronouns", data: data[0]["First Person Pronouns"] },
+    2: { key: "Second Person Pronouns", data: data[1]["Second Person Pronouns"] },
+    3: { key: "Third Person Pronouns", data: data[2]["Third Person Pronouns"] },
+  };
 
-  const correct = allPronouns[index - 1];
+  // Get the pronoun category for the given index
+  const currentCategory = pronounCategories[index];
+  if (!currentCategory || !currentCategory.data || currentCategory.data.length === 0) return null;
 
-  // Get other data with different English translations
-  const otherData = allPronouns.filter(
-    item => item.english !== correct.english && item.id !== correct.id
-  );
+  // Randomly select one pronoun from the current category (without useMemo)
+  const pronouns = currentCategory.data;
+  const randomIndex = Math.floor(Math.random() * pronouns.length);
+  const correct = pronouns[randomIndex];
+
+  // Get all pronouns from other categories
+  const otherData = [
+    ...(index !== 1 ? data[0]["First Person Pronouns"] : []),
+    ...(index !== 2 ? data[1]["Second Person Pronouns"] : []),
+    ...(index !== 3 ? data[2]["Third Person Pronouns"] : []),
+  ].filter(item => item.id !== correct.id);
 
   // Get unique English translations from otherData
   const uniqueOtherEnglish = [...new Set(otherData.map(item => item.english))];
@@ -61,7 +70,7 @@ export function PronounToEn({ chapter, index, data, setStep, isActive }) {
     <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">
       {/* Top Arabic Pronoun */}
       <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055] arabic">
-        <span className="text-6xl font-bold">{correct.arabic}</span>
+        <span className="">{correct.arabic}</span>
       </div>
 
       {/* Four English Options */}
