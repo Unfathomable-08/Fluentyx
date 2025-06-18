@@ -142,7 +142,7 @@
     ]
   }]},
 
-  {"Second Person Pronounce" :[{
+  {"Second Person Pronouns" :[{
     "id": 3,
     "arabic": "أنتَ",
     "english": "you",
@@ -428,7 +428,7 @@
     ]
   }]},
 
-  {"Third Person Pronounce" : [{
+  {"Third Person Pronouns" : [{
     "id": 8,
     "arabic": "هو",
     "english": "he",

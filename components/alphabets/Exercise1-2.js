@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 // EXERCISE NO. 01
 
-export function ArToEn({ chapter, index, data, setStep }) {
+export function ArToEn({ chapter, index, data, setStep, isActive }) {
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);
@@ -82,7 +82,7 @@ export function ArToEn({ chapter, index, data, setStep }) {
 
 // EXERCISE NO. 02
 
-export function EnToAr({chapter, index, data, setStep}){
+export function EnToAr({chapter, index, data, setStep, isActive}){
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);

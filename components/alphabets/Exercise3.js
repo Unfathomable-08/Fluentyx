@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
-export function Draw({chapter, index, setStep, data}){
+export function Draw({chapter, index, setStep, data, isActive}){
     const canvasRef = useRef(null);
     const [isSaving, setIsSaving] = useState(false);
 

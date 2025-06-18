@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-export function SelectCorrect({ chapter, index, setStep, data }) {
+export function SelectCorrect({ chapter, index, setStep, data, isActive }) {
   const [randomWord, setRandomWord] = useState("");
   const [targetLetter, setTargetLetter] = useState("");
   const [clickedIndex, setClickedIndex] = useState(null);
