@@ -10,6 +10,7 @@ import useAuth from "../../../hooks/useAuth";
 
 import { PronounToEn } from "../../../components/pronouns/Exercise1"
 import { PronounToAr } from "../../../components/pronouns/Exercise2"
+import { FillBlank } from "../../../components/pronouns/Exercise3"
 
 export default function Alphabet() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -75,6 +76,7 @@ export default function Alphabet() {
               </div>
               <PronounToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
               <PronounToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
+              <FillBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
             </>
           )
         }
