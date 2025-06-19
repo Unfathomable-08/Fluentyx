@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
-export function FillBlank({ chapter, index, setStep, isActive, selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options }) {
+export function FillBlank({ chapter, index, setStep, isActive, data }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
   const [hover, setHover] = useState(null);
 
-  if (!isActive || !selectedExample || !correctPronoun || !sentenceWithBlank || !selectedWord2Word || !options) return null;
-
+  
   const handleClick = (opt, i) => {
     if (correctIndex !== null) return;
     if (opt.arabic === correctPronoun.arabic) {
@@ -23,6 +22,51 @@ export function FillBlank({ chapter, index, setStep, isActive, selectedExample, 
     setSelected(i);
   };
 
+     // Memoize the selection logic
+    const { selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options } = useMemo(() => {
+      if (!data || data.length === 0) return {};
+  
+      // Map index to pronoun category
+      const pronounCategories = {
+        1: { key: "First Person Pronouns", data: data[0]["First Person Pronouns"] },
+        2: { key: "Second Person Pronouns", data: data[1]["Second Person Pronouns"] },
+        3: { key: "Third Person Pronouns", data: data[2]["Third Person Pronouns"] },
+      };
+  
+      const currentCategory = pronounCategories[index];
+      if (!currentCategory || !currentCategory.data || currentCategory.data.length === 0) return {};
+  
+      const pronouns = currentCategory.data;
+      const allExamples = pronouns.flatMap(pronoun => pronoun.examples);
+      if (allExamples.length === 0) return {};
+  
+      const randomExampleIndex = Math.floor(Math.random() * allExamples.length);
+      const selectedExample = allExamples[randomExampleIndex];
+  
+      const correctPronoun = pronouns.find(pronoun =>
+        pronoun.examples.some(example => example.id === selectedExample.id && example.sentence === selectedExample.sentence)
+      );
+      if (!correctPronoun) return {};
+  
+      const sentenceWithBlank = selectedExample.sentence.replace(correctPronoun.arabic, '____');
+      const selectedWord2Word = selectedExample.word2word;
+  
+      const pronounOptions = pronouns
+        .filter(pronoun => pronoun.person === correctPronoun.person)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, Math.min(4, pronouns.length));
+  
+      if (!pronounOptions.some(opt => opt.arabic === correctPronoun.arabic)) {
+        pronounOptions[Math.floor(Math.random() * pronounOptions.length)] = correctPronoun;
+      }
+  
+      const options = pronounOptions.sort(() => 0.5 - Math.random());
+  
+      return { selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options };
+    }, [data, index]);
+  
+    if (!selectedExample || !correctPronoun) return null;
+
   if (!isActive) return null;
 
   return (
@@ -31,9 +75,10 @@ export function FillBlank({ chapter, index, setStep, isActive, selectedExample, 
         <div className="flex gap-1 relative">
           {sentenceWithBlank.split(" ").map((word, i) => (
             <span
-              className="px-1 arabic"
+              className="px-1 arabic cursor-pointer"
               key={i}
               onMouseEnter={() => setHover(word)}
+              onClick={() => setHover(word)}
               onMouseLeave={() => setHover(null)}
             >
               {word}
@@ -41,7 +86,7 @@ export function FillBlank({ chapter, index, setStep, isActive, selectedExample, 
           ))}
           <div className="absolute top-0 -translate-y-12 flex">
             {selectedWord2Word.map((word, i) => (
-                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center justify-center items-center ${hover != word.word && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onmouseenter={()=>{setHover(word)}} onmouseleave={()=>{setHover(null)}}>
+                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center items-center ${hover != word.word && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onmouseenter={()=>{setHover(word)}} onmouseleave={()=>{setHover(null)}}>
                     <p>
                         {word.translate}
                     </p>

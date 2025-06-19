@@ -27,14 +27,14 @@ export function SelectCorrect({ chapter, index, setStep, data, isActive }) {
 
   const handleClick = (letter, i) => {
     setClickedIndex(i);
-    setIsCorrect(letter === targetLetter);
-  };
-
-  useEffect(() => {
-    if (isCorrect){
-        setStep(prev => prev + 1);
+    const correct = letter === targetLetter;
+    setIsCorrect(correct);
+    if (correct) {
+      setStep(prev => prev + 1);
+      setClickedIndex(null);
+      setIsCorrect(null)
     }
-  }, [isCorrect])
+  };
 
   if (!isActive) return null;
   
