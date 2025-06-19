@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 
 const ProgressSchema = new mongoose.Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Reference to a User model
-    required: true
+    type: String, // Email as userId
+    required: true,
+    unique: true, // Ensure one progress document per email
+    trim: true,
+    lowercase: true // Normalize email
   },
   chapters: [
     {
@@ -18,33 +20,21 @@ const ProgressSchema = new mongoose.Schema({
             type: String, // e.g., "First Person Pronouns", "Letter Alif"
             required: true
           },
-          exercises: [
-            {
-              exerciseName: {
-                type: String, // Unique ID for exercise, e.g., "PronounToEn", "FillInTheBlank"
-                required: true
-              },
-              completed: {
-                type: Boolean,
-                default: false
-              },
-              attempts: {
-                type: Number,
-                default: 0 // Track number of attempts
-              },
-              correctAttempts: {
-                type: Number,
-                default: 0 // Track correct attempts
-              },
-              lastAttempted: {
-                type: Date // Timestamp of last attempt
-              },
-              score: {
-                type: Number, // Optional: Percentage or points (e.g., 80 for 80%)
-                default: 0
-              }
-            }
-          ],
+          attempts: {
+            type: Number,
+            default: 0 // Track number of attempts
+          },
+          correctAttempts: {
+            type: Number,
+            default: 0 // Track correct attempts
+          },
+          lastAttempted: {
+            type: Date // Timestamp of last attempt
+          },
+          score: {
+            type: Number, // Optional: Percentage or points (e.g., 80 for 80%)
+            default: 0
+          },
           progress: {
             type: Number, // Percentage of exercises completed (0-100)
             default: 0

@@ -6,7 +6,6 @@ import useAuth from "../../hooks/useAuth";
 
 export default function Chapter() {
   const { isAuthenticated, user, isLoading } = useAuth();
-
   
   const { chapter } = useParams();
   const router = useRouter();
@@ -30,6 +29,45 @@ export default function Chapter() {
   const handleClick = (index) => {
     router.push(`/${chapter}/${index}`);
   };
+
+  useEffect(() => {
+    console.log("trying")
+    if (!user) return;
+    console.log("found")
+    const fetchProgress = async () => {
+      try {
+        const res = await fetch(`/api/progress/${user.email}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chapters: [
+              {
+                chapterName: "Alphabets",
+                progress: 50,
+                subLessons: [
+                  {
+                    subLessonName: "1",
+                    progress: 100,
+                    attempts: 2,
+                    correctAttempts: 2,
+                    lastAttempted: new Date(),
+                    score: 100
+                  }
+                ]
+              }
+            ]
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Something went wrong');
+        console.log('Progress saved:', data);
+      } catch (err) {
+        console.error('Error saving progress:', err.message);
+      }
+    };
+    fetchProgress();
+  }, [user]);
   
   if (isLoading) {
     return <div>Loading...</div>;
