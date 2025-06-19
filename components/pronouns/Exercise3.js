@@ -1,82 +1,61 @@
 import { useState } from 'react';
 
-export function FillBlank({ chapter, index, data, setStep, isActive }) {
+export function FillBlank({ chapter, index, setStep, isActive, selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
+  const [hover, setHover] = useState(null);
 
-  if (!data || data.length === 0) return null;
-
-  // Map index to pronoun category
-  const pronounCategories = {
-    1: { key: "First Person Pronouns", data: data[0]["First Person Pronouns"] },
-    2: { key: "Second Person Pronouns", data: data[1]["Second Person Pronouns"] },
-    3: { key: "Third Person Pronouns", data: data[2]["Third Person Pronouns"] },
-  };
-
-  // Get the pronoun category for the given index
-  const currentCategory = pronounCategories[index];
-  if (!currentCategory || !currentCategory.data || currentCategory.data.length === 0) return null;
-
-  // Get all pronouns and their example sentences
-  const pronouns = currentCategory.data;
-  
-  // Collect all example sentences
-  const allExamples = pronouns.flatMap(pronoun => pronoun.examples);
-  if (allExamples.length === 0) return null;
-
-  // Select a random sentence
-  const randomExampleIndex = Math.floor(Math.random() * allExamples.length);
-  const selectedExample = allExamples[randomExampleIndex];
-
-  // Find the pronoun corresponding to the selected sentence
-  const correctPronoun = pronouns.find(pronoun => 
-    pronoun.examples.some(example => example.id === selectedExample.id && example.sentence === selectedExample.sentence)
-  );
-  if (!correctPronoun) return null;
-
-  // Replace the pronoun in the sentence with a dash
-  const sentenceWithBlank = selectedExample.sentence.replace(correctPronoun.arabic, '____');
-
-  // Get pronoun options from the same category (up to 4, or fewer if limited)
-  const pronounOptions = pronouns
-    .filter(pronoun => pronoun.person === correctPronoun.person)
-    .sort(() => 0.5 - Math.random())
-    .slice(0, Math.min(4, pronouns.length));
-
-  // Ensure the correct pronoun is included in the options
-  if (!pronounOptions.some(opt => opt.arabic === correctPronoun.arabic)) {
-    pronounOptions[Math.floor(Math.random() * pronounOptions.length)] = correctPronoun;
-  }
-
-  // Shuffle the options
-  const options = pronounOptions.sort(() => 0.5 - Math.random());
+  if (!isActive || !selectedExample || !correctPronoun || !sentenceWithBlank || !selectedWord2Word || !options) return null;
 
   const handleClick = (opt, i) => {
-    if (correctIndex !== null) return; // Prevent further clicks after correct answer
+    if (correctIndex !== null) return;
     if (opt.arabic === correctPronoun.arabic) {
-      setCorrectIndex(i); // Mark correct answer
+      setCorrectIndex(i);
       setStep(prev => prev + 1);
     } else {
-      setWrongIndex(i); // Mark wrong answer
+      setWrongIndex(i);
       setTimeout(() => {
-        setWrongIndex(null); // Clear wrong selection after 1 second
-        setSelected(null); // Allow another selection
+        setWrongIndex(null);
+        setSelected(null);
       }, 1000);
     }
-    setSelected(i); // Track the selected option
+    setSelected(i);
   };
 
   if (!isActive) return null;
+
   return (
     <div className="flex flex-col items-center p-8 gap-y-16">
-      {/* Sentence with blank */}
-      <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] arabic">
-        <span className="">{sentenceWithBlank}</span>
+      <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">
+        <div className="flex gap-1 relative">
+          {sentenceWithBlank.split(" ").map((word, i) => (
+            <span
+              className="px-1 arabic"
+              key={i}
+              onMouseEnter={() => setHover(word)}
+              onMouseLeave={() => setHover(null)}
+            >
+              {word}
+            </span>
+          ))}
+          <div className="absolute top-0 -translate-y-12 flex">
+            {selectedWord2Word.map((word, i) => (
+                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center justify-center items-center ${hover != word.word && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onmouseenter={()=>{setHover(word)}} onmouseleave={()=>{setHover(null)}}>
+                    <p>
+                        {word.translate}
+                    </p>
+                    <p>
+                        {word.pronounce}
+                    </p>
+                    <span className="w-0 h-0 absolute bottom-0 border-l-[6px] border-r-[6px] border-t-[10px] border-l-transparent border-r-transparent border-t-[#eeeeee] transform translate-y-2"></span>
+                </span>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Pronoun Options */}
-      <div className="grid grid-cols-2 gap-4 w-[240px]">
+      <div className="grid grid-cols-2 gap-4 w-[240px] arabic">
         {options.map((opt, i) => {
           const isCorrect = correctIndex !== null && opt.arabic === correctPronoun.arabic;
           const isWrong = wrongIndex === i;
@@ -84,7 +63,7 @@ export function FillBlank({ chapter, index, data, setStep, isActive }) {
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`text-xl font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+              className={`flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                 ${isWrong ? 'bg-red-400 text-white' : ''}
               `}

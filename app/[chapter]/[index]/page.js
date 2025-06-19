@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { usePathname, useParams } from 'next/navigation';
 import { ArToEn, EnToAr } from "../../../components/alphabets/Exercise1-2"
 import { Draw } from "../../../components/alphabets/Exercise3"
@@ -42,6 +42,52 @@ export default function Alphabet() {
     
     fetchChapterData();
   }, [pathname]);
+
+   // Memoize the selection logic for fill the blank exercise
+  const { selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options } = useMemo(() => {
+    if (!chapterData || chapterData.length === 0) return {};
+
+    // Map index to pronoun category
+    const pronounCategories = {
+      1: { key: "First Person Pronouns", data: chapterData[0]["First Person Pronouns"] },
+      2: { key: "Second Person Pronouns", data: chapterData[1]["Second Person Pronouns"] },
+      3: { key: "Third Person Pronouns", data: chapterData[2]["Third Person Pronouns"] },
+    };
+
+    const currentCategory = pronounCategories[index];
+    if (!currentCategory || !currentCategory.data || currentCategory.data.length === 0) return {};
+
+    const pronouns = currentCategory.data;
+    const allExamples = pronouns.flatMap(pronoun => pronoun.examples);
+    if (allExamples.length === 0) return {};
+
+    const randomExampleIndex = Math.floor(Math.random() * allExamples.length);
+    const selectedExample = allExamples[randomExampleIndex];
+
+    const correctPronoun = pronouns.find(pronoun =>
+      pronoun.examples.some(example => example.id === selectedExample.id && example.sentence === selectedExample.sentence)
+    );
+    if (!correctPronoun) return {};
+
+    const sentenceWithBlank = selectedExample.sentence.replace(correctPronoun.arabic, '____');
+    const selectedWord2Word = selectedExample.word2word;
+
+    const pronounOptions = pronouns
+      .filter(pronoun => pronoun.person === correctPronoun.person)
+      .sort(() => 0.5 - Math.random())
+      .slice(0, Math.min(4, pronouns.length));
+
+    if (!pronounOptions.some(opt => opt.arabic === correctPronoun.arabic)) {
+      pronounOptions[Math.floor(Math.random() * pronounOptions.length)] = correctPronoun;
+    }
+
+    const options = pronounOptions.sort(() => 0.5 - Math.random());
+
+    return { selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options };
+  }, [chapterData, index]);
+
+  if (!selectedExample || !correctPronoun) return null;
+
   
   const stepMod = step % 4;
   
@@ -76,7 +122,7 @@ export default function Alphabet() {
               </div>
               <PronounToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
               <PronounToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
-              <FillBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
+              <FillBlank selectedExample={selectedExample} correctPronoun={correctPronoun} sentenceWithBlank={sentenceWithBlank} selectedWord2Word={selectedWord2Word} options={options} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
             </>
           )
         }
