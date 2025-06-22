@@ -15,7 +15,7 @@ export default function Chapter() {
   const { progress, subProgress } = useProgress(user?.email, chapter)
   
   console.log(progress, subProgress)
-  
+
   useEffect(() => {
     const fetchChapterData = async () => {
       try {
@@ -44,7 +44,12 @@ export default function Chapter() {
 
   return (
     <main className="px-4 py-4 sm:px-16 md:px-20">
-      <h1 className="text-xl font-bold text-center mb-4 text-[var(--secondary)]">
+      <div className="text-[var(--secondary)] transform flex justify-end font-medium">
+        <span>
+          {progress} / 100
+        </span>
+      </div>
+      <h1 className="text-xl font-bold text-center my-4 text-[var(--secondary)]">
         {chapter.charAt(0).toUpperCase() + chapter.slice(1).toLowerCase()}
       </h1>
 
@@ -73,7 +78,7 @@ export default function Chapter() {
             >
               <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>{title}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
-                <div className={`bg-[var(--primary)] h-full rounded-full w-full`}></div>
+                <div className={`bg-[var(--primary)] h-full rounded-full`} style={{width: `${subProgress[title] || 0}%`}}></div>
               </div>
             </div>
           ))}
