@@ -33,7 +33,6 @@ export function Draw({chapter, index, setStep, data, isActive}){
 
         if (res.ok) {
             const result = await res.json()
-            console.log(result)
 
             if (result.prediction == data[index - 1].prediction){
                 setStep(prev => prev + 1)
@@ -41,7 +40,7 @@ export function Draw({chapter, index, setStep, data, isActive}){
             }
             else {
                 const pred = data.filter(d => d.prediction == result.prediction)
-                console.log(pred)
+
                 alert("Your drawing is classified as: " + pred[0].pronounce)
                 handleClear()
             }

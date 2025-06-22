@@ -19,9 +19,7 @@ const Login = () => {
   const router = useRouter();
 
   const onSubmit = async (data) => {
-    console.log("Form submitted with data:", JSON.stringify(data, null, 2));
     if (showSignup && step === 1) {
-      console.log("Signup...");
       try {
         const res = await fetch('/api/signup', {
           method: 'POST',
@@ -34,12 +32,12 @@ const Login = () => {
         setVerificationEmail(data.email);
         setStep(2);
         const result = await res.json();
-        console.log("Signup response:", result);
+
       } catch (error) {
         console.error('Signup failed:', error);
       }
     } else if (!showSignup) {
-      console.log("Login...");
+
       try {
         const res = await fetch('/api/login', {
           method: 'POST',
@@ -49,7 +47,7 @@ const Login = () => {
           body: JSON.stringify(data),
         });
         const result = await res.json();
-        console.log("Login response:", result);
+
         router.push("/");
       } catch (error) {
         console.error('Login failed:', error);
@@ -59,7 +57,6 @@ const Login = () => {
   
   const handleVerificationSubmit = async (e) => {
     e.preventDefault();
-    console.log("Verification form submitted");
     setVerificationError("");
 
     // Basic validation
@@ -78,7 +75,7 @@ const Login = () => {
         email: verificationEmail,
         code
       };
-      console.log("Verification payload:", JSON.stringify(payload, null, 2));
+
       const res = await fetch('/api/emailVerification', {
         method: 'POST',
         headers: {
@@ -87,8 +84,8 @@ const Login = () => {
         body: JSON.stringify(payload),
       });
       const result = await res.json();
-      console.log("Verification response:", result);
       router.push("/");
+      
     } catch (error) {
       console.error('Verification failed:', error);
       setVerificationError("Verification failed. Please try again.");

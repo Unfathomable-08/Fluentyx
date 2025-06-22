@@ -5,10 +5,7 @@ const useProgress = (email, chapter) => {
   const [subProgress, setSubProgress] = useState({});
 
   useEffect(() => {
-    console.log("trying");
     if (!email) return;
-    console.log("found");
-    console.log(chapter);
 
     const fetchProgress = async () => {
       try {
@@ -35,8 +32,6 @@ const useProgress = (email, chapter) => {
         } else {
           setSubProgress({});
         }
-
-        console.log('Progress saved:', data);
       } catch (err) {
         console.error('Error saving progress:', err.message);
       }
@@ -45,7 +40,6 @@ const useProgress = (email, chapter) => {
     fetchProgress();
   }, [email, chapter]);
 
-  console.log(progress, subProgress)
   return { progress, subProgress };
 };
 

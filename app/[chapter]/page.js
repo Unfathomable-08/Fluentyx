@@ -13,8 +13,6 @@ export default function Chapter() {
   const [chapterData, setChapterData] = useState([]);
   
   const { progress, subProgress } = useProgress(user?.email, chapter)
-  
-  console.log(progress, subProgress)
 
   useEffect(() => {
     const fetchChapterData = async () => {

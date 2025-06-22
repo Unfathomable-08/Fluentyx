@@ -11,6 +11,7 @@ import useAuth from "../../../hooks/useAuth";
 import { PronounToEn } from "../../../components/pronouns/Exercise1"
 import { PronounToAr } from "../../../components/pronouns/Exercise2"
 import { FillBlank } from "../../../components/pronouns/Exercise3"
+import { FillEnBlank } from "../../../components/pronouns/Exercise4"
 
 export default function Alphabet() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -33,7 +34,7 @@ export default function Alphabet() {
         try {
         const res = await fetch(`/api/chapter/?chapter=${chapter}`);
         const data = await res.json();
-        console.log(data)
+
         setChapterData(data);
       } catch (err) {
         console.error('Failed to fetch chapter:', err);
@@ -73,6 +74,7 @@ export default function Alphabet() {
               <PronounToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
               <PronounToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
               <FillBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
+              <FillEnBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 4} />
             </>
           )
         }
