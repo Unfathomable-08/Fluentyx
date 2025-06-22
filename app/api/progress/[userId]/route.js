@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET(req, { params }) {
   await connectDB();
-  const { userId } = params;
+  const { userId } = await params;
   
   try {
     const progress = await Progress.findOne({ userId: userId.toLowerCase() });

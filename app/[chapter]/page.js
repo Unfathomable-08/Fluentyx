@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import useAuth from "../../hooks/useAuth";
+import useProgress from "../../hooks/useProgress";
 
 export default function Chapter() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -11,13 +12,16 @@ export default function Chapter() {
   const router = useRouter();
   const [chapterData, setChapterData] = useState([]);
   
+  const { progress, subProgress } = useProgress(user?.email, chapter)
+  
+  console.log(progress, subProgress)
+  
   useEffect(() => {
     const fetchChapterData = async () => {
       try {
         const res = await fetch(`/api/chapter/?chapter=${chapter}`);
         const data = await res.json();
         setChapterData(data);
-        console.log(data)
       } catch (err) {
         console.error('Failed to fetch chapter:', err);
       }
@@ -25,49 +29,10 @@ export default function Chapter() {
 
     fetchChapterData();
   }, [chapter]);
-  
+
   const handleClick = (index) => {
     router.push(`/${chapter}/${index}`);
   };
-
-  useEffect(() => {
-    console.log("trying")
-    if (!user) return;
-    console.log("found")
-    const fetchProgress = async () => {
-      try {
-        const res = await fetch(`/api/progress/${user.email}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chapters: [
-              {
-                chapterName: "Alphabets",
-                progress: 50,
-                subLessons: [
-                  {
-                    subLessonName: "1",
-                    progress: 100,
-                    attempts: 2,
-                    correctAttempts: 2,
-                    lastAttempted: new Date(),
-                    score: 100
-                  }
-                ]
-              }
-            ]
-          })
-        });
-
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'Something went wrong');
-        console.log('Progress saved:', data);
-      } catch (err) {
-        console.error('Error saving progress:', err.message);
-      }
-    };
-    fetchProgress();
-  }, [user]);
   
   if (isLoading) {
     return <div>Loading...</div>;
@@ -93,7 +58,7 @@ export default function Chapter() {
             >
               <div>{ch.letter}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-1 mt-3' style={{ direction: 'ltr' }}>
-                <div className={`bg-[var(--primary)] h-full rounded-full w-[60%]`}></div>
+                <div className={`bg-[var(--primary)] h-full rounded-full`} style={{width: `${subProgress[ch.index] || 0}%`}}></div>
               </div>
             </div>
           ))}
@@ -108,7 +73,7 @@ export default function Chapter() {
             >
               <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>{title}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
-                <div className={`bg-[var(--primary)] h-full rounded-full w-[60%]`}></div>
+                <div className={`bg-[var(--primary)] h-full rounded-full w-full`}></div>
               </div>
             </div>
           ))}
