@@ -12,6 +12,9 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data }) {
     if (opt.arabic === correctPronoun.arabic) {
       setCorrectIndex(i);
       setStep(prev => prev + 1);
+      setSelected(null);
+      setCorrectIndex(null);
+      setWrongIndex(null);
     } else {
       setWrongIndex(i);
       setTimeout(() => {
@@ -48,7 +51,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data }) {
       );
       if (!correctPronoun) return {};
   
-      const sentenceWithBlank = selectedExample.translate.replace(correctPronoun.english, '____');
+      const sentenceWithBlank = selectedExample.translate;
       const selectedWord2Word = selectedExample.word2word;
   
       const pronounOptions = pronouns
@@ -75,7 +78,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data }) {
         <div className="flex gap-1 relative">
           {sentenceWithBlank.split(" ").map((word, i) => (
             <span
-              className="px-1 arabic cursor-pointer"
+              className="px-1 text-xl font-bold cursor-pointer"
               key={i}
               onMouseEnter={() => setHover(word)}
               onClick={() => setHover(word)}
@@ -86,9 +89,9 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data }) {
           ))}
           <div className="absolute top-0 -translate-y-12 flex">
             {selectedWord2Word.map((word, i) => (
-                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center items-center ${hover != word.word && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onMouseEnter={()=>{setHover(word)}} onMouseLeave={()=>{setHover(null)}} onClick={()=>{setHover(word)}}>
+                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center items-center ${hover != word.translate && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onMouseEnter={()=>{setHover(word)}} onMouseLeave={()=>{setHover(null)}} onClick={()=>{setHover(word)}}>
                     <p>
-                        {word.translate}
+                        {word.word}
                     </p>
                     <p>
                         {word.pronounce}

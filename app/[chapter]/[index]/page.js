@@ -74,7 +74,7 @@ export default function Alphabet() {
               <PronounToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
               <PronounToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
               <FillBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
-              <FillEnBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 4} />
+              <FillEnBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 0} />
             </>
           )
         }

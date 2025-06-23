@@ -12,6 +12,9 @@ export function FillBlank({ chapter, index, setStep, isActive, data }) {
     if (opt.arabic === correctPronoun.arabic) {
       setCorrectIndex(i);
       setStep(prev => prev + 1);
+      setSelected(null);
+      setCorrectIndex(null);
+      setWrongIndex(null);
     } else {
       setWrongIndex(i);
       setTimeout(() => {

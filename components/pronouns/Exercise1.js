@@ -55,6 +55,9 @@ export function PronounToEn({ chapter, index, data, setStep, isActive }) {
     if (opt.english === correct.english) {
       setCorrectIndex(i); // Mark correct answer
       setStep(prev => prev + 1);
+      setSelected(null);
+      setCorrectIndex(null);
+      setWrongIndex(null);
     } else {
       setWrongIndex(i); // Mark wrong answer
       setTimeout(() => {

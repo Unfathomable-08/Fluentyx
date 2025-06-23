@@ -55,6 +55,9 @@ export function PronounToAr({ chapter, index, data, setStep, isActive }) {
     if (opt.arabic === correct.arabic) {
       setCorrectIndex(i); // Mark correct answer
       setStep(prev => prev + 1);
+      setSelected(null);
+      setWrongIndex(null);
+      setCorrectIndex(null);
     } else {
       setWrongIndex(i); // Mark wrong answer
       setTimeout(() => {
