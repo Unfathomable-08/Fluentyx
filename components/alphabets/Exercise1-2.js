@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 // EXERCISE NO. 01
 
-export function ArToEn({ chapter, index, data, setStep, isActive }) {
+export function ArToEn({ chapter, index, data, setStep, isActive, setCorrectAttepmts, setWrongAttepmts }) {
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);
@@ -31,11 +31,13 @@ export function ArToEn({ chapter, index, data, setStep, isActive }) {
         if (opt.pronounce === correct.pronounce) {
             setCorrectIndex(i); // Mark correct answer
             setStep(prev => prev + 1);
+            setCorrectAttepmts(prev => prev + 1);
             setSelected(null);
             setCorrectIndex(null);
             setWrongIndex(null);
         } else {
             setWrongIndex(i); // Mark wrong answer
+            setWrongAttepmts(prev => prev + 1);
             setTimeout(() => {
                 setWrongIndex(null); // Clear wrong selection after 1 second
                 setSelected(null); // Allow another selection
@@ -83,7 +85,7 @@ export function ArToEn({ chapter, index, data, setStep, isActive }) {
 
 // EXERCISE NO. 02
 
-export function EnToAr({chapter, index, data, setStep, isActive}){
+export function EnToAr({chapter, index, data, setStep, isActive, setCorrectAttepmts, setWrongAttepmts}){
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);
@@ -109,11 +111,13 @@ export function EnToAr({chapter, index, data, setStep, isActive}){
         if (opt.pronounce === correct.pronounce) {
             setCorrectIndex(i); // Mark correct answer
             setStep(prev => prev + 1);
+            setCorrectAttepmts(prev => prev + 1);
             setSelected(null);
             setCorrectIndex(null);
             setWrongIndex(null);
         } else {
             setWrongIndex(i); // Mark wrong answer
+            setWrongAttepmts(prev => prev + 1);
             setTimeout(() => {
                 setWrongIndex(null); // Clear wrong selection after 1 second
                 setSelected(null); // Allow another selection

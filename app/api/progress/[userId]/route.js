@@ -18,32 +18,64 @@ export async function GET(req, { params }) {
           { error: 'Server error', details: process.env.NODE_ENV === 'development' ? error.message : undefined },
       { status: 500 }
     );
+  }
 }
-}
+
 
 export async function POST(req, { params }) {
   try {
-    await connectDB(); // Ensure DB connection
+    await connectDB();
     const { userId } = params;
-
     const body = await req.json();
-    const { chapters } = body;
+    const { chapters } = body; // Expecting a single chapter with one subLesson
 
-    if (!userId || !chapters) {
-      return NextResponse.json({ error: "Missing userId or chapters" }, { status: 400 });
+    if (!userId || !chapters || !Array.isArray(chapters) || chapters.length === 0) {
+      return NextResponse.json({ error: "Invalid userId or chapters data" }, { status: 400 });
     }
 
-    // Check if progress already exists for this user
-    const existing = await Progress.findOne({ userId: userId.toLowerCase() });
+    const newChapter = chapters[0]; // Only one chapter per request
+    const newSubLesson = newChapter.subLessons[0]; // Only one subLesson per request
 
-    if (existing) {
-      // Update existing document
-      existing.chapters = chapters;
-      await existing.save();
-      return NextResponse.json({ message: "Progress updated", data: existing }, { status: 200 });
+    const progressDoc = await Progress.findOne({ userId: userId.toLowerCase() });
+
+    if (progressDoc) {
+      const chapterIndex = progressDoc.chapters.findIndex(
+        c => c.chapterName === newChapter.chapterName
+      );
+
+      if (chapterIndex > -1) {
+        // Chapter exists
+        const subLessonIndex = progressDoc.chapters[chapterIndex].subLessons.findIndex(
+          s => s.subLessonName === newSubLesson.subLessonName
+        );
+
+        if (subLessonIndex > -1) {
+          // SubLesson exists → update
+          progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
+            ...progressDoc.chapters[chapterIndex].subLessons[subLessonIndex],
+            ...newSubLesson
+          };
+        } else {
+          // SubLesson doesn't exist → push it
+          progressDoc.chapters[chapterIndex].subLessons.push(newSubLesson);
+        }
+
+        // Optionally update chapter progress
+        progressDoc.chapters[chapterIndex].progress = newChapter.progress;
+
+      } else {
+        // Chapter doesn't exist → push it
+        progressDoc.chapters.push(newChapter);
+      }
+
+      await progressDoc.save();
+      return NextResponse.json({ message: "Progress updated", data: progressDoc }, { status: 200 });
     } else {
-      // Create new document
-      const newProgress = await Progress.create({ userId, chapters });
+      // No progress document → create new
+      const newProgress = await Progress.create({
+        userId,
+        chapters: [newChapter]
+      });
       return NextResponse.json({ message: "Progress created", data: newProgress }, { status: 201 });
     }
 

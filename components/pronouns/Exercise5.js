@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { HiSpeakerWave } from 'react-icons/hi2';
 
 // EXERCISE: MatchPronounSound
-export function MatchPronounSound({ chapter, index, data, setStep, isActive }) {
+export function MatchPronounSound({ chapter, index, data, setStep, isActive, setCorrectAttepmts, setWrongAttepmts }) {
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);
@@ -58,11 +58,13 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive }) {
         if (opt.arabic === correct.arabic) {
             setCorrectIndex(i); // Mark correct answer
             setStep(prev => prev + 1);
+            setCorrectAttepmts(prev => prev + 1);
             setSelected(null);
             setCorrectIndex(null);
             setWrongIndex(null);
         } else {
             setWrongIndex(i); // Mark wrong answer
+            setWrongAttepmts(prev => prev + 1);
             setTimeout(() => {
                 setWrongIndex(null); // Clear wrong selection after 1 second
                 setSelected(null); // Allow another selection

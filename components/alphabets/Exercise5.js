@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-export function SelectCorrect({ chapter, index, setStep, data, isActive }) {
+export function SelectCorrect({ chapter, index, setStep, data, isActive, setCorrectAttepmts, setWrongAttepmts }) {
   const [randomWord, setRandomWord] = useState("");
   const [targetLetter, setTargetLetter] = useState("");
   const [clickedIndex, setClickedIndex] = useState(null);
@@ -31,8 +31,12 @@ export function SelectCorrect({ chapter, index, setStep, data, isActive }) {
     setIsCorrect(correct);
     if (correct) {
       setStep(prev => prev + 1);
+      setCorrectAttepmts(prev => prev + 1);
       setClickedIndex(null);
       setIsCorrect(null)
+    }
+    else {
+      setWrongAttepmts(prev => prev + 1);
     }
   };
 

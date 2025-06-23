@@ -31,10 +31,6 @@ const ProgressSchema = new mongoose.Schema({
           lastAttempted: {
             type: Date // Timestamp of last attempt
           },
-          score: {
-            type: Number, // Optional: Percentage or points (e.g., 80 for 80%)
-            default: 0
-          },
           progress: {
             type: Number, // Percentage of exercises completed (0-100)
             default: 0

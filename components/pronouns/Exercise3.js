@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-export function FillBlank({ chapter, index, setStep, isActive, data, step }) {
+export function FillBlank({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
@@ -12,11 +12,13 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step }) {
     if (opt.arabic === correctPronoun.arabic) {
       setCorrectIndex(i);
       setStep(prev => prev + 1);
+      setCorrectAttepmts(prev => prev + 1);
       setSelected(null);
       setCorrectIndex(null);
       setWrongIndex(null);
     } else {
       setWrongIndex(i);
+      setWrongAttepmts(prev => prev + 1);
       setTimeout(() => {
         setWrongIndex(null);
         setSelected(null);

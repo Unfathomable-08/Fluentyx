@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 
-export function Draw({chapter, index, setStep, data, isActive}){
+export function Draw({chapter, index, setStep, data, isActive, setCorrectAttepmts, setWrongAttepmts}){
     const canvasRef = useRef(null);
     const [isSaving, setIsSaving] = useState(false);
 
@@ -35,12 +35,13 @@ export function Draw({chapter, index, setStep, data, isActive}){
             const result = await res.json()
 
             if (result.prediction == data[index - 1].prediction){
-                setStep(prev => prev + 1)
-                handleClear()
+                setStep(prev => prev + 1);
+                setCorrectAttepmts(prev => prev + 1);
+                handleClear();
             }
             else {
                 const pred = data.filter(d => d.prediction == result.prediction)
-
+                setWrongAttepmts(prev => prev + 1);
                 alert("Your drawing is classified as: " + pred[0].pronounce)
                 handleClear()
             }

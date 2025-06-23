@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { HiSpeakerWave } from 'react-icons/hi2';
 
 // EXERCISE: MatchSound
-export function MatchSound({ chapter, index, data, setStep, isActive }) {
+export function MatchSound({ chapter, index, data, setStep, isActive, setCorrectAttepmts, setWrongAttepmts }) {
     const [selected, setSelected] = useState(null);
     const [correctIndex, setCorrectIndex] = useState(null);
     const [wrongIndex, setWrongIndex] = useState(null);
@@ -31,11 +31,13 @@ export function MatchSound({ chapter, index, data, setStep, isActive }) {
         if (opt.letter === correct.letter) {
             setCorrectIndex(i); // Mark correct answer
             setStep(prev => prev + 1);
+            setCorrectAttepmts(prev => prev + 1);
             setSelected(null);
             setCorrectIndex(null);
             setWrongIndex(null);
         } else {
             setWrongIndex(i); // Mark wrong answer
+            setWrongAttepmts(prev => prev + 1);
             setTimeout(() => {
                 setWrongIndex(null); // Clear wrong selection after 1 second
                 setSelected(null); // Allow another selection
@@ -54,7 +56,7 @@ export function MatchSound({ chapter, index, data, setStep, isActive }) {
 
     return (
         <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16 relative">
-            
+
             {/* Skip Button */}
             <div className="flex justify-end absolute right-6 top-1 font-medium text-[12px] text-red-600 underline">
                 <span onClick={()=>{setSelected(null); setCorrectIndex(null); setWrongIndex(null); setStep(prev => prev + 1)}}>Skip</span>
