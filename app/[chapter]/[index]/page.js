@@ -12,6 +12,7 @@ import { PronounToEn } from "../../../components/pronouns/Exercise1"
 import { PronounToAr } from "../../../components/pronouns/Exercise2"
 import { FillBlank } from "../../../components/pronouns/Exercise3"
 import { FillEnBlank } from "../../../components/pronouns/Exercise4"
+import { MatchPronounSound } from "../../../components/pronouns/Exercise5"
 
 export default function Alphabet() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -156,6 +157,17 @@ export default function Alphabet() {
               />
 
               <FillBlank
+               data={chapterData} 
+               chapter={chapterName} 
+               step={step} 
+               setStep={setStep} 
+               index={index} 
+               isActive={stepMod == 4} 
+               setCorrectAttepmts={setCorrectAttepmts}
+               setWrongAttepmts={setWrongAttepmts}
+              />
+
+              <MatchPronounSound
                data={chapterData} 
                chapter={chapterName} 
                step={step} 
