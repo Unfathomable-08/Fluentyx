@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-export function FillEnBlank({ chapter, index, setStep, isActive, data }) {
+export function FillEnBlank({ chapter, index, setStep, isActive, data, step }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
@@ -66,7 +66,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data }) {
       const options = pronounOptions.sort(() => 0.5 - Math.random());
   
       return { selectedExample, correctPronoun, sentenceWithBlank, selectedWord2Word, options };
-    }, [data, index]);
+    }, [data, index, step]);
   
     if (!selectedExample || !correctPronoun) return null;
 

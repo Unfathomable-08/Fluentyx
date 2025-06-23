@@ -18,7 +18,7 @@ export function PronounToEn({ chapter, index, data, setStep, isActive }) {
   const currentCategory = pronounCategories[index];
   if (!currentCategory || !currentCategory.data || currentCategory.data.length === 0) return null;
 
-  // Randomly select one pronoun from the current category (without useMemo)
+  // Randomly select one pronoun from the current category
   const pronouns = currentCategory.data;
   const randomIndex = Math.floor(Math.random() * pronouns.length);
   const correct = pronouns[randomIndex];

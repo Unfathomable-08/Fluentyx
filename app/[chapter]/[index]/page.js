@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname, useParams } from 'next/navigation';
 import { ArToEn, EnToAr } from "../../../components/alphabets/Exercise1-2"
 import { Draw } from "../../../components/alphabets/Exercise3"
@@ -73,8 +73,8 @@ export default function Alphabet() {
               </div>
               <PronounToAr data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 1} />
               <PronounToEn data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 2} />
-              <FillBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
-              <FillEnBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 0} />
+              <FillEnBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 3} />
+              <FillBlank data={chapterData} chapter={chapterName} step={step} setStep={setStep} index={index} isActive={stepMod == 0} />
             </>
           )
         }
