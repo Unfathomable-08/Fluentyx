@@ -34,10 +34,10 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
                     attempts: attempts,
                     correctAttempts: correctAttempts,
                     lastAttempted: new Date(),
-                    progress: 100
+                    progress: 0
                 }
                 ],
-                progress: 10
+                progress: 0
             }
             ]
         })

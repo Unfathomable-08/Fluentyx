@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname, useParams } from 'next/navigation';
+import { usePathname, useParams, useRouter } from 'next/navigation';
 
 import useAuth from "../../../hooks/useAuth";
 import useSaveProgress from "../../../hooks/useSaveProgress";
@@ -20,6 +20,7 @@ import { MatchPronounSound } from "../../../components/pronouns/Exercise5"
 export default function Alphabet() {
   const { isAuthenticated, user, isLoading } = useAuth();
 
+  const router = useRouter();
   const { index } = useParams();
   const pathname = usePathname();
   const [chapterName, setChapterName] = useState('');
@@ -56,13 +57,18 @@ export default function Alphabet() {
   useEffect(()=>{
     if (chapterName == "alphabets"){
       if (step == 15){
-        console.log(user)
         saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
+        if (!error){
+          router.push(`/${chapterName}`)
+        }
       }
     }
     else {
-      if (step >= 2){
+      if (step == 25){
         saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
+        if (!error){
+          router.push(`/${chapterName}`)
+        }
       }
     }
 
