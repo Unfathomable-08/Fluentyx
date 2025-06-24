@@ -20,7 +20,7 @@ const useProgress = (email, chapter) => {
         );
 
         // Set chapter progress
-        setProgress(foundChapter ? foundChapter.progress : 0);
+        setProgress(foundChapter ? Math.floor(foundChapter.progress) : 0);
 
         // Set sublesson progress as { subLessonName: progress }
         if (foundChapter && foundChapter.subLessons) {
@@ -28,7 +28,7 @@ const useProgress = (email, chapter) => {
             acc[subLesson.subLessonName] = subLesson.progress || 0;
             return acc;
           }, {});
-          setSubProgress(subProgressMap);
+          setSubProgress(Math.floor(subProgressMap));
         } else {
           setSubProgress({});
         }

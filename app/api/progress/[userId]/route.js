@@ -50,18 +50,23 @@ export async function POST(req, { params }) {
         );
 
         if (subLessonIndex > -1) {
-          // SubLesson exists → update
+          // SubLesson exists → sum up values
+          const existingSubLesson = progressDoc.chapters[chapterIndex].subLessons[subLessonIndex];
           progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
-            ...progressDoc.chapters[chapterIndex].subLessons[subLessonIndex],
-            ...newSubLesson
+            ...existingSubLesson,
+            attempts: (existingSubLesson.attempts || 0) + (newSubLesson.attempts || 0),
+            correctAttempts: (existingSubLesson.correctAttempts || 0) + (newSubLesson.correctAttempts || 0),
+            progress: (existingSubLesson.progress || 0) + (newSubLesson.progress || 0),
+            lastAttempted: newSubLesson.lastAttempted || existingSubLesson.lastAttempted
           };
         } else {
           // SubLesson doesn't exist → push it
           progressDoc.chapters[chapterIndex].subLessons.push(newSubLesson);
         }
 
-        // Optionally update chapter progress
-        progressDoc.chapters[chapterIndex].progress = newChapter.progress;
+        // Sum up chapter progress
+        progressDoc.chapters[chapterIndex].progress = 
+          (progressDoc.chapters[chapterIndex].progress || 0) + (newChapter.progress || 0);
 
       } else {
         // Chapter doesn't exist → push it

@@ -17,6 +17,8 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       setError(null);
 
       let attempts = wrongAttempts + correctAttempts
+      let chapterProgress = chapterName == "alphabets" ? 0.3448 : 2.5;
+      let lessonProgress = chapterName == "alphabets" ? 10 : 4;
 
       try {
         const response = await fetch(`/api/progress/${user.email}`, {
@@ -34,10 +36,10 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
                     attempts: attempts,
                     correctAttempts: correctAttempts,
                     lastAttempted: new Date(),
-                    progress: 0
+                    progress: 100
                 }
                 ],
-                progress: 0
+                progress: 30
             }
             ]
         })
