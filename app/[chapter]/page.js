@@ -76,7 +76,7 @@ export default function Chapter() {
             >
               <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>{title}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
-                <div className={`bg-[var(--primary)] h-full rounded-full`} style={{width: `${subProgress[title] || 0}%`}}></div>
+                <div className={`bg-[var(--primary)] h-full rounded-full`} style={{width: `${subProgress[index + 1] || 0}%`}}></div>
               </div>
             </div>
           ))}

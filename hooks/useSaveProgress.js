@@ -1,21 +1,25 @@
 import { useState, useCallback } from 'react';
 
-export function useSaveProgress() {
-  const [isLoading, setIsLoading] = useState(false);
+export default function useSaveProgress( user, chapterName, index, correctAttempts, wrongAttempts ) {
+  const [isProgressLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const saveProgress = useCallback(
-    async ({ userId, chapterName, subLessonName, attempts, correctAttempts }) => {
-      if (!userId || !chapterName || !subLessonName) {
-        setError('Missing required parameters: userId, chapterName, or subLessonName');
+    async ({ user, chapterName, index, correctAttempts, wrongAttempts }) => {
+        console.log(user, chapterName, index, correctAttempts, wrongAttempts)
+      if (!user || !chapterName || !index) {
+        setError('Missing required parameters: user, chapterName, or subLessonName');
+        console.log("not found")
         return false;
       }
 
       setIsLoading(true);
       setError(null);
 
+      let attempts = wrongAttempts + correctAttempts
+
       try {
-        const response = await fetch(`/api/progress/${userId}`, {
+        const response = await fetch(`/api/progress/${user.email}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -26,7 +30,7 @@ export function useSaveProgress() {
                 chapterName: chapterName,
                 subLessons: [
                 {
-                    subLessonName: subLessonName,
+                    subLessonName: index,
                     attempts: attempts,
                     correctAttempts: correctAttempts,
                     lastAttempted: new Date(),
@@ -57,5 +61,5 @@ export function useSaveProgress() {
     []
   );
 
-  return { saveProgress, isLoading, error };
+  return { saveProgress, isProgressLoading, error };
 }

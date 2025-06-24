@@ -25,7 +25,7 @@ export async function GET(req, { params }) {
 export async function POST(req, { params }) {
   try {
     await connectDB();
-    const { userId } = params;
+    const { userId } = await params;
     const body = await req.json();
     const { chapters } = body; // Expecting a single chapter with one subLesson
 
