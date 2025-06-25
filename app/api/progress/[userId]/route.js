@@ -54,6 +54,7 @@ export async function POST(req, { params }) {
           const existingSubLesson = progressDoc.chapters[chapterIndex].subLessons[subLessonIndex];
           progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
             ...existingSubLesson,
+            subLessonName: existingSubLesson.subLessonName, // Explicitly preserve subLessonName
             attempts: (existingSubLesson.attempts || 0) + (newSubLesson.attempts || 0),
             correctAttempts: (existingSubLesson.correctAttempts || 0) + (newSubLesson.correctAttempts || 0),
             progress: (existingSubLesson.progress || 0) + (newSubLesson.progress || 0),
