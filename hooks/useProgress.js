@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useProgressMemo } from "../contexts/progressContext"
 
 const useProgress = (email, chapter) => {
   const [progress, setProgress] = useState(0);
   const [subProgress, setSubProgress] = useState({});
+  const { setProgressMemo } = useProgressMemo();
 
   useEffect(() => {
     if (!email) return;
@@ -41,6 +43,7 @@ const useProgress = (email, chapter) => {
     console.log(subProgress)
   }, [email, chapter]);
 
+  setProgressMemo([progress, subProgress])
   return { progress, subProgress };
 };
 
