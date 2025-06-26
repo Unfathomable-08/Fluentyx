@@ -68,7 +68,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
         return false; // Failure
       }
     },
-    []
+    [subProgress, user, chapterName, index, correctAttempts, wrongAttempts]
   );
 
   return { saveProgress, isProgressLoading, error };
