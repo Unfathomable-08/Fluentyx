@@ -20,8 +20,8 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       setError(null);
 
       const attempts = (wrongAttempts || 0) + (correctAttempts || 0);
-      let chapterProgress = chapterName.toLowerCase() === 'alphabets' ? 0.3448 : 2.5;
-      let lessonProgress = chapterName.toLowerCase() === 'alphabets' ? 10 : 4;
+      let chapterProgress = chapterName.toLowerCase() === 'alphabets' ? 0.3448 : 8.33333;
+      let lessonProgress = chapterName.toLowerCase() === 'alphabets' ? 25 : 4;
 
       if (subProgress[index] >= 99) {
         chapterProgress = 0;
