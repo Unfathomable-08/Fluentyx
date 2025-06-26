@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useProgressMemo } from "../contexts/progressContext"
 
 const useProgress = (email, chapter) => {
   const [progress, setProgress] = useState(0);
   const [subProgress, setSubProgress] = useState({});
-  const { setProgressMemo } = useProgressMemo();
 
   useEffect(() => {
     if (!email) return;
@@ -38,9 +36,6 @@ const useProgress = (email, chapter) => {
         console.error('Error saving progress:', err.message);
         setProgress(0);
         setSubProgress({});
-      } finally {
-        // Update progressMemo in all cases
-        setProgressMemo([progress, subProgress]);
       }
     };
 

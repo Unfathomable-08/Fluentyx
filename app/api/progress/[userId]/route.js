@@ -52,6 +52,15 @@ export async function POST(req, { params }) {
         if (subLessonIndex > -1) {
           // SubLesson exists → sum up values
           const existingSubLesson = progressDoc.chapters[chapterIndex].subLessons[subLessonIndex];
+          
+          // Check if subLesson progress is already 100
+          if (existingSubLesson.progress >= 99) {
+            return NextResponse.json({ 
+              message: "SubLesson progress already at 100, no update needed", 
+              data: progressDoc 
+            }, { status: 200 });
+          }
+          
           progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
             ...existingSubLesson,
             subLessonName: existingSubLesson.subLessonName, // Explicitly preserve subLessonName
