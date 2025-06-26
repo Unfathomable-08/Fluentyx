@@ -36,14 +36,17 @@ const useProgress = (email, chapter) => {
         }
       } catch (err) {
         console.error('Error saving progress:', err.message);
+        setProgress(0);
+        setSubProgress({});
+      } finally {
+        // Update progressMemo in all cases
+        setProgressMemo([progress, subProgress]);
       }
     };
 
     fetchProgress();
-    console.log(subProgress)
   }, [email, chapter]);
 
-  setProgressMemo([progress, subProgress])
   return { progress, subProgress };
 };
 
