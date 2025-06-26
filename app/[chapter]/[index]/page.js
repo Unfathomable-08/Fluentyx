@@ -86,7 +86,7 @@ export default function Alphabet() {
           (
             <>
               <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
-                  <div className="h-full rounded-full bg-[var(--primary)]" style={{width: `${100 * step / 15}%`}}></div>
+                  <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 15}%`}}></div>
               </div>
 
               <ArToEn 
@@ -147,7 +147,7 @@ export default function Alphabet() {
           (
             <>
               <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
-                  <div className="h-full rounded-full bg-[var(--primary)]" style={{width: `${100 * step / 25}%`}}></div>
+                  <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 25}%`}}></div>
               </div>
 
               <PronounToAr

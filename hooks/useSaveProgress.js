@@ -1,8 +1,11 @@
 import { useState, useCallback } from 'react';
+import { useProgressMemo } from "../contexts/progressContext";
 
 export default function useSaveProgress( user, chapterName, index, correctAttempts, wrongAttempts ) {
   const [isProgressLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { progressMemo } = useProgressMemo();
+  const [, subProgress] = progressMemo || [0, {}]; // Destructure progressMemo, default to [0, {}] if null
 
   const saveProgress = useCallback(
     async ({ user, chapterName, index, correctAttempts, wrongAttempts }) => {
@@ -16,9 +19,14 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       setIsLoading(true);
       setError(null);
 
-      let attempts = wrongAttempts + correctAttempts
-      let chapterProgress = chapterName == "alphabets" ? 0.3448 : 2.5;
-      let lessonProgress = chapterName == "alphabets" ? 10 : 4;
+      const attempts = (wrongAttempts || 0) + (correctAttempts || 0);
+      let chapterProgress = chapterName.toLowerCase() === 'alphabets' ? 0.3448 : 2.5;
+      let lessonProgress = chapterName.toLowerCase() === 'alphabets' ? 10 : 4;
+
+      if (subProgress[index] >= 99) {
+        chapterProgress = 0;
+        lessonProgress = 0;
+      }
 
       try {
         const response = await fetch(`/api/progress/${user.email}`, {
