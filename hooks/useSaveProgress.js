@@ -5,7 +5,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
   const [isProgressLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const { progressMemo } = useProgressMemo();
-  const [, subProgress] = progressMemo || [0, {}]; // Destructure progressMemo, default to [0, {}] if null
+  const subProgress = progressMemo[1] || [0, {}]; // Destructure progressMemo, default to [0, {}] if null
 
   const saveProgress = useCallback(
     async ({ user, chapterName, index, correctAttempts, wrongAttempts }) => {
@@ -23,6 +23,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       let chapterProgress = chapterName.toLowerCase() === 'alphabets' ? 0.3448 : 8.33333;
       let lessonProgress = chapterName.toLowerCase() === 'alphabets' ? 25 : 4;
 
+      console.log(subProgress[index])
       if (subProgress[index] >= 99) {
         chapterProgress = 0;
         lessonProgress = 0;
