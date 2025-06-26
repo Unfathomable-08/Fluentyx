@@ -145,7 +145,7 @@
   {"Second Person Pronouns" :[{
     "id": 3,
     "arabic": "أنتَ",
-    "english": "you",
+    "english": "you (M)",
     "roman": "anta",
     "type": "singular",
     "gender": "masculine",
@@ -155,7 +155,7 @@
         "id": 1,
         "sentence": "أنتَ تشرب الماء",
         "pronounce": "anta tashrab al-maa",
-        "translate": "You drink the water",
+        "translate": "You (m) drink the water",
         "word2word": [
           {
             "word": "أنتَ",
@@ -178,7 +178,7 @@
         "id": 2,
         "sentence": "أنتَ تحب السفر",
         "pronounce": "anta tuhibbu as-safar",
-        "translate": "You love to travel",
+        "translate": "You (m) love to travel",
         "word2word": [
           {
             "word": "أنتَ",
@@ -202,7 +202,7 @@
   {
     "id": 4,
     "arabic": "أنتِ",
-    "english": "you",
+    "english": "you (F)",
     "roman": "anti",
     "type": "singular",
     "gender": "feminine",
@@ -212,7 +212,7 @@
         "id": 1,
         "sentence": "أنتِ طالبة",
         "pronounce": "anti taaliba",
-        "translate": "You are a student",
+        "translate": "You (f) are a student",
         "word2word": [
           {
             "word": "أنتِ",
@@ -230,7 +230,7 @@
         "id": 2,
         "sentence": "أنتِ تقرئين الكتاب",
         "pronounce": "anti taqraeena al-kitab",
-        "translate": "You read the book",
+        "translate": "You (f) read the book",
         "word2word": [
           {
             "word": "أنتِ",
@@ -306,7 +306,7 @@
   {
     "id": 6,
     "arabic": "أنتم",
-    "english": "you all",
+    "english": "you all (M)",
     "roman": "antum",
     "type": "plural",
     "gender": "masculine",
@@ -316,7 +316,7 @@
         "id": 1,
         "sentence": "أنتم تلعبون كرة القدم",
         "pronounce": "antum talaboon kurat al-qadam",
-        "translate": "You all play football",
+        "translate": "You all (m) play football",
         "word2word": [
           {
             "word": "أنتم",
@@ -339,7 +339,7 @@
         "id": 2,
         "sentence": "أنتم تسكنون في المدينة",
         "pronounce": "antum taskunoon fi al-madina",
-        "translate": "You all live in the city",
+        "translate": "You all (m) live in the city",
         "word2word": [
           {
             "word": "أنتم",
@@ -368,7 +368,7 @@
   {
     "id": 7,
     "arabic": "أنتن",
-    "english": "you all",
+    "english": "you all (F)",
     "roman": "antunna",
     "type": "plural",
     "gender": "feminine",
@@ -378,7 +378,7 @@
         "id": 1,
         "sentence": "أنتن تدرسن في الجامعة",
         "pronounce": "antunna tadrusna fi al-jamia",
-        "translate": "You all study at the university",
+        "translate": "You all (f) study at the university",
         "word2word": [
           {
             "word": "أنتن",
@@ -406,7 +406,7 @@
         "id": 2,
         "sentence": "أنتن تحببن الموسيقى",
         "pronounce": "antunna tuhibbna al-musiqa",
-        "translate": "You all love music",
+        "translate": "You all (f) love music",
         "word2word": [
           {
             "word": "أنتن",
@@ -612,7 +612,7 @@
   {
     "id": 11,
     "arabic": "هم",
-    "english": "they",
+    "english": "they (M)",
     "roman": "hum",
     "type": "plural",
     "gender": "masculine",
@@ -622,7 +622,7 @@
         "id": 1,
         "sentence": "هم يشاهدون التلفزيون",
         "pronounce": "hum yushahidun at-talfizyun",
-        "translate": "They watch television",
+        "translate": "They (m) watch television",
         "word2word": [
           {
             "word": "هم",
@@ -645,7 +645,7 @@
         "id": 2,
         "sentence": "هم يحبون السفر",
         "pronounce": "hum yuhibbun as-safar",
-        "translate": "They love to travel",
+        "translate": "They (m) love to travel",
         "word2word": [
           {
             "word": "هم",
@@ -669,7 +669,7 @@
   {
     "id": 12,
     "arabic": "هن",
-    "english": "they",
+    "english": "they (F)",
     "roman": "hunna",
     "type": "plural",
     "gender": "feminine",
@@ -679,7 +679,7 @@
         "id": 1,
         "sentence": "هن يطبخن الطعام",
         "pronounce": "hunna yatbukhna at-taam",
-        "translate": "They cook the food",
+        "translate": "They (f) cook the food",
         "word2word": [
           {
             "word": "هن",
@@ -702,7 +702,7 @@
         "id": 2,
         "sentence": "هن يزرن المتحف",
         "pronounce": "hunna yazurna al-matḥaf",
-        "translate": "They visit the museum",
+        "translate": "They (f) visit the museum",
         "word2word": [
           {
             "word": "هن",

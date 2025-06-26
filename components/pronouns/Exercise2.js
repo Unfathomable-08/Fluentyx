@@ -75,7 +75,7 @@ export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrec
     <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">
       {/* Top Arabic Pronoun */}
       <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055]">
-        <span className="font-medium text-4xl">{correct.english}</span>
+        <span className="font-medium text-2xl text-center">{correct.english}</span>
       </div>
 
       {/* Four English Options */}
@@ -87,7 +87,7 @@ export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrec
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`flex items-center justify-center border border-gray-300 aspect-[5/4] arabic shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+              className={`flex items-center justify-center text-center border border-gray-300 aspect-[5/4] arabic shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                 ${isWrong ? 'bg-red-400 text-white' : ''}
               `}
