@@ -29,6 +29,10 @@ export default function Chapter() {
   }, [chapter]);
 
   const handleClick = (index) => {
+    // For index > 0, check if previous lesson's subProgress is greater than 80
+    if (index > 0 && (subProgress[(index - 1).toString()] || 0) <= 80) {
+      return;
+    }
     router.push(`/${chapter}/${index}`);
   };
   
@@ -81,13 +85,19 @@ export default function Chapter() {
           {Object.entries(Object.assign({}, ...chapterData)).map(([title, data], index) => (
             <div
               key={title}
-              className="w-full h-40 bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-between items-center text-center cursor-pointer"
+              className="w-full h-40 bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-between relative items-center text-center cursor-pointer"
               onClick={() => handleClick(index + 1)}
             >
-              <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>{title}</div>
+              <div className='font-bold mt-12 text-lg text-[var(--secondary)]'>{title}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
                 <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress[index + 1] || 0}%`}}></div>
               </div>
+              {/* Progress or Lock */}
+              {(subProgress[(index).toString()] || 0) <= 80 && (
+                <div className="absolute top-2 right-3 bg-red-600 text-white text-[12px] px-2 py-[1px] rounded-full">
+                  Locked
+                </div>
+              )}
             </div>
           ))}
         </div>
