@@ -17,8 +17,14 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       setError(null);
 
       const attempts = (wrongAttempts || 0) + (correctAttempts || 0);
-      let chapterProgress = chapterName.toLowerCase() === 'alphabets' ? 0.3448 : 8.33333;
-      let lessonProgress = chapterName.toLowerCase() === 'alphabets' ? 10 : 25;
+      const progressMap = {
+        alphabets: { chapterProgress: 0.3448, lessonProgress: 10 },
+        pronouns: { chapterProgress: 6.25, lessonProgress: 25 },
+        prepositions: { chapterProgress: 5, lessonProgress: 10 },
+      };
+
+      const progressValues = progressMap[chapterName.toLowerCase()] || { chapterProgress: 0, lessonProgress: 0 };
+      const { chapterProgress, lessonProgress } = progressValues;
 
       try {
         const response = await fetch(`/api/progress/${user.email}`, {
