@@ -68,6 +68,16 @@ export default function Chapter() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-8 py-6">
+          <div
+            className="w-full h-40 bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-between items-center text-center cursor-pointer"
+            onClick={() => router.push(`/${chapter}/flashcards`)}
+          >
+            <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>Flashcards</div>
+            <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
+              <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress[0] || 0}%`}}></div>
+            </div>
+          </div>
+          
           {Object.entries(Object.assign({}, ...chapterData)).map(([title, data], index) => (
             <div
               key={title}
