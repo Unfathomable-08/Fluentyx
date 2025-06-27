@@ -29,8 +29,8 @@ export default function Flashcards() {
     const segments = pathname.split('/').filter(Boolean);
     const chapter = segments[0];
 
-    if (chapter !== 'pronouns') {
-      router.push('/pronouns'); // Redirect to pronouns if chapter is not pronouns
+    if (chapter == 'alphabets') {
+      router.push('/alphabets'); // Redirect
       return;
     }
 
@@ -43,11 +43,18 @@ export default function Flashcards() {
         setChapterData(data);
 
         // Concatenate all pronoun categories
-        const allPronouns = [
+        const allPronouns = chapter == "pronouns" ? [
           ...(data[1]?.["Second Person Pronouns"] || []),
           ...(data[0]?.["First Person Pronouns"] || []),
           ...(data[2]?.["Third Person Pronouns"] || []),
-        ].filter(pronoun => pronoun); // Filter out any undefined/null entries
+        ].filter(pronoun => pronoun)
+        : chapter == "prepositions" ? [
+          ...(data[0]?.["Attached Prepositions"] || []),
+          ...(data[1]?.["Relational Prepositions"] || []),
+          ...(data[2]?.["Temporal Prepositions"] || []),
+          ...(data[3]?.["Specialized Prepositions"] || [])
+        ]
+        : ''
 
         setPronouns(allPronouns);
       } catch (err) {
@@ -150,8 +157,8 @@ export default function Flashcards() {
               {currentPronoun.english.split(" ").filter(word => !word.match(/^\([MF]\)$/)).join(" ")}
             </div>
             <div>
-              <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.person}</span>
-              <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.gender}</span>
+              {chapterName == "pronouns" && <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.person}</span>}
+              {chapterName == "pronouns" && <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.gender}</span>}
               <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.type}</span>
             </div>
           </div>

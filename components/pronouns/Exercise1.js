@@ -8,11 +8,18 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
   if (!data || data.length === 0) return null;
 
   // Map index to pronoun category
-  const pronounCategories = {
+  const pronounCategories = chapter == "pronouns" ? {
     1: { key: "First Person Pronouns", data: data[0]["First Person Pronouns"] },
     2: { key: "Second Person Pronouns", data: data[1]["Second Person Pronouns"] },
     3: { key: "Third Person Pronouns", data: data[2]["Third Person Pronouns"] },
-  };
+  }
+  : chapter == "prepositions" ? {
+    1: { key: "Attached Prepositions", data: data[0]["Attached Prepositions"] },
+    2: { key: "Relational Prepositions", data: data[1]["Relational Prepositions"] },
+    3: { key: "Temporal Prepositions", data: data[2]["Temporal Prepositions"] },
+    4: { key: "Specialized Prepositions", data: data[3]["Specialized Prepositions"] }
+  }
+  : ''
 
   // Get the pronoun category for the given index
   const currentCategory = pronounCategories[index];
@@ -24,11 +31,18 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
   const correct = pronouns[randomIndex];
 
   // Get all pronouns from other categories
-  const otherData = [
+  const otherData = chapter == 'pronouns' ? [
     ...(index !== 1 ? data[0]["First Person Pronouns"] : []),
     ...(index !== 2 ? data[1]["Second Person Pronouns"] : []),
     ...(index !== 3 ? data[2]["Third Person Pronouns"] : []),
-  ].filter(item => item.id !== correct.id);
+  ].filter(item => item.id !== correct.id)
+  : chapter == 'prepositions' ? [
+    ...(index !== 1 ? data[0]["Attached Prepositions"] : []),
+    ...(index !== 2 ? data[1]["Relational Prepositions"] : []),
+    ...(index !== 3 ? data[2]["Temporal Prepositions"] : []),
+    ...(index !== 4 ? data[3]["Specialized Prepositions"] : [])
+  ] 
+  :''
 
   // Get unique English translations from otherData
   const uniqueOtherEnglish = [...new Set(otherData.map(item => item.english))];
