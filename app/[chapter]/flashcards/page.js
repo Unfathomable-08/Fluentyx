@@ -3,16 +3,22 @@
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import useAuth from "../../../hooks/useAuth";
+import useSaveProgress from "../../../hooks/useSaveProgress";
 
 export default function Flashcards() {
   const { isAuthenticated, user, isLoading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
   const [chapterName, setChapterName] = useState('');
+  const [index, setIndex] = useState(0);
+  const [correctAttempts, setCorrectAttepmts] = useState(0);
+  const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [chapterData, setChapterData] = useState([]);
   const [pronouns, setPronouns] = useState([]);
   const [currentPronounIndex, setCurrentPronounIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const { saveProgress, isProgressLoading, error } = useSaveProgress();
 
   useEffect(() => {
     if (!isAuthenticated || isLoading) return;
@@ -48,6 +54,19 @@ export default function Flashcards() {
 
     fetchChapterData();
   }, [pathname, isAuthenticated, isLoading, router]);
+
+  useEffect(()=>{
+    if (pronouns.length !== 0){
+      if ((currentPronounIndex + 1) == pronouns.length){
+        console.log({user, chapterName, index, correctAttempts, wrongAttempts})
+        saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
+        if (!error){
+          router.push(`/${chapterName}`)
+        }
+      }
+    }
+
+  }, [currentPronounIndex, chapterName, index, user])
 
   if (!isAuthenticated || isLoading) {
     return null; // Redirect handled by useAuth

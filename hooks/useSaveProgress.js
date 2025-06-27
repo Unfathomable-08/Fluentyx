@@ -7,7 +7,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
   const saveProgress = useCallback(
     async ({ user, chapterName, index, correctAttempts, wrongAttempts }) => {
         console.log(user, chapterName, index, correctAttempts, wrongAttempts)
-      if (!user || !chapterName || !index) {
+      if (!user || !chapterName || index === undefined || index === null) {
         setError('Missing required parameters: user, chapterName, or subLessonName');
         console.log("not found")
         return false;
