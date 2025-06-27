@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { motion } from "framer-motion";
+import { FaHandPointer } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import useSaveProgress from "../../../hooks/useSaveProgress";
 
@@ -17,6 +19,7 @@ export default function Flashcards() {
   const [pronouns, setPronouns] = useState([]);
   const [currentPronounIndex, setCurrentPronounIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [userKnows, setUserKnows] = useState(false)
 
   const { saveProgress, isProgressLoading, error } = useSaveProgress();
 
@@ -80,6 +83,7 @@ export default function Flashcards() {
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
+    setUserKnows(true);
   };
 
   const handleNext = () => {
@@ -103,9 +107,11 @@ export default function Flashcards() {
       </div>
       <h1 className="text-2xl font-bold my-8">Flashcards</h1>
 
-      <div 
+      <motion.div 
         className="w-64 h-40 bg-white rounded-xl shadow-[0_0_10px_#00000055] flex items-center justify-center cursor-pointer perspective-1000"
         onClick={handleFlip}
+        animate={!isFlipped && !userKnows ? { scale: [1, 1.01, 1] } : {}}
+        transition={{ repeat: Infinity, duration: 2 }}
       >
         <div 
           style={{ 
@@ -150,7 +156,22 @@ export default function Flashcards() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
+
+      {!isFlipped && !userKnows ? (
+        <motion.div
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: [0.5, 1, 1, 0.5], y: [0, 15, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 2.5,
+            ease: "easeInOut"
+          }}
+          className="mt-2 text-4xl transform -translate-y-8 translate-x-20 -rotate-20 text-[var(--primary)]"
+        >
+          <FaHandPointer />
+        </motion.div>
+      ) : ''}
 
       <div className="flex gap-4 mt-8">
         <button
