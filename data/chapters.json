@@ -2,13 +2,16 @@
   {
     "id": "1",
     "title": "Alphabets",
-    "image": "/alphabets.JPG",
-    "unlocked": true
+    "image": "/alphabets.JPG"
   },
   {
     "id": "2",
     "title": "Pronouns",
-    "image": "/pronouns.jpg",
-    "unlocked": false
+    "image": "/pronouns.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Prepositions",
+    "image": "/prepositions.jpg"
   }
 ]
