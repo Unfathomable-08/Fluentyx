@@ -60,7 +60,9 @@ export async function POST(req, { params }) {
               data: progressDoc 
             }, { status: 200 });
           }
-          
+
+          console.log(newSubLesson)
+          console.log(newSubLesson.progress)
           progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
             ...existingSubLesson,
             subLessonName: existingSubLesson.subLessonName, // Explicitly preserve subLessonName

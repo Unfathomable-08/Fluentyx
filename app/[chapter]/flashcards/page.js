@@ -12,7 +12,7 @@ export default function Flashcards() {
   const router = useRouter();
   const pathname = usePathname();
   const [chapterName, setChapterName] = useState('');
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState("flash");
   const [correctAttempts, setCorrectAttepmts] = useState(0);
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [chapterData, setChapterData] = useState([]);
@@ -66,7 +66,7 @@ export default function Flashcards() {
   }, [pathname, isAuthenticated, isLoading, router]);
 
   useEffect(()=>{
-    if (pronouns.length !== 0){
+    if (pronouns.length !== 0 && userKnows){
       if ((currentPronounIndex + 1) == pronouns.length){
         console.log({user, chapterName, index, correctAttempts, wrongAttempts})
         saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });

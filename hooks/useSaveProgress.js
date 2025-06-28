@@ -25,6 +25,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
 
       const progressValues = progressMap[chapterName.toLowerCase()] || { chapterProgress: 0, lessonProgress: 0 };
       const { chapterProgress, lessonProgress } = progressValues;
+      console.log(chapterProgress, lessonProgress)
 
       try {
         const response = await fetch(`/api/progress/${user.email}`, {

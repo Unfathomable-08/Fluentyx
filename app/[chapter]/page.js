@@ -78,7 +78,7 @@ export default function Chapter() {
           >
             <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>Flashcards</div>
             <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
-              <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress[0] || 0}%`}}></div>
+              <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress["flash"] || 0}%`}}></div>
             </div>
           </div>
           
@@ -92,12 +92,16 @@ export default function Chapter() {
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
                 <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress[index + 1] || 0}%`}}></div>
               </div>
-              {/* Progress or Lock */}
-              {(subProgress[(index).toString()] || 0) <= 80 && (
-                <div className="absolute top-2 right-3 bg-red-600 text-white text-[12px] px-2 py-[1px] rounded-full">
-                  Locked
-                </div>
-              )}
+              
+              {/* Lock */}
+              {
+                (index === 1 && (subProgress["flash"] || 0) < 80) ||
+                (index >= 2 && (subProgress[index.toString()] || 0) <= 80) ? (
+                  <div className="absolute top-2 right-3 bg-red-600 text-white text-[12px] px-2 py-[1px] rounded-full">
+                    Locked
+                  </div>
+                ) : null
+              }
             </div>
           ))}
         </div>
