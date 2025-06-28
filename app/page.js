@@ -23,8 +23,8 @@ export default function Home() {
   }
 
   return (
-    <main className="px-4 py-4 md:px-20">
-      <h1 className="text-2xl font-bold text-center mb-4">Chapters</h1>
+    <main className="px-4 py-4 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+      <h1 className="text-2xl font-bold text-center mb-4 text-[var(--text-theme)]">Chapters</h1>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 px-4 py-4 gap-x-4 gap-y-8 overflow-x-auto pb-2">
         {chapters.map((ch) => (

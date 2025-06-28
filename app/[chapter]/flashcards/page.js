@@ -117,11 +117,11 @@ export default function Flashcards() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
+    <div className="flex flex-col items-center justify-center bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+      <div className='w-[80%] bg-white flex justify-self-center mb-4 h-4 border rounded-full border-[var(--secondary)] transform -translate-y-8'>
           <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * (currentPronounIndex + 1) / pronouns.length}%`}}></div>
       </div>
-      <h1 className="text-2xl font-bold my-8">Flashcards</h1>
+      <h1 className="text-2xl font-bold my-8 text-[var(--text-theme)]">Flashcards</h1>
 
       <motion.div 
         className="w-64 h-40 bg-white rounded-xl shadow-[0_0_10px_#00000055] flex items-center justify-center cursor-pointer perspective-1000"

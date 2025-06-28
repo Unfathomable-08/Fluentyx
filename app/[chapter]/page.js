@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import useAuth from "../../hooks/useAuth";
 import useProgress from "../../hooks/useProgress";
+import { ThemeContext } from '../../contexts/themeContext'
 
 export default function Chapter() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -11,6 +12,7 @@ export default function Chapter() {
   const { chapter } = useParams();
   const router = useRouter();
   const [chapterData, setChapterData] = useState([]);
+  const { theme } = useContext(ThemeContext);
   
   const { progress, subProgress } = useProgress(user?.email, chapter)
 
@@ -45,13 +47,13 @@ export default function Chapter() {
   }
 
   return (
-    <main className="px-4 py-4 sm:px-16 md:px-20">
-      <div className="text-[var(--secondary)] transform flex justify-end font-medium">
+    <main className="px-4 py-4 sm:px-16 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+      <div className="text-[var(--text-theme)] transform flex justify-end font-medium">
         <span>
           {progress <= 100 ? `${progress} / 100` : '100/100'}
         </span>
       </div>
-      <h1 className="text-xl font-bold text-center my-4 text-[var(--secondary)]">
+      <h1 className="text-xl font-bold text-center my-4 text-[var(--text-theme)]">
         {chapter.charAt(0).toUpperCase() + chapter.slice(1).toLowerCase()}
       </h1>
 
@@ -60,8 +62,10 @@ export default function Chapter() {
           {chapterData.map((ch, i) => (
             <div
               key={i}
-              className="w-full aspect-[3/4] arabic bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-evenly items-center text-center"
+              className="w-full aspect-[3/4] arabic bg-[var(--bg-theme)] rounded-lg flex flex-col justify-evenly items-center text-center"
               onClick={() => handleClick(ch.index)}
+              style={{ boxShadow: theme == "light" ? '0 0 10px #00000055' : '0 0 10px #ffffff55',
+                     color: theme == "light" ? 'black' : '#e6fbe0'}}
             >
               <div>{ch.letter}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-1 mt-3' style={{ direction: 'ltr' }}>
@@ -73,10 +77,11 @@ export default function Chapter() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-8 py-6">
           <div
-            className="w-full h-40 bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-between items-center text-center cursor-pointer"
+            className="w-full h-40 bg-[var(--bg-theme)] rounded-lg flex flex-col justify-between items-center text-center cursor-pointer"
             onClick={() => router.push(`/${chapter}/flashcards`)}
+            style={{ boxShadow: theme == "light" ? '0 0 10px #00000055' : '0 0 10px #ffffff55' }}
           >
-            <div className='font-bold mt-10 text-lg text-[var(--secondary)]'>Flashcards</div>
+            <div className='font-bold mt-10 text-lg text-[var(--text-theme)]'>Flashcards</div>
             <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
               <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress["flash"] || 0}%`}}></div>
             </div>
@@ -85,10 +90,11 @@ export default function Chapter() {
           {Object.entries(Object.assign({}, ...chapterData)).map(([title, data], index) => (
             <div
               key={title}
-              className="w-full h-40 bg-white shadow-[0_0_10px_#00000055] rounded-lg flex flex-col justify-between relative items-center text-center cursor-pointer"
+              className="w-full h-40 bg-[var(--bg-theme)] rounded-lg flex flex-col justify-between relative items-center text-center cursor-pointer"
               onClick={() => handleClick(index + 1)}
+              style={{ boxShadow: theme == "light" ? '0 0 10px #00000055' : '0 0 10px #ffffff55' }}
             >
-              <div className='font-bold mt-12 text-lg text-[var(--secondary)]'>{title}</div>
+              <div className='font-bold mt-12 text-lg text-[var(--text-theme)]'>{title}</div>
               <div className='bg-white border border-[var(--secondary)] rounded-full w-[80%] h-[6px] my-8' style={{ direction: 'ltr' }}>
                 <div className={`bg-[var(--primary)] h-full rounded-full max-w-[100%]`} style={{width: `${subProgress[index + 1] || 0}%`}}></div>
               </div>
