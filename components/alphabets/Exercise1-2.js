@@ -64,7 +64,7 @@ export function ArToEn({ chapter, index, data, setStep, isActive, setCorrectAtte
                         <motion.div
                             key={i}
                             onClick={() => handleClick(opt, i)}
-                            className={`text-xl font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+                            className={`text-xl bg-white font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                                 ${isWrong ? 'bg-red-400 text-white' : ''}
                             `}
@@ -144,7 +144,7 @@ export function EnToAr({chapter, index, data, setStep, isActive, setCorrectAttep
                         <motion.div
                             key={i}
                             onClick={() => handleClick(opt, i)}
-                            className={`arabic font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+                            className={`arabic bg-white font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                                 ${isWrong ? 'bg-red-400 text-white' : ''}
                             `}

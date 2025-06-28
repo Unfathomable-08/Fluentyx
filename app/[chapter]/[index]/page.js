@@ -81,11 +81,11 @@ export default function Alphabet() {
   }
 
   return (
-    <div>
+    <div className="bg-[var(--bg-theme)] pt-12" style={{minHeight: 'calc(100vh - 50px)'}}>
         {chapterName == "alphabets" ?
           (
             <>
-              <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
+              <div className='w-[80%] bg-white flex justify-self-center h-4 border rounded-full border-[var(--secondary)]'>
                   <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 15}%`}}></div>
               </div>
 
@@ -146,7 +146,7 @@ export default function Alphabet() {
           :
           (
             <>
-              <div className='w-[80%] flex justify-self-center mt-8 mb-4 h-4 border rounded-full border-[var(--secondary)]'>
+              <div className='w-[80%] bg-white flex justify-self-center mt-8 h-4 border rounded-full border-[var(--secondary)]'>
                   <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 25}%`}}></div>
               </div>
 

@@ -115,7 +115,7 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
     return (
         <div className="flex flex-col items-center p-8 pt-12 gap-x-6 gap-y-16 relative">
             {/* Skip Button */}
-            <div className="flex justify-end absolute right-6 top-1 font-medium text-[12px] text-red-600 underline">
+            <div className="flex justify-end absolute max-sm:right-6 max-sm:top-1 max-md:right-12 cursor-pointer max-md:top-20 md:transform md:translate-x-40 md:text-[16px] font-medium text-[12px] text-red-600 underline">
                 <span onClick={()=>{setSelected(null); setCorrectIndex(null); setWrongIndex(null); setStep(prev => prev + 1)}}>Skip</span>
             </div>
             {/* Speaker Icon */}
@@ -138,7 +138,7 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
                         <motion.div
                             key={i}
                             onClick={() => handleClick(opt, i)}
-                            className={`text-xl font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer arabic
+                            className={`text-xl bg-white font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer arabic
                                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                                 ${isWrong ? 'bg-red-400 text-white' : ''}
                             `}

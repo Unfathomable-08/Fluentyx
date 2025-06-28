@@ -118,7 +118,7 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`text-xl text-center font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+              className={`text-xl text-center font-bold flex items-center bg-white justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                 ${isWrong ? 'bg-red-400 text-white' : ''}
               `}

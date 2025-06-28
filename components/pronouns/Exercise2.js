@@ -118,7 +118,7 @@ export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrec
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`flex items-center justify-center text-center border border-gray-300 aspect-[5/4] arabic shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+              className={`flex items-center justify-center bg-white text-center border border-gray-300 aspect-[5/4] arabic shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                 ${isWrong ? 'bg-red-400 text-white' : ''}
               `}

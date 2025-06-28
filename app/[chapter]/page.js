@@ -32,8 +32,10 @@ export default function Chapter() {
 
   const handleClick = (index) => {
     // For index > 0, check if previous lesson's subProgress is greater than 80
-    if (index > 0 && (subProgress[(index - 1).toString()] || 0) <= 80) {
-      return;
+    if (chapter !== "alphabets"){
+      if (index > 0 && (subProgress[(index - 1).toString()] || 0) <= 80) {
+        return;
+      }
     }
     router.push(`/${chapter}/${index}`);
   };

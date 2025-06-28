@@ -59,6 +59,7 @@ export function Draw({chapter, index, setStep, data, isActive, setCorrectAttepmt
 
     return (
         <div className="flex flex-col items-center gap-4">
+            <h1 className="font-medium text-xl text-[var(--text-theme)]">Draw {data[index - 1].pronounce} below</h1>
         <ReactSketchCanvas
             ref={canvasRef}
             width="80%"

@@ -129,7 +129,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+              className={`flex bg-white items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
                 ${isCorrect ? 'bg-green-400 text-white' : ''}
                 ${isWrong ? 'bg-red-400 text-white' : ''}
               `}
