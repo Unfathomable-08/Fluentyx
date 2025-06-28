@@ -107,7 +107,7 @@
             "translate": "She shines like the star",
             "word2word": [
               { "word": "تضيء", "translate": "she shines", "pronounce": "tudi'" },
-              { "word": "ك安置: "كالنجم", "translate": "like the star", "pronounce": "kal-najm" }
+              { "word": "كالنجم", "translate": "like the star", "pronounce": "kal-najm" }
             ]
           },
           {
@@ -222,7 +222,7 @@
             "pronounce": "dhahabtu ila as-suq",
             "translate": "I went to the market",
             "word2word": [
-              { "word": "ذهبت经典: "ذهبت", "translate": "I went", "pronounce": "dhahabtu" },
+              { "word": "ذهبت", "translate": "I went", "pronounce": "dhahabtu" },
               { "word": "إلى", "translate": "to", "pronounce": "ila" },
               { "word": "السوق", "translate": "the market", "pronounce": "as-suq" }
             ]
@@ -681,7 +681,7 @@
           {
             "id": 1,
             "sentence": "على جانب المدينة",
-            "pronounce": "an-nahr 'ala janib al-madina",
+            "pronounce": "'ala janib al-madina",
             "translate": "On the side of the city",
             "word2word": [
               { "word": "على", "translate": "on", "pronounce": "'ala" },
@@ -783,7 +783,7 @@
             ]
           },
           {
-            "id": 3,
+            "id": 2,
             "sentence": "فيما يخص",
             "pronounce": "fima yakhuṣ",
             "translate": "Regarding the travel,",
@@ -813,7 +813,7 @@
             ]
           },
           {
-            "id": 3,
+            "id": 2,
             "sentence": "مما قيل",
             "pronounce": "mimma qila",
             "translate": "From what was said,",
