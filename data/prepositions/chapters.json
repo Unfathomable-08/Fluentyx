@@ -4,9 +4,9 @@
       {
         "id": 1,
         "arabic": "ب",
-        "english": "with, by",
+        "english": "with, by, in",
         "roman": "bi-",
-        "type": "means",
+        "type": "means/place",
         "gender": "common",
         "examples": [
           {
@@ -15,16 +15,8 @@
             "pronounce": "katabtu bil-qalam",
             "translate": "I wrote with the pen",
             "word2word": [
-              {
-                "word": "كتبت",
-                "translate": "I wrote",
-                "pronounce": "katabtu"
-              },
-              {
-                "word": "بالقلم",
-                "translate": "with the pen",
-                "pronounce": "bil-qalam"
-              }
+              { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" },
+              { "word": "بالقلم", "translate": "with the pen", "pronounce": "bil-qalam" }
             ]
           },
           {
@@ -33,16 +25,8 @@
             "pronounce": "safaratu bit-taa'ira",
             "translate": "I traveled by the plane",
             "word2word": [
-              {
-                "word": "سافرت",
-                "translate": "I traveled",
-                "pronounce": "safaratu"
-              },
-              {
-                "word": "بالطائرة",
-                "translate": "by the plane",
-                "pronounce": "bit-taa'ira"
-              }
+              { "word": "سافرت", "translate": "I traveled", "pronounce": "safaratu" },
+              { "word": "بالطائرة", "translate": "by the plane", "pronounce": "bit-taa'ira" }
             ]
           },
           {
@@ -51,16 +35,8 @@
             "pronounce": "a'eesh bil-madina",
             "translate": "I live in the city",
             "word2word": [
-              {
-                "word": "أعيش",
-                "translate": "I live",
-                "pronounce": "a'eesh"
-              },
-              {
-                "word": "بالمدينة",
-                "translate": "in the city",
-                "pronounce": "bil-madina"
-              }
+              { "word": "أعيش", "translate": "I live", "pronounce": "a'eesh" },
+              { "word": "بالمدينة", "translate": "in the city", "pronounce": "bil-madina" }
             ]
           }
         ]
@@ -79,16 +55,8 @@
             "pronounce": "katabtu lil-mu'allim",
             "translate": "I wrote to the teacher",
             "word2word": [
-              {
-                "word": "كتبت",
-                "translate": "I wrote",
-                "pronounce": "katabtu"
-              },
-              {
-                "word": "للمعلم",
-                "translate": "to the teacher",
-                "pronounce": "lil-mu'allim"
-              }
+              { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" },
+              { "word": "للمعلم", "translate": "to the teacher", "pronounce": "lil-mu'allim" }
             ]
           },
           {
@@ -97,16 +65,8 @@
             "pronounce": "al-kitab lit-taalib",
             "translate": "The book is for the student",
             "word2word": [
-              {
-                "word": "الكتاب",
-                "translate": "the book",
-                "pronounce": "al-kitab"
-              },
-              {
-                "word": "للطالب",
-                "translate": "for the student",
-                "pronounce": "lit-taalib"
-              }
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
+              { "word": "للطالب", "translate": "for the student", "pronounce": "lit-taalib" }
             ]
           },
           {
@@ -115,21 +75,9 @@
             "pronounce": "a'taytu hadiyya li-akhi",
             "translate": "I gave a gift to my brother",
             "word2word": [
-              {
-                "word": "أعطيت",
-                "translate": "I gave",
-                "pronounce": "a'taytu"
-              },
-              {
-                "word": "هدية",
-                "translate": "a gift",
-                "pronounce": "hadiyya"
-              },
-              {
-                "word": "لأخي",
-                "translate": "to my brother",
-                "pronounce": "li-akhi"
-              }
+              { "word": "أعطيت", "translate": "I gave", "pronounce": "a'taytu" },
+              { "word": "هدية", "translate": "a gift", "pronounce": "hadiyya" },
+              { "word": "لأخي", "translate": "to my brother", "pronounce": "li-akhi" }
             ]
           }
         ]
@@ -148,16 +96,8 @@
             "pronounce": "huwa kal-asad",
             "translate": "He is like the lion",
             "word2word": [
-              {
-                "word": "هو",
-                "translate": "he",
-                "pronounce": "huwa"
-              },
-              {
-                "word": "كالأسد",
-                "translate": "like the lion",
-                "pronounce": "kal-asad"
-              }
+              { "word": "هو", "translate": "he", "pronounce": "huwa" },
+              { "word": "كالأسد", "translate": "like the lion", "pronounce": "kal-asad" }
             ]
           },
           {
@@ -166,16 +106,8 @@
             "pronounce": "tudi' kal-najm",
             "translate": "She shines like the star",
             "word2word": [
-              {
-                "word": "تضيء",
-                "translate": "she shines",
-                "pronounce": "tudi'"
-              },
-              {
-                "word": "كالنجم",
-                "translate": "like the star",
-                "pronounce": "kal-najm"
-              }
+              { "word": "تضيء", "translate": "she shines", "pronounce": "tudi'" },
+              { "word": "ك安置: "كالنجم", "translate": "like the star", "pronounce": "kal-najm" }
             ]
           },
           {
@@ -184,16 +116,8 @@
             "pronounce": "rakadat kar-rih",
             "translate": "She ran like the wind",
             "word2word": [
-              {
-                "word": "ركضت",
-                "translate": "she ran",
-                "pronounce": "rakadat"
-              },
-              {
-                "word": "كالريح",
-                "translate": "like the wind",
-                "pronounce": "kar-rih"
-              }
+              { "word": "ركضت", "translate": "she ran", "pronounce": "rakadat" },
+              { "word": "كالريح", "translate": "like the wind", "pronounce": "kar-rih" }
             ]
           }
         ]
@@ -212,16 +136,8 @@
             "pronounce": "wallah sa-af'al",
             "translate": "By God, I will do it",
             "word2word": [
-              {
-                "word": "والله",
-                "translate": "by God",
-                "pronounce": "wallah"
-              },
-              {
-                "word": "سأفعل",
-                "translate": "I will do",
-                "pronounce": "sa-af'al"
-              }
+              { "word": "والله", "translate": "by God", "pronounce": "wallah" },
+              { "word": "سأفعل", "translate": "I will do", "pronounce": "sa-af'al" }
             ]
           },
           {
@@ -230,11 +146,7 @@
             "pronounce": "wal-'asr",
             "translate": "By the time",
             "word2word": [
-              {
-                "word": "والعصر",
-                "translate": "by the time",
-                "pronounce": "wal-'asr"
-              }
+              { "word": "والعصر", "translate": "by the time", "pronounce": "wal-'asr" }
             ]
           },
           {
@@ -243,20 +155,12 @@
             "pronounce": "was-samaa sa-a'ood",
             "translate": "By the sky, I will return",
             "word2word": [
-              {
-                "word": "والسماء",
-                "translate": "by the sky",
-                "pronounce": "was-samaa"
-              },
-              {
-                "word": "سأعود",
-                "translate": "I will return",
-                "pronounce": "sa-a'ood"
-              }
+              { "word": "والسماء", "translate": "by the sky", "pronounce": "was-samaa" },
+              { "word": "سأعود", "translate": "I will return", "pronounce": "sa-a'ood" }
             ]
           }
         ]
-      },
+      }
     ]
   },
   {
@@ -266,7 +170,7 @@
         "arabic": "من",
         "english": "from, of",
         "roman": "min",
-        "type": "location/source",
+        "type": "direction/source",
         "gender": "common",
         "examples": [
           {
@@ -275,21 +179,9 @@
             "pronounce": "ji'tu min al-madrasa",
             "translate": "I came from the school",
             "word2word": [
-              {
-                "word": "جئت",
-                "translate": "I came",
-                "pronounce": "ji'tu"
-              },
-              {
-                "word": "من",
-                "translate": "from",
-                "pronounce": "min"
-              },
-              {
-                "word": "المدرسة",
-                "translate": "the school",
-                "pronounce": "al-madrasa"
-              }
+              { "word": "جئت", "translate": "I came", "pronounce": "ji'tu" },
+              { "word": "من", "translate": "from", "pronounce": "min" },
+              { "word": "المدرسة", "translate": "the school", "pronounce": "al-madrasa" }
             ]
           },
           {
@@ -298,21 +190,9 @@
             "pronounce": "kitab min al-maktaba",
             "translate": "A book from the library",
             "word2word": [
-              {
-                "word": "كتاب",
-                "translate": "a book",
-                "pronounce": "kitab"
-              },
-              {
-                "word": "من",
-                "translate": "from",
-                "pronounce": "min"
-              },
-              {
-                "word": "المكتبة",
-                "translate": "the library",
-                "pronounce": "al-maktaba"
-              }
+              { "word": "كتاب", "translate": "a book", "pronounce": "kitab" },
+              { "word": "من", "translate": "from", "pronounce": "min" },
+              { "word": "المكتبة", "translate": "the library", "pronounce": "al-maktaba" }
             ]
           },
           {
@@ -321,21 +201,9 @@
             "pronounce": "safaratu min misr",
             "translate": "I traveled from Egypt",
             "word2word": [
-              {
-                "word": "سافرت",
-                "translate": "I traveled",
-                "pronounce": "safaratu"
-              },
-              {
-                "word": "من",
-                "translate": "from",
-                "pronounce": "min"
-              },
-              {
-                "word": "مصر",
-                "translate": "Egypt",
-                "pronounce": "misr"
-              }
+              { "word": "سافرت", "translate": "I traveled", "pronounce": "safaratu" },
+              { "word": "من", "translate": "from", "pronounce": "min" },
+              { "word": "مصر", "translate": "Egypt", "pronounce": "misr" }
             ]
           }
         ]
@@ -345,7 +213,7 @@
         "arabic": "إلى",
         "english": "to, toward",
         "roman": "ila",
-        "type": "direction",
+        "type": "direction/person",
         "gender": "common",
         "examples": [
           {
@@ -354,49 +222,21 @@
             "pronounce": "dhahabtu ila as-suq",
             "translate": "I went to the market",
             "word2word": [
-              {
-                "word": "ذهبت",
-                "translate": "I went",
-                "pronounce": "dhahabtu"
-              },
-              {
-                "word": "إلى",
-                "translate": "to",
-                "pronounce": "ila"
-              },
-              {
-                "word": "السوق",
-                "translate": "the market",
-                "pronounce": "as-suq"
-              }
+              { "word": "ذهبت经典: "ذهبت", "translate": "I went", "pronounce": "dhahabtu" },
+              { "word": "إلى", "translate": "to", "pronounce": "ila" },
+              { "word": "السوق", "translate": "the market", "pronounce": "as-suq" }
             ]
           },
           {
             "id": 2,
             "sentence": "أرسلت رسالة إلى أخي",
             "pronounce": "arsaltu risala ila akhi",
-            "translate": "I sent a letter to brother",
+            "translate": "I sent a letter to my brother",
             "word2word": [
-              {
-                "word": "أرسلت",
-                "translate": "I sent",
-                "pronounce": "arsaltu"
-              },
-              {
-                "word": "رسالة",
-                "translate": "a letter",
-                "pronounce": "risala"
-              },
-              {
-                "word": "إلى",
-                "translate": "to",
-                "pronounce": "ila"
-              },
-              {
-                "word": "أخي",
-                "translate": "my brother",
-                "pronounce": "akhi"
-              }
+              { "word": "أرسلت", "translate": "I sent", "pronounce": "arsaltu" },
+              { "word": "رسالة", "translate": "a letter", "pronounce": "risala" },
+              { "word": "إلى", "translate": "to", "pronounce": "ila" },
+              { "word": "أخي", "translate": "my brother", "pronounce": "akhi" }
             ]
           },
           {
@@ -405,21 +245,9 @@
             "pronounce": "safaratu ila bakistan",
             "translate": "I traveled to Pakistan",
             "word2word": [
-              {
-                "word": "سافرت",
-                "translate": "I traveled",
-                "pronounce": "safaratu"
-              },
-              {
-                "word": "إلى",
-                "translate": "to",
-                "pronounce": "ila"
-              },
-              {
-                "word": "باكستان",
-                "translate": "Pakistan",
-                "pronounce": "bakistan"
-              }
+              { "word": "سافرت", "translate": "I traveled", "pronounce": "safaratu" },
+              { "word": "إلى", "translate": "to", "pronounce": "ila" },
+              { "word": "باكستان", "translate": "Pakistan", "pronounce": "bakistan" }
             ]
           }
         ]
@@ -429,7 +257,7 @@
         "arabic": "على",
         "english": "on, upon",
         "roman": "'ala",
-        "type": "place",
+        "type": "location",
         "gender": "common",
         "examples": [
           {
@@ -438,21 +266,9 @@
             "pronounce": "al-kitab 'ala at-tawila",
             "translate": "The book is on the table",
             "word2word": [
-              {
-                "word": "الكتاب",
-                "translate": "the book",
-                "pronounce": "al-kitab"
-              },
-              {
-                "word": "على",
-                "translate": "on",
-                "pronounce": "'ala"
-              },
-              {
-                "word": "الطاولة",
-                "translate": "the table",
-                "pronounce": "at-tawila"
-              }
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
+              { "word": "على", "translate": "on", "pronounce": "'ala" },
+              { "word": "الطاولة", "translate": "the table", "pronounce": "at-tawila" }
             ]
           },
           {
@@ -461,21 +277,9 @@
             "pronounce": "jalastu 'ala al-kursi",
             "translate": "I sat on the chair",
             "word2word": [
-              {
-                "word": "جلست",
-                "translate": "I sat",
-                "pronounce": "jalastu"
-              },
-              {
-                "word": "على",
-                "translate": "on",
-                "pronounce": "'ala"
-              },
-              {
-                "word": "الكرسي",
-                "translate": "the chair",
-                "pronounce": "al-kursi"
-              }
+              { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
+              { "word": "على", "translate": "on", "pronounce": "'ala" },
+              { "word": "الكرسي", "translate": "the chair", "pronounce": "al-kursi" }
             ]
           },
           {
@@ -484,21 +288,9 @@
             "pronounce": "katabtu 'ala as-sabura",
             "translate": "I wrote on the blackboard",
             "word2word": [
-              {
-                "word": "كتبت",
-                "translate": "I wrote",
-                "pronounce": "katabtu"
-              },
-              {
-                "word": "على",
-                "translate": "on",
-                "pronounce": "'ala"
-              },
-              {
-                "word": "السبورة",
-                "translate": "the blackboard",
-                "pronounce": "as-sabura"
-              }
+              { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" },
+              { "word": "على", "translate": "on", "pronounce": "'ala" },
+              { "word": "السبورة", "translate": "the blackboard", "pronounce": "as-sabura" }
             ]
           }
         ]
@@ -508,7 +300,7 @@
         "arabic": "في",
         "english": "in, at",
         "roman": "fi",
-        "type": "place",
+        "type": "location",
         "gender": "common",
         "examples": [
           {
@@ -517,21 +309,9 @@
             "pronounce": "a'eesh fi al-madina",
             "translate": "I live in the city",
             "word2word": [
-              {
-                "word": "أعيش",
-                "translate": "I live",
-                "pronounce": "a'eesh"
-              },
-              {
-                "word": "في",
-                "translate": "in",
-                "pronounce": "fi"
-              },
-              {
-                "word": "المدينة",
-                "translate": "the city",
-                "pronounce": "al-madina"
-              }
+              { "word": "أعيش", "translate": "I live", "pronounce": "a'eesh" },
+              { "word": "في", "translate": "in", "pronounce": "fi" },
+              { "word": "المدينة", "translate": "the city", "pronounce": "al-madina" }
             ]
           },
           {
@@ -540,21 +320,9 @@
             "pronounce": "al-kitab fi al-haqiba",
             "translate": "The book is in the bag",
             "word2word": [
-              {
-                "word": "الكتاب",
-                "translate": "the book",
-                "pronounce": "al-kitab"
-              },
-              {
-                "word": "في",
-                "translate": "in",
-                "pronounce": "fi"
-              },
-              {
-                "word": "الحقيبة",
-                "translate": "the bag",
-                "pronounce": "al-haqiba"
-              }
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
+              { "word": "في", "translate": "in", "pronounce": "fi" },
+              { "word": "الحقيبة", "translate": "the bag", "pronounce": "al-haqiba" }
             ]
           },
           {
@@ -563,21 +331,9 @@
             "pronounce": "darastu fi al-maktaba",
             "translate": "I studied in the library",
             "word2word": [
-              {
-                "word": "درست",
-                "translate": "I studied",
-                "pronounce": "darastu"
-              },
-              {
-                "word": "في",
-                "translate": "in",
-                "pronounce": "fi"
-              },
-              {
-                "word": "المكتبة",
-                "translate": "the library",
-                "pronounce": "al-maktaba"
-              }
+              { "word": "درست", "translate": "I studied", "pronounce": "darastu" },
+              { "word": "في", "translate": "in", "pronounce": "fi" },
+              { "word": "المكتبة", "translate": "the library", "pronounce": "al-maktaba" }
             ]
           }
         ]
@@ -587,7 +343,7 @@
         "arabic": "عن",
         "english": "about, from",
         "roman": "'an",
-        "type": "topic",
+        "type": "topic/separation",
         "gender": "common",
         "examples": [
           {
@@ -596,21 +352,9 @@
             "pronounce": "taḥaddathtu 'an al-kitab",
             "translate": "I talked about the book",
             "word2word": [
-              {
-                "word": "تحدثت",
-                "translate": "I talked",
-                "pronounce": "taḥaddathtu"
-              },
-              {
-                "word": "عن",
-                "translate": "about",
-                "pronounce": "'an"
-              },
-              {
-                "word": "الكتاب",
-                "translate": "the book",
-                "pronounce": "al-kitab"
-              }
+              { "word": "تحدثت", "translate": "I talked", "pronounce": "taḥaddathtu" },
+              { "word": "عن", "translate": "about", "pronounce": "'an" },
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" }
             ]
           },
           {
@@ -619,21 +363,9 @@
             "pronounce": "ibta'ad 'an al-khatar",
             "translate": "Stay away from the danger",
             "word2word": [
-              {
-                "word": "ابتعد",
-                "translate": "stay away",
-                "pronounce": "ibta'ad"
-              },
-              {
-                "word": "عن",
-                "translate": "from",
-                "pronounce": "'an"
-              },
-              {
-                "word": "الخطر",
-                "translate": "the danger",
-                "pronounce": "al-khatar"
-              }
+              { "word": "ابتعد", "translate": "stay away", "pronounce": "ibta'ad" },
+              { "word": "عن", "translate": "from", "pronounce": "'an" },
+              { "word": "الخطر", "translate": "the danger", "pronounce": "al-khatar" }
             ]
           },
           {
@@ -642,21 +374,9 @@
             "pronounce": "sa'altu 'an al-mawdu'",
             "translate": "I asked about the topic",
             "word2word": [
-              {
-                "word": "سألت",
-                "translate": "I asked",
-                "pronounce": "sa'altu"
-              },
-              {
-                "word": "عن",
-                "translate": "about",
-                "pronounce": "'an"
-              },
-              {
-                "word": "الموضوع",
-                "translate": "the topic",
-                "pronounce": "al-mawdu'"
-              }
+              { "word": "سألت", "translate": "I asked", "pronounce": "sa'altu" },
+              { "word": "عن", "translate": "about", "pronounce": "'an" },
+              { "word": "الموضوع", "translate": "the topic", "pronounce": "al-mawdu'" }
             ]
           }
         ]
@@ -679,21 +399,9 @@
             "pronounce": "intazartu ḥatta al-masaa",
             "translate": "I waited until the evening",
             "word2word": [
-              {
-                "word": "انتظرت",
-                "translate": "I waited",
-                "pronounce": "intazartu"
-              },
-              {
-                "word": "حتى",
-                "translate": "until",
-                "pronounce": "ḥatta"
-              },
-              {
-                "word": "المساء",
-                "translate": "the evening",
-                "pronounce": "al-masaa"
-              }
+              { "word": "انتظرت", "translate": "I waited", "pronounce": "intazartu" },
+              { "word": "حتى", "translate": "until", "pronounce": "ḥatta" },
+              { "word": "المساء", "translate": "the evening", "pronounce": "al-masaa" }
             ]
           },
           {
@@ -702,21 +410,9 @@
             "pronounce": "sa-adrus ḥatta muntaṣaf al-layl",
             "translate": "I will study until midnight",
             "word2word": [
-              {
-                "word": "سأدرس",
-                "translate": "I will study",
-                "pronounce": "sa-adrus"
-              },
-              {
-                "word": "حتى",
-                "translate": "until",
-                "pronounce": "ḥatta"
-              },
-              {
-                "word": "منتصف الليل",
-                "translate": "midnight",
-                "pronounce": "muntaṣaf al-layl"
-              }
+              { "word": "سأدرس", "translate": "I will study", "pronounce": "sa-adrus" },
+              { "word": "حتى", "translate": "until", "pronounce": "ḥatta" },
+              { "word": "منتصف الليل", "translate": "midnight", "pronounce": "muntaṣaf al-layl" }
             ]
           },
           {
@@ -725,30 +421,18 @@
             "pronounce": "baqitu ḥatta aṣ-ṣabaḥ",
             "translate": "I stayed until the morning",
             "word2word": [
-              {
-                "word": "بقيت",
-                "translate": "I stayed",
-                "pronounce": "baqitu"
-              },
-              {
-                "word": "حتى",
-                "translate": "until",
-                "pronounce": "ḥatta"
-              },
-              {
-                "word": "الصباح",
-                "translate": "the morning",
-                "pronounce": "aṣ-ṣabaḥ"
-              }
+              { "word": "بقيت", "translate": "I stayed", "pronounce": "baqitu" },
+              { "word": "حتى", "translate": "until", "pronounce": "ḥatta" },
+              { "word": "الصباح", "translate": "the morning", "pronounce": "aṣ-ṣabaḥ" }
             ]
           }
         ]
       },
       {
         "id": 11,
-        "arabic": "مذ/منذ",
+        "arabic": "منذ",
         "english": "since",
-        "roman": "mudh/mundhu",
+        "roman": "mundhu",
         "type": "time",
         "gender": "common",
         "examples": [
@@ -756,30 +440,277 @@
             "id": 1,
             "sentence": "أعيش هنا منذ سنتين",
             "pronounce": "a'eesh huna mundhu sanatayn",
-            "translate": "I've lived here since 2yrs",
+            "translate": "I've lived here since 2 yrs",
             "word2word": [
-              {
-                "word": "أعيش",
-                "translate": "I live",
-                "pronounce": "a'eesh"
-              },
-              {
-                "word": "هنا",
-                "translate": "here",
-                "pronounce": "huna"
-              },
-              {
-                "word": "منذ",
-                "translate": "since",
-                "pronounce": "mundhu"
-              },
-              {
-                "word": "سنتين",
-                "translate": "two years",
-                "pronounce": "sanatayn"
-              }
+              { "word": "أعيش", "translate": "I live", "pronounce": "a'eesh" },
+              { "word": "هنا", "translate": "here", "pronounce": "huna" },
+              { "word": "منذ", "translate": "since", "pronounce": "mundhu" },
+              { "word": "سنتين", "translate": "two years", "pronounce": "sanatayn" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "arabic": "بعد",
+        "english": "after",
+        "roman": "ba'd",
+        "type": "time",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رجعت بعد الظهر",
+            "pronounce": "rajatu ba'd adh-dhuhr",
+            "translate": "I returned after noon",
+            "word2word": [
+              { "word": "رجعت", "translate": "I returned", "pronounce": "rajatu" },
+              { "word": "بعد", "translate": "after", "pronounce": "ba'd" },
+              { "word": "الظهر", "translate": "noon", "pronounce": "adh-dhuhr" }
             ]
           },
+          {
+            "id": 2,
+            "sentence": "أكلت بعد الدرس",
+            "pronounce": "akaltu ba'd ad-dars",
+            "translate": "I ate after the lesson",
+            "word2word": [
+              { "word": "أكلت", "translate": "I ate", "pronounce": "akaltu" },
+              { "word": "بعد", "translate": "after", "pronounce": "ba'd" },
+              { "word": "الدرس", "translate": "the lesson", "pronounce": "ad-dars" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "نلتقي بعد العصر",
+            "pronounce": "naltaqi ba'd al-'asr",
+            "translate": "We will meet after the afternoon",
+            "word2word": [
+              { "word": "نلتقي", "translate": "we will meet", "pronounce": "naltaqi" },
+              { "word": "بعد", "translate": "after", "pronounce": "ba'd" },
+              { "word": "العصر", "translate": "the afternoon", "pronounce": "al-'asr" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "arabic": "قبل",
+        "english": "before",
+        "roman": "qabl",
+        "type": "time",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "وصلت قبل الفجر",
+            "pronounce": "wasaltu qabl al-fajr",
+            "translate": "I arrived before dawn",
+            "word2word": [
+              { "word": "وصلت", "translate": "I arrived", "pronounce": "wasaltu" },
+              { "word": "قبل", "translate": "before", "pronounce": "qabl" },
+              { "word": "الفجر", "translate": "dawn", "pronounce": "al-fajr" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أكمل الواجب قبل الغد",
+            "pronounce": "akmaltu al-wajib qabl al-ghad",
+            "translate": "I finished homework before tomorrow",
+            "word2word": [
+              { "word": "أكملت", "translate": "I finished", "pronounce": "akmaltu" },
+              { "word": "الواجب", "translate": "the homework", "pronounce": "al-wajib" },
+              { "word": "قبل", "translate": "before", "pronounce": "qabl" },
+              { "word": "الغد", "translate": "tomorrow", "pronounce": "al-ghad" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "أكلت قبل الاجتماع",
+            "pronounce": "akaltu qabl al-ijtima'",
+            "translate": "I ate before the meeting",
+            "word2word": [
+              { "word": "أكلت", "translate": "I ate", "pronounce": "akaltu" },
+              { "word": "قبل", "translate": "before", "pronounce": "qabl" },
+              { "word": "الاجتماع", "translate": "the meeting", "pronounce": "al-ijtima'" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Spatial Prepositions": [
+      {
+        "id": 14,
+        "arabic": "وراء",
+        "english": "behind",
+        "roman": "wara'",
+        "type": "location",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "السيارة وراء الشجرة",
+            "pronounce": "as-sayyara wara' ash-shajara",
+            "translate": "The car is behind the tree",
+            "word2word": [
+              { "word": "السيارة", "translate": "the car", "pronounce": "as-sayyara" },
+              { "word": "وراء", "translate": "behind", "pronounce": "wara'" },
+              { "word": "الشجرة", "translate": "the tree", "pronounce": "ash-shajara" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "جلست وراء أحمد",
+            "pronounce": "jalastu wara' aḥmad",
+            "translate": "I sat behind Ahmad",
+            "word2word": [
+              { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
+              { "word": "وراء", "translate": "behind", "pronounce": "wara'" },
+              { "word": "أحمد", "translate": "Ahmad", "pronounce": "aḥmad" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "الكلب وراء الباب",
+            "pronounce": "al-kalb wara' al-bab",
+            "translate": "The dog is behind the door",
+            "word2word": [
+              { "word": "الكلب", "translate": "the dog", "pronounce": "al-kalb" },
+              { "word": "وراء", "translate": "behind", "pronounce": "wara'" },
+              { "word": "الباب", "translate": "the door", "pronounce": "al-bab" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "arabic": "أمام",
+        "english": "in front of",
+        "roman": "amam",
+        "type": "location",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "وقفت أمام المنزل",
+            "pronounce": "waqaftu amam al-manzil",
+            "translate": "I stood in front of the house",
+            "word2word": [
+              { "word": "وقفت", "translate": "I stood", "pronounce": "waqaftu" },
+              { "word": "أمام", "translate": "in front of", "pronounce": "amam" },
+              { "word": "المنزل", "translate": "the house", "pronounce": "al-manzil" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "السيارة أمام المدرسة",
+            "pronounce": "as-sayyara amam al-madrasa",
+            "translate": "The car is in front of school",
+            "word2word": [
+              { "word": "السيارة", "translate": "the car", "pronounce": "as-sayyara" },
+              { "word": "أمام", "translate": "in front of", "pronounce": "amam" },
+              { "word": "المدرسة", "translate": "the school", "pronounce": "al-madrasa" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "جلس أمام المعلم",
+            "pronounce": "jalasa amam al-mu'allim",
+            "translate": "He sat in front of the teacher",
+            "word2word": [
+              { "word": "جلس", "translate": "he sat", "pronounce": "jalasa" },
+              { "word": "أمام", "translate": "in front of", "pronounce": "amam" },
+              { "word": "المعلم", "translate": "the teacher", "pronounce": "al-mu'allim" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "arabic": "بجانب",
+        "english": "beside, next to",
+        "roman": "bijanib",
+        "type": "location",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "جلست بجانب أخي",
+            "pronounce": "jalastu bijanib akhi",
+            "translate": "I sat beside my brother",
+            "word2word": [
+              { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
+              { "word": "بجانب", "translate": "beside", "pronounce": "bijanib" },
+              { "word": "أخي", "translate": "my brother", "pronounce": "akhi" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الكتاب بجانب السرير",
+            "pronounce": "al-kitab bijanib as-sarir",
+            "translate": "The book is beside the bed",
+            "word2word": [
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
+              { "word": "بجانب", "translate": "beside", "pronounce": "bijanib" },
+              { "word": "السرير", "translate": "the bed", "pronounce": "as-sarir" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "وقفت بجانب النافذة",
+            "pronounce": "waqaftu bijanib an-nafidha",
+            "translate": "I stood beside the window",
+            "word2word": [
+              { "word": "وقفت", "translate": "I stood", "pronounce": "waqaftu" },
+              { "word": "بجانب", "translate": "beside", "pronounce": "bijanib" },
+              { "word": "النافذة", "translate": "the window", "pronounce": "an-nafidha" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "arabic": "جانب",
+        "english": "side",
+        "roman": "janib",
+        "type": "location",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "على جانب المدينة",
+            "pronounce": "an-nahr 'ala janib al-madina",
+            "translate": "On the side of the city",
+            "word2word": [
+              { "word": "على", "translate": "on", "pronounce": "'ala" },
+              { "word": "جانب", "translate": "side", "pronounce": "janib" },
+              { "word": "المدينة", "translate": "the city", "pronounce": "al-madina" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الحديقة على جانب",
+            "pronounce": "al-hadiqa 'ala janib",
+            "translate": "The garden is on the side",
+            "word2word": [
+              { "word": "الحديقة", "translate": "the garden", "pronounce": "al-hadiqa" },
+              { "word": "على", "translate": "on", "pronounce": "'ala" },
+              { "word": "جانب", "translate": "side", "pronounce": "janib" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "على جانب المدرسة",
+            "pronounce": "'ala janib al-madrasa",
+            "translate": "On the side of the school",
+            "word2word": [
+              { "word": "على", "translate": "on", "pronounce": "'ala" },
+              { "word": "جانب", "translate": "side", "pronounce": "janib" },
+              { "word": "المدرسة", "translate": "the school", "pronounce": "al-madrasa" }
+            ]
+          }
         ]
       }
     ]
@@ -787,7 +718,7 @@
   {
     "Specialized Prepositions": [
       {
-        "id": 12,
+        "id": 18,
         "arabic": "خلا",
         "english": "except, apart from",
         "roman": "khala",
@@ -800,26 +731,10 @@
             "pronounce": "al-jami' ḥadar khala aḥmad",
             "translate": "Everyone attended except Ahmad",
             "word2word": [
-              {
-                "word": "الجميع",
-                "translate": "everyone",
-                "pronounce": "al-jami'"
-              },
-              {
-                "word": "حضر",
-                "translate": "attended",
-                "pronounce": "ḥadar"
-              },
-              {
-                "word": "خلا",
-                "translate": "except",
-                "pronounce": "khala"
-              },
-              {
-                "word": "أحمد",
-                "translate": "Ahmad",
-                "pronounce": "aḥmad"
-              }
+              { "word": "الجميع", "translate": "everyone", "pronounce": "al-jami'" },
+              { "word": "حضر", "translate": "attended", "pronounce": "ḥadar" },
+              { "word": "خلا", "translate": "except", "pronounce": "khala" },
+              { "word": "أحمد", "translate": "Ahmad", "pronounce": "aḥmad" }
             ]
           },
           {
@@ -828,26 +743,10 @@
             "pronounce": "akaltu al-kull khala at-tuffah",
             "translate": "I ate all except the apple",
             "word2word": [
-              {
-                "word": "أكلت",
-                "translate": "I ate",
-                "pronounce": "akaltu"
-              },
-              {
-                "word": "الكل",
-                "translate": "everything",
-                "pronounce": "al-kull"
-              },
-              {
-                "word": "خلا",
-                "translate": "except",
-                "pronounce": "khala"
-              },
-              {
-                "word": "التفاح",
-                "translate": "the apple",
-                "pronounce": "at-tuffah"
-              }
+              { "word": "أكلت", "translate": "I ate", "pronounce": "akaltu" },
+              { "word": "الكل", "translate": "everything", "pronounce": "al-kull" },
+              { "word": "خلا", "translate": "except", "pronounce": "khala" },
+              { "word": "التفاح", "translate": "the apple", "pronounce": "at-tuffah" }
             ]
           },
           {
@@ -856,88 +755,15 @@
             "pronounce": "safaroo khala muḥammad",
             "translate": "They traveled except Mohammed",
             "word2word": [
-              {
-                "word": "سافروا",
-                "translate": "they traveled",
-                "pronounce": "safaroo"
-              },
-              {
-                "word": "خلا",
-                "translate": "except",
-                "pronounce": "khala"
-              },
-              {
-                "word": "محمد",
-                "translate": "Mohammed",
-                "pronounce": "muḥammad"
-              }
+              { "word": "سافروا", "translate": "they traveled", "pronounce": "safaroo" },
+              { "word": "خلا", "translate": "except", "pronounce": "khala" },
+              { "word": "محمد", "translate": "Mohammed", "pronounce": "muḥammad" }
             ]
           }
         ]
       },
       {
-        "id": 13,
-        "arabic": "عدا",
-        "english": "except, besides",
-        "roman": "'ada",
-        "type": "exception",
-        "gender": "common",
-        "examples": [
-          {
-            "id": 1,
-            "sentence": "الكل نجح عدا علي",
-            "pronounce": "al-kull najaḥ 'ada 'ali",
-            "translate": "Everyone succeeded except Ali",
-            "word2word": [
-              {
-                "word": "الكل",
-                "translate": "everyone",
-                "pronounce": "al-kull"
-              },
-              {
-                "word": "نجح",
-                "translate": "succeeded",
-                "pronounce": "najaḥ"
-              },
-              {
-                "word": "عدا",
-                "translate": "except",
-                "pronounce": "'ada"
-              },
-              {
-                "word": "علي",
-                "translate": "Ali",
-                "pronounce": "'ali"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "sentence": "حضروا عدا فاطمة",
-            "pronounce": "ḥadaroo 'ada fatima",
-            "translate": "They attended except Fatima",
-            "word2word": [
-              {
-                "word": "حضروا",
-                "translate": "they attended",
-                "pronounce": "ḥadaroo"
-              },
-              {
-                "word": "عدا",
-                "translate": "except",
-                "pronounce": "'ada"
-              },
-              {
-                "word": "فاطمة",
-                "translate": "Fatima",
-                "pronounce": "fatima"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 14,
+        "id": 19,
         "arabic": "فيما",
         "english": "in what, regarding",
         "roman": "fima",
@@ -948,67 +774,28 @@
             "id": 1,
             "sentence": "فيما يخص الدراسة نجحت",
             "pronounce": "fima yakhuṣ ad-dirasa najaḥtu",
-            "translate": "Regarding the study, I succeeded",
+            "translate": "Regarding study, I succeeded",
             "word2word": [
-              {
-                "word": "فيما",
-                "translate": "regarding",
-                "pronounce": "fima"
-              },
-              {
-                "word": "يخص",
-                "translate": "concerns",
-                "pronounce": "yakhuṣ"
-              },
-              {
-                "word": "الدراسة",
-                "translate": "the study",
-                "pronounce": "ad-dirasa"
-              },
-              {
-                "word": "نجحت",
-                "translate": "I succeeded",
-                "pronounce": "najaḥtu"
-              }
+              { "word": "فيما", "translate": "regarding", "pronounce": "fima" },
+              { "word": "يخص", "translate": "concerns", "pronounce": "yakhuṣ" },
+              { "word": "الدراسة", "translate": "the study", "pronounce": "ad-dirasa" },
+              { "word": "نجحت", "translate": "I succeeded", "pronounce": "najaḥtu" }
             ]
           },
           {
-            "id": 2,
-            "sentence": "فيما يتعلق بالعمل أنا مشغول",
-            "pronounce": "fima yata'allaq bil-'amal ana mashghul",
-            "translate": "Regarding the work, I am busy",
+            "id": 3,
+            "sentence": "فيما يخص",
+            "pronounce": "fima yakhuṣ",
+            "translate": "Regarding the travel,",
             "word2word": [
-              {
-                "word": "فيما",
-                "translate": "regarding",
-                "pronounce": "fima"
-              },
-              {
-                "word": "يتعلق",
-                "translate": "relates to",
-                "pronounce": "yata'allaq"
-              },
-              {
-                "word": "بالعمل",
-                "translate": "to the work",
-                "pronounce": "bil-'amal"
-              },
-              {
-                "word": "أنا",
-                "translate": "I",
-                "pronounce": "ana"
-              },
-              {
-                "word": "مشغول",
-                "translate": "busy",
-                "pronounce": "mashghul"
-              }
+              { "word": "فيما", "translate": "regarding", "pronounce": "fima" },
+              { "word": "يخص", "translate": "concerns", "pronounce": "yakhuṣ" }
             ]
-          },
+          }
         ]
       },
       {
-        "id": 15,
+        "id": 20,
         "arabic": "مما",
         "english": "from what",
         "roman": "mimma",
@@ -1016,49 +803,23 @@
         "gender": "common",
         "examples": [
           {
-            "id": 2,
-            "sentence": "مما رأيت فهمت الموضوع",
-            "pronounce": "mimma ra'aytu fahimtu al-mawdu'",
-            "translate": "From what I saw, I understood the topic",
+            "id": 1,
+            "sentence": "مما سمعت",
+            "pronounce": "mimma sami'tu",
+            "translate": "From what I heard,",
             "word2word": [
-              {
-                "word": "مما",
-                "translate": "from what",
-                "pronounce": "mimma"
-              },
-              {
-                "word": "رأيت",
-                "translate": "I saw",
-                "pronounce": "ra'aytu"
-              },
-              {
-                "word": "فهمت",
-                "translate": "I understood",
-                "pronounce": "fahimtu"
-              },
-              {
-                "word": "الموضوع",
-                "translate": "the topic",
-                "pronounce": "al-mawdu'"
-              }
+              { "word": "مما", "translate": "from what", "pronounce": "mimma" },
+              { "word": "سمعت", "translate": "I heard", "pronounce": "sami'tu" }
             ]
           },
           {
             "id": 3,
             "sentence": "مما قيل",
             "pronounce": "mimma qila",
-            "translate": "From what was said",
+            "translate": "From what was said,",
             "word2word": [
-              {
-                "word": "مما",
-                "translate": "from what",
-                "pronounce": "mimma"
-              },
-              {
-                "word": "قيل",
-                "translate": "was said",
-                "pronounce": "qila"
-              }
+              { "word": "مما", "translate": "from what", "pronounce": "mimma" },
+              { "word": "قيل", "translate": "was said", "pronounce": "qila" }
             ]
           }
         ]

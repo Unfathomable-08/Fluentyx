@@ -22,7 +22,8 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
         1: { key: "Attached Prepositions", data: data[0]?.["Attached Prepositions"] || [] },
         2: { key: "Relational Prepositions", data: data[1]?.["Relational Prepositions"] || [] },
         3: { key: "Temporal Prepositions", data: data[2]?.["Temporal Prepositions"] || [] },
-        4: { key: "Specialized Prepositions", data: data[3]?.["Specialized Prepositions"] || [] },
+        4: { key: "Spatial Prepositions", data: data[3]?.["Spatial Prepositions"] || [] },
+        5: { key: "Specialized Prepositions", data: data[4]?.["Specialized Prepositions"] || [] },
       };
       break;
     default:

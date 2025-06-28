@@ -56,7 +56,8 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
           ...(index !== 1 ? data[0]?.["Attached Prepositions"] || [] : []),
           ...(index !== 2 ? data[1]?.["Relational Prepositions"] || [] : []),
           ...(index !== 3 ? data[2]?.["Temporal Prepositions"] || [] : []),
-          ...(index !== 4 ? data[3]?.["Specialized Prepositions"] || [] : []),
+          ...(index !== 4 ? data[3]?.["Spatial Prepositions"] || [] : []),
+          ...(index !== 5 ? data[4]?.["Specialized Prepositions"] || [] : []),
         ].filter(item => item?.id !== correct?.id);
         break;
       default:

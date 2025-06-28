@@ -57,7 +57,8 @@ export default function Flashcards() {
               ...(data[0]?.["Attached Prepositions"] || []),
               ...(data[1]?.["Relational Prepositions"] || []),
               ...(data[2]?.["Temporal Prepositions"] || []),
-              ...(data[3]?.["Specialized Prepositions"] || []),
+              ...(data[3]?.["Spatial Prepositions"] || []),
+              ...(data[4]?.["Specialized Prepositions"] || []),
             ];
             break;
           default:
@@ -165,9 +166,9 @@ export default function Flashcards() {
               {currentPronoun.english.split(" ").filter(word => !word.match(/^\([MF]\)$/)).join(" ")}
             </div>
             <div>
-              {chapterName == "pronouns" && <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.person}</span>}
-              {chapterName == "pronouns" && <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.gender}</span>}
-              <span className='bg-[#eeeeee] px-2 py-1 mx-1 rounded '>{currentPronoun.type}</span>
+              {chapterName == "pronouns" && <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.person}</span>}
+              {chapterName == "pronouns" && <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.gender}</span>}
+              <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.type}</span>
             </div>
           </div>
         </div>
