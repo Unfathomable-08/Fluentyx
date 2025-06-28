@@ -226,34 +226,14 @@
           },
           {
             "id": 2,
-            "sentence": "والعصر إن الإنسان لفي خسر",
-            "pronounce": "wal-'asr inna al-insan lafi khusr",
-            "translate": "By the time, indeed mankind is in loss",
+            "sentence": "والعصر",
+            "pronounce": "wal-'asr",
+            "translate": "By the time",
             "word2word": [
               {
                 "word": "والعصر",
                 "translate": "by the time",
                 "pronounce": "wal-'asr"
-              },
-              {
-                "word": "إن",
-                "translate": "indeed",
-                "pronounce": "inna"
-              },
-              {
-                "word": "الإنسان",
-                "translate": "mankind",
-                "pronounce": "al-insan"
-              },
-              {
-                "word": "لفي",
-                "translate": "is in",
-                "pronounce": "lafi"
-              },
-              {
-                "word": "خسر",
-                "translate": "loss",
-                "pronounce": "khusr"
               }
             ]
           },
@@ -395,7 +375,7 @@
             "id": 2,
             "sentence": "أرسلت رسالة إلى أخي",
             "pronounce": "arsaltu risala ila akhi",
-            "translate": "I sent a letter to my brother",
+            "translate": "I sent a letter to brother",
             "word2word": [
               {
                 "word": "أرسلت",
@@ -776,7 +756,7 @@
             "id": 1,
             "sentence": "أعيش هنا منذ سنتين",
             "pronounce": "a'eesh huna mundhu sanatayn",
-            "translate": "I have lived here since two years",
+            "translate": "I've lived here since 2yrs",
             "word2word": [
               {
                 "word": "أعيش",
@@ -800,57 +780,6 @@
               }
             ]
           },
-          {
-            "id": 2,
-            "sentence": "لم أره منذ أمس",
-            "pronounce": "lam arahu mundhu ams",
-            "translate": "I haven’t seen him since yesterday",
-            "word2word": [
-              {
-                "word": "لم",
-                "translate": "not",
-                "pronounce": "lam"
-              },
-              {
-                "word": "أره",
-                "translate": "I see him",
-                "pronounce": "arahu"
-              },
-              {
-                "word": "منذ",
-                "translate": "since",
-                "pronounce": "mundhu"
-              },
-              {
-                "word": "أمس",
-                "translate": "yesterday",
-                "pronounce": "ams"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "sentence": "أدرس منذ الصباح",
-            "pronounce": "adrus mundhu aṣ-ṣabaḥ",
-            "translate": "I have been studying since the morning",
-            "word2word": [
-              {
-                "word": "أدرس",
-                "translate": "I study",
-                "pronounce": "adrus"
-              },
-              {
-                "word": "منذ",
-                "translate": "since",
-                "pronounce": "mundhu"
-              },
-              {
-                "word": "الصباح",
-                "translate": "the morning",
-                "pronounce": "aṣ-ṣabaḥ"
-              }
-            ]
-          }
         ]
       }
     ]
@@ -897,7 +826,7 @@
             "id": 2,
             "sentence": "أكلت الكل خلا التفاح",
             "pronounce": "akaltu al-kull khala at-tuffah",
-            "translate": "I ate everything except the apple",
+            "translate": "I ate all except the apple",
             "word2word": [
               {
                 "word": "أكلت",
@@ -979,34 +908,6 @@
                 "word": "علي",
                 "translate": "Ali",
                 "pronounce": "'ali"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "sentence": "أكلت كل شيء عدا الخبز",
-            "pronounce": "akaltu kull shay' 'ada al-khubz",
-            "translate": "I ate everything except the bread",
-            "word2word": [
-              {
-                "word": "أكلت",
-                "translate": "I ate",
-                "pronounce": "akaltu"
-              },
-              {
-                "word": "كل شيء",
-                "translate": "everything",
-                "pronounce": "kull shay'"
-              },
-              {
-                "word": "عدا",
-                "translate": "except",
-                "pronounce": "'ada"
-              },
-              {
-                "word": "الخبز",
-                "translate": "the bread",
-                "pronounce": "al-khubz"
               }
             ]
           },
@@ -1104,34 +1005,6 @@
               }
             ]
           },
-          {
-            "id": 3,
-            "sentence": "فيما يخص السفر سأخطط",
-            "pronounce": "fima yakhuṣ as-safar sa-ukhaṭṭiṭ",
-            "translate": "Regarding the travel, I will plan",
-            "word2word": [
-              {
-                "word": "فيما",
-                "translate": "regarding",
-                "pronounce": "fima"
-              },
-              {
-                "word": "يخص",
-                "translate": "concerns",
-                "pronounce": "yakhuṣ"
-              },
-              {
-                "word": "السفر",
-                "translate": "the travel",
-                "pronounce": "as-safar"
-              },
-              {
-                "word": "سأخطط",
-                "translate": "I will plan",
-                "pronounce": "sa-ukhaṭṭiṭ"
-              }
-            ]
-          }
         ]
       },
       {
@@ -1142,34 +1015,6 @@
         "type": "topic",
         "gender": "common",
         "examples": [
-          {
-            "id": 1,
-            "sentence": "مما سمعت أحببت القصة",
-            "pronounce": "mimma sami'tu aḥbabtu al-qiṣṣa",
-            "translate": "From what I heard, I loved the story",
-            "word2word": [
-              {
-                "word": "مما",
-                "translate": "from what",
-                "pronounce": "mimma"
-              },
-              {
-                "word": "سمعت",
-                "translate": "I heard",
-                "pronounce": "sami'tu"
-              },
-              {
-                "word": "أحببت",
-                "translate": "I loved",
-                "pronounce": "aḥbabtu"
-              },
-              {
-                "word": "القصة",
-                "translate": "the story",
-                "pronounce": "al-qiṣṣa"
-              }
-            ]
-          },
           {
             "id": 2,
             "sentence": "مما رأيت فهمت الموضوع",
@@ -1200,9 +1045,9 @@
           },
           {
             "id": 3,
-            "sentence": "مما قيل أعجبتني الفكرة",
-            "pronounce": "mimma qila a'jabatni al-fikra",
-            "translate": "From what was said, I liked the idea",
+            "sentence": "مما قيل",
+            "pronounce": "mimma qila",
+            "translate": "From what was said",
             "word2word": [
               {
                 "word": "مما",
@@ -1213,16 +1058,6 @@
                 "word": "قيل",
                 "translate": "was said",
                 "pronounce": "qila"
-              },
-              {
-                "word": "أعجبتني",
-                "translate": "I liked",
-                "pronounce": "a'jabatni"
-              },
-              {
-                "word": "الفكرة",
-                "translate": "the idea",
-                "pronounce": "al-fikra"
               }
             ]
           }
