@@ -48,7 +48,7 @@ export default function Chapter() {
     <main className="px-4 py-4 sm:px-16 md:px-20">
       <div className="text-[var(--secondary)] transform flex justify-end font-medium">
         <span>
-          {progress} / 100
+          {progress <= 100 ? `${progress} / 100` : '100/100'}
         </span>
       </div>
       <h1 className="text-xl font-bold text-center my-4 text-[var(--secondary)]">
