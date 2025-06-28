@@ -43,18 +43,26 @@ export default function Flashcards() {
         setChapterData(data);
 
         // Concatenate all pronoun categories
-        const allPronouns = chapter == "pronouns" ? [
-          ...(data[1]?.["Second Person Pronouns"] || []),
-          ...(data[0]?.["First Person Pronouns"] || []),
-          ...(data[2]?.["Third Person Pronouns"] || []),
-        ].filter(pronoun => pronoun)
-        : chapter == "prepositions" ? [
-          ...(data[0]?.["Attached Prepositions"] || []),
-          ...(data[1]?.["Relational Prepositions"] || []),
-          ...(data[2]?.["Temporal Prepositions"] || []),
-          ...(data[3]?.["Specialized Prepositions"] || [])
-        ]
-        : ''
+        let allPronouns;
+        switch (chapter) {
+          case "pronouns":
+            allPronouns = [
+              ...(data[1]?.["Second Person Pronouns"] || []),
+              ...(data[0]?.["First Person Pronouns"] || []),
+              ...(data[2]?.["Third Person Pronouns"] || []),
+            ].filter(pronoun => pronoun);
+            break;
+          case "prepositions":
+            allPronouns = [
+              ...(data[0]?.["Attached Prepositions"] || []),
+              ...(data[1]?.["Relational Prepositions"] || []),
+              ...(data[2]?.["Temporal Prepositions"] || []),
+              ...(data[3]?.["Specialized Prepositions"] || []),
+            ];
+            break;
+          default:
+            allPronouns = '';
+        }
 
         setPronouns(allPronouns);
       } catch (err) {
