@@ -32,11 +32,26 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
       if (!data || data.length === 0) return {};
   
       // Map index to pronoun category
-      const pronounCategories = {
-        1: { key: "First Person Pronouns", data: data[0]["First Person Pronouns"] },
-        2: { key: "Second Person Pronouns", data: data[1]["Second Person Pronouns"] },
-        3: { key: "Third Person Pronouns", data: data[2]["Third Person Pronouns"] },
-      };
+      let pronounCategories;
+      switch (chapter) {
+        case "pronouns":
+          pronounCategories = {
+            1: { key: "First Person Pronouns", data: data[0]?.["First Person Pronouns"] || [] },
+            2: { key: "Second Person Pronouns", data: data[1]?.["Second Person Pronouns"] || [] },
+            3: { key: "Third Person Pronouns", data: data[2]?.["Third Person Pronouns"] || [] },
+          };
+          break;
+        case "prepositions":
+          pronounCategories = {
+            1: { key: "Attached Prepositions", data: data[0]?.["Attached Prepositions"] || [] },
+            2: { key: "Relational Prepositions", data: data[1]?.["Relational Prepositions"] || [] },
+            3: { key: "Temporal Prepositions", data: data[2]?.["Temporal Prepositions"] || [] },
+            4: { key: "Specialized Prepositions", data: data[3]?.["Specialized Prepositions"] || [] },
+          };
+          break;
+        default:
+          pronounCategories = '';
+      }
   
       const currentCategory = pronounCategories[index];
       if (!currentCategory || !currentCategory.data || currentCategory.data.length === 0) return {};

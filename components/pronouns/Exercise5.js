@@ -11,11 +11,26 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
     if (!data || data.length === 0) return null;
 
     // Map index to pronoun category
-    const pronounCategories = {
-        1: { key: "First Person Pronouns", data: data[0]["First Person Pronouns"] },
-        2: { key: "Second Person Pronouns", data: data[1]["Second Person Pronouns"] },
-        3: { key: "Third Person Pronouns", data: data[2]["Third Person Pronouns"] },
-    };
+    let pronounCategories;
+      switch (chapter) {
+        case "pronouns":
+          pronounCategories = {
+            1: { key: "First Person Pronouns", data: data[0]?.["First Person Pronouns"] || [] },
+            2: { key: "Second Person Pronouns", data: data[1]?.["Second Person Pronouns"] || [] },
+            3: { key: "Third Person Pronouns", data: data[2]?.["Third Person Pronouns"] || [] },
+          };
+          break;
+        case "prepositions":
+          pronounCategories = {
+            1: { key: "Attached Prepositions", data: data[0]?.["Attached Prepositions"] || [] },
+            2: { key: "Relational Prepositions", data: data[1]?.["Relational Prepositions"] || [] },
+            3: { key: "Temporal Prepositions", data: data[2]?.["Temporal Prepositions"] || [] },
+            4: { key: "Specialized Prepositions", data: data[3]?.["Specialized Prepositions"] || [] },
+          };
+          break;
+        default:
+          pronounCategories = '';
+      }
 
     // Get the pronoun category for the given index
     const currentCategory = pronounCategories[index];
@@ -27,11 +42,26 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
     const correct = pronouns[randomIndex];
 
     // Get all pronouns from other categories
-    const otherData = [
-        ...(index !== 1 ? data[0]["First Person Pronouns"] : []),
-        ...(index !== 2 ? data[1]["Second Person Pronouns"] : []),
-        ...(index !== 3 ? data[2]["Third Person Pronouns"] : []),
-    ].filter(item => item.id !== correct.id);
+    let otherData;
+    switch (chapter) {
+      case "pronouns":
+        otherData = [
+          ...(index !== 1 ? data[0]?.["First Person Pronouns"] || [] : []),
+          ...(index !== 2 ? data[1]?.["Second Person Pronouns"] || [] : []),
+          ...(index !== 3 ? data[2]?.["Third Person Pronouns"] || [] : []),
+        ].filter(item => item?.id !== correct?.id);
+        break;
+      case "prepositions":
+        otherData = [
+          ...(index !== 1 ? data[0]?.["Attached Prepositions"] || [] : []),
+          ...(index !== 2 ? data[1]?.["Relational Prepositions"] || [] : []),
+          ...(index !== 3 ? data[2]?.["Temporal Prepositions"] || [] : []),
+          ...(index !== 4 ? data[3]?.["Specialized Prepositions"] || [] : []),
+        ].filter(item => item?.id !== correct?.id);
+        break;
+      default:
+        otherData = '';
+    }
 
     // Get unique Arabic pronouns from otherData
     const uniqueOtherArabic = [...new Set(otherData.map(item => item.arabic))];
