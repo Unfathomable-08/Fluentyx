@@ -4,9 +4,9 @@
       {
         "id": 1,
         "arabic": "ب",
-        "english": "with, by, in",
+        "english": "with, by",
         "roman": "bi-",
-        "type": "attached",
+        "type": "means",
         "gender": "common",
         "examples": [
           {
@@ -70,7 +70,7 @@
         "arabic": "ل",
         "english": "for, to",
         "roman": "li-",
-        "type": "attached",
+        "type": "person/purpose",
         "gender": "common",
         "examples": [
           {
@@ -139,7 +139,7 @@
         "arabic": "ك",
         "english": "like, as",
         "roman": "ka-",
-        "type": "attached",
+        "type": "comparison",
         "gender": "common",
         "examples": [
           {
@@ -203,7 +203,7 @@
         "arabic": "و",
         "english": "by (in oaths)",
         "roman": "wa-",
-        "type": "attached",
+        "type": "oaths",
         "gender": "common",
         "examples": [
           {
@@ -277,85 +277,16 @@
           }
         ]
       },
-      {
-        "id": 5,
-        "arabic": "ت",
-        "english": "by (in oaths)",
-        "roman": "ta-",
-        "type": "attached",
-        "gender": "common",
-        "examples": [
-          {
-            "id": 1,
-            "sentence": "تالله سأنجح",
-            "pronounce": "tallah sa-anjah",
-            "translate": "By God, I will succeed",
-            "word2word": [
-              {
-                "word": "تالله",
-                "translate": "by God",
-                "pronounce": "tallah"
-              },
-              {
-                "word": "سأنجح",
-                "translate": "I will succeed",
-                "pronounce": "sa-anjah"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "sentence": "تالله لن أتأخر",
-            "pronounce": "tallah lan ata'akhkhar",
-            "translate": "By God, I will not be late",
-            "word2word": [
-              {
-                "word": "تالله",
-                "translate": "by God",
-                "pronounce": "tallah"
-              },
-              {
-                "word": "لن",
-                "translate": "will not",
-                "pronounce": "lan"
-              },
-              {
-                "word": "أتأخر",
-                "translate": "be late",
-                "pronounce": "ata'akhkhar"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "sentence": "تالله أحبك",
-            "pronounce": "tallah uḥibbuk",
-            "translate": "By God, I love you",
-            "word2word": [
-              {
-                "word": "تالله",
-                "translate": "by God",
-                "pronounce": "tallah"
-              },
-              {
-                "word": "أحبك",
-                "translate": "I love you",
-                "pronounce": "uḥibbuk"
-              }
-            ]
-          }
-        ]
-      }
     ]
   },
   {
     "Relational Prepositions": [
       {
-        "id": 6,
+        "id": 5,
         "arabic": "من",
         "english": "from, of",
         "roman": "min",
-        "type": "relational",
+        "type": "location/source",
         "gender": "common",
         "examples": [
           {
@@ -430,11 +361,11 @@
         ]
       },
       {
-        "id": 7,
+        "id": 6,
         "arabic": "إلى",
         "english": "to, toward",
         "roman": "ila",
-        "type": "relational",
+        "type": "direction",
         "gender": "common",
         "examples": [
           {
@@ -514,11 +445,11 @@
         ]
       },
       {
-        "id": 8,
+        "id": 7,
         "arabic": "على",
         "english": "on, upon",
         "roman": "'ala",
-        "type": "relational",
+        "type": "place",
         "gender": "common",
         "examples": [
           {
@@ -593,11 +524,11 @@
         ]
       },
       {
-        "id": 9,
+        "id": 8,
         "arabic": "في",
         "english": "in, at",
         "roman": "fi",
-        "type": "relational",
+        "type": "place",
         "gender": "common",
         "examples": [
           {
@@ -672,11 +603,11 @@
         ]
       },
       {
-        "id": 10,
+        "id": 9,
         "arabic": "عن",
         "english": "about, from",
         "roman": "'an",
-        "type": "relational",
+        "type": "topic",
         "gender": "common",
         "examples": [
           {
@@ -755,11 +686,11 @@
   {
     "Temporal Prepositions": [
       {
-        "id": 11,
+        "id": 10,
         "arabic": "حتى",
         "english": "until, up to",
         "roman": "ḥatta",
-        "type": "temporal",
+        "type": "time",
         "gender": "common",
         "examples": [
           {
@@ -834,11 +765,11 @@
         ]
       },
       {
-        "id": 12,
-        "arabic": "منذ",
+        "id": 11,
+        "arabic": "مذ/منذ",
         "english": "since",
-        "roman": "mundhu",
-        "type": "temporal",
+        "roman": "mudh/mundhu",
+        "type": "time",
         "gender": "common",
         "examples": [
           {
@@ -921,106 +852,17 @@
             ]
           }
         ]
-      },
-      {
-        "id": 13,
-        "arabic": "مذ",
-        "english": "since",
-        "roman": "mudh",
-        "type": "temporal",
-        "gender": "common",
-        "examples": [
-          {
-            "id": 1,
-            "sentence": "لم أره مذ البارحة",
-            "pronounce": "lam arahu mudh al-bariḥa",
-            "translate": "I haven’t seen him since yesterday",
-            "word2word": [
-              {
-                "word": "لم",
-                "translate": "not",
-                "pronounce": "lam"
-              },
-              {
-                "word": "أره",
-                "translate": "I see him",
-                "pronounce": "arahu"
-              },
-              {
-                "word": "مذ",
-                "translate": "since",
-                "pronounce": "mudh"
-              },
-              {
-                "word": "البارحة",
-                "translate": "yesterday",
-                "pronounce": "al-bariḥa"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "sentence": "أعمل مذ الفجر",
-            "pronounce": "a'mal mudh al-fajr",
-            "translate": "I have been working since dawn",
-            "word2word": [
-              {
-                "word": "أعمل",
-                "translate": "I work",
-                "pronounce": "a'mal"
-              },
-              {
-                "word": "مذ",
-                "translate": "since",
-                "pronounce": "mudh"
-              },
-              {
-                "word": "الفجر",
-                "translate": "dawn",
-                "pronounce": "al-fajr"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "sentence": "مذ أيام وأنا أنتظر",
-            "pronounce": "mudh ayyam wa-ana antazir",
-            "translate": "Since days, I have been waiting",
-            "word2word": [
-              {
-                "word": "مذ",
-                "translate": "since",
-                "pronounce": "mudh"
-              },
-              {
-                "word": "أيام",
-                "translate": "days",
-                "pronounce": "ayyam"
-              },
-              {
-                "word": "وأنا",
-                "translate": "and I",
-                "pronounce": "wa-ana"
-              },
-              {
-                "word": "أنتظر",
-                "translate": "am waiting",
-                "pronounce": "antazir"
-              }
-            ]
-          }
-        ]
       }
     ]
   },
   {
     "Specialized Prepositions": [
       {
-        "id": 14,
+        "id": 12,
         "arabic": "خلا",
         "english": "except, apart from",
         "roman": "khala",
-        "type": "specialized",
+        "type": "exception",
         "gender": "common",
         "examples": [
           {
@@ -1105,11 +947,11 @@
         ]
       },
       {
-        "id": 15,
+        "id": 13,
         "arabic": "عدا",
         "english": "except, besides",
         "roman": "'ada",
-        "type": "specialized",
+        "type": "exception",
         "gender": "common",
         "examples": [
           {
@@ -1194,90 +1036,11 @@
         ]
       },
       {
-        "id": 16,
-        "arabic": "رب",
-        "english": "by (in oaths)",
-        "roman": "rubb",
-        "type": "specialized",
-        "gender": "common",
-        "examples": [
-          {
-            "id": 1,
-            "sentence": "رب البيت سأساعدك",
-            "pronounce": "rubb al-bayt sa-usa'iduk",
-            "translate": "By the Lord of the house, I will help you",
-            "word2word": [
-              {
-                "word": "رب",
-                "translate": "by the Lord",
-                "pronounce": "rubb"
-              },
-              {
-                "word": "البيت",
-                "translate": "of the house",
-                "pronounce": "al-bayt"
-              },
-              {
-                "word": "سأساعدك",
-                "translate": "I will help you",
-                "pronounce": "sa-usa'iduk"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "sentence": "رب الكعبة سأصدق",
-            "pronounce": "rubb al-ka'ba sa-aṣduq",
-            "translate": "By the Lord of the Kaaba, I will be truthful",
-            "word2word": [
-              {
-                "word": "رب",
-                "translate": "by the Lord",
-                "pronounce": "rubb"
-              },
-              {
-                "word": "الكعبة",
-                "translate": "of the Kaaba",
-                "pronounce": "al-ka'ba"
-              },
-              {
-                "word": "سأصدق",
-                "translate": "I will be truthful",
-                "pronounce": "sa-aṣduq"
-              }
-            ]
-          },
-          {
-            "id": 3,
-            "sentence": "رب السماء سأحاول",
-            "pronounce": "rubb as-samaa sa-uḥawil",
-            "translate": "By the Lord of the sky, I will try",
-            "word2word": [
-              {
-                "word": "رب",
-                "translate": "by the Lord",
-                "pronounce": "rubb"
-              },
-              {
-                "word": "السماء",
-                "translate": "of the sky",
-                "pronounce": "as-samaa"
-              },
-              {
-                "word": "سأحاول",
-                "translate": "I will try",
-                "pronounce": "sa-uḥawil"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 17,
+        "id": 14,
         "arabic": "فيما",
         "english": "in what, regarding",
         "roman": "fima",
-        "type": "specialized",
+        "type": "topic",
         "gender": "common",
         "examples": [
           {
@@ -1372,11 +1135,11 @@
         ]
       },
       {
-        "id": 18,
+        "id": 15,
         "arabic": "مما",
         "english": "from what",
         "roman": "mimma",
-        "type": "specialized",
+        "type": "topic",
         "gender": "common",
         "examples": [
           {
