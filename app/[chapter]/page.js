@@ -95,8 +95,8 @@ export default function Chapter() {
               
               {/* Lock */}
               {
-                (index === 1 && (subProgress["flash"] || 0) < 80) ||
-                (index >= 2 && (subProgress[index.toString()] || 0) <= 80) ? (
+                (index === 0 && (subProgress["flash"] || 0) < 80) ||
+                (index >= 1 && (subProgress[index.toString()] || 0) <= 80) ? (
                   <div className="absolute top-2 right-3 bg-red-600 text-white text-[12px] px-2 py-[1px] rounded-full">
                     Locked
                   </div>
