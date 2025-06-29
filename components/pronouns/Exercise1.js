@@ -87,9 +87,7 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
       setCorrectIndex(i); // Mark correct answer
       setStep(prev => prev + 1);
       setCorrectAttepmts(prev => prev + 1);
-      setSelected(null);
-      setCorrectIndex(null);
-      setWrongIndex(null);
+      setTimeout(() => { setSelected(null); setCorrectIndex(null); setWrongIndex(null); }, 1000);
     } else {
       setWrongIndex(i); // Mark wrong answer
       setWrongAttepmts(prev => prev + 1);
@@ -118,9 +116,8 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`text-xl text-center font-bold flex items-center bg-white justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
-                ${isCorrect ? 'bg-green-400 text-white' : ''}
-                ${isWrong ? 'bg-red-400 text-white' : ''}
+              className={`text-xl text-center font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+                ${isCorrect ? 'bg-green-400 text-white' : isWrong ? 'bg-red-400 text-white' : 'bg-white'}
               `}
             >
               {opt.english}

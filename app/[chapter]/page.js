@@ -33,7 +33,8 @@ export default function Chapter() {
   const handleClick = (index) => {
     // For index > 0, check if previous lesson's subProgress is greater than 80
     if (chapter !== "alphabets"){
-      if (index > 0 && (subProgress[(index - 1).toString()] || 0) <= 80) {
+      if ((index === 1 && (subProgress["flash"] || 0) < 80) ||
+          (index >= 2 && (subProgress[index.toString()] || 0) <= 80) ) {
         return;
       }
     }

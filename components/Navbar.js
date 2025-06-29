@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext, useState } from 'react';
-import { FaBell, FaCog, FaRegMoon, FaTrophy, FaRobot, FaUser, FaHome } from 'react-icons/fa';
+import { FaBell, FaCog, FaRegMoon, FaFire, FaTrophy, FaRobot, FaUser, FaHome } from 'react-icons/fa';
 import { ThemeContext } from '../contexts/themeContext';
 import { useScreenSize } from '../contexts/screenContext';
 
@@ -14,8 +14,12 @@ const Navbar = () => {
     <>
       <nav className="w-full sticky top-0 z-50 bg-[var(--primary)] text-white shadow-md px-4 py-3 sm:px-12 md:px-20 flex items-center justify-between">
         {/* Logo or Brand */}
-        <div className="text-xl font-bold tracking-wide">
+        <div className="text-xl font-bold tracking-wide flex justify-between items-center w-full">
           Fluentyx
+          
+          <div>
+            <FaFire className="text-orange-500 transform -translate-x-6" size={26} />
+          </div>
         </div>
   
         {/* Icons */}

@@ -138,9 +138,8 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
                         <motion.div
                             key={i}
                             onClick={() => handleClick(opt, i)}
-                            className={`text-xl bg-white font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer arabic
-                                ${isCorrect ? 'bg-green-400 text-white' : ''}
-                                ${isWrong ? 'bg-red-400 text-white' : ''}
+                            className={`text-xl font-bold flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer arabic
+                                ${isCorrect ? 'bg-green-400 text-white' : isWrong ? 'bg-red-400 text-white' : 'bg-white'}
                             `}
                             animate={isCorrect || isWrong ? { rotate: [-5, 5, -5, 5, 0] } : {}}
                             transition={{ duration: 0.3 }}

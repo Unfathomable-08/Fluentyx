@@ -13,9 +13,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
       setCorrectIndex(i);
       setStep(prev => prev + 1);
       setCorrectAttepmts(prev => prev + 1);
-      setSelected(null);
-      setCorrectIndex(null);
-      setWrongIndex(null);
+      setTimeout(() => { setSelected(null); setCorrectIndex(null); setWrongIndex(null); }, 1000);
     } else {
       setWrongIndex(i);
       setWrongAttepmts(prev => prev + 1);
@@ -129,9 +127,8 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
             <div
               key={i}
               onClick={() => handleClick(opt, i)}
-              className={`flex bg-white items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
-                ${isCorrect ? 'bg-green-400 text-white' : ''}
-                ${isWrong ? 'bg-red-400 text-white' : ''}
+              className={`flex items-center justify-center border border-gray-300 aspect-[5/4] shadow-[0_0_10px_#00000055] text-center rounded-xl cursor-pointer 
+                ${isCorrect ? 'bg-green-400 text-white' : isWrong ? 'bg-red-400 text-white' : 'bg-white'}
               `}
             >
               {opt.arabic}

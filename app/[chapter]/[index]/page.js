@@ -5,6 +5,7 @@ import { usePathname, useParams, useRouter } from 'next/navigation';
 
 import useAuth from "../../../hooks/useAuth";
 import useSaveProgress from "../../../hooks/useSaveProgress";
+import { showToast } from "../../../lib/toastify"
 
 import { ArToEn, EnToAr } from "../../../components/alphabets/Exercise1-2"
 import { Draw } from "../../../components/alphabets/Exercise3"
@@ -73,6 +74,21 @@ export default function Alphabet() {
     }
 
   }, [step, chapterName, index, user])
+
+  useEffect(() => {
+    if (chapterName == "alphabets"){
+      if (wrongAttempts >= 5){
+        showToast("info", "Oops! You did not make it. Let's try again!", { className: "bg-yellow-100 text-yellow-800 border-l-4 border-yellow-500" });
+        router.push(`/${chapterName}`)
+      }
+    }
+    else {
+      if (wrongAttempts >= 8){
+        showToast("info", "Oops! You did not make it. Let's try again!", { className: "bg-yellow-100 text-yellow-800 border-l-4 border-yellow-500" });
+        router.push(`/${chapterName}`)
+      }
+    }
+  }, [step])
   
   const stepMod = step % 5;
 
