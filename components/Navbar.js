@@ -4,11 +4,17 @@ import { useContext, useState } from 'react';
 import { FaBell, FaCog, FaRegMoon, FaFire, FaTrophy, FaRobot, FaUser, FaHome } from 'react-icons/fa';
 import { ThemeContext } from '../contexts/themeContext';
 import { useScreenSize } from '../contexts/screenContext';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { screenSize } = useScreenSize();
   const [focused, setFocused] = useState("home");
+  const pathname = usePathname();
+
+  if (pathname === '/auth') {
+    return null;
+  }
   
   return (
     <>
@@ -41,7 +47,7 @@ const Navbar = () => {
         }
       </nav>
        {screenSize == "xs" &&
-          <div className='fixed bottom-0 w-full bg-[var(--primary)] z-50 text-white px-4 py-3 flex justify-evenly text-2xl'>
+          <div className='fixed border-t-[10px] border-white bottom-0 w-full bg-[var(--primary)] z-50 text-white px-4 py-3 flex justify-evenly text-2xl'>
             <button className={`hover:text-white/80 transition p-[6px] ${focused == 'home' && 'active'}`} onClick={()=>{ setFocused('home'); }} aria-label="Home">
               <FaHome />
             </button>
