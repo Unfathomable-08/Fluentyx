@@ -23,15 +23,15 @@ export default function Home() {
   }
 
   return (
-    <main className="px-4 py-4 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+    <main className="px-4 py-4 pb-20 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
       <h1 className="text-2xl font-bold text-center mb-4 text-[var(--text-theme)]">Chapters</h1>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 px-4 py-4 gap-x-4 gap-y-8 overflow-x-auto pb-2">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 px-4 py-4 gap-x-4 justify-center gap-y-8 overflow-x-auto pb-2">
         {chapters.map((ch) => (
           <div
             key={ch.id}
             onClick={() => handleClick(ch.title)}
-            className="w-full h-[200px] sm:h-[230px] md:h-[250px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055]"
+            className="w-full max-sm:max-w-[430px] h-[200px] sm:h-[230px] md:h-[250px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055]"
           >
             <img
               src={ch.image}

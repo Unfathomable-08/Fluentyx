@@ -22,3 +22,62 @@ body {
   overflow-x: hidden;
   width: 100vw;
 }
+
+.active {
+  background-color: white !important;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  transform: translateY(-50%) scale(1.2);
+  position: relative;
+}
+
+.active svg {
+  color: var(--primary);
+  transition: 0.5s ease-in-out;
+  /* transform: translateY(7px); */
+}
+
+.active p {
+  display: none;
+}
+
+.active::after,
+.active::before {
+  content: '';
+  position: absolute;
+  background-color: var(--primary);
+  height: 12px;
+  width: 10px;
+  top: calc(50% - 10px);
+  animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+  z-index: 60;
+  opacity: 0;
+}
+
+.active::after {
+  left: -10px;
+  border-top-right-radius: 100%;
+  box-sizing: content-box;
+  border-right-width: 5px;
+  box-shadow: 3px -3px 0 white;
+}
+
+.active::before {
+  right: -10px;
+  border-top-left-radius: 100%;
+  box-sizing: content-box;
+  border-left-width: 5px;
+  box-shadow: -3px -3px 0 white;
+}
+
+/* Fade-in effect for delay */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

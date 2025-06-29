@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar.js"
 import { ThemeProvider } from "../contexts/themeContext";
 import { ToastContainer } from "react-toastify";
+import { ScreenSizeProvider } from "../contexts/screenContext";
 import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <ToastContainer />
-          <Navbar />
-          {children}
+          <ScreenSizeProvider>
+            <ToastContainer />
+            <Navbar />
+            {children}
+          </ScreenSizeProvider>
         </ThemeProvider>
       </body>
     </html>
