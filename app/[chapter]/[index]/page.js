@@ -78,13 +78,13 @@ export default function Alphabet() {
   useEffect(() => {
     if (chapterName == "alphabets"){
       if (wrongAttempts >= 5){
-        showToast("info", "Oops! You did not make it. Let's try again!", { className: "bg-yellow-100 text-yellow-800 border-l-4 border-yellow-500" });
+        showToast("info", "Oops! You did not make it. Let's try again!");
         router.push(`/${chapterName}`)
       }
     }
     else {
       if (wrongAttempts >= 8){
-        showToast("info", "Oops! You did not make it. Let's try again!", { className: "bg-yellow-100 text-yellow-800 border-l-4 border-yellow-500" });
+        showToast("info", "Oops! You did not make it. Let's try again!");
         router.push(`/${chapterName}`)
       }
     }
