@@ -3707,6 +3707,7 @@ __metadata:
     react-hook-form: "npm:^7.57.0"
     react-icons: "npm:^5.5.0"
     react-sketch-canvas: "npm:^6.2.0"
+    react-spinners: "npm:^0.17.0"
     react-toastify: "npm:^11.0.5"
     tailwindcss: "npm:^4"
   languageName: unknown
@@ -4090,6 +4091,16 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
   checksum: 10c0/fa833e29a3fe9f0e4ddc6cc0a56a4dd9a67ed19a66cb398564b0f5e75903bca136663a53cc2d776d5dc7128baf685b6ce13fd094f2a0d04533497c5c1448c872
+  languageName: node
+  linkType: hard
+
+"react-spinners@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "react-spinners@npm:0.17.0"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/175107ba7b9ab2954559376ebe12c7561d4856402773b044c74972e9ba3e8c274454910bf23eb21000064e827a269ef4e48e69432a57395a1fa7edd05a428e7c
   languageName: node
   linkType: hard
 

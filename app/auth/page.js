@@ -6,12 +6,15 @@ import Cloud from "../../components/Cloud";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { CircleLoader } from "react-spinners"
+import { showToast } from "../../lib/toastify"
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
   const [showSignup, setShowSignup] = useState(false);
   const [email, setEmail] = useState("");
   const [step, setStep] = useState(1);
+  const [isVerifying, setIsVerifying] = useState(false);
   const codeRefs = useRef([]);
   const [verificationEmail, setVerificationEmail] = useState(email);
   const [verificationCode, setVerificationCode] = useState(["", "", "", "", "", ""]);
@@ -30,11 +33,12 @@ const Login = () => {
         });
         setEmail(data.email);
         setVerificationEmail(data.email);
+        showToast("success", "Verification code sent to your email.")
         setStep(2);
-        const result = await res.json();
 
       } catch (error) {
         console.error('Signup failed:', error);
+        showToast("error", "Signup failed.")
       }
     } else if (!showSignup) {
 
@@ -46,11 +50,12 @@ const Login = () => {
           },
           body: JSON.stringify(data),
         });
-        const result = await res.json();
+        showToast("success", "Login successful.")
 
         router.push("/");
       } catch (error) {
         console.error('Login failed:', error);
+        showToast("error", "Login failed.")
       }
     }
   };
@@ -58,14 +63,17 @@ const Login = () => {
   const handleVerificationSubmit = async (e) => {
     e.preventDefault();
     setVerificationError("");
+    setIsVerifying(true);
 
     // Basic validation
     if (!verificationEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(verificationEmail)) {
       setVerificationError("Invalid email format");
+      setIsVerifying(false);
       return;
     }
     const code = verificationCode.join('');
     if (!code || code.length !== 6 || !/^[0-9]{6}$/.test(code)) {
+      setIsVerifying(false);
       setVerificationError("Verification code must be 6 digits");
       return;
     }
@@ -83,12 +91,15 @@ const Login = () => {
         },
         body: JSON.stringify(payload),
       });
-      const result = await res.json();
+      showToast("success", "Verification successful.")
       router.push("/");
       
     } catch (error) {
       console.error('Verification failed:', error);
       setVerificationError("Verification failed. Please try again.");
+      showToast("error", "Verification failed.")
+    } finally {
+      setIsVerifying(false);
     }
   };
 
@@ -107,7 +118,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center px-6" style={{ height: 'calc(100vh - 80px)' }}>
+    <div className="flex items-center justify-center px-6 bg-white" style={{ height: 'calc(100vh - 80px)' }}>
       {/* Background Blobs */}
       <div className="opacity-40 sm:opacity-60 md:opacity-80">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute w-58 h-58 md:w-60 md:h-60 lg:w-100 lg:h-100 left-4 -top-12 filter blur-xs">
@@ -186,7 +197,7 @@ const Login = () => {
               )}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isVerifying}
                 className="w-full py-2 bg-[var(--primary)] shadow-[5px_5px_10px_#00000055] text-white rounded-md hover:bg-[var(--secondary)] relative z-10"
               >
                 Verify
@@ -285,7 +296,7 @@ const Login = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isVerifying}
                 className="w-full py-2 bg-[var(--primary)] shadow-[5px_5px_10px_#00000055] text-white rounded-md hover:bg-[var(--secondary)] relative z-10"
               >
                 {showSignup ? "Sign Up" : "Sign In"}
@@ -318,6 +329,15 @@ const Login = () => {
           </p>
         </div>
       </div>
+      {
+        isVerifying && (
+          <div className="absolute backdrop-blur-[3px] z-10 inset-0 flex items-center justify-center">
+            <div className="relative z-20">
+              <CircleLoader color="#2c9910" size={60} />
+            </div>
+          </div>
+        )
+      }
     </div>
   );
 }
