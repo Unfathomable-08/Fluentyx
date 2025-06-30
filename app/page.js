@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation';
 import chapters from '../data/chapters.json';
 import useAuth from "../hooks/useAuth";
+import { FaCheck, FaTimes } from 'react-icons/fa';
+import { motion } from 'framer-motion'
 
 export default function Home() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -13,6 +15,33 @@ export default function Home() {
     const slug = title.toLowerCase().replace(/\s+/g, '-');
     router.push(`/${slug}`);
   };
+
+  // Function to get the current week's dates
+  const getWeekDates = () => {
+    const today = new Date();
+    const startOfWeek = new Date(today);
+    const dayOfWeek = today.getDay();
+    // Adjust to Monday as the start of the week (0 = Sunday, 1 = Monday, etc.)
+    const diff = dayOfWeek === 0 ? -6 : 1 - dayOfWeek; // If Sunday, go back 6 days, else adjust to Monday
+    startOfWeek.setDate(today.getDate() + diff);
+
+    const weekDates = [];
+    const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startOfWeek);
+      date.setDate(startOfWeek.getDate() + i);
+      weekDates.push({
+        day: days[i],
+        date: date.getDate(),
+        month: date.getMonth() + 1, // Months are 0-based, so add 1
+        year: date.getFullYear(),
+      });
+    }
+    return weekDates;
+  };
+
+  const weekDates = getWeekDates();
   
   if (isLoading) {
     return <div>Loading...</div>;
@@ -25,12 +54,38 @@ export default function Home() {
   return (
     <main className="px-4 py-4 pb-20 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
       {/* Daily Exercise */}
-      <div className='px-4 py-4 justify-center flex'>
+      <div className='px-4 py-4 justify-center flex flex-col gap-y-6 items-center'>
         <div
           onClick={() => handleClick()}
-          className="w-full max-sm:max-w-[360px] max-sm:h-[200px] sm:h-[120px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055]"
+          className="w-full max-sm:max-w-[360px] max-sm:h-[200px] sm:h-[200px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
         >
+          <div className='flex justify-evenly items-center w-full max-w-md'>
+            {weekDates.map((dayInfo, index) => (
+              <div key={index} className="text-center">
+                <p className="text-sm font-semibold pb-2 text-[var(--text-theme)]">{dayInfo.day}</p>
+                <p className="text-lg font-bold pb-2 text-[var(--text-theme)]">
+                  {dayInfo.date}
+                </p>
+                <div className='border-3 sm:border-2 border-orange-400 w-6 h-6 rounded-full flex justify-center items-center'>
+                  <FaCheck className='text-orange-500 transform translate-y-[1px]'/>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+        <motion.div 
+          className='w-full max-sm:max-w-[360px] shadow-[0_0_12px_#00000055] hover:bg-[var(--secondary)] bg-[var(--primary)] text-white font-medium text-lg px-4 py-2 rounded-3xl overflow-hidden relative flex justify-center items-center overflow-hidden'
+        >
+          <motion.div 
+            className="absolute top-0 bg-[#b1e78c] w-40 h-full transform -skew-45"
+            initial={{left: '-100%'}}
+            animate={{left: '100%'}}
+            transition={{duration: 3, delay: 3, repeat: Infinity, ease: 'linear'}}
+          ></motion.div>
+          <button className='relative z-5'>
+            Daily Challenge - Ready to practice today?
+          </button>
+        </motion.div>
       </div>
       
       <h1 className="text-2xl font-bold text-center mb-4 text-[var(--text-theme)]">Chapters</h1>

@@ -25,7 +25,7 @@ const Navbar = () => {
           Fluentyx
           
           <div>
-            <Image src="/fire.jpg" alt="" width={40} height={40} className='absolute right-4'/>
+            <Image src="/fire.png" alt="" width={40} height={35} className='absolute -top-1 right-4 w-[40px] h-[35px] object-fill'/>
           </div>
         </div>
   
