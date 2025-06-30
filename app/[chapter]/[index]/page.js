@@ -72,7 +72,6 @@ export default function Alphabet() {
         }
       }
     }
-
   }, [step, chapterName, index, user])
 
   useEffect(() => {
@@ -88,7 +87,7 @@ export default function Alphabet() {
         router.push(`/${chapterName}`)
       }
     }
-  }, [step])
+  }, [step]);
   
   const stepMod = step % 5;
 

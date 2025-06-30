@@ -40,13 +40,13 @@ export async function POST(req, { params }) {
 
     if (progressDoc) {
       const chapterIndex = progressDoc.chapters.findIndex(
-        c => c.chapterName === newChapter.chapterName
+        c => c.chapterName == newChapter.chapterName
       );
 
       if (chapterIndex > -1) {
         // Chapter exists
         const subLessonIndex = progressDoc.chapters[chapterIndex].subLessons.findIndex(
-          s => s.subLessonName === newSubLesson.subLessonName
+          s => s.subLessonName == newSubLesson.subLessonName
         );
 
         if (subLessonIndex > -1) {
@@ -54,15 +54,24 @@ export async function POST(req, { params }) {
           const existingSubLesson = progressDoc.chapters[chapterIndex].subLessons[subLessonIndex];
           
           // Check if subLesson progress is already 100
-          if (existingSubLesson.progress >= 99) {
+          if (existingSubLesson.progress >= 100) {
+            progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
+              ...existingSubLesson,
+              subLessonName: existingSubLesson.subLessonName, // Explicitly preserve subLessonName
+              attempts: (existingSubLesson.attempts || 0) + (newSubLesson.attempts || 0),
+              correctAttempts: (existingSubLesson.correctAttempts || 0) + (newSubLesson.correctAttempts || 0),
+              progress: existingSubLesson.progress, // Preserve existing progress
+              lastAttempted: newSubLesson.lastAttempted || existingSubLesson.lastAttempted
+            };
+
+            await progressDoc.save();
+            
             return NextResponse.json({ 
               message: "SubLesson progress already at 100, no update needed", 
               data: progressDoc 
             }, { status: 200 });
           }
 
-          console.log(newSubLesson)
-          console.log(newSubLesson.progress)
           progressDoc.chapters[chapterIndex].subLessons[subLessonIndex] = {
             ...existingSubLesson,
             subLessonName: existingSubLesson.subLessonName, // Explicitly preserve subLessonName

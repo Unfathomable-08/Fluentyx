@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-export default function useSaveProgress( user, chapterName, index, correctAttempts, wrongAttempts ) {
+export default function useSaveProgress( user, chapterName, index, correctAttempts, wrongAttempts, isDaily ) {
   const [isProgressLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -24,8 +24,10 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       };
 
       const progressValues = progressMap[chapterName.toLowerCase()] || { chapterProgress: 0, lessonProgress: 0 };
-      const { chapterProgress, lessonProgress } = progressValues;
+      const { chapterProgress, lessonProgress } = isDaily ? { chapterProgress: 0, lessonProgress: 0 } : progressValues;
       console.log(chapterProgress, lessonProgress)
+      console.log(isDaily)
+      console.log(correctAttempts, wrongAttempts)
 
       try {
         const response = await fetch(`/api/progress/${user.email}`, {

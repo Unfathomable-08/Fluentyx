@@ -13,7 +13,7 @@ const breakpoints = {
 const ScreenSizeContext = createContext();
 
 export const ScreenSizeProvider = ({ children }) => {
-  const [screenSize, setScreenSize] = useState("md");
+  const [screenSize, setScreenSize] = useState("xs");
 
   useEffect(() => {
     const checkSize = () => {
