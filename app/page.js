@@ -56,7 +56,7 @@ export default function Home() {
       {/* Daily Exercise */}
       <div className='px-4 py-4 justify-center flex flex-col gap-y-6 items-center'>
         <div
-          onClick={() => handleClick()}
+          onClick={() => router.push(`/dailyExercise`)}
           className="w-full max-sm:max-w-[360px] max-sm:h-[200px] sm:h-[200px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
         >
           <div className='flex justify-evenly items-center w-full max-w-md'>
