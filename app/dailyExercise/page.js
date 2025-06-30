@@ -30,7 +30,6 @@ export default function DailyExercise () {
       try {
         const res = await fetch(`/api/progress/${user.email}`);
         const data = await res.json();
-        console.log(data);
 
         if (!res.ok) throw new Error(data.error || 'Something went wrong');
 
@@ -50,7 +49,6 @@ export default function DailyExercise () {
             })
         );
 
-        console.log(newReview)
         setToReview(newReview);
       } catch (err) {
         console.error('Error fetching progress:', err.message);
@@ -63,7 +61,7 @@ export default function DailyExercise () {
   const calculateSteps = (toReview) => {
     // Sum of focus percentages
     const totalFocus = toReview.reduce((sum, [, , focus]) => sum + focus, 0);
-    console.log(totalFocus)
+    
     // Calculate steps for each lesson
     const steps = toReview.map(([name, index, focus]) => ({
       chapterName: name,

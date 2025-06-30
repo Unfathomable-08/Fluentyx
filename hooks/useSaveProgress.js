@@ -6,7 +6,6 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
 
   const saveProgress = useCallback(
     async ({ user, chapterName, index, correctAttempts, wrongAttempts }) => {
-        console.log(user, chapterName, index, correctAttempts, wrongAttempts)
       if (!user || !chapterName || index === undefined || index === null) {
         setError('Missing required parameters: user, chapterName, or subLessonName');
         console.log("not found")
@@ -25,9 +24,6 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
 
       const progressValues = progressMap[chapterName.toLowerCase()] || { chapterProgress: 0, lessonProgress: 0 };
       const { chapterProgress, lessonProgress } = isDaily ? { chapterProgress: 0, lessonProgress: 0 } : progressValues;
-      console.log(chapterProgress, lessonProgress)
-      console.log(isDaily)
-      console.log(correctAttempts, wrongAttempts)
 
       try {
         const response = await fetch(`/api/progress/${user.email}`, {
