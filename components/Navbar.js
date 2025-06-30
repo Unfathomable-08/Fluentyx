@@ -5,6 +5,7 @@ import { FaBell, FaCog, FaRegMoon, FaFire, FaTrophy, FaRobot, FaUser, FaHome } f
 import { ThemeContext } from '../contexts/themeContext';
 import { useScreenSize } from '../contexts/screenContext';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image'
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -20,11 +21,11 @@ const Navbar = () => {
     <>
       <nav className="w-full sticky top-0 z-50 bg-[var(--primary)] text-white shadow-md px-4 py-3 sm:px-12 md:px-20 flex items-center justify-between">
         {/* Logo or Brand */}
-        <div className="text-xl font-bold tracking-wide flex justify-between items-center w-full">
+        <div className="text-xl font-bold tracking-wide flex items-center w-full relative">
           Fluentyx
           
           <div>
-            <FaFire className="text-orange-500 transform -translate-x-6" size={26} />
+            <Image src="/fire.jpg" alt="" width={40} height={40} className='absolute right-4'/>
           </div>
         </div>
   
