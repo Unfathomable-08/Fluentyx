@@ -24,6 +24,15 @@ export default function Home() {
 
   return (
     <main className="px-4 py-4 pb-20 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+      {/* Daily Exercise */}
+      <div className='px-4 py-4 justify-center flex'>
+        <div
+          onClick={() => handleClick()}
+          className="w-full max-sm:max-w-[360px] max-sm:h-[200px] sm:h-[120px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055]"
+        >
+        </div>
+      </div>
+      
       <h1 className="text-2xl font-bold text-center mb-4 text-[var(--text-theme)]">Chapters</h1>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 px-4 py-4 gap-x-4 justify-center gap-y-8 overflow-x-auto pb-2">

@@ -34,7 +34,6 @@ body {
 .active svg {
   color: var(--primary);
   transition: 0.5s ease-in-out;
-  /* transform: translateY(7px); */
 }
 
 .active p {
