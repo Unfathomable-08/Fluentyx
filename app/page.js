@@ -5,9 +5,11 @@ import chapters from '../data/chapters.json';
 import useAuth from "../hooks/useAuth";
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const { isAuthenticated, user, isLoading } = useAuth();
+  const [streak, setStreak] = useState(0);
 
   const router = useRouter();
 
@@ -16,17 +18,26 @@ export default function Home() {
     router.push(`/${slug}`);
   };
 
+
+  useEffect(() => {
+    const getStreak = async () => {
+      if (!user) return;
+      const response = await fetch(`/api/streak?email=${user.email}`);
+      const data = await response.json();
+      console.log(data);
+    };
+    getStreak();
+  }, [user]);
+
   // Function to get the current week's dates
   const getWeekDates = () => {
     const today = new Date();
     const startOfWeek = new Date(today);
-    const dayOfWeek = today.getDay();
-    // Adjust to Monday as the start of the week (0 = Sunday, 1 = Monday, etc.)
-    const diff = dayOfWeek === 0 ? -6 : 1 - dayOfWeek; // If Sunday, go back 6 days, else adjust to Monday
-    startOfWeek.setDate(today.getDate() + diff);
+    const dayOfWeek = today.getDay(); // Sunday = 0, Monday = 1, ..., Saturday = 6
+    startOfWeek.setDate(today.getDate() - dayOfWeek); // Move back to Sunday
 
     const weekDates = [];
-    const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+    const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S']; // Start from Sunday
 
     for (let i = 0; i < 7; i++) {
       const date = new Date(startOfWeek);
@@ -34,10 +45,11 @@ export default function Home() {
       weekDates.push({
         day: days[i],
         date: date.getDate(),
-        month: date.getMonth() + 1, // Months are 0-based, so add 1
+        month: date.getMonth() + 1,
         year: date.getFullYear(),
       });
     }
+
     return weekDates;
   };
 
@@ -56,8 +68,7 @@ export default function Home() {
       {/* Daily Exercise */}
       <div className='px-4 py-4 justify-center flex flex-col gap-y-6 items-center'>
         <div
-          onClick={() => router.push(`/dailyExercise`)}
-          className="w-full max-sm:max-w-[360px] max-sm:h-[200px] sm:h-[200px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
+          className="w-full max-sm:max-w-[360px] max-sm:h-[120px] sm:h-[120px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
         >
           <div className='flex justify-evenly items-center w-full max-w-md'>
             {weekDates.map((dayInfo, index) => (
@@ -66,15 +77,15 @@ export default function Home() {
                 <p className="text-lg font-bold pb-2 text-[var(--text-theme)]">
                   {dayInfo.date}
                 </p>
-                <div className='border-3 sm:border-2 border-orange-400 w-6 h-6 rounded-full flex justify-center items-center'>
-                  <FaCheck className='text-orange-500 transform translate-y-[1px]'/>
+                <div className='border-2 border-orange-400 w-6 h-6 rounded-full flex justify-center items-center'>
+                  <FaCheck className='text-orange-400 transform translate-y-[1px]'/>
                 </div>
               </div>
             ))}
           </div>
         </div>
         <motion.div 
-          className='w-full max-sm:max-w-[360px] shadow-[0_0_12px_#00000055] hover:bg-[var(--secondary)] bg-[var(--primary)] text-white font-medium text-lg px-4 py-2 rounded-3xl overflow-hidden relative flex justify-center items-center overflow-hidden'
+          className='w-full max-sm:max-w-[360px] shadow-[0_0_12px_#00000055] hover:bg-[var(--secondary)] bg-[var(--primary)] text-white font-medium text-lg px-4 py-1 sm:py-2 rounded-3xl overflow-hidden relative flex justify-center items-center overflow-hidden'
         >
           <motion.div 
             className="absolute top-0 bg-[#b1e78c] w-40 h-full transform -skew-45"
@@ -82,8 +93,8 @@ export default function Home() {
             animate={{left: '100%'}}
             transition={{duration: 3, delay: 3, repeat: Infinity, ease: 'linear'}}
           ></motion.div>
-          <button className='relative z-5'>
-            Daily Challenge - Ready to practice today?
+          <button className='relative z-5' onClick={() => router.push(`/dailyExercise`)}>
+            Daily Challenge
           </button>
         </motion.div>
       </div>

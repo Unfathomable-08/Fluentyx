@@ -24,8 +24,15 @@ const streakSchema = new mongoose.Schema({
     min: [0, 'Longest streak cannot be negative'],
   },
   completedDates: [{
-    type: Date, // Array of dates when the user completed the exercise
-    default: [],
+    date: {
+      type: Date, // Date when the user completed the exercise
+      required: true,
+    },
+    totalTime: {
+      type: Number, // Time spent in seconds
+      required: true,
+      min: [0, 'Total time cannot be negative'],
+    },
   }],
 }, {
   timestamps: true, // Automatically add createdAt and updatedAt

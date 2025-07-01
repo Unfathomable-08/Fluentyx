@@ -1,13 +1,16 @@
 "use client"
 
-import { useEffect, useState, useContext } from 'react';
-import useAuth from "../../hooks/useAuth";
-import useSaveProgress from "../../hooks/useSaveProgress";
+import { useEffect, useState, useContext } from 'react'
+import useAuth from "../../hooks/useAuth"
+import useSaveProgress from "../../hooks/useSaveProgress"
 import { PronounToEn } from "../../components/pronouns/Exercise1"
 import { PronounToAr } from "../../components/pronouns/Exercise2"
 import { FillBlank } from "../../components/pronouns/Exercise3"
 import { FillEnBlank } from "../../components/pronouns/Exercise4"
 import { MatchPronounSound } from "../../components/pronouns/Exercise5"
+import CircularProgress from "../../sub-components/CircularProgress"
+import { useRouter } from 'next/navigation'
+import { showToast } from '../../lib/toastify'
 
 export default function DailyExercise () {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -21,6 +24,10 @@ export default function DailyExercise () {
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [stepsPerLesson, setStepsPerLesson] = useState([]);
   const [currentPosition, setCurrentPosition] = useState(0);
+  const [getProgress, setGetProgress] = useState(false);
+  const [parentProgress, setParentProgress] = useState(0);
+
+  const router = useRouter();
 
   const { saveProgress, isProgressLoading, error } = useSaveProgress();
 
@@ -67,13 +74,13 @@ export default function DailyExercise () {
     const steps = toReview.map(([name, index, focus]) => ({
       chapterName: name,
       subLessonName: index,
-      steps: totalFocus > 0 ? Math.round((focus / totalFocus) * 35) : 0,
+      steps: totalFocus > 0 ? Math.round((focus / totalFocus) * 100) : 0,
     }));
 
-    // Adjust steps to ensure total is 35
+    // Adjust steps to ensure total is 100
     const currentTotal = steps.reduce((sum, { steps }) => sum + steps, 0);
-    if (currentTotal !== 35 && steps.length > 0) {
-      const diff = 35 - currentTotal;
+    if (currentTotal !== 100 && steps.length > 0) {
+      const diff = 100 - currentTotal;
       steps[0].steps += diff; // Add/subtract difference to first lesson
     }
 
@@ -131,9 +138,13 @@ export default function DailyExercise () {
       setCurrentIndex(toReview[0][1]);
     }
     
-    if (wrongAttempts >= 12){
-      showToast("info", "Oops! You did not make it. Let's try again!");
-      router.push(`/dailyExercise`)
+    if (wrongAttempts >= 33){
+      showToast("success", "Oops! You did not make it. But your progress is saved.");
+      router.push(`/dailyExercise`);
+    }
+
+    if (step == 100){
+      setStep(1);
     }
 
     let stepToMove = stepsPerLesson.filter((item) => (
@@ -141,8 +152,7 @@ export default function DailyExercise () {
     ))
 
     if (step > stepToMove[0]?.steps){
-      // saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
-      console.log(toReview)
+      saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
       setCurrentChapter(toReview[currentPosition + 1][0]);
       setCurrentIndex(toReview[currentPosition + 1][1]);
       setCorrectAttepmts(0);
@@ -152,6 +162,41 @@ export default function DailyExercise () {
 
   }, [step, toReview]);
 
+  const pausefn = () => {
+    setGetProgress(true);
+    saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
+    showToast("success", "Your progress is saved.");
+    router.push(`/dailyExercise`);
+  }
+
+  const completedFn = () => {
+    setGetProgress(true);
+    saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
+    showToast("success", "Congratulations! You have completed the daily exercise.");
+    router.push(`/dailyExercise`);
+  }
+
+  useEffect(() => {
+    const postStreak = async () => {
+      
+      if (parentProgress !== 0) {
+        const response = await fetch('/api/streak', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: user.email,
+            date: new Date(),
+            totalTime: parentProgress,
+          }),
+        });
+        const data = await response.json();
+        console.log(data);
+        router.push(`/`)
+      }
+    };
+    postStreak();
+  }, [parentProgress]);
+
   const stepMod = step % 5;
 
   if (!isAuthenticated){
@@ -160,8 +205,18 @@ export default function DailyExercise () {
   
   return (
     <>
-      <div className='w-[80%] bg-white flex justify-self-center mt-8 h-4 border rounded-full border-[var(--secondary)]'>
-        <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 25}%`}}></div>
+      <div className='w-[90%] mt-2 gap-x-4 flex justify-center items-center flex justify-self-center'>
+        <div className='w-full bg-white h-4 border rounded-full border-[var(--secondary)]'>
+          <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 100}%`}}></div>
+        </div>
+        <div className="transform">
+          <CircularProgress totalTime={300} radius={25} stroke={4} fontSize={14} getProgress={getProgress} setParentProgress={setParentProgress} completedFn={completedFn} />
+        </div>
+      </div>
+
+      <div className='flex justify-self-center gap-x-4'>
+        <button className='px-4 py-1 bg-red-600 hover:bg-red-800 text-white rounded-full text-sm' onClick={()=>router.push('/dailyExercise')}>Restart</button>
+        <button className='px-4 py-1 bg-green-600 hover:bg-green-800 text-white rounded-full text-sm' onClick={()=>pausefn()}>Pause</button>
       </div>
 
       <PronounToEn

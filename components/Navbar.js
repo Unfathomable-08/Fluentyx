@@ -43,7 +43,7 @@ const Navbar = () => {
         }
       </nav>
        {screenSize == "xs" &&
-          <div className='fixed border-t-[10px] border-white bottom-0 w-full bg-[var(--primary)] z-50 text-white px-4 py-3 flex justify-evenly text-2xl'>
+          <div className='fixed border-t-[10px] border-white bottom-0 w-full bg-[var(--primary)] z-50 text-white py-3 flex justify-evenly text-2xl'>
             <button className={`hover:text-white/80 transition p-[6px] ${focused == 'home' && 'active'}`} onClick={()=>{ setFocused('home'); }} aria-label="Home">
               <FaHome />
             </button>
