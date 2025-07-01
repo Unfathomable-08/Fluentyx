@@ -15,11 +15,12 @@ export default function DailyExercise () {
   const [chapterName, setChapterName] = useState([]);
   const [toReview, setToReview] = useState([]);
   const [step, setStep] = useState(1);
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [currentChapter, setCurrentChapter] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [currentChapter, setCurrentChapter] = useState(null);
   const [correctAttempts, setCorrectAttepmts] = useState(0);
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [stepsPerLesson, setStepsPerLesson] = useState([]);
+  const [currentPosition, setCurrentPosition] = useState(0);
 
   const { saveProgress, isProgressLoading, error } = useSaveProgress();
 
@@ -87,6 +88,9 @@ export default function DailyExercise () {
         // Extract unique subLessonName values from toReview
         const uniqueSubLessons = [...new Set(toReview.map(item => item[0]))];
 
+        // Get all sub-lessons (including duplicates) for chapterName
+        const allSubLessons = toReview.map(item => item[0]);
+        
         // Fetch data for each unique sub-lesson
         const fetchPromises = uniqueSubLessons.map(async (subLesson) => {
           const res = await fetch(`/api/chapter/?chapter=${subLesson}`);
@@ -107,7 +111,8 @@ export default function DailyExercise () {
         // Update state with fetched data
         setChapterData(chapterDataMap);
 
-        setChapterName(uniqueSubLessons);
+        // Update chapterName state
+        setChapterName(allSubLessons);
         
         const stepsPerLesson = calculateSteps(toReview);
         setStepsPerLesson(stepsPerLesson);
@@ -121,26 +126,31 @@ export default function DailyExercise () {
   }, [toReview]);
 
   useEffect(() => {
+    if (toReview && toReview.length > 0 && step == 1){
+      setCurrentChapter(toReview[0][0]);
+      setCurrentIndex(toReview[0][1]);
+    }
+    
     if (wrongAttempts >= 12){
       showToast("info", "Oops! You did not make it. Let's try again!");
       router.push(`/dailyExercise`)
     }
 
-    console.log(stepsPerLesson)
     let stepToMove = stepsPerLesson.filter((item) => (
-      item.chapterName == chapterName[currentChapter] && item.subLessonName == currentIndex
+      item.chapterName == currentChapter && item.subLessonName == currentIndex
     ))
 
-    console.log("steps" ,stepToMove)
     if (step > stepToMove[0]?.steps){
-      saveProgress({ user, chapterName: chapterName[currentChapter], index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
-      setCurrentChapter(prev => prev + 1);
-      setCurrentIndex(1);
+      // saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
+      console.log(toReview)
+      setCurrentChapter(toReview[currentPosition + 1][0]);
+      setCurrentIndex(toReview[currentPosition + 1][1]);
       setCorrectAttepmts(0);
       setWrongAttepmts(0);
+      setCurrentPosition(prev => prev + 1);
     }
 
-  }, [step]);
+  }, [step, toReview]);
 
   const stepMod = step % 5;
 
@@ -155,8 +165,8 @@ export default function DailyExercise () {
       </div>
 
       <PronounToEn
-        data={chapterData[chapterName[currentChapter]]}
-        chapter={chapterName[currentChapter]} 
+        data={chapterData[currentChapter]}
+        chapter={currentChapter} 
         step={step} setStep={setStep} 
         index={currentIndex} 
         isActive={stepMod == 1} 
@@ -165,8 +175,8 @@ export default function DailyExercise () {
       />
 
       <PronounToAr
-        data={chapterData[chapterName[currentChapter]]}
-        chapter={chapterName[currentChapter]}
+        data={chapterData[currentChapter]}
+        chapter={currentChapter}
         step={step} setStep={setStep}
         index={currentIndex}
         isActive={stepMod == 2}
@@ -175,8 +185,8 @@ export default function DailyExercise () {
         />
 
       <FillEnBlank
-        data={chapterData[chapterName[currentChapter]]}
-        chapter={chapterName[currentChapter]}
+        data={chapterData[currentChapter]}
+        chapter={currentChapter}
         step={step}
         setStep={setStep}
         index={currentIndex}
@@ -186,8 +196,8 @@ export default function DailyExercise () {
         />
 
       <FillBlank
-        data={chapterData[chapterName[currentChapter]]}
-        chapter={chapterName[currentChapter]}
+        data={chapterData[currentChapter]}
+        chapter={currentChapter}
         step={step}
         setStep={setStep}
         index={currentIndex}
@@ -197,8 +207,8 @@ export default function DailyExercise () {
         />
 
        <MatchPronounSound
-         data={chapterData[chapterName[currentChapter]]}
-         chapter={chapterName[currentChapter]}
+         data={chapterData[currentChapter]}
+         chapter={currentChapter}
          step={step}
          setStep={setStep}
          index={currentIndex}

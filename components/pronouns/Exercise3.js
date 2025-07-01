@@ -69,7 +69,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
       );
       if (!correctPronoun) return {};
   
-      const sentenceWithBlank = selectedExample.sentence.replace(correctPronoun.arabic, '____');
+      const sentenceWithBlank = selectedExample.sentence;
       const selectedWord2Word = selectedExample.word2word;
   
       const pronounOptions = pronouns
@@ -121,7 +121,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 w-[240px] arabic">
+      <div className="grid grid-cols-2 gap-4 w-[240px] font-medium text-xl">
         {options.map((opt, i) => {
           const isCorrect = correctIndex !== null && opt.arabic === correctPronoun.arabic;
           const isWrong = wrongIndex === i;
@@ -133,7 +133,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
                 ${isCorrect ? 'bg-green-400 text-white' : isWrong ? 'bg-red-400 text-white' : 'bg-white'}
               `}
             >
-              {opt.arabic}
+              {opt.english}
             </div>
           );
         })}
