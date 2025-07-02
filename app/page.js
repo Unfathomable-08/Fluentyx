@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 export default function Home() {
   const { isAuthenticated, user, isLoading } = useAuth();
   const [streak, setStreak] = useState(0);
+  const [streakTime, setStreakTime] = useState([]);
 
   const router = useRouter();
 
@@ -24,7 +25,14 @@ export default function Home() {
       if (!user) return;
       const response = await fetch(`/api/streak?email=${user.email}`);
       const data = await response.json();
-      console.log(data);
+      
+      const streakTimeVar = data.completedDates.map(item => {
+        const day = new Date(item.date).getDate(); // gets day as number (1–31)
+        return { [day]: item.totalTime }; // key as number, value as string
+      });
+      
+      setStreak(data.currentStreak);
+      setStreakTime(streakTimeVar);
     };
     getStreak();
   }, [user]);
@@ -71,17 +79,40 @@ export default function Home() {
           className="w-full max-sm:max-w-[360px] max-sm:h-[120px] sm:h-[120px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
         >
           <div className='flex justify-evenly items-center w-full max-w-md'>
-            {weekDates.map((dayInfo, index) => (
-              <div key={index} className="text-center">
-                <p className="text-sm font-semibold pb-2 text-[var(--text-theme)]">{dayInfo.day}</p>
-                <p className="text-lg font-bold pb-2 text-[var(--text-theme)]">
-                  {dayInfo.date}
-                </p>
-                <div className='border-2 border-orange-400 w-6 h-6 rounded-full flex justify-center items-center'>
-                  <FaCheck className='text-orange-400 transform translate-y-[1px]'/>
+            {weekDates.map((dayInfo, index) => {
+              const today = new Date();
+              const targetDate = new Date(dayInfo.year, dayInfo.month - 1, dayInfo.date);
+
+              const found = streakTime.find(item => item[dayInfo.date]);
+              const value = found ? parseInt(Object.values(found)[0]) : 0;
+
+              const isFuture = targetDate > today;
+
+          console.log((360 - (value / 300) * 360))
+
+              return (
+                <div key={index} className="text-center">
+                  <p className="text-sm font-semibold pb-2 text-[var(--text-theme)]">{dayInfo.day}</p>
+                  <p className="text-lg font-bold pb-2 text-[var(--text-theme)]">{dayInfo.date}</p>
+
+                  {/* Status Circle */}
+                  <div className={`border-2 w-6 h-6 text-sm rounded-full flex justify-center items-center ${
+                    isFuture ? 'border-gray-400' : 'border-orange-400'
+                  }`}>
+                    {isFuture ? null : found ? (
+                      value >= 300 ? (
+                        <FaCheck className="text-red-400 transform" />
+                      ) : (
+                        <div className="progress-hider-container">
+                        </div>
+                      )
+                    ) : (
+                      <FaTimes className="text-red-400 transform" />
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         <motion.div 

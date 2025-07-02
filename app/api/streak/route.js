@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import Streak from '@/models/streak'
+import connectDB from '@/lib/db'
 
 // Helper function to get the start of the current week (Sunday)
 const getWeekStart = () => {
@@ -21,6 +22,7 @@ const isDateInCurrentWeek = (date) => {
 // POST route to record exercise data
 export async function POST(req) {
   try {
+    await connectDB();
     const { email, date, totalTime } = await req.json();
 
     if (!email || !date || totalTime === undefined) {
@@ -122,6 +124,7 @@ export async function POST(req) {
 // GET route to fetch streak data
 export async function GET(req) {
   try {
+    await connectDB();
     const { searchParams } = new URL(req.url);
     const email = searchParams.get('email');
 
