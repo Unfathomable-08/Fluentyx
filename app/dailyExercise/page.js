@@ -166,20 +166,18 @@ export default function DailyExercise () {
     setGetProgress(true);
     saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
     showToast("success", "Your progress is saved.");
-    router.push(`/dailyExercise`);
   }
 
   const completedFn = () => {
     setGetProgress(true);
     saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
     showToast("success", "Congratulations! You have completed the daily exercise.");
-    router.push(`/dailyExercise`);
   }
 
   useEffect(() => {
     const postStreak = async () => {
-      
-      if (parentProgress !== 0) {
+      console.log(step)
+      if (parentProgress != 0 && step != 1) {
         const response = await fetch('/api/streak', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -191,7 +189,6 @@ export default function DailyExercise () {
         });
         const data = await response.json();
         console.log(data);
-        router.push(`/`)
       }
     };
     postStreak();
@@ -210,7 +207,7 @@ export default function DailyExercise () {
           <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 100}%`}}></div>
         </div>
         <div className="transform">
-          <CircularProgress totalTime={300} radius={25} stroke={4} fontSize={14} getProgress={getProgress} setParentProgress={setParentProgress} completedFn={completedFn} />
+          <CircularProgress totalTime={300} radius={25} stroke={4} fontSize={14} getProgress={getProgress} setParentProgress={setParentProgress} completedFn={completedFn} email={user.email} />
         </div>
       </div>
 

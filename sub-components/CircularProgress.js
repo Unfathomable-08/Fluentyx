@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 
-export default function CircularProgress({totalTime, radius, stroke, fontSize, getProgress, setParentProgress, completedFn}) {
+export default function CircularProgress({totalTime, radius, stroke, fontSize, getProgress, setParentProgress, completedFn, email}) {
   const [progress, setProgress] = useState(0);
+  const [init, setinit] = useState(0);
   const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
     const startTime = Date.now();
     const interval = setInterval(() => {
       const elapsed = (Date.now() - startTime) / 1000; // Seconds
-      setProgress(elapsed);
+      setProgress((elapsed + init));
       if (elapsed >= totalTime) {
         clearInterval(interval);
         completedFn()
@@ -16,13 +17,31 @@ export default function CircularProgress({totalTime, radius, stroke, fontSize, g
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [init]);
 
   useEffect(() => {
     if (getProgress){
       setParentProgress(progress);
     }
   }, [getProgress])
+
+  useEffect(() => {
+    const getStreak = async () => {
+      if (!email) return;
+      const response = await fetch(`/api/streak?email=${email}`);
+      const data = await response.json();
+
+      const today = new Date();
+
+      const todayData = data.completedDates.find(item => (
+        new Date(item.date).toDateString() === today.toDateString()
+      ))
+      setProgress(todayData?.totalTime || 0);
+      setParentProgress(todayData?.totalTime || 0);
+      setinit(todayData?.totalTime || 0);
+    };
+    getStreak();
+  }, [email]);
 
   const strokeDashoffset = circumference - (progress / totalTime) * circumference;
 
