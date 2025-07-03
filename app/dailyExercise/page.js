@@ -74,13 +74,13 @@ export default function DailyExercise () {
     const steps = toReview.map(([name, index, focus]) => ({
       chapterName: name,
       subLessonName: index,
-      steps: totalFocus > 0 ? Math.round((focus / totalFocus) * 100) : 0,
+      steps: totalFocus > 0 ? Math.round((focus / totalFocus) * 50) : 0,
     }));
 
-    // Adjust steps to ensure total is 100
+    // Adjust steps to ensure total is 50
     const currentTotal = steps.reduce((sum, { steps }) => sum + steps, 0);
-    if (currentTotal !== 100 && steps.length > 0) {
-      const diff = 100 - currentTotal;
+    if (currentTotal !== 50 && steps.length > 0) {
+      const diff = 50 - currentTotal;
       steps[0].steps += diff; // Add/subtract difference to first lesson
     }
 
@@ -122,6 +122,7 @@ export default function DailyExercise () {
         setChapterName(allSubLessons);
         
         const stepsPerLesson = calculateSteps(toReview);
+        console.log(stepsPerLesson)
         setStepsPerLesson(stepsPerLesson);
         
       } catch (err) {
@@ -138,12 +139,12 @@ export default function DailyExercise () {
       setCurrentIndex(toReview[0][1]);
     }
     
-    if (wrongAttempts >= 33){
+    if (wrongAttempts >= 17){
       showToast("success", "Oops! You did not make it. But your progress is saved.");
       router.push(`/dailyExercise`);
     }
 
-    if (step == 100){
+    if (step == 50){
       setStep(1);
     }
 
@@ -189,6 +190,9 @@ export default function DailyExercise () {
         });
         const data = await response.json();
         console.log(data);
+        setParentProgress(0);
+        setGetProgress(false);
+        router.push('/');
       }
     };
     postStreak();
@@ -204,7 +208,7 @@ export default function DailyExercise () {
     <>
       <div className='w-[90%] mt-2 gap-x-4 flex justify-center items-center flex justify-self-center'>
         <div className='w-full bg-white h-4 border rounded-full border-[var(--secondary)]'>
-          <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 100}%`}}></div>
+          <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 50}%`}}></div>
         </div>
         <div className="transform">
           <CircularProgress totalTime={300} radius={25} stroke={4} fontSize={14} getProgress={getProgress} setParentProgress={setParentProgress} completedFn={completedFn} email={user.email} />

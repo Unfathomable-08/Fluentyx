@@ -81,14 +81,16 @@ export default function Home() {
           <div className='flex justify-evenly items-center w-full max-w-md'>
             {weekDates.map((dayInfo, index) => {
               const today = new Date();
+              today.setHours(0, 0, 0, 0);
               const targetDate = new Date(dayInfo.year, dayInfo.month - 1, dayInfo.date);
 
               const found = streakTime.find(item => item[dayInfo.date]);
               const value = found ? parseInt(Object.values(found)[0]) : 0;
 
               const isFuture = targetDate > today;
-
-          console.log((360 - (value / 300) * 360))
+              const isToday = targetDate.getFullYear() === today.getFullYear() &&
+                targetDate.getMonth() === today.getMonth() &&
+                targetDate.getDate() === today.getDate();
 
               return (
                 <div key={index} className="text-center">
@@ -99,16 +101,13 @@ export default function Home() {
                   <div className={`border-2 w-6 h-6 text-sm rounded-full flex justify-center items-center ${
                     isFuture ? 'border-gray-400' : 'border-orange-400'
                   }`}>
-                    {isFuture ? null : found ? (
-                      value >= 300 ? (
-                        <FaCheck className="text-red-400 transform" />
+                    {
+                      isFuture ? null : isToday ? (
+                        value >= 300 ? <FaCheck className="text-red-400 transform" /> : null
                       ) : (
-                        <div className="progress-hider-container">
-                        </div>
+                        value >= 300 ? <FaCheck className="text-red-400 transform" /> : <FaTimes className="text-red-400 transform" />
                       )
-                    ) : (
-                      <FaTimes className="text-red-400 transform" />
-                    )}
+                    }
                   </div>
                 </div>
               );

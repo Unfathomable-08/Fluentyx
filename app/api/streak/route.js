@@ -67,7 +67,7 @@ export async function POST(req) {
 
     if (dateIndex !== -1) {
       // Date exists, update totalTime by adding the new totalTime
-      streak.completedDates[dateIndex].totalTime += totalTime;
+      streak.completedDates[dateIndex].totalTime = totalTime;
 
       // Recalculate if the day is completed (totalTime >= 300 seconds)
       const isCompleted = streak.completedDates[dateIndex].totalTime >= 300;

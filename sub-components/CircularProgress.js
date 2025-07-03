@@ -10,7 +10,7 @@ export default function CircularProgress({totalTime, radius, stroke, fontSize, g
     const interval = setInterval(() => {
       const elapsed = (Date.now() - startTime) / 1000; // Seconds
       setProgress((elapsed + init));
-      if (elapsed >= totalTime) {
+      if ((elapsed + init) >= totalTime) {
         clearInterval(interval);
         completedFn()
       }
