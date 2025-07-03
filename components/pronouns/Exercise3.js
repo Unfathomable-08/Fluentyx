@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useContext } from 'react';
+import { LanguageContext } from '../../contexts/languageContext'
 
 export function FillBlank({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);
@@ -6,6 +7,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
   const [wrongIndex, setWrongIndex] = useState(null);
   const [hover, setHover] = useState(null);
 
+  const { language } = useContext(LanguageContext)
   
   const handleClick = (opt, i) => {
     if (correctIndex !== null) return;
@@ -133,7 +135,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
                 ${isCorrect ? 'bg-green-400 text-white' : isWrong ? 'bg-red-400 text-white' : 'bg-white'}
               `}
             >
-              {opt.english}
+              {language == 'english' ? opt.english : opt.hindi}
             </div>
           );
         })}

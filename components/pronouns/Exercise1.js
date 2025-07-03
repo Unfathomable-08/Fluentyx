@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { LanguageContext } from '../../contexts/languageContext'
 
 export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
+
+  const { language } = useContext(LanguageContext)
   
   if (!data || data.length === 0) return null;
 
@@ -120,7 +123,7 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
                 ${isCorrect ? 'bg-green-400 text-white' : isWrong ? 'bg-red-400 text-white' : 'bg-white'}
               `}
             >
-              {opt.english}
+              {language == 'english' ? opt.english : opt.hindi}
             </div>
           );
         })}

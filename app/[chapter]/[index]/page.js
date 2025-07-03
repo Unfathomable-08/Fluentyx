@@ -96,7 +96,7 @@ export default function Alphabet() {
   }
 
   return (
-    <div className="bg-[var(--bg-theme)] pt-12" style={{minHeight: 'calc(100vh - 50px)'}}>
+    <div className="bg-[var(--bg-theme)] pt-6" style={{minHeight: 'calc(100vh - 50px)'}}>
         {chapterName == "alphabets" ?
           (
             <>

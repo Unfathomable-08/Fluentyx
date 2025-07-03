@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar.js"
 import { ThemeProvider } from "../contexts/themeContext";
+import { LanguageProvider } from "../contexts/languageContext";
 import { ToastContainer } from "react-toastify";
 import { ScreenSizeProvider } from "../contexts/screenContext";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,13 +28,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
-          <ScreenSizeProvider>
-            <ToastContainer />
-            <Navbar />
-            {children}
-          </ScreenSizeProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider>
+            <ScreenSizeProvider>
+              <ToastContainer />
+              <Navbar />
+              {children}
+            </ScreenSizeProvider>
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

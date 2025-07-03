@@ -205,8 +205,8 @@ export default function DailyExercise () {
   }
   
   return (
-    <>
-      <div className='w-[90%] mt-2 gap-x-4 flex justify-center items-center flex justify-self-center'>
+    <main className='bg-[var(--bg-theme)] min-h-screen pt-3'>
+      <div className='w-[90%] gap-x-4 flex justify-center items-center flex justify-self-center'>
         <div className='w-full bg-white h-4 border rounded-full border-[var(--secondary)]'>
           <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 50}%`}}></div>
         </div>
@@ -272,6 +272,6 @@ export default function DailyExercise () {
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
          />
-    </>
+    </main>
   );
 };

@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { LanguageContext } from '../../contexts/languageContext'
 
 export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
+
+  const { language } = useContext(LanguageContext)
 
   if (!data || data.length === 0) return null;
 
@@ -106,7 +109,7 @@ export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrec
     <div className="flex flex-col items-center p-8 gap-x-6 gap-y-16">
       {/* Top Arabic Pronoun */}
       <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex flex-col items-center justify-center shadow-[0_0_10px_#00000055]">
-        <span className="font-medium text-2xl text-center">{correct.english}</span>
+        <span className="font-medium text-2xl text-center">{language == 'english' ? correct.english : correct.hindi}</span>
       </div>
 
       {/* Four English Options */}

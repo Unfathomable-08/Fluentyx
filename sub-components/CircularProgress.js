@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from '../contexts/themeContext';
 
 export default function CircularProgress({totalTime, radius, stroke, fontSize, getProgress, setParentProgress, completedFn, email}) {
   const [progress, setProgress] = useState(0);
   const [init, setinit] = useState(0);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
@@ -68,7 +70,7 @@ export default function CircularProgress({totalTime, radius, stroke, fontSize, g
           cy={radius * 1.25}
           style={{ transition: 'stroke-dashoffset 1s linear' }}
         />
-        <text x={radius * 1.25} y={radius * 1.25} textAnchor="middle" dy=".3em" fontSize={fontSize}>
+        <text x={radius * 1.25} y={radius * 1.25} textAnchor="middle" dy=".3em" fontSize={fontSize} fill={theme === 'dark' ? 'white' : 'black'}>
           {`0${Math.floor(progress / 60)}:${Math.floor(progress % 60) < 10 ? `0${Math.round(progress % 60)}` : Math.round(progress % 60)}`}
         </text>
       </svg>

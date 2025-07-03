@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useContext } from 'react';
+import { LanguageContext } from '../../contexts/languageContext'
 
 export function FillEnBlank({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);
@@ -6,6 +7,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
   const [wrongIndex, setWrongIndex] = useState(null);
   const [hover, setHover] = useState(null);
 
+  const { language } = useContext(LanguageContext)
   
   const handleClick = (opt, i) => {
     if (correctIndex !== null) return;
@@ -67,7 +69,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
       );
       if (!correctPronoun) return {};
   
-      const sentenceWithBlank = selectedExample.translate;
+      const sentenceWithBlank = language == 'english' ? selectedExample.translate : selectedExample.urdu;
       const selectedWord2Word = selectedExample.word2word;
   
       const pronounOptions = pronouns

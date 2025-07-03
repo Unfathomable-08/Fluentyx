@@ -6,6 +6,7 @@
         "arabic": "ب",
         "english": "with, by, in",
         "roman": "bi-",
+        "hindi": "se",
         "type": "means/place",
         "gender": "common",
         "examples": [
@@ -14,6 +15,7 @@
             "sentence": "كتبت بالقلم",
             "pronounce": "katabtu bil-qalam",
             "translate": "I wrote with the pen",
+            "urdu": "main ne qalam se likha",
             "word2word": [
               { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" },
               { "word": "بالقلم", "translate": "with the pen", "pronounce": "bil-qalam" }
@@ -24,6 +26,7 @@
             "sentence": "سافرت بالطائرة",
             "pronounce": "safaratu bit-taa'ira",
             "translate": "I traveled by the plane",
+            "urdu": "main ne jahaaz se safar kiya",
             "word2word": [
               { "word": "سافرت", "translate": "I traveled", "pronounce": "safaratu" },
               { "word": "بالطائرة", "translate": "by the plane", "pronounce": "bit-taa'ira" }
@@ -34,6 +37,7 @@
             "sentence": "أعيش بالمدينة",
             "pronounce": "a'eesh bil-madina",
             "translate": "I live in the city",
+            "urdu": "main shehar mein rehta hoon",
             "word2word": [
               { "word": "أعيش", "translate": "I live", "pronounce": "a'eesh" },
               { "word": "بالمدينة", "translate": "in the city", "pronounce": "bil-madina" }
@@ -46,6 +50,7 @@
         "arabic": "ل",
         "english": "for, to",
         "roman": "li-",
+        "hindi": "ke liye",
         "type": "person/purpose",
         "gender": "common",
         "examples": [
@@ -54,6 +59,7 @@
             "sentence": "كتبت للمعلم",
             "pronounce": "katabtu lil-mu'allim",
             "translate": "I wrote to the teacher",
+            "urdu": "main ne ustaad ke liye likha",
             "word2word": [
               { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" },
               { "word": "للمعلم", "translate": "to the teacher", "pronounce": "lil-mu'allim" }
@@ -64,6 +70,7 @@
             "sentence": "الكتاب للطالب",
             "pronounce": "al-kitab lit-taalib",
             "translate": "The book is for the student",
+            "urdu": "kitaab taalib ke liye hai",
             "word2word": [
               { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
               { "word": "للطالب", "translate": "for the student", "pronounce": "lit-taalib" }
@@ -74,6 +81,7 @@
             "sentence": "أعطيت هدية لأخي",
             "pronounce": "a'taytu hadiyya li-akhi",
             "translate": "I gave a gift to my brother",
+            "urdu": "main ne apne bhai ko tohfa diya",
             "word2word": [
               { "word": "أعطيت", "translate": "I gave", "pronounce": "a'taytu" },
               { "word": "هدية", "translate": "a gift", "pronounce": "hadiyya" },
@@ -87,6 +95,7 @@
         "arabic": "ك",
         "english": "like, as",
         "roman": "ka-",
+        "hindi": "jaisa",
         "type": "comparison",
         "gender": "common",
         "examples": [
@@ -95,6 +104,7 @@
             "sentence": "هو كالأسد",
             "pronounce": "huwa kal-asad",
             "translate": "He is like the lion",
+            "urdu": "vah sher jaisa hai",
             "word2word": [
               { "word": "هو", "translate": "he", "pronounce": "huwa" },
               { "word": "كالأسد", "translate": "like the lion", "pronounce": "kal-asad" }
@@ -105,6 +115,7 @@
             "sentence": "تضيء كالنجم",
             "pronounce": "tudi' kal-najm",
             "translate": "She shines like the star",
+            "urdu": "vah sitara jaisi chamakti hai",
             "word2word": [
               { "word": "تضيء", "translate": "she shines", "pronounce": "tudi'" },
               { "word": "كالنجم", "translate": "like the star", "pronounce": "kal-najm" }
@@ -115,6 +126,7 @@
             "sentence": "ركضت كالريح",
             "pronounce": "rakadat kar-rih",
             "translate": "She ran like the wind",
+            "urdu": "vah hawa jaisi daudi",
             "word2word": [
               { "word": "ركضت", "translate": "she ran", "pronounce": "rakadat" },
               { "word": "كالريح", "translate": "like the wind", "pronounce": "kar-rih" }
@@ -127,6 +139,7 @@
         "arabic": "و",
         "english": "by (in oaths)",
         "roman": "wa-",
+        "hindi": "ki qasam",
         "type": "oaths",
         "gender": "common",
         "examples": [
@@ -135,6 +148,7 @@
             "sentence": "والله سأفعل",
             "pronounce": "wallah sa-af'al",
             "translate": "By God, I will do it",
+            "urdu": "Allah ki qasam main karunga",
             "word2word": [
               { "word": "والله", "translate": "by God", "pronounce": "wallah" },
               { "word": "سأفعل", "translate": "I will do", "pronounce": "sa-af'al" }
@@ -145,6 +159,7 @@
             "sentence": "والعصر",
             "pronounce": "wal-'asr",
             "translate": "By the time",
+            "urdu": "waqt ki qasam",
             "word2word": [
               { "word": "والعصر", "translate": "by the time", "pronounce": "wal-'asr" }
             ]
@@ -154,6 +169,7 @@
             "sentence": "والسماء سأعود",
             "pronounce": "was-samaa sa-a'ood",
             "translate": "By the sky, I will return",
+            "urdu": "aasman ki qasam main wapas aaunga",
             "word2word": [
               { "word": "والسماء", "translate": "by the sky", "pronounce": "was-samaa" },
               { "word": "سأعود", "translate": "I will return", "pronounce": "sa-a'ood" }
@@ -170,6 +186,7 @@
         "arabic": "من",
         "english": "from, of",
         "roman": "min",
+        "hindi": "se",
         "type": "direction/source",
         "gender": "common",
         "examples": [
@@ -178,6 +195,7 @@
             "sentence": "جئت من المدرسة",
             "pronounce": "ji'tu min al-madrasa",
             "translate": "I came from the school",
+            "urdu": "main school se aaya",
             "word2word": [
               { "word": "جئت", "translate": "I came", "pronounce": "ji'tu" },
               { "word": "من", "translate": "from", "pronounce": "min" },
@@ -189,6 +207,7 @@
             "sentence": "كتاب من المكتبة",
             "pronounce": "kitab min al-maktaba",
             "translate": "A book from the library",
+            "urdu": "kitaab library se hai",
             "word2word": [
               { "word": "كتاب", "translate": "a book", "pronounce": "kitab" },
               { "word": "من", "translate": "from", "pronounce": "min" },
@@ -200,6 +219,7 @@
             "sentence": "سافرت من مصر",
             "pronounce": "safaratu min misr",
             "translate": "I traveled from Egypt",
+            "urdu": "main ne Misr se safar kiya",
             "word2word": [
               { "word": "سافرت", "translate": "I traveled", "pronounce": "safaratu" },
               { "word": "من", "translate": "from", "pronounce": "min" },
@@ -213,6 +233,7 @@
         "arabic": "إلى",
         "english": "to, toward",
         "roman": "ila",
+        "hindi": "ko",
         "type": "direction/person",
         "gender": "common",
         "examples": [
@@ -221,6 +242,7 @@
             "sentence": "ذهبت إلى السوق",
             "pronounce": "dhahabtu ila as-suq",
             "translate": "I went to the market",
+            "urdu": "main bazaar gaya",
             "word2word": [
               { "word": "ذهبت", "translate": "I went", "pronounce": "dhahabtu" },
               { "word": "إلى", "translate": "to", "pronounce": "ila" },
@@ -232,6 +254,7 @@
             "sentence": "أرسلت رسالة إلى أخي",
             "pronounce": "arsaltu risala ila akhi",
             "translate": "I sent a letter to my brother",
+            "urdu": "main ne apne bhai ko khat bheja",
             "word2word": [
               { "word": "أرسلت", "translate": "I sent", "pronounce": "arsaltu" },
               { "word": "رسالة", "translate": "a letter", "pronounce": "risala" },
@@ -244,6 +267,7 @@
             "sentence": "سافرت إلى باكستان",
             "pronounce": "safaratu ila bakistan",
             "translate": "I traveled to Pakistan",
+            "urdu": "main ne Pakistan ko safar kiya",
             "word2word": [
               { "word": "سافرت", "translate": "I traveled", "pronounce": "safaratu" },
               { "word": "إلى", "translate": "to", "pronounce": "ila" },
@@ -257,6 +281,7 @@
         "arabic": "على",
         "english": "on, upon",
         "roman": "'ala",
+        "hindi": "par",
         "type": "location",
         "gender": "common",
         "examples": [
@@ -265,6 +290,7 @@
             "sentence": "الكتاب على الطاولة",
             "pronounce": "al-kitab 'ala at-tawila",
             "translate": "The book is on the table",
+            "urdu": "kitaab mez par hai",
             "word2word": [
               { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
               { "word": "على", "translate": "on", "pronounce": "'ala" },
@@ -276,6 +302,7 @@
             "sentence": "جلست على الكرسي",
             "pronounce": "jalastu 'ala al-kursi",
             "translate": "I sat on the chair",
+            "urdu": "main kursi par baitha",
             "word2word": [
               { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
               { "word": "على", "translate": "on", "pronounce": "'ala" },
@@ -287,6 +314,7 @@
             "sentence": "كتبت على السبورة",
             "pronounce": "katabtu 'ala as-sabura",
             "translate": "I wrote on the blackboard",
+            "urdu": "main ne blackboard par likha",
             "word2word": [
               { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" },
               { "word": "على", "translate": "on", "pronounce": "'ala" },
@@ -300,6 +328,7 @@
         "arabic": "في",
         "english": "in, at",
         "roman": "fi",
+        "hindi": "mein",
         "type": "location",
         "gender": "common",
         "examples": [
@@ -308,6 +337,7 @@
             "sentence": "أعيش في المدينة",
             "pronounce": "a'eesh fi al-madina",
             "translate": "I live in the city",
+            "urdu": "main shehar mein rehta hoon",
             "word2word": [
               { "word": "أعيش", "translate": "I live", "pronounce": "a'eesh" },
               { "word": "في", "translate": "in", "pronounce": "fi" },
@@ -319,6 +349,7 @@
             "sentence": "الكتاب في الحقيبة",
             "pronounce": "al-kitab fi al-haqiba",
             "translate": "The book is in the bag",
+            "urdu": "kitaab bag mein hai",
             "word2word": [
               { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
               { "word": "في", "translate": "in", "pronounce": "fi" },
@@ -330,6 +361,7 @@
             "sentence": "درست في المكتبة",
             "pronounce": "darastu fi al-maktaba",
             "translate": "I studied in the library",
+            "urdu": "main ne library mein parhai ki",
             "word2word": [
               { "word": "درست", "translate": "I studied", "pronounce": "darastu" },
               { "word": "في", "translate": "in", "pronounce": "fi" },
@@ -343,6 +375,7 @@
         "arabic": "عن",
         "english": "about, from",
         "roman": "'an",
+        "hindi": "ke baare mein",
         "type": "topic/separation",
         "gender": "common",
         "examples": [
@@ -351,6 +384,7 @@
             "sentence": "تحدثت عن الكتاب",
             "pronounce": "taḥaddathtu 'an al-kitab",
             "translate": "I talked about the book",
+            "urdu": "main ne kitaab ke baare mein baat ki",
             "word2word": [
               { "word": "تحدثت", "translate": "I talked", "pronounce": "taḥaddathtu" },
               { "word": "عن", "translate": "about", "pronounce": "'an" },
@@ -362,6 +396,7 @@
             "sentence": "ابتعد عن الخطر",
             "pronounce": "ibta'ad 'an al-khatar",
             "translate": "Stay away from the danger",
+            "urdu": "khatre se door raho",
             "word2word": [
               { "word": "ابتعد", "translate": "stay away", "pronounce": "ibta'ad" },
               { "word": "عن", "translate": "from", "pronounce": "'an" },
@@ -373,6 +408,7 @@
             "sentence": "سألت عن الموضوع",
             "pronounce": "sa'altu 'an al-mawdu'",
             "translate": "I asked about the topic",
+            "urdu": "main ne mazmoon ke baare mein poocha",
             "word2word": [
               { "word": "سألت", "translate": "I asked", "pronounce": "sa'altu" },
               { "word": "عن", "translate": "about", "pronounce": "'an" },
@@ -390,6 +426,7 @@
         "arabic": "حتى",
         "english": "until, up to",
         "roman": "ḥatta",
+        "hindi": "tak",
         "type": "time",
         "gender": "common",
         "examples": [
@@ -398,6 +435,7 @@
             "sentence": "انتظرت حتى المساء",
             "pronounce": "intazartu ḥatta al-masaa",
             "translate": "I waited until the evening",
+            "urdu": "main ne shaam tak intezaar kiya",
             "word2word": [
               { "word": "انتظرت", "translate": "I waited", "pronounce": "intazartu" },
               { "word": "حتى", "translate": "until", "pronounce": "ḥatta" },
@@ -409,6 +447,7 @@
             "sentence": "سأدرس حتى منتصف الليل",
             "pronounce": "sa-adrus ḥatta muntaṣaf al-layl",
             "translate": "I will study until midnight",
+            "urdu": "main aadhi raat tak parhunga",
             "word2word": [
               { "word": "سأدرس", "translate": "I will study", "pronounce": "sa-adrus" },
               { "word": "حتى", "translate": "until", "pronounce": "ḥatta" },
@@ -420,6 +459,7 @@
             "sentence": "بقيت حتى الصباح",
             "pronounce": "baqitu ḥatta aṣ-ṣabaḥ",
             "translate": "I stayed until the morning",
+            "urdu": "main subah tak ruka",
             "word2word": [
               { "word": "بقيت", "translate": "I stayed", "pronounce": "baqitu" },
               { "word": "حتى", "translate": "until", "pronounce": "ḥatta" },
@@ -433,6 +473,7 @@
         "arabic": "منذ",
         "english": "since",
         "roman": "mundhu",
+        "hindi": "se",
         "type": "time",
         "gender": "common",
         "examples": [
@@ -441,6 +482,7 @@
             "sentence": "أعيش هنا منذ سنتين",
             "pronounce": "a'eesh huna mundhu sanatayn",
             "translate": "I've lived here since 2 yrs",
+            "urdu": "main yahan do saal se rehta hoon",
             "word2word": [
               { "word": "أعيش", "translate": "I live", "pronounce": "a'eesh" },
               { "word": "هنا", "translate": "here", "pronounce": "huna" },
@@ -455,6 +497,7 @@
         "arabic": "بعد",
         "english": "after",
         "roman": "ba'd",
+        "hindi": "ke baad",
         "type": "time",
         "gender": "common",
         "examples": [
@@ -463,6 +506,7 @@
             "sentence": "رجعت بعد الظهر",
             "pronounce": "rajatu ba'd adh-dhuhr",
             "translate": "I returned after noon",
+            "urdu": "main dopahar ke baad wapas aaya",
             "word2word": [
               { "word": "رجعت", "translate": "I returned", "pronounce": "rajatu" },
               { "word": "بعد", "translate": "after", "pronounce": "ba'd" },
@@ -474,6 +518,7 @@
             "sentence": "أكلت بعد الدرس",
             "pronounce": "akaltu ba'd ad-dars",
             "translate": "I ate after the lesson",
+            "urdu": "main ne dars ke baad khana khaya",
             "word2word": [
               { "word": "أكلت", "translate": "I ate", "pronounce": "akaltu" },
               { "word": "بعد", "translate": "after", "pronounce": "ba'd" },
@@ -485,6 +530,7 @@
             "sentence": "نلتقي بعد العصر",
             "pronounce": "naltaqi ba'd al-'asr",
             "translate": "We will meet after the afternoon",
+            "urdu": "hum shaam ke baad milenge",
             "word2word": [
               { "word": "نلتقي", "translate": "we will meet", "pronounce": "naltaqi" },
               { "word": "بعد", "translate": "after", "pronounce": "ba'd" },
@@ -498,6 +544,7 @@
         "arabic": "قبل",
         "english": "before",
         "roman": "qabl",
+        "hindi": "se pehle",
         "type": "time",
         "gender": "common",
         "examples": [
@@ -506,6 +553,7 @@
             "sentence": "وصلت قبل الفجر",
             "pronounce": "wasaltu qabl al-fajr",
             "translate": "I arrived before dawn",
+            "urdu": "main subh-e-sadiq se pehle pahuncha",
             "word2word": [
               { "word": "وصلت", "translate": "I arrived", "pronounce": "wasaltu" },
               { "word": "قبل", "translate": "before", "pronounce": "qabl" },
@@ -517,6 +565,7 @@
             "sentence": "أكمل الواجب قبل الغد",
             "pronounce": "akmaltu al-wajib qabl al-ghad",
             "translate": "I finished homework before tomorrow",
+            "urdu": "main ne homework kal se pehle khatam kiya",
             "word2word": [
               { "word": "أكملت", "translate": "I finished", "pronounce": "akmaltu" },
               { "word": "الواجب", "translate": "the homework", "pronounce": "al-wajib" },
@@ -529,6 +578,7 @@
             "sentence": "أكلت قبل الاجتماع",
             "pronounce": "akaltu qabl al-ijtima'",
             "translate": "I ate before the meeting",
+            "urdu": "main ne meeting se pehle khana khaya",
             "word2word": [
               { "word": "أكلت", "translate": "I ate", "pronounce": "akaltu" },
               { "word": "قبل", "translate": "before", "pronounce": "qabl" },
@@ -546,6 +596,7 @@
         "arabic": "وراء",
         "english": "behind",
         "roman": "wara'",
+        "hindi": "peeche",
         "type": "location",
         "gender": "common",
         "examples": [
@@ -554,6 +605,7 @@
             "sentence": "السيارة وراء الشجرة",
             "pronounce": "as-sayyara wara' ash-shajara",
             "translate": "The car is behind the tree",
+            "urdu": "car darakht ke peeche hai",
             "word2word": [
               { "word": "السيارة", "translate": "the car", "pronounce": "as-sayyara" },
               { "word": "وراء", "translate": "behind", "pronounce": "wara'" },
@@ -565,6 +617,7 @@
             "sentence": "جلست وراء أحمد",
             "pronounce": "jalastu wara' aḥmad",
             "translate": "I sat behind Ahmad",
+            "urdu": "main Ahmad ke peeche baitha",
             "word2word": [
               { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
               { "word": "وراء", "translate": "behind", "pronounce": "wara'" },
@@ -576,6 +629,7 @@
             "sentence": "الكلب وراء الباب",
             "pronounce": "al-kalb wara' al-bab",
             "translate": "The dog is behind the door",
+            "urdu": "kutta darwaze ke peeche hai",
             "word2word": [
               { "word": "الكلب", "translate": "the dog", "pronounce": "al-kalb" },
               { "word": "وراء", "translate": "behind", "pronounce": "wara'" },
@@ -589,6 +643,7 @@
         "arabic": "أمام",
         "english": "in front of",
         "roman": "amam",
+        "hindi": "ke saamne",
         "type": "location",
         "gender": "common",
         "examples": [
@@ -597,6 +652,7 @@
             "sentence": "وقفت أمام المنزل",
             "pronounce": "waqaftu amam al-manzil",
             "translate": "I stood in front of the house",
+            "urdu": "main ghar ke saamne khada tha",
             "word2word": [
               { "word": "وقفت", "translate": "I stood", "pronounce": "waqaftu" },
               { "word": "أمام", "translate": "in front of", "pronounce": "amam" },
@@ -608,6 +664,7 @@
             "sentence": "السيارة أمام المدرسة",
             "pronounce": "as-sayyara amam al-madrasa",
             "translate": "The car is in front of school",
+            "urdu": "car school ke saamne hai",
             "word2word": [
               { "word": "السيارة", "translate": "the car", "pronounce": "as-sayyara" },
               { "word": "أمام", "translate": "in front of", "pronounce": "amam" },
@@ -619,6 +676,7 @@
             "sentence": "جلس أمام المعلم",
             "pronounce": "jalasa amam al-mu'allim",
             "translate": "He sat in front of the teacher",
+            "urdu": "vah ustaad ke saamne baitha",
             "word2word": [
               { "word": "جلس", "translate": "he sat", "pronounce": "jalasa" },
               { "word": "أمام", "translate": "in front of", "pronounce": "amam" },
@@ -632,6 +690,7 @@
         "arabic": "بجانب",
         "english": "beside, next to",
         "roman": "bijanib",
+        "hindi": "ke paas",
         "type": "location",
         "gender": "common",
         "examples": [
@@ -640,6 +699,7 @@
             "sentence": "جلست بجانب أخي",
             "pronounce": "jalastu bijanib akhi",
             "translate": "I sat beside my brother",
+            "urdu": "main apne bhai ke paas baitha",
             "word2word": [
               { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
               { "word": "بجانب", "translate": "beside", "pronounce": "bijanib" },
@@ -651,6 +711,7 @@
             "sentence": "الكتاب بجانب السرير",
             "pronounce": "al-kitab bijanib as-sarir",
             "translate": "The book is beside the bed",
+            "urdu": "kitaab bistar ke paas hai",
             "word2word": [
               { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
               { "word": "بجانب", "translate": "beside", "pronounce": "bijanib" },
@@ -662,6 +723,7 @@
             "sentence": "وقفت بجانب النافذة",
             "pronounce": "waqaftu bijanib an-nafidha",
             "translate": "I stood beside the window",
+            "urdu": "main khirki ke paas khada tha",
             "word2word": [
               { "word": "وقفت", "translate": "I stood", "pronounce": "waqaftu" },
               { "word": "بجانب", "translate": "beside", "pronounce": "bijanib" },
@@ -675,6 +737,7 @@
         "arabic": "جانب",
         "english": "side",
         "roman": "janib",
+        "hindi": "taraf",
         "type": "location",
         "gender": "common",
         "examples": [
@@ -683,6 +746,7 @@
             "sentence": "على جانب المدينة",
             "pronounce": "'ala janib al-madina",
             "translate": "On the side of the city",
+            "urdu": "shehar ki taraf par",
             "word2word": [
               { "word": "على", "translate": "on", "pronounce": "'ala" },
               { "word": "جانب", "translate": "side", "pronounce": "janib" },
@@ -694,6 +758,7 @@
             "sentence": "الحديقة على جانب",
             "pronounce": "al-hadiqa 'ala janib",
             "translate": "The garden is on the side",
+            "urdu": "baagh ek taraf par hai",
             "word2word": [
               { "word": "الحديقة", "translate": "the garden", "pronounce": "al-hadiqa" },
               { "word": "على", "translate": "on", "pronounce": "'ala" },
@@ -705,6 +770,7 @@
             "sentence": "على جانب المدرسة",
             "pronounce": "'ala janib al-madrasa",
             "translate": "On the side of the school",
+            "urdu": "school ki taraf par",
             "word2word": [
               { "word": "على", "translate": "on", "pronounce": "'ala" },
               { "word": "جانب", "translate": "side", "pronounce": "janib" },
@@ -722,6 +788,7 @@
         "arabic": "خلا",
         "english": "except, apart from",
         "roman": "khala",
+        "hindi": "ke siva",
         "type": "exception",
         "gender": "common",
         "examples": [
@@ -730,6 +797,7 @@
             "sentence": "الجميع حضر خلا أحمد",
             "pronounce": "al-jami' ḥadar khala aḥmad",
             "translate": "Everyone attended except Ahmad",
+            "urdu": "sab ne shirkat ki siwaye Ahmad ke",
             "word2word": [
               { "word": "الجميع", "translate": "everyone", "pronounce": "al-jami'" },
               { "word": "حضر", "translate": "attended", "pronounce": "ḥadar" },
@@ -742,6 +810,7 @@
             "sentence": "أكلت الكل خلا التفاح",
             "pronounce": "akaltu al-kull khala at-tuffah",
             "translate": "I ate all except the apple",
+            "urdu": "main ne sab kuch khaya siwaye seb ke",
             "word2word": [
               { "word": "أكلت", "translate": "I ate", "pronounce": "akaltu" },
               { "word": "الكل", "translate": "everything", "pronounce": "al-kull" },
@@ -754,6 +823,7 @@
             "sentence": "سافروا خلا محمد",
             "pronounce": "safaroo khala muḥammad",
             "translate": "They traveled except Mohammed",
+            "urdu": "sab ne safar kiya siwaye Muhammad ke",
             "word2word": [
               { "word": "سافروا", "translate": "they traveled", "pronounce": "safaroo" },
               { "word": "خلا", "translate": "except", "pronounce": "khala" },
@@ -767,6 +837,7 @@
         "arabic": "فيما",
         "english": "in what, regarding",
         "roman": "fima",
+        "hindi": "ke baare mein",
         "type": "topic",
         "gender": "common",
         "examples": [
@@ -775,6 +846,7 @@
             "sentence": "فيما يخص الدراسة نجحت",
             "pronounce": "fima yakhuṣ ad-dirasa najaḥtu",
             "translate": "Regarding study, I succeeded",
+            "urdu": "parhai ke baare mein main kamyab hua",
             "word2word": [
               { "word": "فيما", "translate": "regarding", "pronounce": "fima" },
               { "word": "يخص", "translate": "concerns", "pronounce": "yakhuṣ" },
@@ -787,6 +859,7 @@
             "sentence": "فيما يخص",
             "pronounce": "fima yakhuṣ",
             "translate": "Regarding the travel,",
+            "urdu": "safar ke baare mein",
             "word2word": [
               { "word": "فيما", "translate": "regarding", "pronounce": "fima" },
               { "word": "يخص", "translate": "concerns", "pronounce": "yakhuṣ" }
@@ -799,6 +872,7 @@
         "arabic": "مما",
         "english": "from what",
         "roman": "mimma",
+        "hindi": "jis se",
         "type": "topic",
         "gender": "common",
         "examples": [
@@ -807,6 +881,7 @@
             "sentence": "مما سمعت",
             "pronounce": "mimma sami'tu",
             "translate": "From what I heard,",
+            "urdu": "jo main ne suna",
             "word2word": [
               { "word": "مما", "translate": "from what", "pronounce": "mimma" },
               { "word": "سمعت", "translate": "I heard", "pronounce": "sami'tu" }
@@ -817,6 +892,7 @@
             "sentence": "مما قيل",
             "pronounce": "mimma qila",
             "translate": "From what was said,",
+            "urdu": "jo kaha gaya",
             "word2word": [
               { "word": "مما", "translate": "from what", "pronounce": "mimma" },
               { "word": "قيل", "translate": "was said", "pronounce": "qila" }
