@@ -52,20 +52,8 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-QZDD1NNBWS"
         />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-QZDD1NNBWS', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986"
+           crossorigin="anonymous"></script>
         <Script
           id="adsense-loader"
           strategy="beforeInteractive"
