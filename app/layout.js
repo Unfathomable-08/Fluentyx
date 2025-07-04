@@ -67,9 +67,21 @@ export default function RootLayout({ children }) {
           }}
         />
         <Script
+          id="adsense-loader"
           strategy="beforeInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986"
-          crossorigin="anonymous"/>
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var s = document.createElement('script');
+                s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986";
+                s.async = true;
+                s.crossOrigin = "anonymous";
+                document.head.appendChild(s);
+              })();
+            `,
+          }}
+        />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
