@@ -23,7 +23,7 @@ export const ThemeProvider = ({ children }) => {
     const root = document.documentElement;
 
     if (theme === 'dark') {
-      root.style.setProperty('--bg-theme', '#4c4c4c'); 
+      root.style.setProperty('--bg-theme', '#fdfaf6'); 
       root.style.setProperty('--text-theme', '#e6fbe0'); 
     } else {
       root.style.setProperty('--bg-theme', '#ffffff'); 
