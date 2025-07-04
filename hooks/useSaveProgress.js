@@ -47,14 +47,28 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
                 progress: chapterProgress
             }
             ]
-        })
+          })
         });
+        
+        const response2 = await fetch(`/api/leaderboard`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: user.email,
+            name: user.name,
+            weekly_score: correctAttempts,
+            trophies: []
+          })
+        })
 
         const data = await response.json();
-        console.log(data)
+        const data2 = await response2.json();
+        console.log(data2)
 
-        if (!response.ok) {
-          throw new Error(data.message || 'Failed to save progress');
+        if (!response.ok || !response2.ok) {
+          throw new Error(data.message, data2.message || 'Failed to save progress');
         }
 
         setIsLoading(false);
