@@ -60,12 +60,16 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+              gtag('config', 'G-QZDD1NNBWS', {
                 page_path: window.location.pathname,
               });
             `,
           }}
         />
+        <Script
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986"
+           crossorigin="anonymous"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
