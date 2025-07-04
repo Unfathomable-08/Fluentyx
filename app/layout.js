@@ -67,9 +67,9 @@ export default function RootLayout({ children }) {
           }}
         />
         <Script
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986"
-           crossorigin="anonymous"/>
+          crossorigin="anonymous"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
