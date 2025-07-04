@@ -48,28 +48,20 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" />
         {/* Google Analytics Scripts */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZDD1NNBWS"></script>
         <Script
+          id="gtag-init"
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-QZDD1NNBWS"
-        />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986"
-           crossorigin="anonymous"></script>
-        <Script
-          id="adsense-loader"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                var s = document.createElement('script');
-                s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986";
-                s.async = true;
-                s.crossOrigin = "anonymous";
-                document.head.appendChild(s);
-              })();
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-QZDD1NNBWS');
             `,
           }}
         />
-
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986" crossorigin="anonymous"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
