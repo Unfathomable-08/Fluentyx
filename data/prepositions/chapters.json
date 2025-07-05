@@ -778,13 +778,107 @@
             ]
           }
         ]
+      },
+      {
+        "id": 18,
+        "arabic": "فوق",
+        "english": "above",
+        "roman": "fawq",
+        "hindi": "upar",
+        "type": "location",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الطائر فوق الشجرة",
+            "pronounce": "at-tayr fawq ash-shajara",
+            "translate": "The bird is above the tree",
+            "urdu": "parinda darakht ke upar hai",
+            "word2word": [
+              { "word": "الطائر", "translate": "the bird", "pronounce": "at-tayr" },
+              { "word": "فوق", "translate": "above", "pronounce": "fawq" },
+              { "word": "الشجرة", "translate": "the tree", "pronounce": "ash-shajara" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الصورة فوق الجدار",
+            "pronounce": "as-sura fawq al-jidar",
+            "translate": "The picture is above the wall",
+            "urdu": "tasveer deewar ke upar hai",
+            "word2word": [
+              { "word": "الصورة", "translate": "the picture", "pronounce": "as-sura" },
+              { "word": "فوق", "translate": "above", "pronounce": "fawq" },
+              { "word": "الجدار", "translate": "the wall", "pronounce": "al-jidar" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "طارت فوق السحاب",
+            "pronounce": "tarat fawq as-sahab",
+            "translate": "It flew above the clouds",
+            "urdu": "yah baadal ke upar udda",
+            "word2word": [
+              { "word": "طارت", "translate": "it flew", "pronounce": "tarat" },
+              { "word": "فوق", "translate": "above", "pronounce": "fawq" },
+              { "word": "السحاب", "translate": "the clouds", "pronounce": "as-sahab" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "arabic": "تحت",
+        "english": "below",
+        "roman": "taḥt",
+        "hindi": "neeche",
+        "type": "location",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الكلب تحت الطاولة",
+            "pronounce": "al-kalb taḥt at-tawila",
+            "translate": "The dog is below the table",
+            "urdu": "kutta mez ke neeche hai",
+            "word2word": [
+              { "word": "الكلب", "translate": "the dog", "pronounce": "al-kalb" },
+              { "word": "تحت", "translate": "below", "pronounce": "taḥt" },
+              { "word": "الطاولة", "translate": "the table", "pronounce": "at-tawila" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الكتاب تحت السرير",
+            "pronounce": "al-kitab taḥt as-sarir",
+            "translate": "The book is below the bed",
+            "urdu": "kitaab bistar ke neeche hai",
+            "word2word": [
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitab" },
+              { "word": "تحت", "translate": "below", "pronounce": "taḥt" },
+              { "word": "السرير", "translate": "the bed", "pronounce": "as-sarir" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "جلست تحت الشجرة",
+            "pronounce": "jalastu taḥt ash-shajara",
+            "translate": "I sat below the tree",
+            "urdu": "main darakht ke neeche baitha",
+            "word2word": [
+              { "word": "جلست", "translate": "I sat", "pronounce": "jalastu" },
+              { "word": "تحت", "translate": "below", "pronounce": "taḥt" },
+              { "word": "الشجرة", "translate": "the tree", "pronounce": "ash-shajara" }
+            ]
+          }
+        ]
       }
     ]
   },
   {
     "Specialized Prepositions": [
       {
-        "id": 18,
+        "id": 20,
         "arabic": "خلا",
         "english": "except, apart from",
         "roman": "khala",
@@ -833,7 +927,7 @@
         ]
       },
       {
-        "id": 19,
+        "id": 21,
         "arabic": "فيما",
         "english": "in what, regarding",
         "roman": "fima",
@@ -868,7 +962,7 @@
         ]
       },
       {
-        "id": 20,
+        "id": 22,
         "arabic": "مما",
         "english": "from what",
         "roman": "mimma",

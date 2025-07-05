@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion } from "framer-motion";
 import { FaHandPointer } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import useSaveProgress from "../../../hooks/useSaveProgress";
+import { LanguageContext } from '../../../contexts/languageContext'
+import { HiSpeakerWave } from 'react-icons/hi2';
 
 export default function Flashcards() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -20,6 +22,8 @@ export default function Flashcards() {
   const [currentPronounIndex, setCurrentPronounIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [userKnows, setUserKnows] = useState(false)
+
+  const { language } = useContext(LanguageContext)
 
   const { saveProgress, isProgressLoading, error } = useSaveProgress();
 
@@ -116,9 +120,15 @@ export default function Flashcards() {
     setIsFlipped(false);
   };
 
+  const playSound = (arabic) => {
+      const utterance = new SpeechSynthesisUtterance(arabic);
+      utterance.lang = 'ar'; // Set language to Arabic
+      window.speechSynthesis.speak(utterance); // Use Web Speech API to pronounce the pronoun
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
-      <div className='w-[80%] bg-white flex justify-self-center mb-4 h-4 border rounded-full border-[var(--secondary)] transform -translate-y-8'>
+    <div className="flex flex-col items-center  bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+      <div className='w-[80%] bg-white flex justify-self-center mb-4 h-4 border rounded-full border-[var(--secondary)] mt-14'>
           <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * (currentPronounIndex + 1) / pronouns.length}%`}}></div>
       </div>
       <h1 className="text-2xl font-bold my-8 text-[var(--text-theme)]">Flashcards</h1>
@@ -147,9 +157,20 @@ export default function Flashcards() {
               height: '100%', 
               backfaceVisibility: 'hidden' 
             }}
-            className="bg-white rounded-xl flex items-center justify-center arabic text-3xl"
+            className="bg-white rounded-xl relative flex items-center justify-center arabic text-3xl"
           >
             {currentPronoun.arabic}
+
+            <motion.button
+              className="text-2xl text-gray-700 hover:text-gray-900 absolute top-4 right-4"
+              whileTap={{ scale: 0.9 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                playSound(currentPronoun.arabic);
+              }}
+            >
+              <HiSpeakerWave />
+            </motion.button>
           </div>
           {/* Back Side (English) */}
           <div 
@@ -163,7 +184,11 @@ export default function Flashcards() {
             className="bg-white rounded-xl flex flex-col gap-y-6 items-center justify-center"
           >
             <div className='text-2xl font-medium'>
-              {currentPronoun.english.split(" ").filter(word => !word.match(/^\([MF]\)$/)).join(" ")}
+              {language == 'english' ?
+                currentPronoun.english.split(" ").filter(word => !word.match(/^\([MF]\)$/)).join(" ")
+              :
+                currentPronoun.hindi
+              }
             </div>
             <div>
               {chapterName == "pronouns" && <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.person}</span>}

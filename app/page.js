@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import chapters from '../data/chapters.json';
 import useAuth from "../hooks/useAuth";
-import { FaCheck, FaTimes } from 'react-icons/fa';
+import { FaCheck, FaTimes, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
@@ -116,6 +116,7 @@ export default function Home() {
         </div>
         <motion.div 
           className='w-full max-sm:max-w-[360px] shadow-[0_0_12px_#00000055] hover:bg-[var(--secondary)] bg-[var(--primary)] text-white font-medium text-lg px-4 py-1 sm:py-2 rounded-3xl overflow-hidden relative flex justify-center items-center overflow-hidden'
+          onClick={() => router.push(`/dailyExercise`)}
         >
           <motion.div 
             className="absolute top-0 bg-[#b1e78c] w-40 h-full transform -skew-45"
@@ -123,13 +124,13 @@ export default function Home() {
             animate={{left: '100%'}}
             transition={{duration: 3, delay: 3, repeat: Infinity, ease: 'linear'}}
           ></motion.div>
-          <button className='relative z-5' onClick={() => router.push(`/dailyExercise`)}>
+          <button className='relative z-5'>
             Daily Challenge
           </button>
         </motion.div>
       </div>
       
-      <h1 className="text-2xl font-bold text-center mb-4 text-[var(--text-theme)]">Chapters</h1>
+      <h1 className="text-2xl font-medium text-center my-3 text-[var(--text-theme)]">Chapters</h1>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 px-4 py-4 gap-x-4 justify-center gap-y-8 overflow-x-auto pb-2">
         {chapters.map((ch) => (
@@ -150,6 +151,15 @@ export default function Home() {
             </div>
           </div>
         ))}
+      </div>
+      
+      <div className='flex justify-center items-center mt-8 mb-6 text-lg text-red-600 relative gap-x-10 px-8'>
+        <span className='h-[2px] w-full bg-red-600' />
+        <FaLock className='absolute'/>
+        <span className='h-[2px] w-full bg-red-600' />
+      </div>
+      <div className='flex justify-center text-center items-center text-md text-[var(--secondary)] font-medium'>
+        <p>Complete Previous Chapters <br />to Unlock More.</p>
       </div>
     </main>
   );
