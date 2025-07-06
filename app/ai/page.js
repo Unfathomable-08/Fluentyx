@@ -3,12 +3,15 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaRobot, FaPaperPlane } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth"
 
 export default function AIPage() {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
+
+  const { isAuthenticated, user, isLoading } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +45,10 @@ export default function AIPage() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  if (!isAuthenticated){
+    return null;
+  }
 
   return (
     <main className="relative bg-[#1a1a1a] text-[#1a1a1a] flex justify-center text-white p-4" style={{height: 'calc(100vh - 52px)'}}>

@@ -63,10 +63,27 @@ export async function POST(req) {
 }
 
 // GET: Fetch top 30 leaderboard entries
-export async function GET() {
+export async function GET(request) {
   try {
-    await connectDB(); // Ensure DB connection
+    await connectDB();
+    const { searchParams } = new URL(request.url);
+    const email = searchParams.get('email');
 
+    // If email is provided, ensure user exists in the leaderboard
+    if (email) {
+      await Leaderboard.findOneAndUpdate(
+        { email },
+        {
+          $setOnInsert: {
+            name: email.split('@')[0], // Default name from email prefix
+            weekly_score: 0,
+            trophies: []
+          }
+        },
+        { upsert: true }
+      );
+    }
+    
     // If it's Sunday, ensure only fresh data is returned (after reset)
     if (isSunday()) {
       if (isSunday()) {
@@ -85,7 +102,7 @@ export async function GET() {
     const leaderboard = await Leaderboard
       .find()
       .sort({ weekly_score: -1 })
-      .limit(30)
+      .limit(25)
       .select('name email weekly_score trophies');
 
     return NextResponse.json(leaderboard, { status: 200 });

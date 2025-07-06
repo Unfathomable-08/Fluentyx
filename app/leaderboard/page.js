@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { FaCrown, FaUserAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import useAuth from "../../hooks/useAuth";
 
 const medals = ["#FFD700", "#B0B0B0", "#CD7F32"]; // Gold, Silver, Bronze
 
@@ -10,10 +11,13 @@ export default function LeaderboardPage() {
   const [leaders, setLeaders] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { isAuthenticated, user } = useAuth();
+
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await fetch("/api/leaderboard");
+        if (!user) return;
+        const res = await fetch(`/api/leaderboard?email=${user.email}`);
         const data = await res.json();
         console.log(data)
         setLeaders(data || []);
@@ -24,11 +28,15 @@ export default function LeaderboardPage() {
       }
     };
     fetchLeaderboard();
-  }, []);
+  }, [user]);
+
+  if (!isAuthenticated) {
+    return null;
+  }
 
   return (
-    <div className="bg-gradient-to-tr from-yellow-50 to-white px-4 py-6" style={{minHeight: 'calc(100vh - 50px)'}}>
-      <h1 className="text-2xl md:text-5xl font-bold text-center text-[var(--primary)] mb-8">
+    <div className="bg-[var(--bg-theme)] px-4 py-6" style={{minHeight: 'calc(100vh - 50px)'}}>
+      <h1 className="text-2xl md:text-5xl font-bold text-center text-[var(--text-theme)] mb-8">
         Top Learners Leaderboard
       </h1>
 
@@ -37,7 +45,7 @@ export default function LeaderboardPage() {
       ) : (
         <div className="max-w-3xl mx-auto space-y-4">
           {leaders.length === 0 ? (
-            <p className="text-center text-gray-500">No data yet.</p>
+            <p className="text-center text-[var(--text-theme)]">Complete a exercise to participate.</p>
           ) : (
             leaders.map((user, index) => (
               <motion.div
