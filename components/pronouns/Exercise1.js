@@ -29,6 +29,11 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
         5: { key: "Specialized Prepositions", data: data[4]?.["Specialized Prepositions"] || [] },
       };
       break;
+    case "interrogative-words":
+      pronounCategories = {
+        1: { key: "Interrogative Words", data: data[0]?.["Interrogative Words"] || [] },
+      };
+      break;
     default:
       pronounCategories = '';
   }
@@ -59,6 +64,11 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
         ...(index !== 3 ? data[2]?.["Temporal Prepositions"] || [] : []),
         ...(index !== 4 ? data[3]?.["Specialized Prepositions"] || [] : []),
       ];
+      break;
+    case "interrogative-words":
+        otherData = [
+            ...(index !== 1 ? data[0]?.["Interrogative Words"] || [] : [])
+        ];
       break;
     default:
       otherData = '';

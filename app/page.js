@@ -147,7 +147,7 @@ export default function Home() {
 
             {/* Title */}
             <div className="absolute bottom-4 left-4 bg-gray-100/90 px-4 py-2 rounded-xl text-[var(--secondary)] text-lg font-semibold">
-              {ch.title}
+              {ch.title?.replace(/-/g, ' ')}
             </div>
           </div>
         ))}

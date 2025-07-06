@@ -31,6 +31,12 @@ const Login = () => {
           },
           body: JSON.stringify(data),
         });
+
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.message || `Signup failed with status: ${res.status}`);
+        }
+        
         setEmail(data.email);
         setVerificationEmail(data.email);
         showToast("success", "Verification code sent to your email.")
@@ -38,7 +44,7 @@ const Login = () => {
 
       } catch (error) {
         console.error('Signup failed:', error);
-        showToast("error", "Signup failed.")
+        showToast("error", error.message || "Login failed.")
       }
     } else if (!showSignup) {
 
@@ -50,12 +56,18 @@ const Login = () => {
           },
           body: JSON.stringify(data),
         });
+
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.message || `Login failed with status: ${res.status}`);
+        }
+        
         showToast("success", "Login successful.")
 
         router.push("/");
       } catch (error) {
         console.error('Login failed:', error);
-        showToast("error", "Login failed.")
+        showToast("error", error.message || "Login failed.")
       }
     }
   };
@@ -91,13 +103,21 @@ const Login = () => {
         },
         body: JSON.stringify(payload),
       });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || `Login failed with status: ${res.status}`);
+      }
+      
+      setVerificationCode(["", "", "", "", "", ""]);
+      setVerificationEmail("");
       showToast("success", "Verification successful.")
       router.push("/");
       
     } catch (error) {
       console.error('Verification failed:', error);
       setVerificationError("Verification failed. Please try again.");
-      showToast("error", "Verification failed.")
+      showToast("error", error.message || "Verification failed.")
     } finally {
       setIsVerifying(false);
     }

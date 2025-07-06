@@ -20,9 +20,10 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
         alphabets: { chapterProgress: 0.34489, lessonProgress: 10 },
         pronouns: { chapterProgress: 6.25, lessonProgress: 25 },
         prepositions: { chapterProgress: 4.16667, lessonProgress: 25 },
+        interrogativewords: { chapterProgress: 12.5, lessonProgress: 25 }
       };
 
-      const progressValues = progressMap[chapterName.toLowerCase()] || { chapterProgress: 0, lessonProgress: 0 };
+      const progressValues = progressMap[chapterName.toLowerCase().replace("-","")] || { chapterProgress: 0, lessonProgress: 0 };
       const { chapterProgress, lessonProgress } = isDaily ? { chapterProgress: 0, lessonProgress: 0 } : progressValues;
 
       try {

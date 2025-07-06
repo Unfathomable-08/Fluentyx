@@ -65,6 +65,11 @@ export default function Flashcards() {
               ...(data[4]?.["Specialized Prepositions"] || []),
             ];
             break;
+            case "interrogative-words":
+            allPronouns = [
+              ...(data[0]?.["Interrogative Words"] || []),
+            ];
+            break;
           default:
             allPronouns = '';
         }

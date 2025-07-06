@@ -52,6 +52,11 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
             5: { key: "Specialized Prepositions", data: data[4]?.["Specialized Prepositions"] || [] },
           };
           break;
+        case "interrogative-words":
+          pronounCategories = {
+            1: { key: "Interrogative Words", data: data[0]?.["Interrogative Words"] || [] },
+          };
+          break;
         default:
           pronounCategories = '';
       }

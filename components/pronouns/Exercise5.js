@@ -28,6 +28,11 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
             4: { key: "Specialized Prepositions", data: data[3]?.["Specialized Prepositions"] || [] },
           };
           break;
+        case "interrogative-words":
+          pronounCategories = {
+            1: { key: "Interrogative Words", data: data[0]?.["Interrogative Words"] || [] },
+          };
+          break;
         default:
           pronounCategories = '';
       }
@@ -59,6 +64,11 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
           ...(index !== 4 ? data[3]?.["Spatial Prepositions"] || [] : []),
           ...(index !== 5 ? data[4]?.["Specialized Prepositions"] || [] : []),
         ].filter(item => item?.id !== correct?.id);
+        break;
+      case "interrogative-words":
+        otherData = [
+            ...(index !== 1 ? data[0]?.["Interrogative Words"] || [] : [])
+        ].filter(item => item?.id !== correct?.id)
         break;
       default:
         otherData = '';

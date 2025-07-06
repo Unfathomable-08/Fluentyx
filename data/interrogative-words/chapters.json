@@ -1,0 +1,438 @@
+[
+  {
+    "Interrogative Words": [
+      {
+        "id": 1,
+        "arabic": "كيف",
+        "english": "how",
+        "roman": "Kayf",
+        "hindi": "kaise",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "كيف تدرس؟",
+            "pronounce": "Kayf tadrus?",
+            "translate": "How do you study?",
+            "urdu": "tum kaise parhte ho?",
+            "word2word": [
+              {
+                "word": "كيف",
+                "translate": "how",
+                "pronounce": "Kayf",
+                "hindi": "kaise"
+              },
+              {
+                "word": "تدرس",
+                "translate": "study",
+                "pronounce": "tadrus"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "كيف هو؟",
+            "pronounce": "Kayf huwa?",
+            "translate": "How is he?",
+            "urdu": "vah kaisa hai?",
+            "word2word": [
+              {
+                "word": "كيف",
+                "translate": "how",
+                "pronounce": "Kayf",
+                "hindi": "kaise"
+              },
+              {
+                "word": "هو",
+                "translate": "he",
+                "pronounce": "huwa",
+                "hindi": "vah"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "arabic": "من",
+        "english": "who",
+        "roman": "Man",
+        "hindi": "kaun",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "من هو؟",
+            "pronounce": "Man huwa?",
+            "translate": "Who is he?",
+            "urdu": "vah kaun hai?",
+            "word2word": [
+              {
+                "word": "من",
+                "translate": "who",
+                "pronounce": "Man",
+                "hindi": "kaun"
+              },
+              {
+                "word": "هو",
+                "translate": "he",
+                "pronounce": "huwa",
+                "hindi": "vah"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "من يأتي؟",
+            "pronounce": "Man yaati?",
+            "translate": "Who is coming?",
+            "urdu": "kaun aa raha hai?",
+            "word2word": [
+              {
+                "word": "من",
+                "translate": "who",
+                "pronounce": "Man",
+                "hindi": "kaun"
+              },
+              {
+                "word": "يأتي",
+                "translate": "is coming",
+                "pronounce": "yaati"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "arabic": "متى",
+        "english": "when",
+        "roman": "Matā",
+        "hindi": "kab",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "متى تصل؟",
+            "pronounce": "Matā tasil?",
+            "translate": "When do you arrive?",
+            "urdu": "tum kab pahunchte ho?",
+            "word2word": [
+              {
+                "word": "متى",
+                "translate": "when",
+                "pronounce": "Matā",
+                "hindi": "kab"
+              },
+              {
+                "word": "تصل",
+                "translate": "arrive",
+                "pronounce": "tasil"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "متى تبدأ؟",
+            "pronounce": "Matā tabda?",
+            "translate": "When does it start?",
+            "urdu": "yah kab shuru hota hai?",
+            "word2word": [
+              {
+                "word": "متى",
+                "translate": "when",
+                "pronounce": "Matā",
+                "hindi": "kab"
+              },
+              {
+                "word": "تبدأ",
+                "translate": "starts",
+                "pronounce": "tabda"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "arabic": "أين",
+        "english": "where",
+        "roman": "Ayna",
+        "hindi": "kahan",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أين الكتاب؟",
+            "pronounce": "Ayna al-kitab?",
+            "translate": "Where is the book?",
+            "urdu": "kitaab kahan hai?",
+            "word2word": [
+              {
+                "word": "أين",
+                "translate": "where",
+                "pronounce": "Ayna",
+                "hindi": "kahan"
+              },
+              {
+                "word": "الكتاب",
+                "translate": "the book",
+                "pronounce": "al-kitab"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أين تسكن؟",
+            "pronounce": "Ayna taskun?",
+            "translate": "Where do you live?",
+            "urdu": "tum kahan rehte ho?",
+            "word2word": [
+              {
+                "word": "أين",
+                "translate": "where",
+                "pronounce": "Ayna",
+                "hindi": "kahan"
+              },
+              {
+                "word": "تسكن",
+                "translate": "live",
+                "pronounce": "taskun"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "arabic": "ماذا",
+        "english": "what",
+        "roman": "Mādhā",
+        "hindi": "kya",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "ماذا تفعل؟",
+            "pronounce": "Mādhā tafal?",
+            "translate": "What do you do?",
+            "urdu": "tum kya karte ho?",
+            "word2word": [
+              {
+                "word": "ماذا",
+                "translate": "what",
+                "pronounce": "Mādhā",
+                "hindi": "kya"
+              },
+              {
+                "word": "تفعل",
+                "translate": "do",
+                "pronounce": "tafal"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "ماذا تأكل؟",
+            "pronounce": "Mādhā taakul?",
+            "translate": "What do you eat?",
+            "urdu": "tum kya khaate ho?",
+            "word2word": [
+              {
+                "word": "ماذا",
+                "translate": "what",
+                "pronounce": "Mādhā",
+                "hindi": "kya"
+              },
+              {
+                "word": "تأكل",
+                "translate": "eat",
+                "pronounce": "taakul"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "arabic": "لماذا",
+        "english": "why",
+        "roman": "Limādhā",
+        "hindi": "kyun",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "لماذا تبكي؟",
+            "pronounce": "Limādhā tabki?",
+            "translate": "Why are you crying?",
+            "urdu": "tum kyun ro rahe ho?",
+            "word2word": [
+              {
+                "word": "لماذا",
+                "translate": "why",
+                "pronounce": "Limādhā",
+                "hindi": "kyun"
+              },
+              {
+                "word": "تبكي",
+                "translate": "cry",
+                "pronounce": "tabki"
+              }
+            ]
+
+
+          },
+          {
+            "id": 2,
+            "sentence": "لماذا تأخرت؟",
+            "pronounce": "Limādhā taakhkhart?",
+            "translate": "Why are you late?",
+            "urdu": "tum kyun der se aaye?",
+            "word2word": [
+              {
+                "word": "لماذا",
+                "translate": "why",
+                "pronounce": "Limādhā",
+                "hindi": "kyun"
+              },
+              {
+                "word": "تأخرت",
+                "translate": "late",
+                "pronounce": "taakhkhart"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "arabic": "أي",
+        "english": "which",
+        "roman": "Ayy",
+        "hindi": "kaunsa",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أي كتاب؟",
+            "pronounce": "Ayy kitab?",
+            "translate": "Which book?",
+            "urdu": "kaunsi kitaab?",
+            "word2word": [
+              {
+                "word": "أي",
+                "translate": "which",
+                "pronounce": "Ayy",
+                "hindi": "kaunsa"
+              },
+              {
+                "word": "كتاب",
+                "translate": "book",
+                "pronounce": "kitab"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أي يوم؟",
+            "pronounce": "Ayy yawm?",
+            "translate": "Which day?",
+            "urdu": "kaunsa din?",
+            "word2word": [
+              {
+                "word": "أي",
+                "translate": "which",
+                "pronounce": "Ayy",
+                "hindi": "kaunsa"
+              },
+              {
+                "word": "يوم",
+                "translate": "day",
+                "pronounce": "yawm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "arabic": "هل",
+        "english": "is/am/are",
+        "roman": "Hal",
+        "hindi": "kya",
+        "type": "interrogative",
+        "gender": "common",
+        "person": "N/A",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "هل أنت طالب؟",
+            "pronounce": "Hal anta taalib?",
+            "translate": "Are you a student?",
+            "urdu": "kya tum taalib ho?",
+            "word2word": [
+              {
+                "word": "هل",
+                "translate": "are",
+                "pronounce": "Hal",
+                "hindi": "kya"
+              },
+              {
+                "word": "أنت",
+                "translate": "you",
+                "pronounce": "anta",
+                "hindi": "tum"
+              },
+              {
+                "word": "طالب",
+                "translate": "student",
+                "pronounce": "taalib"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "هل هي هنا؟",
+            "pronounce": "Hal hiya huna?",
+            "translate": "Is she here?",
+            "urdu": "kya vah yahan hai?",
+            "word2word": [
+              {
+                "word": "هل",
+                "translate": "is",
+                "pronounce": "Hal",
+                "hindi": "kya"
+              },
+              {
+                "word": "هي",
+                "translate": "she",
+                "pronounce": "hiya",
+                "hindi": "vah"
+              },
+              {
+                "word": "هنا",
+                "translate": "here",
+                "pronounce": "huna"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
