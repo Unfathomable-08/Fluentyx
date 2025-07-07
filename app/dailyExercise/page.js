@@ -48,7 +48,7 @@ export default function DailyExercise () {
               const percentage =
                 sub.attempts > 0 && (sub.correctAttempts / sub.attempts) * 100;
               // Include sub-lessons with less than 100% completion
-              return percentage < 100 && sub.attempts > 0;
+              return percentage < 100 && sub.attempts > 0 && ch.chapterName !== 'alphabets';
             })
             .map((sub) => {
               const percentage =
