@@ -180,7 +180,7 @@ const Login = () => {
 
         <div className={`relative z-10 w-full md:w-1/2 py-6 text-center transform ${showSignup ? "rotate-y-180" : ""}`}>
           <h1 className="text-2xl font-bold text-gray-800">{showSignup ? (step === 1 ? "Create Account" : "Verify Email") : "Hello!"}</h1>
-          <p className="text-black mb-6">{showSignup ? (step === 1 ? "Sign up to get started" : "Enter the verification code sent to your email") : "Sign in to your account"}</p>
+          <p className="text-black mb-6">{showSignup ? (step === 1 ? "Sign up to get started" : "Enter the code sent to your email if not received check spam folder.") : "Sign in to your account"}</p>
 
           {showSignup && step === 2 ? (
             <form onSubmit={handleVerificationSubmit} className="space-y-4">
