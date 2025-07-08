@@ -26,7 +26,7 @@ export async function POST(req) {
     const { email, date, totalTime } = await req.json();
 
     if (!email || !date || totalTime === undefined) {
-      return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+      return new Response(JSON.stringify({ message: 'Missing required fields' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -34,7 +34,7 @@ export async function POST(req) {
 
     const parsedDate = new Date(date);
     if (isNaN(parsedDate)) {
-      return new Response(JSON.stringify({ error: 'Invalid date format' }), {
+      return new Response(JSON.stringify({ message: 'Invalid date format' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -42,7 +42,7 @@ export async function POST(req) {
 
     // Ensure date is within the current week
     if (!isDateInCurrentWeek(parsedDate)) {
-      return new Response(JSON.stringify({ error: 'Date must be within the current week (Sunday to Saturday)' }), {
+      return new Response(JSON.stringify({ message: 'Date must be within the current week (Sunday to Saturday)' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
@@ -114,7 +114,7 @@ export async function POST(req) {
     );
   } catch (error) {
     console.error('Error in POST /streak:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+    return new Response(JSON.stringify({ message: 'Internal server error' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -133,7 +133,7 @@ export async function GET(req) {
       const streak = await Streak.findOne({ email });
 
       if (!streak) {
-        return new Response(JSON.stringify({ error: 'User not found' }), {
+        return new Response(JSON.stringify({ message: 'User not found' }), {
           status: 404,
           headers: { 'Content-Type': 'application/json' },
         });
@@ -189,7 +189,7 @@ export async function GET(req) {
     }
   } catch (error) {
     console.error('Error in GET /streak:', error);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+    return new Response(JSON.stringify({ message: 'Internal server error' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

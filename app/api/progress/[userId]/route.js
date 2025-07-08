@@ -15,7 +15,7 @@ export async function GET(req, { params }) {
   } catch (error) {
       console.error('Error fetching progress:', error);
       return NextResponse.json(
-          { error: 'Server error', details: process.env.NODE_ENV === 'development' ? error.message : undefined },
+          { message: 'Server error', details: process.env.NODE_ENV === 'development' ? error.message : undefined },
       { status: 500 }
     );
   }
@@ -30,7 +30,7 @@ export async function POST(req, { params }) {
     const { chapters } = body; // Expecting a single chapter with one subLesson
 
     if (!userId || !chapters || !Array.isArray(chapters) || chapters.length === 0) {
-      return NextResponse.json({ error: "Invalid userId or chapters data" }, { status: 400 });
+      return NextResponse.json({ message: "Invalid userId or chapters data" }, { status: 400 });
     }
 
     const newChapter = chapters[0]; // Only one chapter per request
@@ -107,6 +107,6 @@ export async function POST(req, { params }) {
 
   } catch (err) {
     console.error("Progress POST error:", err);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }
 }

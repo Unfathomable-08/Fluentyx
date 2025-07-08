@@ -26,12 +26,12 @@ export async function POST(req) {
 
     // Validate required fields
     if (!email || !name || weekly_score === undefined) {
-      return NextResponse.json({ error: 'Email, name, and weekly_score are required' }, { status: 400 });
+      return NextResponse.json({ message: 'Email, name, and weekly_score are required' }, { status: 400 });
     }
 
     // Validate email format
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
+      return NextResponse.json({ message: 'Invalid email format' }, { status: 400 });
     }
 
     // Check if email already exists
@@ -60,7 +60,7 @@ export async function POST(req) {
     return NextResponse.json(newEntry, { status: 201 });
   } catch (error) {
     console.error('Error in POST /api/leaderboard:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
   }
 }
 
@@ -74,7 +74,7 @@ export async function GET(request) {
     // If email is provided, ensure user exists in the leaderboard
     if (email) {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
+        return NextResponse.json({ message: 'Invalid email format' }, { status: 400 });
       }
       await Leaderboard.findOneAndUpdate(
         { email },
@@ -108,6 +108,6 @@ export async function GET(request) {
     return NextResponse.json(leaderboard, { status: 200 });
   } catch (error) {
     console.error('Error in GET /api/leaderboard:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
   }
 }

@@ -6,7 +6,7 @@ export async function GET(req) {
   const chapter = searchParams.get('chapter');
 
   if (!chapter) {
-    return new Response(JSON.stringify({ error: 'Chapter query is required.' }), {
+    return new Response(JSON.stringify({ message: 'Chapter query is required.' }), {
       status: 400,
     });
   }
@@ -26,7 +26,7 @@ export async function GET(req) {
   } catch (error) {
     console.error(`Error reading file for chapter ${chapter}:`, error);
     return new Response(
-      JSON.stringify({ error: 'Chapter not found or invalid data.' }),
+      JSON.stringify({ message: 'Chapter not found or invalid data.' }),
       { status: 404 }
     );
   }

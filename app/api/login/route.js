@@ -8,7 +8,7 @@ export async function POST(req) {
     const { email, password } = await req.json();
 
     if (!email || !password) {
-      return Response.json({ error: "Email and password are required" }, { status: 400 });
+      return Response.json({ message: "Email and password are required" }, { status: 400 });
     }
 
     await connectDB();
@@ -16,17 +16,17 @@ export async function POST(req) {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return Response.json({ error: "Invalid credentials" }, { status: 401 });
+      return Response.json({ message: "Invalid credentials" }, { status: 401 });
     }
 
     if (!user.verified) {
-      return Response.json({ error: "Account not verified" }, { status: 403 });
+      return Response.json({ message: "Account not verified" }, { status: 403 });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      return Response.json({ error: "Invalid credentials" }, { status: 401 });
+      return Response.json({ message: "Invalid credentials" }, { status: 401 });
     }
 
     const token = jwt.sign(
@@ -51,6 +51,6 @@ export async function POST(req) {
     });
   } catch (err) {
     console.error("Login Error:", err);
-    return Response.json({ error: "Internal Server Error" }, { status: 500 });
+    return Response.json({ message: "Internal Server Error" }, { status: 500 });
   }
 }
