@@ -20,8 +20,7 @@ const Navbar = () => {
       <nav className="w-full sticky top-0 z-50 bg-[var(--primary)] text-white shadow-md px-4 py-3 sm:px-12 md:px-20 flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold tracking-wide flex items-center w-full relative">
-          <Image src="/fa-logo.png" alt="Fluentyx" width={50} height={50} className="mr-2 absolute" style={{filter: "invert(100%)"}} />
-          <span className="text-transparent">Fluentyx</span>
+          Fluentyx
         </div>
 
         {/* Top Navbar Icons */}
