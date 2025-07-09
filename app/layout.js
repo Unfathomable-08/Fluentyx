@@ -62,6 +62,16 @@ export default function RootLayout({ children }) {
           }}
         />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986" crossorigin="anonymous"></script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Fluentyx",
+          "url": "https://fluentyx.vercel.app",
+          "logo": "https://fluentyx.vercel.app/fluentyx.png"
+        }
+        </script>
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
