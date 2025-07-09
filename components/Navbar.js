@@ -2,7 +2,6 @@
 
 import { useContext, useState } from 'react';
 import { FaBell, FaCog, FaRegMoon, FaFire, FaTrophy, FaRobot, FaUser, FaHome } from 'react-icons/fa';
-import { ThemeContext } from '../contexts/themeContext';
 import { useScreenSize } from '../contexts/screenContext';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image'
@@ -20,7 +19,8 @@ const Navbar = () => {
       <nav className="w-full sticky top-0 z-50 bg-[var(--primary)] text-white shadow-md px-4 py-3 sm:px-12 md:px-20 flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold tracking-wide flex items-center w-full relative">
-          Fluentyx
+          <Image src="/fluentyx.png" alt="" width={52} height={52} className='absolute' style={{filter: "invert(100%)"}} />
+          <span className='text-transparent'>Fluentyx</span>
         </div>
 
         {/* Top Navbar Icons */}
