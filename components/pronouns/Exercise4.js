@@ -95,6 +95,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
 
   if (!isActive) return null;
 
+
   return (
     <div className="flex flex-col items-center p-8 gap-y-16">
       <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">

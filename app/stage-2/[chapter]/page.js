@@ -15,6 +15,7 @@ export default function Chapter() {
   const { theme } = useContext(ThemeContext);
 
   const { progress, subProgress } = useProgress(user?.email, chapter)
+  console.log(progress, subProgress, "check")
 
   useEffect(() => {
     console.log(chapter)
@@ -51,7 +52,7 @@ export default function Chapter() {
   }
 
   return (
-    <main className="px-4 py-4 sm:px-16 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+    <main className="px-4 py-4 sm:px-16 mb-14 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
       <div className="text-[var(--text-theme)] transform flex justify-end font-medium">
         <span>
           {progress <= 100 ? `${progress} / 100` : '100/100'}

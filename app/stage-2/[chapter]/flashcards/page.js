@@ -62,7 +62,7 @@ export default function Flashcards() {
         console.log({user, chapterName, index, correctAttempts, wrongAttempts})
         saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
         if (!error){
-          router.push(`/${chapterName}`)
+          router.push(`/stage-2/${chapterName}`)
         }
       }
     }
@@ -94,8 +94,8 @@ export default function Flashcards() {
   };
 
   return (
-    <div className="flex flex-col items-center  bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
-      <div className='w-[80%] bg-white flex justify-self-center mb-4 h-4 border rounded-full border-[var(--secondary)] mt-14'>
+    <div className="flex flex-col items-center mb-14 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+      <div className='w-[80%] bg-white flex justify-self-center mb-4 h-4 border rounded-full border-[var(--secondary)] mt-6'>
           <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * (currentIndex + 1) / data.length}%`}}></div>
       </div>
       
@@ -127,14 +127,14 @@ export default function Flashcards() {
         </div>
       </div>
 
-      <div>
+      <div className='w-[80%] flex flex-col gap-y-1 transform scale-80 max-h-[240px] overflow-scroll'>
         {data[currentIndex]?.word2word.map((word, index) => (
-          <div key={index} className='flex gap-x-4'>
-            <span className='arabic' style={{fontSize: '1rem !important'}}>{word.arabic}</span>
-            <span>{language == 'english' ? word.english : word.urdu}</span>
-            <span>{word.pronounce}</span>
+          <div key={index} className='flex gap-x-4 w-full items-center justify-center border-1 border-gray-800'>
+            <span className='arabic w-[25%] px-2'><b className='text-[16px]'>{word.arabic}</b></span>
+            <span className='w-[25%]'>{language == 'english' ? word.english : word.urdu}</span>
+            <span className='w-[25%]'>{word.pronounce}</span>
             <motion.button
-              className="text-2xl text-gray-700 hover:text-gray-900"
+              className="w-[25%] text-2xl text-gray-700 hover:text-gray-900"
               whileTap={{ scale: 0.9 }}
               onClick={(e) => {
                 e.stopPropagation();
@@ -147,7 +147,7 @@ export default function Flashcards() {
         ))}
       </div>
 
-      <div className="flex gap-4 mt-8">
+      <div className="flex gap-4">
         <button
           onClick={handlePrevious}
           className="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-dark)]"
@@ -161,13 +161,6 @@ export default function Flashcards() {
           Next
         </button>
       </div>
-
-      <button
-        onClick={() => router.push(`/${chapterName}`)}
-        className="mt-4 text-[var(--primary)] hover:underline"
-      >
-        Back to {chapterName}
-      </button>
     </div>
   );
 }

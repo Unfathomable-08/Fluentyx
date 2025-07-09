@@ -114,7 +114,7 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
           ))}
           <div className="absolute top-0 -translate-y-12 flex">
             {selectedWord2Word.map((word, i) => (
-                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center items-center ${hover != word.word && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onMouseEnter={()=>{setHover(word)}} onMouseLeave={()=>{setHover(null)}} onClick={()=>{setHover(word)}}>
+                <span className={`px-4 bg-[#eeeeee] rounded-lg flex flex-col text-sm text-center items-center ${(hover != word.word || hover == correctPronoun.arabic) && "invisible"}`} style={{fontSize: "12px !important"}} key={i} onMouseEnter={()=>{setHover(word)}} onMouseLeave={()=>{setHover(null)}} onClick={()=>{setHover(word)}}>
                     <p>
                         {word.translate}
                     </p>
