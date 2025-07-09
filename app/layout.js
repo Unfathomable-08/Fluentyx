@@ -62,16 +62,21 @@ export default function RootLayout({ children }) {
           }}
         />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986" crossorigin="anonymous"></script>
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Fluentyx",
-          "url": "https://fluentyx.vercel.app",
-          "logo": "https://fluentyx.vercel.app/fluentyx.png"
-        }
-        </script>
-
+        <Script
+          id="structured-data-logo"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Fluentyx",
+              "url": "https://fluentyx.vercel.app",
+              "logo": "https://fluentyx.vercel.app/logo.png",
+            }),
+          }}
+        />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
