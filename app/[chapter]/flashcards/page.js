@@ -15,7 +15,7 @@ export default function Flashcards() {
   const pathname = usePathname();
   const [chapterName, setChapterName] = useState('');
   const [index, setIndex] = useState("flash");
-  const [correctAttempts, setCorrectAttepmts] = useState(0);
+  const [correctAttempts, setCorrectAttepmts] = useState(25);
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [chapterData, setChapterData] = useState([]);
   const [pronouns, setPronouns] = useState([]);
