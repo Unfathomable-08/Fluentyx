@@ -71,39 +71,50 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const email = searchParams.get('email');
 
-    // If email is provided, ensure user exists in the leaderboard
+    let user = null;
+
     if (email) {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         return NextResponse.json({ message: 'Invalid email format' }, { status: 400 });
       }
-      await Leaderboard.findOneAndUpdate(
+      user = await Leaderboard.findOneAndUpdate(
         { email },
         {
           $setOnInsert: {
-            name: email.split('@')[0].replace(/\./g, ' '), // Cleaner name
+            name: email.split('@')[0].replace(/\./g, ' '),
             weekly_score: 0,
             trophies: [],
           },
         },
-        { upsert: true }
+        { upsert: true, new: true }
       );
     }
 
-    // Reset scores if today is Sunday and entries are from the previous week
     if (isSunday()) {
       const weekStart = getWeekStart();
       await Leaderboard.updateMany(
         { updatedAt: { $lt: weekStart } },
-        { weekly_score: 0 } // Mongoose updates updatedAt automatically
+        { weekly_score: 0 }
       );
     }
 
-    // Fetch top 30 entries sorted by weekly_score
     const leaderboard = await Leaderboard
       .find()
       .sort({ weekly_score: -1 })
       .limit(30)
       .select('name email weekly_score trophies');
+
+    if (email && user) {
+      const inTop30 = leaderboard.some(u => u.email === email);
+      if (!inTop30) {
+        leaderboard.push({
+          name: user.name,
+          email: user.email,
+          weekly_score: user.weekly_score,
+          trophies: user.trophies,
+        });
+      }
+    }
 
     return NextResponse.json(leaderboard, { status: 200 });
   } catch (error) {
