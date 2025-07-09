@@ -73,7 +73,7 @@ export default function Chapter() {
             </div>
           </div>
 
-          {/* {chapterData.map((data, index) => (
+          {chapterData.map((data, index) => (
             <div
               key={data.id}
               className="w-full h-40 bg-[var(--bg-theme)] rounded-lg flex flex-col justify-between relative items-center text-center cursor-pointer"
@@ -95,7 +95,7 @@ export default function Chapter() {
                 ) : null
               }
             </div>
-          ))} */}
+          ))}
         </div>
     </main>
   );
