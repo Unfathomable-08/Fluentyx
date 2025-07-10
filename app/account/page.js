@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeContext } from "../../contexts/themeContext";
 import { LanguageContext } from "../../contexts/languageContext";
-import { FaEdit, FaSun, FaMoon } from "react-icons/fa";
+import { FaEdit, FaSun, FaMoon, FaTrophy } from "react-icons/fa";
 import { MdEmail, MdPhone, MdPassword, MdClose } from "react-icons/md";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
@@ -19,10 +19,7 @@ export default function AccountPage() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  if (!isAuthenticated) {
-    return null;
-  }
+  const [trophies, setTrophies] = useState([])
 
   const handleOpenModal = (type) => {
     setModalType(type);
@@ -95,11 +92,31 @@ export default function AccountPage() {
     }
   };
 
+  useEffect(() => {
+    if (!user) return;
+    const fetchTrophies = async () => {
+      try {
+        const res = await fetch(`/api/leaderboard/trophies?email=${user.email}`);
+        const data = await res.json();
+        setTrophies(data[0]?.trophies || []);
+      } catch (error) {
+        console.error("Failed to load trophies:", error);
+      }
+    };
+    fetchTrophies();
+  }, [user])
+
+  if (!isAuthenticated) {
+    return null;
+  }
+
+  const medals = ["#FFD700", "#B0B0B0", "#CD7F32"]; // Gold, Silver, Bronze
+
   return (
-    <div className={`bg-[var(--bg-theme)] min-h-[calc(100vh-50px)] py-8 px-4 flex flex-col items-center`}>
+    <div className={`bg-[var(--bg-theme)] min-h-[calc(100vh-50px)] pt-8 pb-20 px-4 flex flex-col items-center`}>
       {/* Circle Avatar and Name */}
       <motion.div
-        className="flex flex-col items-center gap-2 mb-8"
+        className="flex flex-col items-center gap-2 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -109,6 +126,22 @@ export default function AccountPage() {
         </div>
         <h1 className={`text-2xl ${theme === 'dark' ? 'text-[var(--text-theme)]' : 'text-black'} font-semibold`}>{user?.name}</h1>
       </motion.div>
+
+      {/* Trophies */}
+      <div className="flex gap-4 mb-8 overflow-x-scroll max-w-[320px]">
+        {trophies.map((trophy, index) => (
+          <div
+            key={index}
+            className="flex-none w-12 h-12 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-md scrollbar-none"
+            style={{
+              backgroundColor: trophy == 'gold' ? medals[0] : trophy == 'silver' ? medals[1] : medals[2],
+            }}
+            title={trophy}
+            >
+            <FaTrophy />
+            </div>
+          ))}
+      </div>
 
       {/* Details Box */}
       <motion.div

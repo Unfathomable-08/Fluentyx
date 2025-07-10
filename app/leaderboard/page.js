@@ -47,7 +47,7 @@ export default function LeaderboardPage() {
           {leaders.length === 0 ? (
             <p className="text-center text-[var(--text-theme)]">Complete a exercise to participate.</p>
           ) : (
-            leaders.map((user, index) => (
+            leaders.map((person, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function LeaderboardPage() {
                 transition={{ delay: index * 0.05 }}
                 className={`flex items-center justify-between px-5 py-2 rounded-2xl shadow-lg ${
                   index < 3 ? "bg-[var(--primary)]/50" : "bg-white"
-                }`}
+                } ${person.email === user.email && "border-2 transform scale-103 border-[var(--primary)]"}`}
               >
                 <div className="flex items-center space-x-4">
                   <div
@@ -76,9 +76,9 @@ export default function LeaderboardPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-md text-gray-800 capitalize">
-                      {user.name || "Anonymous"}
+                      {person.name || "Anonymous"}
                     </p>
-                    <p className="text-sm text-gray-500">Points: {user.weekly_score || 0}</p>
+                    <p className="text-sm text-gray-500">Points: {person.weekly_score || 0}</p>
                   </div>
                 </div>
                 <div className="text-md font-bold text-gray-900">#{index + 1}</div>

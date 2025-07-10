@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import Leaderboard from '@/models/leaderboard';
+import ResetLog from '@/models/resetLog'; // Import the new ResetLog model
 import connectDB from '@/lib/db';
 
 // Helper function to check if today is Sunday (using PKT timezone)
@@ -92,15 +93,45 @@ export async function GET(request) {
 
     if (isSunday()) {
       const weekStart = getWeekStart();
-      await Leaderboard.updateMany(
-        { updatedAt: { $lt: weekStart } },
-        { weekly_score: 0 }
-      );
+
+      // Check if reset has already occurred for this week
+      const lastReset = await ResetLog.findOne({ weekStart }).sort({ resetDate: -1 });
+
+      if (!lastReset) {
+        // Step 1: Get top 3 users before resetting scores
+        const topUsers = await Leaderboard
+          .find()
+          .sort({ weekly_score: -1, updatedAt: -1 }) // Secondary sort by updatedAt for ties
+          .limit(3)
+          .select('email weekly_score trophies');
+
+        // Step 2: Award trophies to top 3 users
+        const trophyAwards = ['gold', 'silver', 'bronze'];
+        for (let i = 0; i < topUsers.length; i++) {
+          const user = topUsers[i];
+          if (user.weekly_score > 0) { // Only award if they have a positive score
+            await Leaderboard.updateOne(
+              { email: user.email },
+              { $push: { trophies: trophyAwards[i] } }
+            );
+          }
+        }
+
+        // Step 3: Reset weekly_score for all users
+        await Leaderboard.updateMany(
+          {}, // Apply to all users
+          { weekly_score: 0 }
+        );
+
+        // Step 4: Log the reset
+        await ResetLog.create({ resetDate: new Date(), weekStart });
+      }
     }
 
+    // Step 5: Fetch top 30 leaderboard entries
     const leaderboard = await Leaderboard
       .find()
-      .sort({ weekly_score: -1 })
+      .sort({ weekly_score: -1, updatedAt: -1 }) // Secondary sort for consistency
       .limit(30)
       .select('name email weekly_score trophies');
 
