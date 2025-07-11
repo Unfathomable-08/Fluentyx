@@ -19,6 +19,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
       const progressMap = {
         alphabets: { chapterProgress: 0.34489, lessonProgress: 10 },
         pronouns: { chapterProgress: 6.25, lessonProgress: 25 },
+        objectivepronouns: { chapterProgress: 6.25, lessonProgress: 25 },
         prepositions: { chapterProgress: 4.16667, lessonProgress: 25 },
         interrogativewords: { chapterProgress: 12.5, lessonProgress: 25 },
         basicconversation: { chapterProgress: 6.25, lessonProgress: 25 },

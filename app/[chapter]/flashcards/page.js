@@ -8,6 +8,7 @@ import useAuth from "../../../hooks/useAuth";
 import useSaveProgress from "../../../hooks/useSaveProgress";
 import { LanguageContext } from '../../../contexts/languageContext'
 import { HiSpeakerWave } from 'react-icons/hi2';
+import chapters from '../../../data/chapters.json';
 
 export default function Flashcards() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -19,9 +20,10 @@ export default function Flashcards() {
   const [wrongAttempts, setWrongAttepmts] = useState(2);
   const [chapterData, setChapterData] = useState([]);
   const [pronouns, setPronouns] = useState([]);
-  const [currentPronounIndex, setCurrentPronounIndex] = useState(0);
+  const [currentPronounIndex, setCurrentPronounIndex] = useState(-1);
   const [isFlipped, setIsFlipped] = useState(false);
-  const [userKnows, setUserKnows] = useState(false)
+  const [userKnows, setUserKnows] = useState(false);
+  const [desc, setDesc] = useState('');
 
   const { language } = useContext(LanguageContext)
 
@@ -50,6 +52,7 @@ export default function Flashcards() {
         let allPronouns;
         switch (chapter) {
           case "pronouns":
+          case "objective-pronouns":
             allPronouns = [
               ...(data[1]?.["Second Person Pronouns"] || []),
               ...(data[0]?.["First Person Pronouns"] || []),
@@ -96,6 +99,13 @@ export default function Flashcards() {
 
   }, [currentPronounIndex, chapterName, index, user])
 
+  useEffect(()=>{
+    chapters.filter(chap => {
+      return(
+      chap?.title?.toLowerCase() == chapterName ? setDesc(chap.desc) : null
+    )})
+  }, [chapters, chapterName])
+
   if (!isAuthenticated || isLoading) {
     return null; // Redirect handled by useAuth
   }
@@ -138,73 +148,87 @@ export default function Flashcards() {
       </div>
       <h1 className="text-2xl font-bold my-8 text-[var(--text-theme)]">Flashcards</h1>
 
-      <motion.div 
-        className="w-64 h-40 bg-white rounded-xl shadow-[0_0_10px_#00000055] flex items-center justify-center cursor-pointer perspective-1000"
-        onClick={handleFlip}
-        animate={!isFlipped && !userKnows ? { scale: [1, 1.01, 1] } : {}}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
+      {currentPronounIndex == -1 ? 
         <div 
-          style={{ 
-            position: 'relative', 
-            width: '100%', 
-            height: '100%', 
-            transition: 'transform 0.5s', 
-            transformStyle: 'preserve-3d', 
-            transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
-          }}
+          className="w-72 h-48 p-4 text-center font-medium bg-white rounded-xl shadow-[0_0_10px_#00000055] flex items-center justify-center cursor-pointer perspective-1000"
         >
-          {/* Front Side (Arabic) */}
-          <div 
-            style={{ 
-              position: 'absolute', 
-              width: '100%', 
-              height: '100%', 
-              backfaceVisibility: 'hidden' 
-            }}
-            className="bg-white rounded-xl relative flex items-center justify-center arabic text-3xl"
-          >
-            {currentPronoun.arabic}
-
-            <motion.button
-              className="text-2xl text-gray-700 hover:text-gray-900 absolute top-4 right-4"
-              whileTap={{ scale: 0.9 }}
-              onClick={(e) => {
-                e.stopPropagation();
-                playSound(currentPronoun.arabic);
-              }}
-            >
-              <HiSpeakerWave />
-            </motion.button>
-          </div>
-          {/* Back Side (English) */}
-          <div 
-            style={{ 
-              position: 'absolute', 
-              width: '100%', 
-              height: '100%', 
-              backfaceVisibility: 'hidden', 
-              transform: 'rotateY(180deg)' 
-            }}
-            className="bg-white rounded-xl flex flex-col gap-y-6 items-center justify-center"
-          >
-            <div className='text-2xl font-medium'>
-              {language == 'english' ?
-                currentPronoun.english.split(" ").filter(word => !word.match(/^\([MF]\)$/)).join(" ")
-              :
-                currentPronoun.hindi
-              }
-            </div>
-            <div>
-              {chapterName == "pronouns" && <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.person}</span>}
-              {chapterName == "pronouns" && <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.gender}</span>}
-              <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.type}</span>
-            </div>
-          </div>
+          {desc}        
         </div>
-      </motion.div>
+        :
+        <motion.div 
+          className="w-64 h-40 bg-white rounded-xl shadow-[0_0_10px_#00000055] flex items-center justify-center cursor-pointer perspective-1000"
+          onClick={handleFlip}
+          animate={!isFlipped && !userKnows ? { scale: [1, 1.01, 1] } : {}}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <div 
+            style={{ 
+              position: 'relative', 
+              width: '100%', 
+              height: '100%', 
+              transition: 'transform 0.5s', 
+              transformStyle: 'preserve-3d', 
+              transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+            }}
+          >
+            {/* Front Side (Arabic) */}
+            <div 
+              style={{ 
+                position: 'absolute', 
+                width: '100%', 
+                height: '100%', 
+                backfaceVisibility: 'hidden' 
+              }}
+              className="bg-white rounded-xl relative flex items-center justify-center arabic text-3xl"
+            >
+              {currentPronoun.arabic}
+  
+              <motion.button
+                className="text-2xl text-gray-700 hover:text-gray-900 absolute top-4 right-4"
+                whileTap={{ scale: 0.9 }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  playSound(currentPronoun.arabic);
+                }}
+              >
+                <HiSpeakerWave />
+              </motion.button>
+            </div>
+            {/* Back Side (English) */}
+            <div 
+              style={{ 
+                position: 'absolute', 
+                width: '100%', 
+                height: '100%', 
+                backfaceVisibility: 'hidden', 
+                transform: 'rotateY(180deg)' 
+              }}
+              className="bg-white rounded-xl flex flex-col gap-y-6 items-center justify-center"
+            >
+              <div className='text-2xl font-medium'>
+                {language == 'english' ?
+                  currentPronoun.english.split(" ").filter(word => !word.match(/^\([MF]\)$/)).join(" ")
+                :
+                  currentPronoun.hindi
+                }
+              </div>
+              <div>
+                {(chapterName == "pronouns" || chapterName == "objective-pronouns") && 
+                  <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
+                    {currentPronoun.person}
+                  </span>}
+                {(chapterName == "pronouns" || chapterName == "objective-pronouns") &&
+                  <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
+                    {currentPronoun.gender}
+                  </span>}
+                <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.type}</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      }
 
-      {!isFlipped && !userKnows ? (
+      {!isFlipped && !userKnows && currentPronounIndex >= 0 ? (
         <motion.div
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: [0.5, 1, 1, 0.5], y: [0, 15, 0] }}

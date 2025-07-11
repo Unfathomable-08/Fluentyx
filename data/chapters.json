@@ -2,21 +2,35 @@
   {
     "id": "1",
     "title": "Alphabets",
-    "image": "/alphabets.JPG"
+    "image": "/alphabets.JPG",
+    "stage": ""
   },
   {
     "id": "2",
     "title": "Pronouns",
-    "image": "/pronouns.jpg"
+    "image": "/pronouns.jpg",
+    "stage": "1",
+    "desc": "Words used to refer to people (e.g. I, you, we) as the subject of a sentence."
   },
   {
     "id": "3",
-    "title": "Prepositions",
-    "image": "/prepositions.jpg"
+    "title": "Objective-Pronouns",
+    "image": "/pronouns-obj.jpg",
+    "stage": "1",
+    "desc": "Pronouns used as the object of a verb or preposition (e.g. me, him, us)."
   },
   {
-    "id": "4",
+    "id": "5",
+    "title": "Prepositions",
+    "image": "/prepositions.jpg",
+    "stage": "1",
+    "desc": "Words that show relationships between nouns or pronouns and other words (e.g. in, on, with)."
+  },
+  {
+    "id": "6",
     "title": "Interrogative-Words",
-    "image": "/interrogative.JPG"
+    "image": "/interrogative.JPG",
+    "stage": "1",
+    "desc": "Words used to ask questions (e.g. who, what, where)."
   }
 ]

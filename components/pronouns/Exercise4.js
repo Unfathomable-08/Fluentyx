@@ -35,6 +35,7 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
       let pronounCategories;
       switch (chapter) {
         case "pronouns":
+        case "objective-pronouns":
           pronounCategories = {
             1: { key: "First Person Pronouns", data: data[0]?.["First Person Pronouns"] || [] },
             2: { key: "Second Person Pronouns", data: data[1]?.["Second Person Pronouns"] || [] },

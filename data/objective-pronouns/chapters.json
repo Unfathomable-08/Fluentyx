@@ -1,0 +1,718 @@
+[
+  {
+    "First Person Pronouns": [
+      {
+        "id": 1,
+        "arabic": "ني",
+        "english": "me",
+        "roman": "ni",
+        "hindi": "mujhe",
+        "type": "singular",
+        "gender": "common",
+        "person": "1st",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "المعلم يعلمني",
+            "pronounce": "al-muallim yuallimuni",
+            "translate": "The teacher teaches me",
+            "urdu": "ustad mujhe parhata hai",
+            "word2word": [
+              {
+                "word": "المعلم",
+                "translate": "the teacher",
+                "pronounce": "al-muallim"
+              },
+              {
+                "word": "يعلمني",
+                "translate": "teaches me",
+                "pronounce": "yuallimuni",
+                "hindi": "mujhe parhata hai"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطاني كتابا",
+            "pronounce": "aataani kitaaban",
+            "translate": "He gave me a book",
+            "urdu": "usne mujhe ek kitaab di",
+            "word2word": [
+              {
+                "word": "أعطاني",
+                "translate": "gave me",
+                "pronounce": "aataani",
+                "hindi": "mujhe diya"
+              },
+              {
+                "word": "كتابا",
+                "translate": "a book",
+                "pronounce": "kitaaban"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "رآني في السوق",
+            "pronounce": "raani fi as-suq",
+            "translate": "He saw me in the market",
+            "urdu": "usne mujhe bazaar mein dekha",
+            "word2word": [
+              {
+                "word": "رآني",
+                "translate": "saw me",
+                "pronounce": "raani",
+                "hindi": "mujhe dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "السوق",
+                "translate": "the market",
+                "pronounce": "as-suq"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "arabic": "نا",
+        "english": "us",
+        "roman": "na",
+        "hindi": "humein",
+        "type": "plural",
+        "gender": "common",
+        "person": "1st",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أعطانا الهدايا",
+            "pronounce": "aataana al-hadaya",
+            "translate": "He gave us gifts",
+            "urdu": "usne humein tohfe diye",
+            "word2word": [
+              {
+                "word": "أعطانا",
+                "translate": "gave us",
+                "pronounce": "aataana",
+                "hindi": "humein diya"
+              },
+              {
+                "word": "الهدايا",
+                "translate": "the gifts",
+                "pronounce": "al-hadaya"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "رآنا في الحديقة",
+            "pronounce": "raana fi al-hadiqa",
+            "translate": "He saw us in the park",
+            "urdu": "usne humein park mein dekha",
+            "word2word": [
+              {
+                "word": "رآنا",
+                "translate": "saw us",
+                "pronounce": "raana",
+                "hindi": "humein dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الحديقة",
+                "translate": "the park",
+                "pronounce": "al-hadiqa"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Second Person Pronouns": [
+      {
+        "id": 3,
+        "arabic": "كَ",
+        "english": "you (M)",
+        "roman": "ka",
+        "hindi": "tumhe",
+        "type": "singular",
+        "gender": "masculine",
+        "person": "2nd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتكَ في المدرسة",
+            "pronounce": "raaytuk fi al-madrasa",
+            "translate": "I saw you (m) in the school",
+            "urdu": "maine tumhe school mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتكَ",
+                "translate": "saw you",
+                "pronounce": "raaytuk",
+                "hindi": "tumhe dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المدرسة",
+                "translate": "the school",
+                "pronounce": "al-madrasa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتكَ القلم",
+            "pronounce": "aataituk al-qalam",
+            "translate": "I gave you (m) the pen",
+            "urdu": "maine tumhe qalam diya",
+            "word2word": [
+              {
+                "word": "أعطيتكَ",
+                "translate": "gave you",
+                "pronounce": "aataituk",
+                "hindi": "tumhe diya"
+              },
+              {
+                "word": "القلم",
+                "translate": "the pen",
+                "pronounce": "al-qalam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "arabic": "كِ",
+        "english": "you (F)",
+        "roman": "ki",
+        "hindi": "tumhe",
+        "type": "singular",
+        "gender": "feminine",
+        "person": "2nd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتكِ في السوق",
+            "pronounce": "raaytuki fi as-suq",
+            "translate": "I saw you (f) in the market",
+            "urdu": "maine tumhe bazaar mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتكِ",
+                "translate": "saw you",
+                "pronounce": "raaytuki",
+                "hindi": "tumhe dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "السوق",
+                "translate": "the market",
+                "pronounce": "as-suq"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتكِ الكتاب",
+            "pronounce": "aataituki al-kitaab",
+            "translate": "I gave you (f) the book",
+            "urdu": "maine tumhe kitaab di",
+            "word2word": [
+              {
+                "word": "أعطيتكِ",
+                "translate": "gave you",
+                "pronounce": "aataituki",
+                "hindi": "tumhe diya"
+              },
+              {
+                "word": "الكتاب",
+                "translate": "the book",
+                "pronounce": "al-kitaab"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "arabic": "كما",
+        "english": "you two",
+        "roman": "kuma",
+        "hindi": "tum dono ko",
+        "type": "dual",
+        "gender": "common",
+        "person": "2nd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتكما في الحديقة",
+            "pronounce": "raaytukuma fi al-hadiqa",
+            "translate": "I saw you two in the park",
+            "urdu": "maine tum dono ko park mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتكما",
+                "translate": "saw you two",
+                "pronounce": "raaytukuma",
+                "hindi": "tum dono ko dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الحديقة",
+                "translate": "the park",
+                "pronounce": "al-hadiqa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتكما الهدايا",
+            "pronounce": "aataitukuma al-hadaya",
+            "translate": "I gave you two gifts",
+            "urdu": "maine tum dono ko tohfe diye",
+            "word2word": [
+              {
+                "word": "أعطيتكما",
+                "translate": "gave you two",
+                "pronounce": "aataitukuma",
+                "hindi": "tum dono ko diya"
+              },
+              {
+                "word": "الهدايا",
+                "translate": "the gifts",
+                "pronounce": "al-hadaya"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "arabic": "كم",
+        "english": "you all (M)",
+        "roman": "kum",
+        "hindi": "tum sab ko",
+        "type": "plural",
+        "gender": "masculine",
+        "person": "2nd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتكم في الملعب",
+            "pronounce": "raaytukum fi al-malab",
+            "translate": "I saw you all (m) in the playground",
+            "urdu": "maine tum sab ko maidan mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتكم",
+                "translate": "saw you all",
+                "pronounce": "raaytukum",
+                "hindi": "tum sab ko dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الملعب",
+                "translate": "the playground",
+                "pronounce": "al-malab"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتكم الكتب",
+            "pronounce": "aataitukum al-kutub",
+            "translate": "I gave you all (m) the books",
+            "urdu": "maine tum sab ko kitaabein di",
+            "word2word": [
+              {
+                "word": "أعطيتكم",
+                "translate": "gave you all",
+                "pronounce": "aataitukum",
+                "hindi": "tum sab ko diya"
+              },
+              {
+                "word": "الكتب",
+                "translate": "the books",
+                "pronounce": "al-kutub"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "arabic": "كن",
+        "english": "you all (F)",
+        "roman": "kunna",
+        "hindi": "tum sab ko",
+        "type": "plural",
+        "gender": "feminine",
+        "person": "2nd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتكن في المكتبة",
+            "pronounce": "raaytukunna fi al-maktaba",
+            "translate": "I saw you all (f) in the library",
+            "urdu": "maine tum sab ko library mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتكن",
+                "translate": "saw you all",
+                "pronounce": "raaytukunna",
+                "hindi": "tum sab ko dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المكتبة",
+                "translate": "the library",
+                "pronounce": "al-maktaba"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتكن الهدايا",
+            "pronounce": "aataitukunna al-hadaya",
+            "translate": "I gave you all (f) gifts",
+            "urdu": "maine tum sab ko tohfe diye",
+            "word2word": [
+              {
+                "word": "أعطيتكن",
+                "translate": "gave you all",
+                "pronounce": "aataitukunna",
+                "hindi": "tum sab ko diya"
+              },
+              {
+                "word": "الهدايا",
+                "translate": "the gifts",
+                "pronounce": "al-hadaya"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Third Person Pronouns": [
+      {
+        "id": 8,
+        "arabic": "ه",
+        "english": "him",
+        "roman": "hu",
+        "hindi": "use",
+        "type": "singular",
+        "gender": "masculine",
+        "person": "3rd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيته في المكتب",
+            "pronounce": "raaytuhu fi al-maktab",
+            "translate": "I saw him in the office",
+            "urdu": "maine use daftar mein dekha",
+            "word2word": [
+              {
+                "word": "رأيته",
+                "translate": "saw him",
+                "pronounce": "raaytuhu",
+                "hindi": "use dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المكتب",
+                "translate": "the office",
+                "pronounce": "al-maktab"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيته التفاحة",
+            "pronounce": "aataituhu at-tuffaha",
+            "translate": "I gave him the apple",
+            "urdu": "maine use seb diya",
+            "word2word": [
+              {
+                "word": "أعطيته",
+                "translate": "gave him",
+                "pronounce": "aataituhu",
+                "hindi": "use diya"
+              },
+              {
+                "word": "التفاحة",
+                "translate": "the apple",
+                "pronounce": "at-tuffaha"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "arabic": "ها",
+        "english": "her",
+        "roman": "ha",
+        "hindi": "use",
+        "type": "singular",
+        "gender": "feminine",
+        "person": "3rd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتها في المتجر",
+            "pronounce": "raaytuha fi al-matjar",
+            "translate": "I saw her in the store",
+            "urdu": "maine use dukaan mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتها",
+                "translate": "saw her",
+                "pronounce": "raaytuha",
+                "hindi": "use dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المتجر",
+                "translate": "the store",
+                "pronounce": "al-matjar"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتها الرسالة",
+            "pronounce": "aataituha ar-risala",
+            "translate": "I gave her the letter",
+            "urdu": "maine use khat diya",
+            "word2word": [
+              {
+                "word": "أعطيتها",
+                "translate": "gave her",
+                "pronounce": "aataituha",
+                "hindi": "use diya"
+              },
+              {
+                "word": "الرسالة",
+                "translate": "the letter",
+                "pronounce": "ar-risala"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "arabic": "هما",
+        "english": "them two",
+        "roman": "huma",
+        "hindi": "un dono ko",
+        "type": "dual",
+        "gender": "common",
+        "person": "3rd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتهما في الحديقة",
+            "pronounce": "raaytuhuma fi al-hadiqa",
+            "translate": "I saw them two in the park",
+            "urdu": "maine un dono ko park mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتهما",
+                "translate": "saw them two",
+                "pronounce": "raaytuhuma",
+                "hindi": "un dono ko dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الحديقة",
+                "translate": "the park",
+                "pronounce": "al-hadiqa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتهما الفطور",
+            "pronounce": "aataituhuma al-futur",
+            "translate": "I gave them two breakfast",
+            "urdu": "maine un dono ko nashta diya",
+            "word2word": [
+              {
+                "word": "أعطيتهما",
+                "translate": "gave them two",
+                "pronounce": "aataituhuma",
+                "hindi": "un dono ko diya"
+              },
+              {
+                "word": "الفطور",
+                "translate": "the breakfast",
+                "pronounce": "al-futur"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "arabic": "هم",
+        "english": "them (M)",
+        "roman": "hum",
+        "hindi": "unhein",
+        "type": "plural",
+        "gender": "masculine",
+        "person": "3rd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتهم في التلفزيون",
+            "pronounce": "raaytuhum fi at-talfizyun",
+            "translate": "I saw them (m) on television",
+            "urdu": "maine unhein television par dekha",
+            "word2word": [
+              {
+                "word": "رأيتهم",
+                "translate": "saw them",
+                "pronounce": "raaytuhum",
+                "hindi": "unhein dekha"
+              },
+              {
+                "word": "في",
+                "translate": "on",
+                "pronounce": "fi"
+              },
+              {
+                "word": "التلفزيون",
+                "translate": "the television",
+                "pronounce": "at-talfizyun"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتهم الكتب",
+            "pronounce": "aataituhum al-kutub",
+            "translate": "I gave them (m) the books",
+            "urdu": "maine unhein kitaabein di",
+            "word2word": [
+              {
+                "word": "أعطيتهم",
+                "translate": "gave them",
+                "pronounce": "aataituhum",
+                "hindi": "unhein diya"
+              },
+              {
+                "word": "الكتب",
+                "translate": "the books",
+                "pronounce": "al-kutub"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "arabic": "هن",
+        "english": "them (F)",
+        "roman": "hunna",
+        "hindi": "unhein",
+        "type": "plural",
+        "gender": "feminine",
+        "person": "3rd",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "رأيتهن في المطبخ",
+            "pronounce": "raaytuhunna fi al-matbakh",
+            "translate": "I saw them (f) in the kitchen",
+            "urdu": "maine unhein rasoi mein dekha",
+            "word2word": [
+              {
+                "word": "رأيتهن",
+                "translate": "saw them",
+                "pronounce": "raaytuhunna",
+                "hindi": "unhein dekha"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المطبخ",
+                "translate": "the kitchen",
+                "pronounce": "al-matbakh"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعطيتهن الطعام",
+            "pronounce": "aataituhunna at-taam",
+            "translate": "I gave them (f) the food",
+            "urdu": "maine unhein khana diya",
+            "word2word": [
+              {
+                "word": "أعطيتهن",
+                "translate": "gave them",
+                "pronounce": "aataituhunna",
+                "hindi": "unhein diya"
+              },
+              {
+                "word": "الطعام",
+                "translate": "the food",
+                "pronounce": "at-taam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
