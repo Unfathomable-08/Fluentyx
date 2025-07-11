@@ -17,7 +17,7 @@
     "title": "Objective-Pronouns",
     "image": "/pronouns-obj.jpg",
     "stage": "1",
-    "desc": "Pronouns used as the object of a verb or preposition (e.g. me, him, us)."
+    "desc": "Pronouns used as the object of a verb or preposition (e.g. me, him, us). Note: In arabic Objective and Possessive Pronounsa are same execpt 'I' that is 'ni' and 'i-' respectively."
   },
   {
     "id": "5",
@@ -31,6 +31,6 @@
     "title": "Interrogative-Words",
     "image": "/interrogative.JPG",
     "stage": "1",
-    "desc": "Words used to ask questions (e.g. who, what, where). Note: In arabic Objective Pronouns and Possessive Pronounsa are almost same execpt for 'I' that is 'ni' and 'i-' respectively."
+    "desc": "Words used to ask questions (e.g. who, what, where)."
   }
 ]
