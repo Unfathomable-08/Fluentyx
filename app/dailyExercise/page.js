@@ -1,5 +1,7 @@
 "use client"
 
+// DON'T TOUCH THIS FILE
+
 import { useEffect, useState, useContext } from 'react'
 import useAuth from "../../hooks/useAuth"
 import useSaveProgress from "../../hooks/useSaveProgress"
@@ -202,6 +204,18 @@ export default function DailyExercise () {
 
   if (!isAuthenticated){
     return null;
+  }
+
+  if(stepsPerLesson.length == 0){
+    return (
+      <div className='bg-[var(--bg-theme)] min-h-screen pt-20 pt-3 px-8'>
+        <h1 className='text-2xl text-center text-[var(--text-theme)]'>No exercises to review.</h1>
+        <p className='text-md text-center text-[var(--text-theme)]'>Complete a Exercise other than alphabets then come here!</p>
+        <button 
+          className='px-4 py-1 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white rounded-full text-sm mx-auto block mt-4' 
+          onClick={()=>router.push('/')}>Go Home</button>
+      </div>
+    )
   }
   
   return (

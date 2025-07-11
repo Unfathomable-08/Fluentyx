@@ -1,7 +1,7 @@
 import { useState, useMemo, useContext } from 'react';
 import { LanguageContext } from '../../contexts/languageContext'
 
-export function QToA({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
+export function QenToAen({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
@@ -36,7 +36,7 @@ export function QToA({ chapter, index, setStep, isActive, data, step, setCorrect
 
       const current = data[index - 1]?.data;
       const all = [].concat(...data.map(item => item.data));
-      
+
       if (current.length === 0 || all.length === 0) return {};
 
       const randomExampleIndex = Math.floor(Math.random() * current.length);
@@ -62,12 +62,12 @@ export function QToA({ chapter, index, setStep, isActive, data, step, setCorrect
 
   return (
     <div className="flex flex-col items-center p-8 gap-y-16">
-      <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">
-        <div className="flex gap-1 relative arabic">
+      <div className="bg-white md:mt-16 font-medium text-xl rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">
+        <div className="flex gap-1 relative">
           {
-            selectedExample?.question?.split(" ").map((word, i) =>(
+            selectedExample?.question_english?.split(" ").map((word, i) =>(
               <span
-                className="px-1 arabic cursor-pointer"
+                className="px-1 cursor-pointer"
                 key={i}
                 onMouseEnter={() => setHover(word)}
                 onClick={() => setHover(word)}
@@ -85,9 +85,9 @@ export function QToA({ chapter, index, setStep, isActive, data, step, setCorrect
                   key={i} onMouseEnter={()=>{setHover(word)}} 
                   onMouseLeave={()=>{setHover(null)}}
                   onClick={()=>{setHover(word)}}>
-                  
+
                     <p>
-                        {language == 'english' ? word.english : word.urdu}
+                        {word.arabic}
                     </p>
                     <p>
                         {word.pronounce}

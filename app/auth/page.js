@@ -15,6 +15,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [step, setStep] = useState(1);
   const [isVerifying, setIsVerifying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const codeRefs = useRef([]);
   const [verificationEmail, setVerificationEmail] = useState(email);
   const [verificationCode, setVerificationCode] = useState(["", "", "", "", "", ""]);
@@ -24,6 +25,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     if (showSignup && step === 1) {
       try {
+        setIsLoading(true);
         const res = await fetch('/api/signup', {
           method: 'POST',
           headers: {
@@ -41,14 +43,17 @@ const Login = () => {
         setVerificationEmail(data.email);
         showToast("success", "Verification code sent to your email.")
         setStep(2);
+        setIsLoading(false);
 
       } catch (error) {
         console.error('Signup failed:', error);
         showToast("error", error.message || "Login failed.")
+        setIsLoading(false);
       }
     } else if (!showSignup) {
 
       try {
+        setIsLoading(true);
         const res = await fetch('/api/login', {
           method: 'POST',
           headers: {
@@ -61,13 +66,15 @@ const Login = () => {
           const errorData = await res.json();
           throw new Error(errorData.message || `Login failed with status: ${res.status}`);
         }
-        
+
+        setIsLoading(false);
         showToast("success", "Login successful.")
 
         router.push("/");
       } catch (error) {
         console.error('Login failed:', error);
         showToast("error", error.message || "Login failed.")
+        setIsLoading(false);
       }
     }
   };
@@ -350,7 +357,7 @@ const Login = () => {
         </div>
       </div>
       {
-        isVerifying && (
+        (isVerifying || isLoading) && (
           <div className="absolute backdrop-blur-[3px] z-10 inset-0 flex items-center justify-center">
             <div className="relative z-20">
               <CircleLoader color="#2c9910" size={60} />

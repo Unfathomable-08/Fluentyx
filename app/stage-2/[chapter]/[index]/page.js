@@ -7,8 +7,8 @@ import useAuth from "../../../../hooks/useAuth";
 import useSaveProgress from "../../../../hooks/useSaveProgress";
 import { showToast } from "../../../../lib/toastify"
 
-// import { PronounToEn } from "../../../components/pronouns/Exercise1"
-// import { PronounToAr } from "../../../components/pronouns/Exercise2"
+import { QToA } from "../../../../components/stage-2/Exercise1"
+import { QenToAen } from "../../../../components/stage-2/Exercise2"
 // import { FillBlank } from "../../../components/pronouns/Exercise3"
 // import { FillEnBlank } from "../../../components/pronouns/Exercise4"
 // import { MatchPronounSound } from "../../../components/pronouns/Exercise5"
@@ -38,12 +38,13 @@ export default function Alphabet() {
 
     const fetchChapterData = async () => {
         try {
-        const res = await fetch(`/api/chapter/?chapter=${chapter}`);
-        const data = await res.json();
-
-        setChapterData(data);
-      } catch (err) {
-        console.error('Failed to fetch chapter:', err);
+          const res = await fetch(`/api/chapter/?chapter=${chapter}`);
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Failed to fetch chapter');
+          
+          setChapterData(data);
+        } catch (err) {
+          console.error('Failed to fetch chapter:', err);
         }
     };
 
@@ -51,36 +52,18 @@ export default function Alphabet() {
   }, [pathname]);
 
   useEffect(()=>{
-    if (chapterName == "alphabets"){
-      if (step == 15){
-        saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
-        if (!error){
-          router.push(`/${chapterName}`)
-        }
-      }
-    }
-    else {
-      if (step == 25){
-        saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
-        if (!error){
-          router.push(`/${chapterName}`)
-        }
+    if (step == 25){
+      saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
+      if (!error){
+        router.push(`/stage-2/${chapterName}`)
       }
     }
   }, [step, chapterName, index, user])
 
   useEffect(() => {
-    if (chapterName == "alphabets"){
-      if (wrongAttempts >= 5){
-        showToast("info", "Oops! You did not make it. Let's try again!");
-        router.push(`/${chapterName}`)
-      }
-    }
-    else {
-      if (wrongAttempts >= 8){
-        showToast("info", "Oops! You did not make it. Let's try again!");
-        router.push(`/${chapterName}`)
-      }
+    if (wrongAttempts >= 8){
+      showToast("info", "Oops! You did not make it. Let's try again!");
+      router.push(`/${chapterName}`)
     }
   }, [step]);
 
@@ -96,7 +79,27 @@ export default function Alphabet() {
             <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 25}%`}}></div>
         </div>
 
-        {/* <PronounToAr
+        <QToA
+         data={chapterData} 
+         chapter={chapterName} 
+         step={step} setStep={setStep} 
+         index={index} 
+         isActive={stepMod == 1} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+      
+        <QenToAen
+         data={chapterData} 
+         chapter={chapterName} 
+         step={step} setStep={setStep} 
+         index={index} 
+         isActive={stepMod == 2} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+      
+        {/* <EnToAr
          data={chapterData} 
          chapter={chapterName} 
          step={step} setStep={setStep} 

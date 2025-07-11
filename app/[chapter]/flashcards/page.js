@@ -16,7 +16,7 @@ export default function Flashcards() {
   const [chapterName, setChapterName] = useState('');
   const [index, setIndex] = useState("flash");
   const [correctAttempts, setCorrectAttepmts] = useState(25);
-  const [wrongAttempts, setWrongAttepmts] = useState(0);
+  const [wrongAttempts, setWrongAttepmts] = useState(2);
   const [chapterData, setChapterData] = useState([]);
   const [pronouns, setPronouns] = useState([]);
   const [currentPronounIndex, setCurrentPronounIndex] = useState(0);

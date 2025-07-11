@@ -20,7 +20,6 @@ export default function Flashcards() {
   const [chapterData, setChapterData] = useState([]);
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
 
   const { language } = useContext(LanguageContext)
 
@@ -77,14 +76,12 @@ export default function Flashcards() {
     setCurrentIndex((prev) => 
       prev + 1 < data.length ? prev + 1 : 0
     );
-    setIsFlipped(false);
   };
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => 
       prev - 1 >= 0 ? prev - 1 : data.length - 1
     );
-    setIsFlipped(false);
   };
 
   const playSound = (arabic) => {
