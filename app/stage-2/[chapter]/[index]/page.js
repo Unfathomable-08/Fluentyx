@@ -9,7 +9,7 @@ import { showToast } from "../../../../lib/toastify"
 
 import { QToA } from "../../../../components/stage-2/Exercise1"
 import { QenToAen } from "../../../../components/stage-2/Exercise2"
-// import { FillBlank } from "../../../components/pronouns/Exercise3"
+import { QToAtranslate } from "../../../../components/stage-2/Exercise3"
 // import { FillEnBlank } from "../../../components/pronouns/Exercise4"
 // import { MatchPronounSound } from "../../../components/pronouns/Exercise5"
 
@@ -84,7 +84,7 @@ export default function Alphabet() {
          chapter={chapterName} 
          step={step} setStep={setStep} 
          index={index} 
-         isActive={stepMod == 1} 
+         isActive={stepMod == 3} 
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
         />
@@ -95,6 +95,16 @@ export default function Alphabet() {
          step={step} setStep={setStep} 
          index={index} 
          isActive={stepMod == 2} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+      
+        <QToAtranslate
+         data={chapterData} 
+         chapter={chapterName} 
+         step={step} setStep={setStep} 
+         index={index} 
+         isActive={stepMod == 1} 
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
         />
