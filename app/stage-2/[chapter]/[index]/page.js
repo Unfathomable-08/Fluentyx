@@ -10,6 +10,7 @@ import { showToast } from "../../../../lib/toastify"
 import { QToA } from "../../../../components/stage-2/Exercise1"
 import { QenToAen } from "../../../../components/stage-2/Exercise2"
 import { QToAtranslate } from "../../../../components/stage-2/Exercise3"
+import { QenToAentranslate } from "../../../../components/stage-2/Exercise4"
 // import { FillEnBlank } from "../../../components/pronouns/Exercise4"
 // import { MatchPronounSound } from "../../../components/pronouns/Exercise5"
 
@@ -78,26 +79,6 @@ export default function Alphabet() {
         <div className='w-[80%] bg-white flex justify-self-center mt-8 h-4 border rounded-full border-[var(--secondary)]'>
             <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 25}%`}}></div>
         </div>
-
-        <QToA
-         data={chapterData} 
-         chapter={chapterName} 
-         step={step} setStep={setStep} 
-         index={index} 
-         isActive={stepMod == 3} 
-         setCorrectAttepmts={setCorrectAttepmts}
-         setWrongAttepmts={setWrongAttepmts}
-        />
-      
-        <QenToAen
-         data={chapterData} 
-         chapter={chapterName} 
-         step={step} setStep={setStep} 
-         index={index} 
-         isActive={stepMod == 2} 
-         setCorrectAttepmts={setCorrectAttepmts}
-         setWrongAttepmts={setWrongAttepmts}
-        />
       
         <QToAtranslate
          data={chapterData} 
@@ -108,6 +89,37 @@ export default function Alphabet() {
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
         />
+
+        <QToA
+         data={chapterData} 
+         chapter={chapterName} 
+         step={step} setStep={setStep} 
+         index={index} 
+         isActive={stepMod == 2} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+      
+        <QenToAen
+         data={chapterData} 
+         chapter={chapterName} 
+         step={step} setStep={setStep} 
+         index={index} 
+         isActive={stepMod == 3} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+      
+        <QenToAentranslate
+         data={chapterData} 
+         chapter={chapterName} 
+         step={step} setStep={setStep} 
+         index={index} 
+         isActive={stepMod == 4} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+      
       
         {/* <EnToAr
          data={chapterData} 
