@@ -59,7 +59,8 @@ export default function DailyExercise () {
             })
         );
 
-        setToReview(newReview);
+        const filtered = newReview.filter(item => item[1] !== "flash");
+        setToReview(filtered);
       } catch (err) {
         console.error('Error fetching progress:', err.message);
       }
@@ -68,23 +69,20 @@ export default function DailyExercise () {
     fetchProgress();
   }, [user]);
   
-  const calculateSteps = (toReview) => {
+  const calculateSteps = (toReview, cumulative) => {
     // Sum of focus percentages
     const totalFocus = toReview.reduce((sum, [, , focus]) => sum + focus, 0);
     
     // Calculate steps for each lesson
-    const steps = toReview.map(([name, index, focus]) => ({
+    const steps = toReview.map(([name, index, focus]) => {
+      const stepCount = totalFocus > 0 ? Math.round((focus / totalFocus) * 50) : 0;
+      cumulative += stepCount;
+      
+      return ({
       chapterName: name,
       subLessonName: index,
-      steps: totalFocus > 0 ? Math.round((focus / totalFocus) * 50) : 0,
-    }));
-
-    // Adjust steps to ensure total is 50
-    const currentTotal = steps.reduce((sum, { steps }) => sum + steps, 0);
-    if (currentTotal !== 50 && steps.length > 0) {
-      const diff = 50 - currentTotal;
-      steps[0].steps += diff; // Add/subtract difference to first lesson
-    }
+      steps: cumulative,
+    })});
 
     return steps;
   };
@@ -122,8 +120,9 @@ export default function DailyExercise () {
 
         // Update chapterName state
         setChapterName(allSubLessons);
-        
-        const stepsPerLesson = calculateSteps(toReview);
+
+        let cumulative = 0;
+        const stepsPerLesson = calculateSteps(toReview, cumulative);
         console.log(stepsPerLesson)
         setStepsPerLesson(stepsPerLesson);
         
@@ -153,11 +152,14 @@ export default function DailyExercise () {
     let stepToMove = stepsPerLesson.filter((item) => (
       item.chapterName == currentChapter && item.subLessonName == currentIndex
     ))
-
+    
     if (step > stepToMove[0]?.steps){
       saveProgress({ user, chapterName: currentChapter, index: currentIndex, correctAttempts, wrongAttempts, isDaily: true });
-      setCurrentChapter(toReview[currentPosition + 1][0]);
-      setCurrentIndex(toReview[currentPosition + 1][1]);
+      const nextIndex = currentPosition + 1;
+      const nextChapter = toReview[nextIndex] ? toReview[nextIndex][0] : toReview[0][0];
+
+      setCurrentChapter(nextChapter);
+      setCurrentIndex(toReview[nextIndex] ? toReview[nextIndex][1] : toReview[0][1]);
       setCorrectAttepmts(0);
       setWrongAttepmts(0);
       setCurrentPosition(prev => prev + 1);
