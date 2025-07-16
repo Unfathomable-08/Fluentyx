@@ -17,14 +17,14 @@
     "title": "Objective-Pronouns",
     "image": "/pronouns-obj.jpg",
     "stage": "1",
-    "desc": "Pronouns used as the object of a verb or preposition (e.g. me, him, us). Note: In arabic Objective and Possessive Pronounsa are same execpt 'I' that is 'ni' and 'i-' respectively."
+    "desc": "Pronouns used as the object of a verb or preposition (e.g. me, him, us). In Arabic, they are attached as suffixes."
   },
   {
     "id": "5",
     "title": "Prepositions",
     "image": "/prepositions.jpg",
     "stage": "1",
-    "desc": "Words that show relationships between nouns or pronouns and other words (e.g. in, on, with)."
+    "desc": "Words that show relationships between nouns/pronouns and other words (e.g. in, on, with). They are used as prefixes or separate words."
   },
   {
     "id": "6",
