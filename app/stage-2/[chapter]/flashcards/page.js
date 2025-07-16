@@ -19,7 +19,7 @@ export default function Flashcards() {
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [chapterData, setChapterData] = useState([]);
   const [data, setData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const { language } = useContext(LanguageContext)
 
