@@ -28,6 +28,7 @@ export default function DailyExercise () {
   const [currentPosition, setCurrentPosition] = useState(0);
   const [getProgress, setGetProgress] = useState(false);
   const [parentProgress, setParentProgress] = useState(0);
+  const [empty, setEmpty] = useState(false);
 
   const router = useRouter();
 
@@ -202,13 +203,23 @@ export default function DailyExercise () {
     postStreak();
   }, [parentProgress]);
 
+  useEffect(() => {
+    if (stepsPerLesson.length === 0) {
+      const timeout = setTimeout(() => {
+        setEmpty(true);
+      }, 3000); // 3 seconds
+
+      return () => clearTimeout(timeout);
+    }
+  }, [stepsPerLesson]);
+
   const stepMod = step % 5;
 
   if (!isAuthenticated){
     return null;
   }
 
-  if(stepsPerLesson.length == 0){
+  if(stepsPerLesson.length == 0 && show){
     return (
       <div className='bg-[var(--bg-theme)] min-h-screen pt-20 pt-3 px-8'>
         <h1 className='text-2xl text-center text-[var(--text-theme)]'>No exercises to review.</h1>
