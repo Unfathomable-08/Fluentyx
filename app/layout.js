@@ -6,6 +6,7 @@ import { LanguageProvider } from "../contexts/languageContext";
 import { ToastContainer } from "react-toastify";
 import { ScreenSizeProvider } from "../contexts/screenContext";
 import Script from 'next/script';
+import ScriptAd from '../Ads/inject.js'
 import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
@@ -79,7 +80,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
-
+        <ScriptAd />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
