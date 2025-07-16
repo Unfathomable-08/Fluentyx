@@ -79,6 +79,7 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
+        <meta name="e4438e8a5fe5ff12be5326609ddbbf33312578f7" content="e4438e8a5fe5ff12be5326609ddbbf33312578f7" />
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
         <ScriptAd />
       </head>
