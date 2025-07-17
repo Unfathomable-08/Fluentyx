@@ -1,12 +1,17 @@
 import { useState, useMemo, useContext } from 'react';
 import { LanguageContext } from '../../contexts/languageContext';
 
-export function QToAtranslate({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
+export function MatchSound({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selectedWords, setSelectedWords] = useState([]);
   const [correctIndex, setCorrectIndex] = useState(null);
   const [wrongIndex, setWrongIndex] = useState(null);
   const [isQuestionState, setIsQuestionState] = useState(null);
-  const { language } = useContext(LanguageContext);
+
+  const playSound = (arabic) => {
+    const utterance = new SpeechSynthesisUtterance(arabic);
+    utterance.lang = 'ar';
+    window.speechSynthesis.speak(utterance);
+  };
 
   const { selectedExample, words, isQuestion } = useMemo(() => {
     if (!data || data.length === 0) return {};
@@ -17,20 +22,17 @@ export function QToAtranslate({ chapter, index, setStep, isActive, data, step, s
     const randomExampleIndex = Math.floor(Math.random() * current.length);
     const selectedExample = current[randomExampleIndex];
 
-    // Randomly decide whether to use question or answer
     const isQuestion = Math.random() > 0.5;
     setIsQuestionState(isQuestion);
     const targetText = isQuestion ? selectedExample.question : selectedExample.answer;
     const targetWords = targetText.split(' ');
 
-    // Generate extra words (3-4) from other items in data
     const allWords = [].concat(...data.map(item => item.data.map(d => (isQuestion ? d.question : d.answer).split(' '))).flat());
     const extraWords = allWords
       .filter(word => !targetWords.includes(word))
       .sort(() => 0.5 - Math.random())
-      .slice(0, Math.floor(Math.random() * 2) + 3); // 3 or 4 extra words
+      .slice(0, Math.floor(Math.random() * 2) + 3);
 
-    // Combine target words with extra words and shuffle
     const words = [...new Set([...targetWords, ...extraWords])].sort(() => 0.5 - Math.random());
 
     return { selectedExample, words, isQuestion };
@@ -47,7 +49,6 @@ export function QToAtranslate({ chapter, index, setStep, isActive, data, step, s
     if (selectedWords.length < correctWords.length) {
       setSelectedWords(prev => [...prev, word]);
 
-      // Check if the current sequence is correct so far
       const currentSequence = [...selectedWords, word].join(' ');
       const correctSequence = correctWords.slice(0, selectedWords.length + 1).join(' ');
 
@@ -78,62 +79,57 @@ export function QToAtranslate({ chapter, index, setStep, isActive, data, step, s
     setCorrectIndex(null);
     setWrongIndex(null);
   };
-  
+
   const handleReset = () => {
     setSelectedWords([]);
     setCorrectIndex(null);
     setWrongIndex(null);
   };
-  
+
   if (!isActive) return null;
 
   return (
     <div className="flex flex-col items-center p-8 pb-20 gap-y-6">
-      <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">
+      <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-between shadow-[0_0_10px_#00000055] relative">
         <div className="flex gap-2 relative font-medium text-xl">
-          {language == 'english' ?
-            isQuestion ?
+          {isQuestion ?
             selectedExample?.question_english?.split(" ")?.map((word, i) => (
-            <span key={i} className="py-2 rounded">
-              {word}
-            </span>
-          ))
+              <span key={i} className="py-2 rounded">
+                {word}
+              </span>
+            ))
             :
             selectedExample?.answer_english?.split(" ")?.map((word, i) => (
-            <span key={i} className="py-2 rounded">
-              {word}
-            </span>
-          ))
-            :
-            isQuestion ?
-            selectedExample?.question_urdu?.split(" ")?.map((word, i) => (
-            <span key={i} className="py-2 rounded">
-              {word}
-            </span>
-          )) :
-            selectedExample?.answer_urdu?.split(" ")?.map((word, i) => (
-            <span key={i} className="py-2 rounded">
-              {word}
-            </span>
-          ))
+              <span key={i} className="py-2 rounded">
+                {word}
+              </span>
+            ))
           }
         </div>
+        <button
+          onClick={() => playSound(isQuestion ? selectedExample.question : selectedExample.answer)}
+          className="ml-4 p-2 rounded-full hover:bg-gray-100"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707a1 1 0 011.414 0l.707.707a1 1 0 000 1.414L9.414 9H13a1 1 0 011 1v4a1 1 0 01-1 1H9.414l2.293 2.293a1 1 0 01.293.707v.707a1 1 0 01-1 1h-.707a1 1 0 01-.707-.293L5.586 15z" />
+          </svg>
+        </button>
       </div>
 
       <div className='arabic flex gap-x-1'>
-          {isQuestion ?
-            selectedExample?.question?.split(" ")?.map((word, i) => (
+        {isQuestion ?
+          selectedExample?.question?.split(" ")?.map((word, i) => (
             <span key={i} className="py-2 rounded text-[20px]">
               {selectedWords[i] ? selectedWords[i] : '_____'}
             </span>
           ))
-            :
-            selectedExample?.answer?.split(" ")?.map((word, i) => (
+          :
+          selectedExample?.answer?.split(" ")?.map((word, i) => (
             <span key={i} className="py-2 rounded text-[20px]">
               {selectedWords[i] ? selectedWords[i] : '_____'}
             </span>
           ))
-          }
+        }
       </div>
 
       <div className="grid grid-cols-3 gap-4 max-w-md font-medium arabic">

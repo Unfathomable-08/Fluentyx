@@ -37,7 +37,7 @@ export default function Chapter() {
     // For index > 0, check if previous lesson's subProgress is greater than 80
 
     if ((index === 1 && (subProgress["flash"] || 0) < 80) ||
-        (index >= 2 && (subProgress[index.toString()] || 0) <= 80) ) {
+        (index >= 2 && (subProgress[(index - 1).toString()] || 0) <= 80) ) {
       return;
     }
     router.push(`/stage-2/${chapter}/${index}`);

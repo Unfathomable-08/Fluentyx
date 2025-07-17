@@ -20,11 +20,20 @@ export function QenToAentranslate({ chapter, index, setStep, isActive, data, ste
     // Randomly decide whether to use question or answer
     const isQuestion = Math.random() > 0.5;
     setIsQuestionState(isQuestion);
-    const targetText = isQuestion ? selectedExample.question : selectedExample.answer;
+    const targetText = language == 'english' ?
+      isQuestion ? selectedExample.question_english : selectedExample.answer_english
+      :
+      isQuestion ? selectedExample.question_urdu : selectedExample.answer_urdu
     const targetWords = targetText.split(' ');
 
     // Generate extra words (3-4) from other items in data
-    const allWords = [].concat(...data.map(item => item.data.map(d => (isQuestion ? d.question : d.answer).split(' '))).flat());
+    const allWords = language == 'english' ?
+      [].concat(...data.map(item => item.data.map(d => (
+      isQuestion ? d.question_english : d.answer_english).split(' '))).flat())
+      :
+      [].concat(...data.map(item => item.data.map(d => (
+      isQuestion ? d.question_urdu : d.answer_urdu).split(' '))).flat())
+    
     const extraWords = allWords
       .filter(word => !targetWords.includes(word))
       .sort(() => 0.5 - Math.random())
@@ -41,7 +50,11 @@ export function QenToAentranslate({ chapter, index, setStep, isActive, data, ste
   const handleWordClick = (word, i) => {
     if (correctIndex !== null) return;
 
-    const targetText = isQuestion ? selectedExample.question : selectedExample.answer;
+    const targetText = language == 'english' ?
+      isQuestion ? selectedExample.question_english : selectedExample.answer_english
+      :
+      isQuestion ? selectedExample.question_urdu : selectedExample.answer_urdu
+      
     const correctWords = targetText.split(' ');
 
     if (selectedWords.length < correctWords.length) {
@@ -90,10 +103,10 @@ export function QenToAentranslate({ chapter, index, setStep, isActive, data, ste
   return (
     <div className="flex flex-col items-center p-8 pb-20 gap-y-6">
       <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">
-        <div className="flex gap-2 relative font-medium text-xl">
+        <div className="flex gap-2 relative font-medium arabic">
           {isQuestion ?
             selectedExample?.question?.split(" ")?.map((word, i) => (
-            <span key={i} className="py-2 rounded">
+            <span key={i} className="py-2 rounded text-[20px]">
               {word}
             </span>
           ))
@@ -107,15 +120,15 @@ export function QenToAentranslate({ chapter, index, setStep, isActive, data, ste
         </div>
       </div>
 
-      <div className='arabic flex gap-x-1'>
+      <div className='flex gap-x-1'>
           {isQuestion ?
-            selectedExample?.question?.split(" ")?.map((word, i) => (
+            selectedExample?.question_english?.split(" ")?.map((word, i) => (
             <span key={i} className="py-2 rounded text-[20px]">
               {selectedWords[i] ? selectedWords[i] : '_____'}
             </span>
           ))
             :
-            selectedExample?.answer?.split(" ")?.map((word, i) => (
+            selectedExample?.answer_english?.split(" ")?.map((word, i) => (
             <span key={i} className="py-2 rounded text-[20px]">
               {selectedWords[i] ? selectedWords[i] : '_____'}
             </span>
@@ -123,7 +136,7 @@ export function QenToAentranslate({ chapter, index, setStep, isActive, data, ste
           }
       </div>
 
-      <div className="grid grid-cols-3 gap-4 max-w-md font-medium arabic">
+      <div className="grid grid-cols-3 gap-4 max-w-md">
         {words.map((word, i) => (
           <div
             key={i}

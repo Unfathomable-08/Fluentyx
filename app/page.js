@@ -14,9 +14,12 @@ export default function Home() {
 
   const router = useRouter();
 
-  const handleClick = (title) => {
+  const handleClick = (title, stage) => {
     const slug = title.toLowerCase().replace(/\s+/g, '-');
-    router.push(`/${slug}`);
+    stage == 1 ?
+      router.push(`/${slug}`)
+    :
+      router.push(`/stage-2/${slug}`)
   };
 
 
@@ -136,7 +139,7 @@ export default function Home() {
         {chapters.map((ch) => (
           <div
             key={ch.id}
-            onClick={() => handleClick(ch.title)}
+            onClick={() => handleClick(ch.title, ch.stage)}
             className="w-full max-sm:max-w-[430px] h-[200px] sm:h-[230px] md:h-[250px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055]"
           >
             <img

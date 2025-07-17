@@ -65,17 +65,30 @@ export function QenToAen({ chapter, index, setStep, isActive, data, step, setCor
       <div className="bg-white md:mt-16 font-medium text-xl rounded-xl w-full max-w-md p-4 flex items-center justify-center shadow-[0_0_10px_#00000055] relative">
         <div className="flex gap-1 relative">
           {
-            selectedExample?.question_english?.split(" ").map((word, i) =>(
-              <span
-                className="px-1 cursor-pointer"
-                key={i}
-                onMouseEnter={() => setHover(word)}
-                onClick={() => setHover(word)}
-                onMouseLeave={() => setHover(null)}
-                >
-                {word}
-                </span>
-            ))
+            language == 'english' ?
+              selectedExample?.question_english?.split(" ").map((word, i) =>(
+                <span
+                  className="px-1 cursor-pointer"
+                  key={i}
+                  onMouseEnter={() => setHover(word)}
+                  onClick={() => setHover(word)}
+                  onMouseLeave={() => setHover(null)}
+                  >
+                  {word}
+                  </span>
+              ))
+            :
+              selectedExample?.question_urdu?.split(" ").map((word, i) =>(
+                <span
+                  className="px-1 cursor-pointer"
+                  key={i}
+                  onMouseEnter={() => setHover(word)}
+                  onClick={() => setHover(word)}
+                  onMouseLeave={() => setHover(null)}
+                  >
+                  {word}
+                  </span>
+              ))
           }
           <div className="absolute top-0 -translate-y-12 flex">
             {selectedExample?.word2word.map((word, i) => (

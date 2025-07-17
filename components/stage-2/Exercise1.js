@@ -1,5 +1,5 @@
 import { useState, useMemo, useContext } from 'react';
-import { LanguageContext } from '../../contexts/languageContext'
+import { LanguageContext } from '../../contexts/languageContext';
 
 export function QToA({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selected, setSelected] = useState(null);

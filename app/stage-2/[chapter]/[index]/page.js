@@ -5,14 +5,13 @@ import { usePathname, useParams, useRouter } from 'next/navigation';
 
 import useAuth from "../../../../hooks/useAuth";
 import useSaveProgress from "../../../../hooks/useSaveProgress";
-import { showToast } from "../../../../lib/toastify"
+import { showToast } from "../../../../lib/toastify";
 
 import { QToA } from "../../../../components/stage-2/Exercise1"
 import { QenToAen } from "../../../../components/stage-2/Exercise2"
 import { QToAtranslate } from "../../../../components/stage-2/Exercise3"
 import { QenToAentranslate } from "../../../../components/stage-2/Exercise4"
-// import { FillEnBlank } from "../../../components/pronouns/Exercise4"
-// import { MatchPronounSound } from "../../../components/pronouns/Exercise5"
+import { MatchSound } from "../../../../components/stage-2/Exercise5"
 
 export default function Alphabet() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -120,60 +119,16 @@ export default function Alphabet() {
          setWrongAttepmts={setWrongAttepmts}
         />
       
-      
-        {/* <EnToAr
+        <MatchSound
          data={chapterData} 
          chapter={chapterName} 
          step={step} setStep={setStep} 
          index={index} 
-         isActive={stepMod == 1} 
+         isActive={stepMod == 5} 
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
         />
-
-        <PronounToEn 
-          data={chapterData}
-          chapter={chapterName} 
-          step={step} 
-          setStep={setStep} 
-          index={index} 
-          isActive={stepMod == 2} 
-          setCorrectAttepmts={setCorrectAttepmts}
-          setWrongAttepmts={setWrongAttepmts} 
-        />
-
-        <FillEnBlank
-         data={chapterData} 
-         chapter={chapterName} 
-         step={step} 
-         setStep={setStep} 
-         index={index} 
-         isActive={stepMod == 3} 
-         setCorrectAttepmts={setCorrectAttepmts}
-         setWrongAttepmts={setWrongAttepmts}
-        />
-
-        <FillBlank
-         data={chapterData} 
-         chapter={chapterName} 
-         step={step} 
-         setStep={setStep} 
-         index={index} 
-         isActive={stepMod == 4} 
-         setCorrectAttepmts={setCorrectAttepmts}
-         setWrongAttepmts={setWrongAttepmts}
-        />
-
-        <MatchPronounSound
-         data={chapterData} 
-         chapter={chapterName} 
-         step={step} 
-         setStep={setStep} 
-         index={index} 
-         isActive={stepMod == 0} 
-         setCorrectAttepmts={setCorrectAttepmts}
-         setWrongAttepmts={setWrongAttepmts}
-        /> */}
+      
       </div>
     );
 }

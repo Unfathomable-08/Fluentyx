@@ -1,376 +1,376 @@
-            [
-              {
-                "id": "1",
-                "title": "Part I",
-                "data": [
-                  {
-                    "id": "1",
-                    "question": "مَن أنت؟",
-                    "answer": "أنا أحمد.",
-                    "question_english": "Who are you?",
-                    "answer_english": "I am Ahmed.",
-                    "question_pronounce": "Man anta?",
-                    "answer_pronounce": "Ana Ahmed.",
-                    "question_urdu": "تم کون ہو؟",
-                    "answer_urdu": "میں احمد ہوں۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "أنت", "english": "are you", "urdu": "ہو", "pronounce": "Anta"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"},
-                      {"arabic": "أحمد", "english": "Ahmed", "urdu": "احمد", "pronounce": "Ahmed"}
-                    ]
-                  },
-                  {
-                    "id": "2",
-                    "question": "مَن معك؟",
-                    "answer": "أنا مع سارة.",
-                    "question_english": "Who is with you?",
-                    "answer_english": "I am with Sara.",
-                    "question_pronounce": "Man ma’ak?",
-                    "answer_pronounce": "Ana ma’a Sara.",
-                    "question_urdu": "تمہارے ساتھ کون ہے؟",
-                    "answer_urdu": "میں سارہ کے ساتھ ہوں۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "معك", "english": "is with you", "urdu": "تمہارے ساتھ", "pronounce": "Ma’ak"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"},
-                      {"arabic": "مع", "english": "with", "urdu": "کے ساتھ", "pronounce": "Ma’a"},
-                      {"arabic": "سارة", "english": "Sara", "urdu": "سارہ", "pronounce": "Sara"}
-                    ]
-                  },
-                  {
-                    "id": "3",
-                    "question": "هل أنت مِن مصر؟",
-                    "answer": "نعم، أنا مِن مصر.",
-                    "question_english": "Are you from Egypt?",
-                    "answer_english": "Yes, I am from Egypt.",
-                    "question_pronounce": "Hal anta min Misr?",
-                    "answer_pronounce": "Na’am, ana min Misr.",
-                    "question_urdu": "کیا تم مصر سے ہو؟",
-                    "answer_urdu": "ہاں، میں مصر سے ہوں۔",
-                    "word2word": [
-                      {"arabic": "هل", "english": "Are", "urdu": "کیا", "pronounce": "Hal"},
-                      {"arabic": "أنت", "english": "you", "urdu": "تم", "pronounce": "Anta"},
-                      {"arabic": "مِن", "english": "from", "urdu": "سے", "pronounce": "Min"},
-                      {"arabic": "مصر", "english": "Egypt", "urdu": "مصر", "pronounce": "Misr"},
-                      {"arabic": "نعم", "english": "Yes", "urdu": "ہاں", "pronounce": "Na’am"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"}
-                    ]
-                  },
-                  {
-                    "id": "4",
-                    "question": "أين هو علي؟",
-                    "answer": "علي في باكستان.",
-                    "question_english": "Where is Ali?",
-                    "answer_english": "Ali is in Pakistan.",
-                    "question_pronounce": "Ayna huwa Ali?",
-                    "answer_pronounce": "Ali fi Pakistan.",
-                    "question_urdu": "علی کہاں ہے؟",
-                    "answer_urdu": "علی پاکستان میں ہے۔",
-                    "word2word": [
-                      {"arabic": "أين", "english": "Where", "urdu": "کہاں", "pronounce": "Ayna"},
-                      {"arabic": "هو", "english": "is", "urdu": "ہے", "pronounce": "Huwa"},
-                      {"arabic": "علي", "english": "Ali", "urdu": "علی", "pronounce": "Ali"},
-                      {"arabic": "في", "english": "in", "urdu": "میں", "pronounce": "Fi"},
-                      {"arabic": "باكستان", "english": "Pakistan", "urdu": "پاکستان", "pronounce": "Pakistan"}
-                    ]
-                  },
-                  {
-                    "id": "5",
-                    "question": "مَن في الرياض؟",
-                    "answer": "يوسف في الرياض.",
-                    "question_english": "Who is in Riyadh?",
-                    "answer_english": "Yusuf is in Riyadh.",
-                    "question_pronounce": "Man fi al-Riyadh?",
-                    "answer_pronounce": "Yusuf fi al-Riyadh.",
-                    "question_urdu": "ریاض میں کون ہے؟",
-                    "answer_urdu": "یوسف ریاض میں ہے۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "في", "english": "in", "urdu": "میں", "pronounce": "Fi"},
-                      {"arabic": "الرياض", "english": "Riyadh", "urdu": "ریاض", "pronounce": "Al-Riyadh"},
-                      {"arabic": "يوسف", "english": "Yusuf", "urdu": "یوسف", "pronounce": "Yusuf"}
-                    ]
-                  },
-                  {
-                    "id": "6",
-                    "question": "هل فاطمة معك؟",
-                    "answer": "لا، فاطمة ليست معي.",
-                    "question_english": "Is Fatima with you?",
-                    "answer_english": "No, Fatima is not with me.",
-                    "question_pronounce": "Hal Fatima ma’ak?",
-                    "answer_pronounce": "La, Fatima laysat ma’i.",
-                    "question_urdu": "کیا فاطمہ تمہارے ساتھ ہے؟",
-                    "answer_urdu": "نہیں، فاطمہ میرے ساتھ نہیں ہے۔",
-                    "word2word": [
-                      {"arabic": "هل", "english": "Is", "urdu": "کیا", "pronounce": "Hal"},
-                      {"arabic": "فاطمة", "english": "Fatima", "urdu": "فاطمہ", "pronounce": "Fatima"},
-                      {"arabic": "معك", "english": "with you", "urdu": "تمہارے ساتھ", "pronounce": "Ma’ak"},
-                      {"arabic": "لا", "english": "No", "urdu": "نہیں", "pronounce": "La"},
-                      {"arabic": "ليست", "english": "is not", "urdu": "نہیں ہے", "pronounce": "Laysat"},
-                      {"arabic": "معي", "english": "with me", "urdu": "میرے ساتھ", "pronounce": "Ma’i"}
-                    ]
-                  },
-                  {
-                    "id": "7",
-                    "question": "إلى مَن؟",
-                    "answer": "إلى علي.",
-                    "question_english": "To whom?",
-                    "answer_english": "To Ali.",
-                    "question_pronounce": "Ila man?",
-                    "answer_pronounce": "Ila Ali.",
-                    "question_urdu": "کس کے لئے؟",
-                    "answer_urdu": "علی کے لئے۔",
-                    "word2word": [
-                      {"arabic": "إلى", "english": "To", "urdu": "کے لئے", "pronounce": "Ila"},
-                      {"arabic": "مَن", "english": "whom", "urdu": "کس", "pronounce": "Man"},
-                      {"arabic": "علي", "english": "Ali", "urdu": "علی", "pronounce": "Ali"}
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "2",
-                "title": "Part II",
-                "data": [
-                  {
-                    "id": "8",
-                    "question": "مَن مِن باكستان؟",
-                    "answer": "أحمد مِن باكستان.",
-                    "question_english": "Who is from Pakistan?",
-                    "answer_english": "Ahmed is from Pakistan.",
-                    "question_pronounce": "Man min Pakistan?",
-                    "answer_pronounce": "Ahmed min Pakistan.",
-                    "question_urdu": "پاکستان سے کون ہے؟",
-                    "answer_urdu": "احمد پاکستان سے ہے۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "مِن", "english": "from", "urdu": "سے", "pronounce": "Min"},
-                      {"arabic": "باكستان", "english": "Pakistan", "urdu": "پاکستان", "pronounce": "Pakistan"},
-                      {"arabic": "أحمد", "english": "Ahmed", "urdu": "احمد", "pronounce": "Ahmed"}
-                    ]
-                  },
-                  {
-                    "id": "9",
-                    "question": "هل أنت مع محمد؟",
-                    "answer": "نعم، أنا مع محمد.",
-                    "question_english": "Are you with Muhammad?",
-                    "answer_english": "Yes, I am with Muhammad.",
-                    "question_pronounce": "Hal anta ma’a Muhammad?",
-                    "answer_pronounce": "Na’am, ana ma’a Muhammad.",
-                    "question_urdu": "کیا تم محمد کے ساتھ ہو؟",
-                    "answer_urdu": "ہاں، میں محمد کے ساتھ ہوں۔",
-                    "word2word": [
-                      {"arabic": "هل", "english": "Are", "urdu": "کیا", "pronounce": "Hal"},
-                      {"arabic": "أنت", "english": "you", "urdu": "تم", "pronounce": "Anta"},
-                      {"arabic": "مع", "english": "with", "urdu": "کے ساتھ", "pronounce": "Ma’a"},
-                      {"arabic": "محمد", "english": "Muhammad", "urdu": "محمد", "pronounce": "Muhammad"},
-                      {"arabic": "نعم", "english": "Yes", "urdu": "ہاں", "pronounce": "Na’am"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"}
-                    ]
-                  },
-                  {
-                    "id": "10",
-                    "question": "مع مَن أنت؟",
-                    "answer": "أنا مع فاطمة.",
-                    "question_english": "With whom are you?",
-                    "answer_english": "I am with Fatima.",
-                    "question_pronounce": "Ma’a man anta?",
-                    "answer_pronounce": "Ana ma’a Fatima.",
-                    "question_urdu": "تم کس کے ساتھ ہو؟",
-                    "answer_urdu": "میں فاطمہ کے ساتھ ہوں۔",
-                    "word2word": [
-                      {"arabic": "مع", "english": "With", "urdu": "کے ساتھ", "pronounce": "Ma’a"},
-                      {"arabic": "مَن", "english": "whom", "urdu": "کس", "pronounce": "Man"},
-                      {"arabic": "أنت", "english": "are you", "urdu": "ہو", "pronounce": "Anta"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"},
-                      {"arabic": "فاطمة", "english": "Fatima", "urdu": "فاطمہ", "pronounce": "Fatima"}
-                    ]
-                  },
-                  {
-                    "id": "11",
-                    "question": "مَن في مصر؟",
-                    "answer": "سارة في مصر.",
-                    "question_english": "Who is in Egypt?",
-                    "answer_english": "Sara is in Egypt.",
-                    "question_pronounce": "Man fi Misr?",
-                    "answer_pronounce": "Sara fi Misr.",
-                    "question_urdu": "مصر میں کون ہے؟",
-                    "answer_urdu": "سارہ مصر میں ہے۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "في", "english": "in", "urdu": "میں", "pronounce": "Fi"},
-                      {"arabic": "مصر", "english": "Egypt", "urdu": "مصر", "pronounce": "Misr"},
-                      {"arabic": "سارة", "english": "Sara", "urdu": "سارہ", "pronounce": "Sara"}
-                    ]
-                  },
-                  {
-                    "id": "12",
-                    "question": "هل هو مِن الرياض؟",
-                    "answer": "نعم، هو مِن الرياض.",
-                    "question_english": "Is he from Riyadh?",
-                    "answer_english": "Yes, he is from Riyadh.",
-                    "question_pronounce": "Hal huwa min al-Riyadh?",
-                    "answer_pronounce": "Na’am, huwa min al-Riyadh.",
-                    "question_urdu": "کیا وہ ریاض سے ہے؟",
-                    "answer_urdu": "ہاں، وہ ریاض سے ہے۔",
-                    "word2word": [
-                      {"arabic": "هل", "english": "Is", "urdu": "کیا", "pronounce": "Hal"},
-                      {"arabic": "هو", "english": "he", "urdu": "وہ", "pronounce": "Huwa"},
-                      {"arabic": "مِن", "english": "from", "urdu": "سے", "pronounce": "Min"},
-                      {"arabic": "الرياض", "english": "Riyadh", "urdu": "ریاض", "pronounce": "Al-Riyadh"},
-                      {"arabic": "نعم", "english": "Yes", "urdu": "ہاں", "pronounce": "Na’am"}
-                    ]
-                  },
-                  {
-                    "id": "13",
-                    "question": "مَن إلى القاهرة؟",
-                    "answer": "يوسف إلى القاهرة.",
-                    "question_english": "Who is to Cairo?",
-                    "answer_english": "Yusuf is to Cairo.",
-                    "question_pronounce": "Man ila al-Qahira?",
-                    "answer_pronounce": "Yusuf ila al-Qahira.",
-                    "question_urdu": "قاہرہ کے لئے کون ہے؟",
-                    "answer_urdu": "یوسف قاہرہ کے لئے ہے۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "إلى", "english": "to", "urdu": "کے لئے", "pronounce": "Ila"},
-                      {"arabic": "القاهرة", "english": "Cairo", "urdu": "قاہرہ", "pronounce": "Al-Qahira"},
-                      {"arabic": "يوسف", "english": "Yusuf", "urdu": "یوسف", "pronounce": "Yusuf"}
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "3",    
-                "title": "Part III",  
-                "data": [
-                  {
-                    "id": "14",
-                    "question": "أين هي فاطمة؟",
-                    "answer": "فاطمة في لاهور.",
-                    "question_english": "Where is Fatima?",
-                    "answer_english": "Fatima is in Lahore.",
-                    "question_pronounce": "Ayna hiya Fatima?",
-                    "answer_pronounce": "Fatima fi Lahore.",
-                    "question_urdu": "فاطمہ کہاں ہے؟",
-                    "answer_urdu": "فاطمہ لاہور میں ہے۔",
-                    "word2word": [
-                      {"arabic": "أين", "english": "Where", "urdu": "کہاں", "pronounce": "Ayna"},
-                      {"arabic": "هي", "english": "is", "urdu": "ہے", "pronounce": "Hiya"},
-                      {"arabic": "فاطمة", "english": "Fatima", "urdu": "فاطمہ", "pronounce": "Fatima"},
-                      {"arabic": "في", "english": "in", "urdu": "میں", "pronounce": "Fi"},
-                      {"arabic": "لاهور", "english": "Lahore", "urdu": "لاہور", "pronounce": "Lahore"}
-                    ]
-                  },
-                  {
-                    "id": "15",
-                    "question": "كم مِن مصر؟",
-                    "answer": "ثلاثة مِن مصر.",
-                    "question_english": "How many are from Egypt?",
-                    "answer_english": "Three are from Egypt.",
-                    "question_pronounce": "Kam min Misr?",
-                    "answer_pronounce": "Thalatha min Misr.",
-                    "question_urdu": "مصر سے کتنے ہیں؟",
-                    "answer_urdu": "تین مصر سے ہیں۔",
-                    "word2word": [
-                      {"arabic": "كم", "english": "How many", "urdu": "کتنے", "pronounce": "Kam"},
-                      {"arabic": "مِن", "english": "from", "urdu": "سے", "pronounce": "Min"},
-                      {"arabic": "مصر", "english": "Egypt", "urdu": "مصر", "pronounce": "Misr"},
-                      {"arabic": "ثلاثة", "english": "Three", "urdu": "تین", "pronounce": "Thalatha"}
-                    ]
-                  },
-                  {
-                    "id": "16",
-                    "question": "مَن على؟",
-                    "answer": "علي على الهاتف.",
-                    "question_english": "Who is on?",
-                    "answer_english": "Ali is on the phone.",
-                    "question_pronounce": "Man ‘ala?",
-                    "answer_pronounce": "Ali ‘ala al-hatif.",
-                    "question_urdu": "کون آن ہے؟",
-                    "answer_urdu": "علی فون پر ہے۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "على", "english": "on", "urdu": "آن", "pronounce": "‘Ala"},
-                      {"arabic": "علي", "english": "Ali", "urdu": "علی", "pronounce": "Ali"},
-                      {"arabic": "الهاتف", "english": "the phone", "urdu": "فون", "pronounce": "Al-hatif"}
-                    ]
-                  },
-                  {
-                    "id": "17",
-                    "question": "هل أحمد مع فاطمة؟",
-                    "answer": "لا، أحمد ليس مع فاطمة.",
-                    "question_english": "Is Ahmed with Fatima?",
-                    "answer_english": "No, Ahmed is not with Fatima.",
-                    "question_pronounce": "Hal Ahmed ma’a Fatima?",
-                    "answer_pronounce": "La, Ahmed laysa ma’a Fatima.",
-                    "question_urdu": "کیا احمد فاطمہ کے ساتھ ہے؟",
-                    "answer_urdu": "نہیں، احمد فاطمہ کے ساتھ نہیں ہے۔",
-                    "word2word": [
-                      {"arabic": "هل", "english": "Is", "urdu": "کیا", "pronounce": "Hal"},
-                      {"arabic": "أحمد", "english": "Ahmed", "urdu": "احمد", "pronounce": "Ahmed"},
-                      {"arabic": "مع", "english": "with", "urdu": "کے ساتھ", "pronounce": "Ma’a"},
-                      {"arabic": "فاطمة", "english": "Fatima", "urdu": "فاطمہ", "pronounce": "Fatima"},
-                      {"arabic": "لا", "english": "No", "urdu": "نہیں", "pronounce": "La"},
-                      {"arabic": "ليس", "english": "is not", "urdu": "نہیں ہے", "pronounce": "Laysa"}
-                    ]
-                  },
-                  {
-                    "id": "18",
-                    "question": "مع مَن في كراتشي؟",
-                    "answer": "أنا مع سارة في كراتشي.",
-                    "question_english": "With whom are you in Karachi?",
-                    "answer_english": "I am with Sara in Karachi.",
-                    "question_pronounce": "Ma’a man fi Karachi?",
-                    "answer_pronounce": "Ana ma’a Sara fi Karachi.",
-                    "question_urdu": "کراچی میں کس کے ساتھ ہو؟",
-                    "answer_urdu": "میں کراچی میں سارہ کے ساتھ ہوں۔",
-                    "word2word": [
-                      {"arabic": "مع", "english": "With", "urdu": "کے ساتھ", "pronounce": "Ma’a"},
-                      {"arabic": "مَن", "english": "whom", "urdu": "کس", "pronounce": "Man"},
-                      {"arabic": "في", "english": "in", "urdu": "میں", "pronounce": "Fi"},
-                      {"arabic": "كراتشي", "english": "Karachi", "urdu": "کراچی", "pronounce": "Karachi"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"},
-                      {"arabic": "سارة", "english": "Sara", "urdu": "سارہ", "pronounce": "Sara"}
-                    ]
-                  },
-                  {
-                    "id": "19",
-                    "question": "مَن في باكستان؟",
-                    "answer": "محمد في باكستان.",
-                    "question_english": "Who is in Pakistan?",
-                    "answer_english": "Muhammad is in Pakistan.",
-                    "question_pronounce": "Man fi Pakistan?",
-                    "answer_pronounce": "Muhammad fi Pakistan.",
-                    "question_urdu": "پاکستان میں کون ہے؟",
-                    "answer_urdu": "محمد پاکستان میں ہے۔",
-                    "word2word": [
-                      {"arabic": "مَن", "english": "Who", "urdu": "کون", "pronounce": "Man"},
-                      {"arabic": "في", "english": "in", "urdu": "میں", "pronounce": "Fi"},
-                      {"arabic": "باكستان", "english": "Pakistan", "urdu": "پاکستان", "pronounce": "Pakistan"},
-                      {"arabic": "محمد", "english": "Muhammad", "urdu": "محمد", "pronounce": "Muhammad"}
-                    ]
-                  },
-                  {
-                    "id": "20",
-                    "question": "هل أنت إلى باكستان؟",
-                    "answer": "نعم، أنا إلى باكستان.",
-                    "question_english": "Are you going to Pakistan?",
-                    "answer_english": "Yes, I am going to Pakistan.",
-                    "question_pronounce": "Hal anta ila Pakistan?",
-                    "answer_pronounce": "Na’am, ana ila Pakistan.",
-                    "question_urdu": "کیا تم پاکستان جا رہے ہو؟",
-                    "answer_urdu": "ہاں، میں پاکستان جا رہا ہوں۔",
-                    "word2word": [
-                      {"arabic": "هل", "english": "Are", "urdu": "کیا", "pronounce": "Hal"},
-                      {"arabic": "أنت", "english": "you", "urdu": "تم", "pronounce": "Anta"},
-                      {"arabic": "إلى", "english": "to", "urdu": "کے لئے", "pronounce": "Ila"},
-                      {"arabic": "باكستان", "english": "Pakistan", "urdu": "پاکستان", "pronounce": "Pakistan"},
-                      {"arabic": "نعم", "english": "Yes", "urdu": "ہاں", "pronounce": "Na’am"},
-                      {"arabic": "أنا", "english": "I am", "urdu": "میں ہوں", "pronounce": "Ana"}
-                    ]
-                  }
-                ]
-              }
-            ]
+[
+  {
+    "id": "1",
+    "title": "Part I",
+    "data": [
+      {
+        "id": "1",
+        "question": "مَن أنت؟",
+        "answer": "أنا أحمد.",
+        "question_english": "Who are you?",
+        "answer_english": "I am Ahmed.",
+        "question_pronounce": "Man anta?",
+        "answer_pronounce": "Ana Ahmed.",
+        "question_urdu": "Tum kaun ho?",
+        "answer_urdu": "Main Ahmed hoon.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "أنت", "english": "are you", "urdu": "Ho", "pronounce": "Anta"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"},
+          {"arabic": "أحمد", "english": "Ahmed", "urdu": "Ahmed", "pronounce": "Ahmed"}
+        ]
+      },
+      {
+        "id": "2",
+        "question": "مَن معك؟",
+        "answer": "أنا مع سارة.",
+        "question_english": "Who is with you?",
+        "answer_english": "I am with Sara.",
+        "question_pronounce": "Man ma’ak?",
+        "answer_pronounce": "Ana ma’a Sara.",
+        "question_urdu": "Tumhare saath kaun hai?",
+        "answer_urdu": "Main Sara ke saath hoon.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "معك", "english": "is with you", "urdu": "Tumhare saath", "pronounce": "Ma’ak"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"},
+          {"arabic": "مع", "english": "with", "urdu": "Ke saath", "pronounce": "Ma’a"},
+          {"arabic": "سارة", "english": "Sara", "urdu": "Sara", "pronounce": "Sara"}
+        ]
+      },
+      {
+        "id": "3",
+        "question": "هل أنت مِن مصر؟",
+        "answer": "نعم، أنا مِن مصر.",
+        "question_english": "Are you from Egypt?",
+        "answer_english": "Yes, I am from Egypt.",
+        "question_pronounce": "Hal anta min Misr?",
+        "answer_pronounce": "Na’am, ana min Misr.",
+        "question_urdu": "Kya tum Misr se ho?",
+        "answer_urdu": "Haan, main Misr se hoon.",
+        "word2word": [
+          {"arabic": "هل", "english": "Are", "urdu": "Kya", "pronounce": "Hal"},
+          {"arabic": "أنت", "english": "you", "urdu": "Tum", "pronounce": "Anta"},
+          {"arabic": "مِن", "english": "from", "urdu": "Se", "pronounce": "Min"},
+          {"arabic": "مصر", "english": "Egypt", "urdu": "Misr", "pronounce": "Misr"},
+          {"arabic": "نعم", "english": "Yes", "urdu": "Haan", "pronounce": "Na’am"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"}
+        ]
+      },
+      {
+        "id": "4",
+        "question": "أين هو علي؟",
+        "answer": "علي في باكستان.",
+        "question_english": "Where is Ali?",
+        "answer_english": "Ali is in Pakistan.",
+        "question_pronounce": "Ayna huwa Ali?",
+        "answer_pronounce": "Ali fi Pakistan.",
+        "question_urdu": "Ali kahan hai?",
+        "answer_urdu": "Ali Pakistan mein hai.",
+        "word2word": [
+          {"arabic": "أين", "english": "Where", "urdu": "Kahan", "pronounce": "Ayna"},
+          {"arabic": "هو", "english": "is", "urdu": "Hai", "pronounce": "Huwa"},
+          {"arabic": "علي", "english": "Ali", "urdu": "Ali", "pronounce": "Ali"},
+          {"arabic": "في", "english": "in", "urdu": "Mein", "pronounce": "Fi"},
+          {"arabic": "باكستان", "english": "Pakistan", "urdu": "Pakistan", "pronounce": "Pakistan"}
+        ]
+      },
+      {
+        "id": "5",
+        "question": "مَن في الرياض؟",
+        "answer": "يوسف في الرياض.",
+        "question_english": "Who is in Riyadh?",
+        "answer_english": "Yusuf is in Riyadh.",
+        "question_pronounce": "Man fi al-Riyadh?",
+        "answer_pronounce": "Yusuf fi al-Riyadh.",
+        "question_urdu": "Riyadh mein kaun hai?",
+        "answer_urdu": "Yusuf Riyadh mein hai.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "في", "english": "in", "urdu": "Mein", "pronounce": "Fi"},
+          {"arabic": "الرياض", "english": "Riyadh", "urdu": "Riyadh", "pronounce": "Al-Riyadh"},
+          {"arabic": "يوسف", "english": "Yusuf", "urdu": "Yusuf", "pronounce": "Yusuf"}
+        ]
+      },
+      {
+        "id": "6",
+        "question": "هل فاطمة معك؟",
+        "answer": "لا، فاطمة ليست معي.",
+        "question_english": "Is Fatima with you?",
+        "answer_english": "No, Fatima is not with me.",
+        "question_pronounce": "Hal Fatima ma’ak?",
+        "answer_pronounce": "La, Fatima laysat ma’i.",
+        "question_urdu": "Kya Fatima tumhare saath hai?",
+        "answer_urdu": "Nahi, Fatima mere saath nahi hai.",
+        "word2word": [
+          {"arabic": "هل", "english": "Is", "urdu": "Kya", "pronounce": "Hal"},
+          {"arabic": "فاطمة", "english": "Fatima", "urdu": "Fatima", "pronounce": "Fatima"},
+          {"arabic": "معك", "english": "with you", "urdu": "Tumhare saath", "pronounce": "Ma’ak"},
+          {"arabic": "لا", "english": "No", "urdu": "Nahi", "pronounce": "La"},
+          {"arabic": "ليست", "english": "is not", "urdu": "Nahi hai", "pronounce": "Laysat"},
+          {"arabic": "معي", "english": "with me", "urdu": "Mere saath", "pronounce": "Ma’i"}
+        ]
+      },
+      {
+        "id": "7",
+        "question": "إلى مَن؟",
+        "answer": "إلى علي.",
+        "question_english": "To whom?",
+        "answer_english": "To Ali.",
+        "question_pronounce": "Ila man?",
+        "answer_pronounce": "Ila Ali.",
+        "question_urdu": "Kis ke liye?",
+        "answer_urdu": "Ali ke liye.",
+        "word2word": [
+          {"arabic": "إلى", "english": "To", "urdu": "Ke liye", "pronounce": "Ila"},
+          {"arabic": "مَن", "english": "whom", "urdu": "Kis", "pronounce": "Man"},
+          {"arabic": "علي", "english": "Ali", "urdu": "Ali", "pronounce": "Ali"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Part II",
+    "data": [
+      {
+        "id": "8",
+        "question": "مَن مِن باكستان؟",
+        "answer": "أحمد مِن باكستان.",
+        "question_english": "Who is from Pakistan?",
+        "answer_english": "Ahmed is from Pakistan.",
+        "question_pronounce": "Man min Pakistan?",
+        "answer_pronounce": "Ahmed min Pakistan.",
+        "question_urdu": "Pakistan se kaun hai?",
+        "answer_urdu": "Ahmed Pakistan se hai.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "مِن", "english": "from", "urdu": "Se", "pronounce": "Min"},
+          {"arabic": "باكستان", "english": "Pakistan", "urdu": "Pakistan", "pronounce": "Pakistan"},
+          {"arabic": "أحمد", "english": "Ahmed", "urdu": "Ahmed", "pronounce": "Ahmed"}
+        ]
+      },
+      {
+        "id": "9",
+        "question": "هل أنت مع محمد؟",
+        "answer": "نعم، أنا مع محمد.",
+        "question_english": "Are you with Muhammad?",
+        "answer_english": "Yes, I am with Muhammad.",
+        "question_pronounce": "Hal anta ma’a Muhammad?",
+        "answer_pronounce": "Na’am, ana ma’a Muhammad.",
+        "question_urdu": "Kya tum Muhammad ke saath ho?",
+        "answer_urdu": "Haan, main Muhammad ke saath hoon.",
+        "word2word": [
+          {"arabic": "هل", "english": "Are", "urdu": "Kya", "pronounce": "Hal"},
+          {"arabic": "أنت", "english": "you", "urdu": "Tum", "pronounce": "Anta"},
+          {"arabic": "مع", "english": "with", "urdu": "Ke saath", "pronounce": "Ma’a"},
+          {"arabic": "محمد", "english": "Muhammad", "urdu": "Muhammad", "pronounce": "Muhammad"},
+          {"arabic": "نعم", "english": "Yes", "urdu": "Haan", "pronounce": "Na’am"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"}
+        ]
+      },
+      {
+        "id": "10",
+        "question": "مع مَن أنت؟",
+        "answer": "أنا مع فاطمة.",
+        "question_english": "With whom are you?",
+        "answer_english": "I am with Fatima.",
+        "question_pronounce": "Ma’a man anta?",
+        "answer_pronounce": "Ana ma’a Fatima.",
+        "question_urdu": "Tum kis ke saath ho?",
+        "answer_urdu": "Main Fatima ke saath hoon.",
+        "word2word": [
+          {"arabic": "مع", "english": "With", "urdu": "Ke saath", "pronounce": "Ma’a"},
+          {"arabic": "مَن", "english": "whom", "urdu": "Kis", "pronounce": "Man"},
+          {"arabic": "أنت", "english": "are you", "urdu": "Ho", "pronounce": "Anta"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"},
+          {"arabic": "فاطمة", "english": "Fatima", "urdu": "Fatima", "pronounce": "Fatima"}
+        ]
+      },
+      {
+        "id": "11",
+        "question": "مَن في مصر؟",
+        "answer": "سارة في مصر.",
+        "question_english": "Who is in Egypt?",
+        "answer_english": "Sara is in Egypt.",
+        "question_pronounce": "Man fi Misr?",
+        "answer_pronounce": "Sara fi Misr.",
+        "question_urdu": "Misr mein kaun hai?",
+        "answer_urdu": "Sara Misr mein hai.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "في", "english": "in", "urdu": "Mein", "pronounce": "Fi"},
+          {"arabic": "مصر", "english": "Egypt", "urdu": "Misr", "pronounce": "Misr"},
+          {"arabic": "سارة", "english": "Sara", "urdu": "Sara", "pronounce": "Sara"}
+        ]
+      },
+      {
+        "id": "12",
+        "question": "هل هو مِن الرياض؟",
+        "answer": "نعم، هو مِن الرياض.",
+        "question_english": "Is he from Riyadh?",
+        "answer_english": "Yes, he is from Riyadh.",
+        "question_pronounce": "Hal huwa min al-Riyadh?",
+        "answer_pronounce": "Na’am, huwa min al-Riyadh.",
+        "question_urdu": "Kya woh Riyadh se hai?",
+        "answer_urdu": "Haan, woh Riyadh se hai.",
+        "word2word": [
+          {"arabic": "هل", "english": "Is", "urdu": "Kya", "pronounce": "Hal"},
+          {"arabic": "هو", "english": "he", "urdu": "Woh", "pronounce": "Huwa"},
+          {"arabic": "مِن", "english": "from", "urdu": "Se", "pronounce": "Min"},
+          {"arabic": "الرياض", "english": "Riyadh", "urdu": "Riyadh", "pronounce": "Al-Riyadh"},
+          {"arabic": "نعم", "english": "Yes", "urdu": "Haan", "pronounce": "Na’am"}
+        ]
+      },
+      {
+        "id": "13",
+        "question": "مَن إلى القاهرة؟",
+        "answer": "يوسف إلى القاهرة.",
+        "question_english": "Who is to Cairo?",
+        "answer_english": "Yusuf is to Cairo.",
+        "question_pronounce": "Man ila al-Qahira?",
+        "answer_pronounce": "Yusuf ila al-Qahira.",
+        "question_urdu": "Qahira ke liye kaun hai?",
+        "answer_urdu": "Yusuf Qahira ke liye hai.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "إلى", "english": "to", "urdu": "Ke liye", "pronounce": "Ila"},
+          {"arabic": "القاهرة", "english": "Cairo", "urdu": "Qahira", "pronounce": "Al-Qahira"},
+          {"arabic": "يوسف", "english": "Yusuf", "urdu": "Yusuf", "pronounce": "Yusuf"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Part III",
+    "data": [
+      {
+        "id": "14",
+        "question": "أين هي فاطمة؟",
+        "answer": "فاطمة في لاهور.",
+        "question_english": "Where is Fatima?",
+        "answer_english": "Fatima is in Lahore.",
+        "question_pronounce": "Ayna hiya Fatima?",
+        "answer_pronounce": "Fatima fi Lahore.",
+        "question_urdu": "Fatima kahan hai?",
+        "answer_urdu": "Fatima Lahore mein hai.",
+        "word2word": [
+          {"arabic": "أين", "english": "Where", "urdu": "Kahan", "pronounce": "Ayna"},
+          {"arabic": "هي", "english": "is", "urdu": "Hai", "pronounce": "Hiya"},
+          {"arabic": "فاطمة", "english": "Fatima", "urdu": "Fatima", "pronounce": "Fatima"},
+          {"arabic": "في", "english": "in", "urdu": "Mein", "pronounce": "Fi"},
+          {"arabic": "لاهور", "english": "Lahore", "urdu": "Lahore", "pronounce": "Lahore"}
+        ]
+      },
+      {
+        "id": "15",
+        "question": "كم مِن مصر؟",
+        "answer": "ثلاثة مِن مصر.",
+        "question_english": "How many are from Egypt?",
+        "answer_english": "Three are from Egypt.",
+        "question_pronounce": "Kam min Misr?",
+        "answer_pronounce": "Thalatha min Misr.",
+        "question_urdu": "Misr se kitne hain?",
+        "answer_urdu": "Teen Misr se hain.",
+        "word2word": [
+          {"arabic": "كم", "english": "How many", "urdu": "Kitne", "pronounce": "Kam"},
+          {"arabic": "مِن", "english": "from", "urdu": "Se", "pronounce": "Min"},
+          {"arabic": "مصر", "english": "Egypt", "urdu": "Misr", "pronounce": "Misr"},
+          {"arabic": "ثلاثة", "english": "Three", "urdu": "Teen", "pronounce": "Thalatha"}
+        ]
+      },
+      {
+        "id": "16",
+        "question": "مَن على؟",
+        "answer": "علي على الهاتف.",
+        "question_english": "Who is on?",
+        "answer_english": "Ali is on the phone.",
+        "question_pronounce": "Man ‘ala?",
+        "answer_pronounce": "Ali ‘ala al-hatif.",
+        "question_urdu": "Kaun on hai?",
+        "answer_urdu": "Ali phone par hai.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "على", "english": "on", "urdu": "On", "pronounce": "‘Ala"},
+          {"arabic": "علي", "english": "Ali", "urdu": "Ali", "pronounce": "Ali"},
+          {"arabic": "الهاتف", "english": "the phone", "urdu": "Phone", "pronounce": "Al-hatif"}
+        ]
+      },
+      {
+        "id": "17",
+        "question": "هل أحمد مع فاطمة؟",
+        "answer": "لا، أحمد ليس مع فاطمة.",
+        "question_english": "Is Ahmed with Fatima?",
+        "answer_english": "No, Ahmed is not with Fatima.",
+        "question_pronounce": "Hal Ahmed ma’a Fatima?",
+        "answer_pronounce": "La, Ahmed laysa ma’a Fatima.",
+        "question_urdu": "Kya Ahmed Fatima ke saath hai?",
+        "answer_urdu": "Nahi, Ahmed Fatima ke saath nahi hai.",
+        "word2word": [
+          {"arabic": "هل", "english": "Is", "urdu": "Kya", "pronounce": "Hal"},
+          {"arabic": "أحمد", "english": "Ahmed", "urdu": "Ahmed", "pronounce": "Ahmed"},
+          {"arabic": "مع", "english": "with", "urdu": "Ke saath", "pronounce": "Ma’a"},
+          {"arabic": "فاطمة", "english": "Fatima", "urdu": "Fatima", "pronounce": "Fatima"},
+          {"arabic": "لا", "english": "No", "urdu": "Nahi", "pronounce": "La"},
+          {"arabic": "ليس", "english": "is not", "urdu": "Nahi hai", "pronounce": "Laysa"}
+        ]
+      },
+      {
+        "id": "18",
+        "question": "مع مَن في كراتشي؟",
+        "answer": "أنا مع سارة في كراتشي.",
+        "question_english": "With whom are you in Karachi?",
+        "answer_english": "I am with Sara in Karachi.",
+        "question_pronounce": "Ma’a man fi Karachi?",
+        "answer_pronounce": "Ana ma’a Sara fi Karachi.",
+        "question_urdu": "Karachi mein kis ke saath ho?",
+        "answer_urdu": "Main Karachi mein Sara ke saath hoon.",
+        "word2word": [
+          {"arabic": "مع", "english": "With", "urdu": "Ke saath", "pronounce": "Ma’a"},
+          {"arabic": "مَن", "english": "whom", "urdu": "Kis", "pronounce": "Man"},
+          {"arabic": "في", "english": "in", "urdu": "Mein", "pronounce": "Fi"},
+          {"arabic": "كراتشي", "english": "Karachi", "urdu": "Karachi", "pronounce": "Karachi"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"},
+          {"arabic": "سارة", "english": "Sara", "urdu": "Sara", "pronounce": "Sara"}
+        ]
+      },
+      {
+        "id": "19",
+        "question": "مَن في باكستان؟",
+        "answer": "محمد في باكستان.",
+        "question_english": "Who is in Pakistan?",
+        "answer_english": "Muhammad is in Pakistan.",
+        "question_pronounce": "Man fi Pakistan?",
+        "answer_pronounce": "Muhammad fi Pakistan.",
+        "question_urdu": "Pakistan mein kaun hai?",
+        "answer_urdu": "Muhammad Pakistan mein hai.",
+        "word2word": [
+          {"arabic": "مَن", "english": "Who", "urdu": "Kaun", "pronounce": "Man"},
+          {"arabic": "في", "english": "in", "urdu": "Mein", "pronounce": "Fi"},
+          {"arabic": "باكستان", "english": "Pakistan", "urdu": "Pakistan", "pronounce": "Pakistan"},
+          {"arabic": "محمد", "english": "Muhammad", "urdu": "Muhammad", "pronounce": "Muhammad"}
+        ]
+      },
+      {
+        "id": "20",
+        "question": "هل أنت إلى باكستان؟",
+        "answer": "نعم، أنا إلى باكستان.",
+        "question_english": "Are you going to Pakistan?",
+        "answer_english": "Yes, I am going to Pakistan.",
+        "question_pronounce": "Hal anta ila Pakistan?",
+        "answer_pronounce": "Na’am, ana ila Pakistan.",
+        "question_urdu": "Kya tum Pakistan ja rahe ho?",
+        "answer_urdu": "Haan, main Pakistan ja raha hoon.",
+        "word2word": [
+          {"arabic": "هل", "english": "Are", "urdu": "Kya", "pronounce": "Hal"},
+          {"arabic": "أنت", "english": "you", "urdu": "Tum", "pronounce": "Anta"},
+          {"arabic": "إلى", "english": "to", "urdu": "Ke liye", "pronounce": "Ila"},
+          {"arabic": "باكستان", "english": "Pakistan", "urdu": "Pakistan", "pronounce": "Pakistan"},
+          {"arabic": "نعم", "english": "Yes", "urdu": "Haan", "pronounce": "Na’am"},
+          {"arabic": "أنا", "english": "I am", "urdu": "Main hoon", "pronounce": "Ana"}
+        ]
+      }
+    ]
+  }
+]
