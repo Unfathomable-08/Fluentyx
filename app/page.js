@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import chapters from '../data/chapters.json';
 import useAuth from "../hooks/useAuth";
 import { FaCheck, FaTimes, FaLock } from 'react-icons/fa';
+import { RiFlashlightFill } from 'react-icons/ri';
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
@@ -33,7 +34,7 @@ export default function Home() {
         const day = new Date(item.date).getDate(); // gets day as number (1–31)
         return { [day]: item.totalTime }; // key as number, value as string
       });
-      
+
       setStreak(data.currentStreak);
       setStreakTime(streakTimeVar);
     };
@@ -75,12 +76,16 @@ export default function Home() {
   }
 
   return (
-    <main className="px-4 py-4 pb-20 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
+    <main className="px-4 py-6 pb-20 md:px-20 bg-[var(--bg-theme)]" style={{minHeight: 'calc(100vh - 50px)'}}>
       {/* Daily Exercise */}
       <div className='px-4 py-4 justify-center flex flex-col gap-y-6 items-center'>
         <div
-          className="w-full max-sm:max-w-[360px] max-sm:h-[120px] sm:h-[120px] border rounded-3xl overflow-hidden relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
+          className="w-full max-sm:max-w-[360px] max-sm:h-[120px] sm:h-[120px] border rounded-3xl relative shadow-[0_0_20px_#00000055] flex justify-center items-center"
         >
+          <span className='absolute flex items-center gap-x-1 text-[18px] sm:text-[20px] text-[#ffa500] right-0 sm:right-8 max-sm:top-0 max-sm:translate-y-[-30px] z-10'>
+            {streak}
+            <RiFlashlightFill className='' />
+          </span>
           <div className='flex justify-evenly items-center w-full max-w-md'>
             {weekDates.map((dayInfo, index) => {
               const today = new Date();
@@ -128,7 +133,7 @@ export default function Home() {
             transition={{duration: 3, delay: 3, repeat: Infinity, ease: 'linear'}}
           ></motion.div>
           <button className='relative z-5'>
-            Daily Challenge
+            Daily Challenge 
           </button>
         </motion.div>
       </div>

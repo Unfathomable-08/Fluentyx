@@ -19,7 +19,7 @@ export default function Flashcards() {
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [chapterData, setChapterData] = useState([]);
   const [data, setData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(-1)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const { language } = useContext(LanguageContext)
 
@@ -95,14 +95,7 @@ export default function Flashcards() {
       <div className='w-[80%] bg-white flex justify-self-center mb-4 h-4 border rounded-full border-[var(--secondary)] mt-6'>
           <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * (currentIndex + 1) / data.length}%`}}></div>
       </div>
-      { currentIndex == -1 ? 
-        <div 
-          className="w-72 h-48 p-4 text-center font-medium bg-white rounded-xl shadow-[0_0_10px_#00000055] flex items-center justify-center cursor-pointer perspective-1000"
-        >
-          {desc}        
-        </div>
-        :
-        <>
+
           <div className="w-full flex flex-col gap-y-10 px-6 sm:px-12 md:px-20 py-6 max-w-2xl">
             {/* Question Bubble (User - right aligned) */}
             <div key={index} className="flex justify-end items-center gap-x-2">
@@ -165,8 +158,7 @@ export default function Flashcards() {
               Next
             </button>
           </div>
-        </>
-      }
+      
     </div>
   );
 }
