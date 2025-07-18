@@ -124,7 +124,7 @@ export default function Alphabet() {
          chapter={chapterName} 
          step={step} setStep={setStep} 
          index={index} 
-         isActive={stepMod == 5} 
+         isActive={stepMod == 0} 
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
         />

@@ -32,5 +32,12 @@
     "image": "/interrogative.JPG",
     "stage": "1",
     "desc": "Words used to ask questions (e.g. who, what, where)."
+  },
+  {
+    "id": "6",
+    "title": "Basic-Conversation",
+    "image": "/basicConversation.JPG",
+    "stage": "2",
+    "desc": "Basic conversation questions and answers using pronouns, prepositions and interrogative words."
   }
 ]

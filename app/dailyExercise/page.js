@@ -1,18 +1,35 @@
 "use client"
 
-// DON'T TOUCH THIS FILE
+// ---------------------
+// ---------------------
+
+// DO NOT TOUCH THIS FILE
+// DO NOT TOUCH THIS FILE
+// DO NOT TOUCH THIS FILE
+
+// ---------------------
+// ---------------------
+
 
 import { useEffect, useState, useContext } from 'react'
 import useAuth from "../../hooks/useAuth"
 import useSaveProgress from "../../hooks/useSaveProgress"
+import CircularProgress from "../../sub-components/CircularProgress"
+import { useRouter } from 'next/navigation'
+import { showToast } from '../../lib/toastify'
+
 import { PronounToEn } from "../../components/pronouns/Exercise1"
 import { PronounToAr } from "../../components/pronouns/Exercise2"
 import { FillBlank } from "../../components/pronouns/Exercise3"
 import { FillEnBlank } from "../../components/pronouns/Exercise4"
 import { MatchPronounSound } from "../../components/pronouns/Exercise5"
-import CircularProgress from "../../sub-components/CircularProgress"
-import { useRouter } from 'next/navigation'
-import { showToast } from '../../lib/toastify'
+
+import { QToA } from "../../components/stage-2/Exercise1"
+import { QenToAen } from "../../components/stage-2/Exercise2"
+import { QToAtranslate } from "../../components/stage-2/Exercise3"
+import { QenToAentranslate } from "../../components/stage-2/Exercise4"
+import { MatchSound } from "../../components/stage-2/Exercise5"
+
 
 export default function DailyExercise () {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -26,9 +43,12 @@ export default function DailyExercise () {
   const [wrongAttempts, setWrongAttepmts] = useState(0);
   const [stepsPerLesson, setStepsPerLesson] = useState([]);
   const [currentPosition, setCurrentPosition] = useState(0);
+  const [currentStage, setCurrentStage] = useState(null);
   const [getProgress, setGetProgress] = useState(false);
   const [parentProgress, setParentProgress] = useState(0);
   const [empty, setEmpty] = useState(false);
+
+  const stage2Array = ['basic-conversation'];
 
   const router = useRouter();
 
@@ -56,7 +76,8 @@ export default function DailyExercise () {
             .map((sub) => {
               const percentage =
                 sub.attempts > 0 && (sub.correctAttempts / sub.attempts) * 100;
-              return [ch.chapterName, sub.subLessonName, 100 - percentage];
+              const stage = stage2Array.includes(ch.chapterName.toLowerCase()) ? 2 : 1;
+              return [ch.chapterName, sub.subLessonName, 100 - percentage, stage];
             })
         );
 
@@ -90,6 +111,7 @@ export default function DailyExercise () {
 
   useEffect(() => {
     if (!toReview || !toReview.length) return;
+    console.log(toReview)
 
     const fetchChapterData = async () => {
       try {
@@ -139,6 +161,7 @@ export default function DailyExercise () {
     if (toReview && toReview.length > 0 && step == 1){
       setCurrentChapter(toReview[0][0]);
       setCurrentIndex(toReview[0][1]);
+      setCurrentStage(toReview[0][3]);
     }
     
     if (wrongAttempts >= 17){
@@ -161,6 +184,7 @@ export default function DailyExercise () {
 
       setCurrentChapter(nextChapter);
       setCurrentIndex(toReview[nextIndex] ? toReview[nextIndex][1] : toReview[0][1]);
+      setCurrentStage(toReview[nextIndex] ? toReview[nextIndex][3] : toReview[0][3]);
       setCorrectAttepmts(0);
       setWrongAttepmts(0);
       setCurrentPosition(prev => prev + 1);
@@ -219,7 +243,7 @@ export default function DailyExercise () {
     return null;
   }
 
-  if(stepsPerLesson.length == 0 && show){
+  if(stepsPerLesson.length == 0 && empty){
     return (
       <div className='bg-[var(--bg-theme)] min-h-screen pt-20 pt-3 px-8'>
         <h1 className='text-2xl text-center text-[var(--text-theme)]'>No exercises to review.</h1>
@@ -247,58 +271,114 @@ export default function DailyExercise () {
         <button className='px-4 py-1 bg-green-600 hover:bg-green-800 text-white rounded-full text-sm' onClick={()=>pausefn()}>Pause</button>
       </div>
 
-      <PronounToEn
-        data={chapterData[currentChapter]}
-        chapter={currentChapter} 
-        step={step} setStep={setStep} 
-        index={currentIndex} 
-        isActive={stepMod == 1} 
-        setCorrectAttepmts={setCorrectAttepmts}
-        setWrongAttepmts={setWrongAttepmts}
-      />
-
-      <PronounToAr
-        data={chapterData[currentChapter]}
-        chapter={currentChapter}
-        step={step} setStep={setStep}
-        index={currentIndex}
-        isActive={stepMod == 2}
-        setCorrectAttepmts={setCorrectAttepmts}
-        setWrongAttepmts={setWrongAttepmts}
+      {currentStage == 1 ?
+        <>
+        <PronounToEn
+          data={chapterData[currentChapter]}
+          chapter={currentChapter} 
+          step={step} setStep={setStep} 
+          index={currentIndex} 
+          isActive={stepMod == 1} 
+          setCorrectAttepmts={setCorrectAttepmts}
+          setWrongAttepmts={setWrongAttepmts}
         />
+  
+        <PronounToAr
+          data={chapterData[currentChapter]}
+          chapter={currentChapter}
+          step={step} setStep={setStep}
+          index={currentIndex}
+          isActive={stepMod == 2}
+          setCorrectAttepmts={setCorrectAttepmts}
+          setWrongAttepmts={setWrongAttepmts}
+          />
+  
+        <FillEnBlank
+          data={chapterData[currentChapter]}
+          chapter={currentChapter}
+          step={step}
+          setStep={setStep}
+          index={currentIndex}
+          isActive={stepMod == 3}
+          setCorrectAttepmts={setCorrectAttepmts}
+          setWrongAttepmts={setWrongAttepmts}
+          />
+  
+        <FillBlank
+          data={chapterData[currentChapter]}
+          chapter={currentChapter}
+          step={step}
+          setStep={setStep}
+          index={currentIndex}
+          isActive={stepMod == 4}
+          setCorrectAttepmts={setCorrectAttepmts}
+          setWrongAttepmts={setWrongAttepmts}
+          />
+  
+         <MatchPronounSound
+           data={chapterData[currentChapter]}
+           chapter={currentChapter}
+           step={step}
+           setStep={setStep}
+           index={currentIndex}
+           isActive={stepMod == 0}
+           setCorrectAttepmts={setCorrectAttepmts}
+           setWrongAttepmts={setWrongAttepmts}
+           />
+        </>
+      :
+        <>
+          <QToAtranslate
+             data={chapterData[currentChapter]} 
+             chapter={currentChapter}
+             step={step} setStep={setStep} 
+             index={currentIndex}
+             isActive={stepMod == 1} 
+             setCorrectAttepmts={setCorrectAttepmts}
+             setWrongAttepmts={setWrongAttepmts}
+            />
 
-      <FillEnBlank
-        data={chapterData[currentChapter]}
-        chapter={currentChapter}
-        step={step}
-        setStep={setStep}
-        index={currentIndex}
-        isActive={stepMod == 3}
-        setCorrectAttepmts={setCorrectAttepmts}
-        setWrongAttepmts={setWrongAttepmts}
-        />
+            <QToA
+             data={chapterData[currentChapter]} 
+             chapter={currentChapter}
+             step={step} setStep={setStep} 
+             index={currentIndex}
+             isActive={stepMod == 2} 
+             setCorrectAttepmts={setCorrectAttepmts}
+             setWrongAttepmts={setWrongAttepmts}
+            />
 
-      <FillBlank
-        data={chapterData[currentChapter]}
-        chapter={currentChapter}
-        step={step}
-        setStep={setStep}
-        index={currentIndex}
-        isActive={stepMod == 4}
-        setCorrectAttepmts={setCorrectAttepmts}
-        setWrongAttepmts={setWrongAttepmts}
-        />
+            <QenToAen
+             data={chapterData[currentChapter]} 
+             chapter={currentChapter}
+             step={step} setStep={setStep} 
+             index={currentIndex}
+             isActive={stepMod == 3} 
+             setCorrectAttepmts={setCorrectAttepmts}
+             setWrongAttepmts={setWrongAttepmts}
+            />
 
-       <MatchPronounSound
-         data={chapterData[currentChapter]}
-         chapter={currentChapter}
-         step={step}
-         setStep={setStep}
-         index={currentIndex}
-         isActive={stepMod == 0}
-         setCorrectAttepmts={setCorrectAttepmts}
-         setWrongAttepmts={setWrongAttepmts}
-         />
+            <QenToAentranslate
+             data={chapterData[currentChapter]} 
+             chapter={currentChapter}
+             step={step} setStep={setStep} 
+             index={currentIndex}
+             isActive={stepMod == 4} 
+             setCorrectAttepmts={setCorrectAttepmts}
+             setWrongAttepmts={setWrongAttepmts}
+            />
+
+            <MatchSound
+             data={chapterData[currentChapter]} 
+             chapter={currentChapter}
+             step={step} setStep={setStep} 
+             index={currentIndex}
+             isActive={stepMod == 0} 
+             setCorrectAttepmts={setCorrectAttepmts}
+             setWrongAttepmts={setWrongAttepmts}
+            />
+        </>
+      }
     </main>
   );
 };
