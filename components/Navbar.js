@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  if (pathname === '/auth') return null;
+  if (pathname === '/auth' || pathname === '/forget-password') return null;
 
   return (
     <>

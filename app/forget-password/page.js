@@ -103,7 +103,7 @@ const ForgotPassword = () => {
       }
 
       showToast("success", "Password reset successful.");
-      router.push("/login");
+      router.push("/");
     } catch (error) {
       console.error('Password reset failed:', error);
       showToast("error", error.message || "Password reset failed.");
@@ -165,8 +165,8 @@ const ForgotPassword = () => {
           <Cloud />
         </motion.div>
 
-        <div className="relative z-10 w-full py-6 text-center">
-          <h1 className="text-2xl font-bold text-gray-800">
+        <div className="relative z-10 w-full py-4 text-center">
+          <h1 className="text-2xl font-medium text-gray-800">
             {step === 1 ? "Forgot Password" : step === 2 ? "Verify Email" : "Reset Password"}
           </h1>
           <p className="text-black mb-6">

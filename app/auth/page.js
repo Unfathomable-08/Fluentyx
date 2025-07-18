@@ -6,6 +6,7 @@ import Cloud from "../../components/Cloud";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { CircleLoader } from "react-spinners"
 import { showToast } from "../../lib/toastify"
 
@@ -314,9 +315,9 @@ const Login = () => {
                       />
                       <span>Remember me</span>
                     </label>
-                    <a href="#" className="text-[var(--secondary)] hover:underline">
+                    <Link href="/forget-password" className="text-[var(--secondary)] hover:underline">
                       Forgot password?
-                    </a>
+                    </Link>
                   </div>
                 </>
               )}

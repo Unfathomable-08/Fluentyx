@@ -3,6 +3,7 @@ run = "yarn install && yarn run dev"
 
 [nix]
 channel = "stable-24_05"
+packages = ["got"]
 
 [deployment]
 run = ["sh", "-c", "yarn install && yarn run dev"]
