@@ -1,0 +1,320 @@
+"use client"
+
+import { useForm } from "react-hook-form";
+import { FaEnvelope, FaLock } from "react-icons/fa";
+import Cloud from "../../components/Cloud";
+import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { CircleLoader } from "react-spinners"
+import { showToast } from "../../lib/toastify"
+
+const ForgotPassword = () => {
+  const { register, handleSubmit, formState: { errors, isSubmitting }, watch } = useForm();
+  const [step, setStep] = useState(1);
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [verificationCode, setVerificationCode] = useState(["", "", "", "", "", ""]);
+  const [verificationError, setVerificationError] = useState("");
+  const codeRefs = useRef([]);
+  const router = useRouter();
+  const password = watch("password");
+
+  const onEmailSubmit = async (data) => {
+    try {
+      setIsLoading(true);
+      const res = await fetch('/api/forgot-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: data.email }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Failed to send verification code");
+      }
+
+      setEmail(data.email);
+      showToast("success", "Verification code sent to your email.");
+      setStep(2);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error sending verification code:', error);
+      showToast("error", error.message || "Failed to send verification code.");
+      setIsLoading(false);
+    }
+  };
+
+  const handleVerificationSubmit = async (e) => {
+    e.preventDefault();
+    setVerificationError("");
+    setIsVerifying(true);
+
+    const code = verificationCode.join('');
+    if (!code || code.length !== 6 || !/^[0-9]{6}$/.test(code)) {
+      setVerificationError("Verification code must be 6 digits");
+      setIsVerifying(false);
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/verify-forgot-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, code }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Verification failed");
+      }
+
+      setVerificationCode(["", "", "", "", "", ""]);
+      showToast("success", "Verification successful.");
+      setStep(3);
+    } catch (error) {
+      console.error('Verification failed:', error);
+      setVerificationError(error.message || "Verification failed. Please try again.");
+      showToast("error", error.message || "Verification failed.");
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
+  const onPasswordReset = async (data) => {
+    try {
+      setIsLoading(true);
+      const res = await fetch('/api/reset-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password: data.password }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Password reset failed");
+      }
+
+      showToast("success", "Password reset successful.");
+      router.push("/login");
+    } catch (error) {
+      console.error('Password reset failed:', error);
+      showToast("error", error.message || "Password reset failed.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleCodeInput = (e, index) => {
+    const value = e.target.value;
+    if (value.length <= 1) {
+      const newCode = [...verificationCode];
+      newCode[index] = value;
+      setVerificationCode(newCode);
+      if (value.length === 1 && index < 5) {
+        codeRefs.current[index + 1].focus();
+      } else if (value.length === 0 && index > 0) {
+        codeRefs.current[index - 1].focus();
+      }
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center px-6 bg-white" style={{ height: 'calc(100vh - 80px)' }}>
+      {/* Background Blobs */}
+      <div className="opacity-40 sm:opacity-60 md:opacity-80">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute w-58 h-58 md:w-60 md:h-60 lg:w-100 lg:h-100 left-4 -top-12 filter blur-xs">
+          <path fill="#64D832" d="M27.4,-10.8C39.5,5.1,56,23.5,52.2,38.3C48.3,53.1,24.2,64.3,2.5,62.8C-19.2,61.4,-38.4,47.3,-51.4,27.3C-64.3,7.2,-71.1,-18.9,-61.5,-33.3C-51.9,-47.7,-25.9,-50.6,-9.1,-45.3C7.7,-40,15.4,-26.7,27.4,-10.8Z" transform="translate(100 100)" />
+        </svg>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute w-52 h-52 md:w-60 md:h-60 lg:w-80 lg:h-80 right-6 -top-16 filter blur-xs">
+          <path fill="#64D832" d="M49.2,-49.7C64.5,-45.8,78,-31,73.9,-18.3C69.9,-5.6,48.3,4.9,36.5,17.1C24.8,29.3,22.8,43.3,12.9,55.7C2.9,68.2,-15,79.2,-28.7,75.6C-42.5,72.1,-52.2,53.9,-60.2,36.5C-68.2,19.1,-74.5,2.4,-71.7,-12.6C-69,-27.5,-57.2,-40.8,-43.7,-45C-30.3,-49.1,-15.1,-44.1,0.9,-45.2C17,-46.3,34,-53.5,49.2,-49.7Z" transform="translate(100 100)" />
+        </svg>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute w-58 h-58 md:w-60 md:h-60 lg:w-100 lg:h-100 right-0 lg:right-36 bottom-0 filter blur-xs">
+          <path fill="#64D832" d="M38,-57.9C48.6,-52.3,56.3,-40.7,54.7,-29.3C53.1,-17.9,42.4,-6.7,34.9,0.9C27.5,8.6,23.4,12.6,19.9,18C16.4,23.5,13.7,30.3,7.6,37.2C1.6,44.1,-7.7,51.1,-18.5,52.6C-29.2,54.2,-41.4,50.3,-53.6,42.8C-65.8,35.3,-78,24.1,-77.1,12.7C-76.2,1.3,-62.2,-10.3,-54,-23.1C-45.7,-35.9,-43.3,-49.7,-35.3,-56.5C-27.3,-63.3,-13.6,-63.1,0,-63.1C13.7,-63.2,27.3,-63.5,38,-57.9Z" transform="translate(100 100)" />
+        </svg>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute w-52 h-52 md:w-60 md:h-60 left-6 bottom-0 filter blur-xs">
+          <path fill="#64D832" d="M36.5,-59.5C47.6,-49.7,57,-40,61.9,-28.5C66.9,-17,67.4,-3.6,65,9C62.7,21.6,57.5,33.5,50.1,45.1C42.7,56.8,33,68.2,19.8,76.1C6.5,84.1,-10.4,88.4,-26,85.3C-41.6,82.2,-56,71.6,-63,57.8C-70.1,44,-69.9,27,-66.3,13.1C-62.7,-0.7,-55.7,-11.5,-49.7,-22C-43.8,-32.5,-38.9,-42.7,-30.8,-53.8C-22.7,-64.9,-11.3,-77,0.7,-78.1C12.7,-79.2,25.4,-69.3,36.5,-59.5Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+
+      <div className="relative bg-white shadow-[0_0_15px_#000000aa] grid md:grid-cols-2 rounded-2xl p-8 w-full lg:max-w-2xl md:max-w-xl sm:max-w-md max-w-sm flex overflow-hidden">
+        {/* Cloud positioned at bottom-right */}
+        <motion.div
+          className="absolute bottom-[-20px] right-[-20px] z-5 opacity-80"
+          initial={{ bottom: "-160px", right: "-140px" }}
+          animate={{ bottom: "-20px", right: "-20px" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        >
+          <Cloud />
+        </motion.div>
+
+        {/* Cloud positioned at top-left */}
+        <motion.div
+          className="absolute top-[-20px] left-[-120px] z-5 rotate-x-180 opacity-80"
+          initial={{ top: "-120px", left: "-220px" }}
+          animate={{ top: "-20px", left: "-120px" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        >
+          <Cloud />
+        </motion.div>
+
+        <div className="relative z-10 w-full py-6 text-center">
+          <h1 className="text-2xl font-bold text-gray-800">
+            {step === 1 ? "Forgot Password" : step === 2 ? "Verify Email" : "Reset Password"}
+          </h1>
+          <p className="text-black mb-6">
+            {step === 1 ? "Enter your email to receive a verification code" : 
+             step === 2 ? "Enter the 6-digit code sent to your email" : 
+             "Enter your new password"}
+          </p>
+
+          {step === 1 && (
+            <form onSubmit={handleSubmit(onEmailSubmit)} className="space-y-4">
+              <div className="relative">
+                <FaEnvelope className="absolute left-3 top-3 text-[var(--secondary)]" />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Invalid email format"
+                    }
+                  })}
+                  className="pl-10 pr-4 py-2 w-full border border-gray-500 rounded-md focus:ring focus:ring-[var(--primary)]"
+                />
+                {errors.email && <p className="text-red-600 text-start text-sm">{errors.email.message}</p>}
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting || isLoading}
+                className="w-full py-2 bg-[var(--primary)] shadow-[5px_5px_10px_#00000055] text-white rounded-md hover:bg-[var(--secondary)] relative z-10"
+              >
+                Send Verification Code
+              </button>
+            </form>
+          )}
+
+          {step === 2 && (
+            <form onSubmit={handleVerificationSubmit} className="space-y-4">
+              <div className="relative">
+                <FaEnvelope className="absolute left-3 top-3 text-[var(--secondary)]" />
+                <input
+                  type="email"
+                  value={email}
+                  disabled
+                  className="pl-10 pr-4 py-2 w-full border border-gray-500 rounded-md bg-gray-100"
+                />
+              </div>
+              <div className="flex justify-between space-x-2">
+                {[...Array(6)].map((_, index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    maxLength="1"
+                    value={verificationCode[index]}
+                    className="w-8 h-8 text-center text-lg border border-gray-500 rounded-md focus:ring focus:ring-[var(--primary)]"
+                    onChange={(e) => handleCodeInput(e, index)}
+                    ref={(el) => (codeRefs.current[index] = el)}
+                  />
+                ))}
+              </div>
+              {verificationError && (
+                <p className="text-red-600 text-start text-sm">{verificationError}</p>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting || isVerifying}
+                className="w-full py-2 bg-[var(--primary)] shadow-[5px_5px_10px_#00000055] text-white rounded-md hover:bg-[var(--secondary)] relative z-10"
+              >
+                Verify Code
+              </button>
+            </form>
+          )}
+
+          {step === 3 && (
+            <form onSubmit={handleSubmit(onPasswordReset)} className="space-y-4">
+              <div className="relative">
+                <FaEnvelope className="absolute left-3 top-3 text-[var(--secondary)]" />
+                <input
+                  type="email"
+                  value={email}
+                  disabled
+                  className="pl-10 pr-4 py-2 w-full border border-gray-500 rounded-md bg-gray-100"
+                />
+              </div>
+              <div className="relative">
+                <FaLock className="absolute left-3 top-3 text-[var(--secondary)]" />
+                <input
+                  type="password"
+                  placeholder="New Password"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: { value: 8, message: "Password must be at least 8 characters" }
+                  })}
+                  className="pl-10 pr-4 py-2 w-full border border-gray-500 rounded-md focus:ring focus:ring-[var(--primary)]"
+                />
+                {errors.password && <p className="text-red-600 text-start text-sm">{errors.password.message}</p>}
+              </div>
+              <div className="relative">
+                <FaLock className="absolute left-3 top-3 text-[var(--secondary)]" />
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  {...register("confirmPassword", {
+                    required: "Please confirm your password",
+                    validate: value => value === password || "Passwords do not match"
+                  })}
+                  className="pl-10 pr-4 py-2 w-full border border-gray-500 rounded-md focus:ring focus:ring-[var(--primary)]"
+                />
+                {errors.confirmPassword && <p className="text-red-600 text-start text-sm">{errors.confirmPassword.message}</p>}
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting || isLoading}
+                className="w-full py-2 bg-[var(--primary)] shadow-[5px_5px_10px_#00000055] text-white rounded-md hover:bg-[var(--secondary)] relative z-10"
+              >
+                Reset Password
+              </button>
+            </form>
+          )}
+
+          <p className="text-sm text-center mt-4">
+            Remember your password?{" "}
+            <button
+              className="text-[var(--secondary)] hover:underline"
+              onClick={() => router.push("/auth")}
+            >
+              Sign In
+            </button>
+          </p>
+        </div>
+
+        {/* Right Section: Info */}
+        <div className="max-md:hidden relative -translate-y-4 z-10 w-full flex flex-col justify-center items-center p-6 rounded-2xl">
+          <h2 className="text-xl font-bold">Reset Your Password</h2>
+          <p className="text-center text-sm mt-2">
+            Follow the steps to securely reset your password and regain access to your account.
+          </p>
+        </div>
+      </div>
+      {(isVerifying || isLoading) && (
+        <div className="absolute backdrop-blur-[3px] z-10 inset-0 flex items-center justify-center">
+          <div className="relative z-20">
+            <CircleLoader color="#2c9910" size={60} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default ForgotPassword;
