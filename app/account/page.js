@@ -6,8 +6,10 @@ import { ThemeContext } from "../../contexts/themeContext";
 import { LanguageContext } from "../../contexts/languageContext";
 import { FaEdit, FaSun, FaMoon, FaTrophy } from "react-icons/fa";
 import { MdEmail, MdPhone, MdPassword, MdClose } from "react-icons/md";
+import ReviewModal from "../../components/ReviewModal";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 export default function AccountPage() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -19,7 +21,8 @@ export default function AccountPage() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [trophies, setTrophies] = useState([])
+  const [trophies, setTrophies] = useState([]);
+  const [reviewModalOpen, setReviewModalOpen] = useState(false);
 
   const handleOpenModal = (type) => {
     setModalType(type);
@@ -185,6 +188,16 @@ export default function AccountPage() {
         </div>
       </motion.div>
 
+      {/* Feedback Button */}
+      <div className="mt-8">
+        <button
+          onClick={() => setReviewModalOpen(prev => !prev)}
+          className="flex relative items-center gap-2 px-4 py-2 pr-12 rounded-full shadow-xl font-medium border-2 border-[var(--primary)] text-[var(--secondary)] transition hover:scale-105"
+        >
+          Review | Suggestion | Complaint <Image src="/complaint.png" alt="" className="absolute right-1" width={40} height={40} />
+        </button>
+      </div>
+
       {/* Modal */}
       <AnimatePresence>
         {modalType && (
@@ -308,6 +321,8 @@ export default function AccountPage() {
           ))}
         </div>
       </div>
+
+      {reviewModalOpen && <ReviewModal isOpen={reviewModalOpen} onClose={setReviewModalOpen} email={user.email} />}
     </div>
   );
 }
