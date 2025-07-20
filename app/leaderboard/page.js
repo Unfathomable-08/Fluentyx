@@ -36,7 +36,7 @@ export default function LeaderboardPage() {
 
   return (
     <div className="bg-[var(--bg-theme)] px-4 pt-6 pb-20" style={{minHeight: 'calc(100vh - 50px)'}}>
-      <h1 className="text-2xl md:text-5xl font-bold text-center text-[var(--text-theme)] mb-8">
+      <h1 className="text-2xl font-bold text-center text-[var(--text-theme)] mb-8">
         Weekly Leaderboard
       </h1>
 
