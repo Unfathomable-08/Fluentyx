@@ -35,6 +35,11 @@ export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrec
         1: { key: "Interrogative Words", data: data[0]?.["Interrogative Words"] || [] },
       };
       break;
+    case "demonstratives":
+      pronounCategories = {
+        1: { key: "Demonstrative Pronouns", data: data[0]?.["Demonstrative Pronouns"] || [] },
+      };
+      break;
     default:
       pronounCategories = '';
   }
@@ -70,6 +75,11 @@ export function PronounToAr({ chapter, index, data, setStep, isActive, setCorrec
     case "interrogative-words":
       otherData = [
           ...(index !== 1 ? data[0]?.["Interrogative Words"] || [] : [])
+      ];
+      break;
+    case "demonstratives":
+      otherData = [
+          ...(index !== 1 ? data[0]?.["Demonstrative Pronouns"] || [] : [])
       ];
       break;
     default:

@@ -23,6 +23,7 @@ export default function useSaveProgress( user, chapterName, index, correctAttemp
         prepositions: { chapterProgress: 4.16667, lessonProgress: 25 },
         interrogativewords: { chapterProgress: 12.5, lessonProgress: 25 },
         basicconversation: { chapterProgress: 6.25, lessonProgress: 25 },
+        demonstratives: { chapterProgress: 12.5, lessonProgress: 25 },
       };
 
       const progressValues = progressMap[chapterName.toLowerCase().replace("-","")] || { chapterProgress: 0, lessonProgress: 0 };

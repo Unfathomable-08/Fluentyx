@@ -1,0 +1,342 @@
+[
+  {
+    "Demonstrative Pronouns": [
+      {
+        "id": 1,
+        "arabic": "هذا",
+        "english": "this (M)",
+        "roman": "hādhā",
+        "hindi": "yah",
+        "type": "singular",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "هذا كتاب",
+            "pronounce": "hādhā kitāb",
+            "translate": "This is a book",
+            "urdu": "yah ek kitaab hai",
+            "word2word": [
+              {
+                "word": "هذا",
+                "translate": "this",
+                "pronounce": "hādhā",
+                "hindi": "yah"
+              },
+              {
+                "word": "كتاب",
+                "translate": "book",
+                "pronounce": "kitāb"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "هذا قلم جديد",
+            "pronounce": "hādhā qalam jadīd",
+            "translate": "This is a new pen",
+            "urdu": "yah ek naya qalam hai",
+            "word2word": [
+              {
+                "word": "هذا",
+                "translate": "this",
+                "pronounce": "hādhā",
+                "hindi": "yah"
+              },
+              {
+                "word": "قلم",
+                "translate": "pen",
+                "pronounce": "qalam"
+              },
+              {
+                "word": "جديد",
+                "translate": "new",
+                "pronounce": "jadīd"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "arabic": "هذه",
+        "english": "this (F)",
+        "roman": "hādhihi",
+        "hindi": "yah",
+        "type": "singular",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "هذه سيارة",
+            "pronounce": "hādhihi sayyāra",
+            "translate": "This is a car",
+            "urdu": "yah ek gaadi hai",
+            "word2word": [
+              {
+                "word": "هذه",
+                "translate": "this",
+                "pronounce": "hādhihi",
+                "hindi": "yah"
+              },
+              {
+                "word": "سيارة",
+                "translate": "car",
+                "pronounce": "sayyāra"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "هذه حقيبة جميلة",
+            "pronounce": "hādhihi haqība jamīla",
+            "translate": "This is a beautiful bag",
+            "urdu": "yah ek sundar bag hai",
+            "word2word": [
+              {
+                "word": "هذه",
+                "translate": "this",
+                "pronounce": "hādhihi",
+                "hindi": "yah"
+              },
+              {
+                "word": "حقيبة",
+                "translate": "bag",
+                "pronounce": "haqība"
+              },
+              {
+                "word": "جميلة",
+                "translate": "beautiful",
+                "pronounce": "jamīla"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "arabic": "هؤلاء",
+        "english": "these",
+        "roman": "hā’ulā’",
+        "hindi": "ye",
+        "type": "plural",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "هؤلاء طلاب",
+            "pronounce": "hā’ulā’ tullāb",
+            "translate": "These are students",
+            "urdu": "ye taalib hain",
+            "word2word": [
+              {
+                "word": "هؤلاء",
+                "translate": "these",
+                "pronounce": "hā’ulā’",
+                "hindi": "ye"
+              },
+              {
+                "word": "طلاب",
+                "translate": "students",
+                "pronounce": "tullāb"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "هؤلاء كتب مفيدة",
+            "pronounce": "hā’ulā’ kutub mufīda",
+            "translate": "These are useful books",
+            "urdu": "ye faidemand kitaabein hain",
+            "word2word": [
+              {
+                "word": "هؤلاء",
+                "translate": "these",
+                "pronounce": "hā’ulā’",
+                "hindi": "ye"
+              },
+              {
+                "word": "كتب",
+                "translate": "books",
+                "pronounce": "kutub"
+              },
+              {
+                "word": "مفيدة",
+                "translate": "useful",
+                "pronounce": "mufīda"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "arabic": "ذلك",
+        "english": "that (M)",
+        "roman": "dhālika",
+        "hindi": "voh",
+        "type": "singular",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "ذلك بيت",
+            "pronounce": "dhālika bayt",
+            "translate": "That is a house",
+            "urdu": "voh ek ghar hai",
+            "word2word": [
+              {
+                "word": "ذلك",
+                "translate": "that",
+                "pronounce": "dhālika",
+                "hindi": "voh"
+              },
+              {
+                "word": "بيت",
+                "translate": "house",
+                "pronounce": "bayt"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "ذلك رجل طويل",
+            "pronounce": "dhālika rajul tawīl",
+            "translate": "That is a tall man",
+            "urdu": "voh ek lamba aadmi hai",
+            "word2word": [
+              {
+                "word": "ذلك",
+                "translate": "that",
+                "pronounce": "dhālika",
+                "hindi": "voh"
+              },
+              {
+                "word": "رجل",
+                "translate": "man",
+                "pronounce": "rajul"
+              },
+              {
+                "word": "طويل",
+                "translate": "tall",
+                "pronounce": "tawīl"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "arabic": "تلك",
+        "english": "that (F)",
+        "roman": "tilka",
+        "hindi": "voh",
+        "type": "singular",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "تلك شجرة",
+            "pronounce": "tilka shajara",
+            "translate": "That is a tree",
+            "urdu": "voh ek darakht hai",
+            "word2word": [
+              {
+                "word": "تلك",
+                "translate": "that",
+                "pronounce": "tilka",
+                "hindi": "voh"
+              },
+              {
+                "word": "شجرة",
+                "translate": "tree",
+                "pronounce": "shajara"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "تلك مدينة كبيرة",
+            "pronounce": "tilka madīna kabīra",
+            "translate": "That is a big city",
+            "urdu": "voh ek bada shehar hai",
+            "word2word": [
+              {
+                "word": "تلك",
+                "translate": "that",
+                "pronounce": "tilka",
+                "hindi": "voh"
+              },
+              {
+                "word": "مدينة",
+                "translate": "city",
+                "pronounce": "madīna"
+              },
+              {
+                "word": "كبيرة",
+                "translate": "big",
+                "pronounce": "kabīra"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "arabic": "أولئك",
+        "english": "those",
+        "roman": "ulā’ika",
+        "hindi": "ve",
+        "type": "plural",
+        "gender": "common",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أولئك أصدقاء",
+            "pronounce": "ulā’ika aṣdiqā’",
+            "translate": "Those are friends",
+            "urdu": "ve dost hain",
+            "word2word": [
+              {
+                "word": "أولئك",
+                "translate": "those",
+                "pronounce": "ulā’ika",
+                "hindi": "ve"
+              },
+              {
+                "word": "أصدقاء",
+                "translate": "friends",
+                "pronounce": "aṣdiqā’"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أولئك أشجار طويلة",
+            "pronounce": "ulā’ika ashjār tawīla",
+            "translate": "Those are tall trees",
+            "urdu": "ve lambe darakht hain",
+            "word2word": [
+              {
+                "word": "أولئك",
+                "translate": "those",
+                "pronounce": "ulā’ika",
+                "hindi": "ve"
+              },
+              {
+                "word": "أشجار",
+                "translate": "trees",
+                "pronounce": "ashjār"
+              },
+              {
+                "word": "طويلة",
+                "translate": "tall",
+                "pronounce": "tawīla"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

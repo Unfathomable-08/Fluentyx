@@ -68,9 +68,14 @@ export default function Flashcards() {
               ...(data[4]?.["Specialized Prepositions"] || []),
             ];
             break;
-            case "interrogative-words":
+          case "interrogative-words":
             allPronouns = [
               ...(data[0]?.["Interrogative Words"] || []),
+            ];
+            break;
+          case "demonstratives":
+            allPronouns = [
+              ...(data[0]?.["Demonstrative Pronouns"] || []),
             ];
             break;
           default:
@@ -213,11 +218,11 @@ export default function Flashcards() {
                 }
               </div>
               <div>
-                {(chapterName == "pronouns" || chapterName == "objective-pronouns") && 
+                {currentPronoun.person && 
                   <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
                     {currentPronoun.person}
                   </span>}
-                {(chapterName == "pronouns" || chapterName == "objective-pronouns") &&
+                {currentPronoun.gender &&
                   <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
                     {currentPronoun.gender}
                   </span>}

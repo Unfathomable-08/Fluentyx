@@ -34,6 +34,11 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
             1: { key: "Interrogative Words", data: data[0]?.["Interrogative Words"] || [] },
           };
           break;
+        case "demonstratives":
+          pronounCategories = {
+            1: { key: "Demonstrative Pronouns", data: data[0]?.["Demonstrative Pronouns"] || [] },
+          }
+          break;
         default:
           pronounCategories = '';
       }
@@ -70,6 +75,11 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
       case "interrogative-words":
         otherData = [
             ...(index !== 1 ? data[0]?.["Interrogative Words"] || [] : [])
+        ].filter(item => item?.id !== correct?.id)
+        break;
+      case "demonstratives":
+        otherData = [
+            ...(index !== 1 ? data[0]?.["Demonstrative Pronouns"] || [] : [])
         ].filter(item => item?.id !== correct?.id)
         break;
       default:

@@ -39,5 +39,12 @@
     "image": "/basicConversation.jpg",
     "stage": "2",
     "desc": "Basic conversation questions and answers using pronouns, prepositions and interrogative words."
+  },
+  {
+    "id": "7",
+    "title": "Demonstratives",
+    "image": "/demonstrative.jpg",
+    "stage": "1",
+    "desc": "Words used to point out or indicate something (e.g. this, that, these, those)."
   }
 ]
