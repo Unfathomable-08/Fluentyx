@@ -6,7 +6,6 @@ import { LanguageProvider } from "../contexts/languageContext";
 import { ToastContainer } from "react-toastify";
 import { ScreenSizeProvider } from "../contexts/screenContext";
 import Script from 'next/script';
-import ScriptAd from '../Ads/inject.js'
 import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
@@ -70,8 +69,59 @@ export default function RootLayout({ children }) {
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
         {/* PropellerAds */}
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
-        {/* PropellerAds */}
-        <ScriptAd />
+        {/* PopUp Ads */}
+        <script
+          type="text/javascript"
+          data-cfasync="false"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+              var b = window,
+                  l = "e0f2982eed45d6c44c4f8c8d72066201",
+                  m = [
+                    ["siteId", 531*143-947*475+5593276],
+                    ["minBid", 0],
+                    ["popundersPerIP", "0"],
+                    ["delayBetween", 0],
+                    ["default", false],
+                    ["defaultPerDay", 0],
+                    ["topmostLayer", "auto"]
+                  ],
+                  v = [
+                    "d3d3LmJldHRlcmFkc3lzdGVtLmNvbS94anNncmlkLm1pbi5jc3M=",
+                    "ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvaGQvbGpzZmlsZS5taW4uanM="
+                  ],
+                  r = -1,
+                  k, f,
+                  i = function(){
+                    clearTimeout(f);
+                    r++;
+                    if (v[r] && !(1779000740000 < (new Date).getTime() && 1 < r)) {
+                      k = b.document.createElement("script");
+                      k.type = "text/javascript";
+                      k.async = true;
+                      var u = b.document.getElementsByTagName("script")[0];
+                      k.src = "https://" + atob(v[r]);
+                      k.crossOrigin = "anonymous";
+                      k.onerror = i;
+                      k.onload = function(){
+                        clearTimeout(f);
+                        b[l.slice(0,16)+l.slice(0,16)] || i();
+                      };
+                      f = setTimeout(i, 5E3);
+                      u.parentNode.insertBefore(k, u);
+                    }
+                  };
+              if (!b[l]) {
+                try {
+                  Object.freeze(b[l] = m);
+                } catch(e) {}
+                i();
+              }
+            })();`
+          }}
+        />
+        {/* PopUp Ads */}
+        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
