@@ -1,5 +1,7 @@
 import { useState, useMemo, useContext } from 'react';
 import { LanguageContext } from '../../contexts/languageContext';
+import { HiSpeakerWave } from 'react-icons/hi2'
+import { motion } from 'framer-motion';
 
 export function MatchSound({ chapter, index, setStep, isActive, data, step, setCorrectAttepmts, setWrongAttepmts }) {
   const [selectedWords, setSelectedWords] = useState([]);
@@ -7,7 +9,8 @@ export function MatchSound({ chapter, index, setStep, isActive, data, step, setC
   const [wrongIndex, setWrongIndex] = useState(null);
   const [isQuestionState, setIsQuestionState] = useState(null);
 
-  const playSound = (arabic) => {
+  const playSound = () => {
+    const arabic = isQuestionState ? selectedExample.question : selectedExample.answer;
     const utterance = new SpeechSynthesisUtterance(arabic);
     utterance.lang = 'ar';
     window.speechSynthesis.speak(utterance);
@@ -89,31 +92,20 @@ export function MatchSound({ chapter, index, setStep, isActive, data, step, setC
   if (!isActive) return null;
 
   return (
-    <div className="flex flex-col items-center p-8 pb-20 gap-y-6">
-      <div className="bg-white md:mt-16 rounded-xl w-full max-w-md p-4 flex items-center justify-between shadow-[0_0_10px_#00000055] relative">
-        <div className="flex gap-2 relative font-medium text-xl">
-          {isQuestion ?
-            selectedExample?.question_english?.split(" ")?.map((word, i) => (
-              <span key={i} className="py-2 rounded">
-                {word}
-              </span>
-            ))
-            :
-            selectedExample?.answer_english?.split(" ")?.map((word, i) => (
-              <span key={i} className="py-2 rounded">
-                {word}
-              </span>
-            ))
-          }
-        </div>
-        <button
-          onClick={() => playSound(isQuestion ? selectedExample.question : selectedExample.answer)}
-          className="ml-4 p-2 rounded-full hover:bg-gray-100"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707a1 1 0 011.414 0l.707.707a1 1 0 000 1.414L9.414 9H13a1 1 0 011 1v4a1 1 0 01-1 1H9.414l2.293 2.293a1 1 0 01.293.707v.707a1 1 0 01-1 1h-.707a1 1 0 01-.707-.293L5.586 15z" />
-          </svg>
-        </button>
+    <div className="flex flex-col items-center p-8 pb-20 gap-y-6 relative">
+      {/* Skip Button */}
+      <div className="flex justify-end absolute max-sm:right-6 max-sm:top-1 max-md:right-12 cursor-pointer max-md:top-20 md:transform md:translate-x-40 md:text-[16px] font-medium text-[12px] text-red-600 underline">
+          <span onClick={()=>{setSelected(null); setCorrectIndex(null); setWrongIndex(null); setStep(prev => prev + 1)}}>Skip</span>
+      </div>
+      {/* Speaker Icon */}
+      <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex items-center justify-center shadow-[0_0_10px_#00000055]">
+          <motion.button
+              onClick={playSound}
+              className="text-6xl text-gray-700 hover:text-gray-900"
+              whileTap={{ scale: 0.9 }}
+          >
+              <HiSpeakerWave />
+          </motion.button>
       </div>
 
       <div className='arabic flex gap-x-1'>

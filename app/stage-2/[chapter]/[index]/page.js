@@ -12,6 +12,7 @@ import { QenToAen } from "../../../../components/stage-2/Exercise2"
 import { QToAtranslate } from "../../../../components/stage-2/Exercise3"
 import { QenToAentranslate } from "../../../../components/stage-2/Exercise4"
 import { MatchSound } from "../../../../components/stage-2/Exercise5"
+import AiExercise from "../../../../components/stage-2/Exercise6"
 
 export default function Alphabet() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -52,7 +53,7 @@ export default function Alphabet() {
   }, [pathname]);
 
   useEffect(()=>{
-    if (step == 25){
+    if (step == 30){
       saveProgress({ user, chapterName, index, correctAttempts, wrongAttempts });
       if (!error){
         router.push(`/stage-2/${chapterName}`)
@@ -61,13 +62,13 @@ export default function Alphabet() {
   }, [step, chapterName, index, user])
 
   useEffect(() => {
-    if (wrongAttempts >= 8){
+    if (wrongAttempts >= 10){
       showToast("info", "Oops! You did not make it. Let's try again!");
-      router.push(`/${chapterName}`)
+      router.push(`/stage-2/${chapterName}`)
     }
   }, [step]);
 
-  const stepMod = step % 5;
+  const stepMod = step % 6;
 
   if (!isAuthenticated) {
     return null; // Redirect handled by useAuth
@@ -76,7 +77,7 @@ export default function Alphabet() {
   return (
     <div className="bg-[var(--bg-theme)] pt-6" style={{minHeight: 'calc(100vh - 50px)'}}>
         <div className='w-[80%] bg-white flex justify-self-center mt-8 h-4 border rounded-full border-[var(--secondary)]'>
-            <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 25}%`}}></div>
+            <div className="h-full rounded-full bg-[var(--primary)] max-w-[100%]" style={{width: `${100 * step / 30}%`}}></div>
         </div>
       
         <QToAtranslate
@@ -124,7 +125,17 @@ export default function Alphabet() {
          chapter={chapterName} 
          step={step} setStep={setStep} 
          index={index} 
-         isActive={stepMod == 0} 
+         isActive={stepMod == 5} 
+         setCorrectAttepmts={setCorrectAttepmts}
+         setWrongAttepmts={setWrongAttepmts}
+        />
+
+       <AiExercise
+         data={chapterData}
+         chapter={chapterName}
+         step={step} setStep={setStep}
+         index={index}
+         isActive={stepMod == 0}
          setCorrectAttepmts={setCorrectAttepmts}
          setWrongAttepmts={setWrongAttepmts}
         />
