@@ -75,53 +75,52 @@ export default function RootLayout({ children }) {
           data-cfasync="false"
           dangerouslySetInnerHTML={{
             __html: `(function(){
-              var b = window,
-                  l = "e0f2982eed45d6c44c4f8c8d72066201",
-                  m = [
-                    ["siteId", 531*143-947*475+5593276],
-                    ["minBid", 0],
-                    ["popundersPerIP", "0"],
-                    ["delayBetween", 0],
+              var q = window,
+                  e = "e0f2982eed45d6c44c4f8c8d72066201",
+                  p = [
+                    ["siteId", 48 - 26 * 834 - 416 + 5241436],
+                    ["minBid", 2],
+                    ["popundersPerIP", "2,2"],
+                    ["delayBetween", 300],
                     ["default", false],
-                    ["defaultPerDay", 0],
+                    ["defaultPerDay", 5],
                     ["topmostLayer", "auto"]
                   ],
-                  v = [
-                    "d3d3LmJldHRlcmFkc3lzdGVtLmNvbS94anNncmlkLm1pbi5jc3M=",
-                    "ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvaGQvbGpzZmlsZS5taW4uanM="
+                  k = [
+                    "d3d3LmJldHRlcmFkc3lzdGVtLmNvbS91anNncmlkLm1pbi5jc3M=",
+                    "ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvRFhWdGQvdGpzZmlsZS5taW4uanM="
                   ],
-                  r = -1,
-                  k, f,
-                  i = function(){
-                    clearTimeout(f);
-                    r++;
-                    if (v[r] && !(1779000740000 < (new Date).getTime() && 1 < r)) {
-                      k = b.document.createElement("script");
-                      k.type = "text/javascript";
-                      k.async = true;
-                      var u = b.document.getElementsByTagName("script")[0];
-                      k.src = "https://" + atob(v[r]);
-                      k.crossOrigin = "anonymous";
-                      k.onerror = i;
-                      k.onload = function(){
-                        clearTimeout(f);
-                        b[l.slice(0,16)+l.slice(0,16)] || i();
+                  n = -1,
+                  w, x,
+                  z = function(){
+                    clearTimeout(x);
+                    n++;
+                    if (k[n] && !(1779001119000 < (new Date).getTime() && 1 < n)) {
+                      w = q.document.createElement("script");
+                      w.type = "text/javascript";
+                      w.async = true;
+                      var v = q.document.getElementsByTagName("script")[0];
+                      w.src = "https://" + atob(k[n]);
+                      w.crossOrigin = "anonymous";
+                      w.onerror = z;
+                      w.onload = function(){
+                        clearTimeout(x);
+                        q[e.slice(0,16) + e.slice(0,16)] || z();
                       };
-                      f = setTimeout(i, 5E3);
-                      u.parentNode.insertBefore(k, u);
+                      x = setTimeout(z, 5E3);
+                      v.parentNode.insertBefore(w, v);
                     }
                   };
-              if (!b[l]) {
+              if (!q[e]) {
                 try {
-                  Object.freeze(b[l] = m);
+                  Object.freeze(q[e] = p);
                 } catch(e) {}
-                i();
+                z();
               }
             })();`
           }}
         />
         {/* PopUp Ads */}
-        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
