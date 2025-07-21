@@ -74,50 +74,9 @@ export default function RootLayout({ children }) {
           type="text/javascript"
           data-cfasync="false"
           dangerouslySetInnerHTML={{
-            __html: `(function(){
-              var q = window,
-                  e = "e0f2982eed45d6c44c4f8c8d72066201",
-                  p = [
-                    ["siteId", 48 - 26 * 834 - 416 + 5241436],
-                    ["minBid", 2],
-                    ["popundersPerIP", "2,2"],
-                    ["delayBetween", 300],
-                    ["default", false],
-                    ["defaultPerDay", 5],
-                    ["topmostLayer", "auto"]
-                  ],
-                  k = [
-                    "d3d3LmJldHRlcmFkc3lzdGVtLmNvbS91anNncmlkLm1pbi5jc3M=",
-                    "ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvRFhWdGQvdGpzZmlsZS5taW4uanM="
-                  ],
-                  n = -1,
-                  w, x,
-                  z = function(){
-                    clearTimeout(x);
-                    n++;
-                    if (k[n] && !(1779001119000 < (new Date).getTime() && 1 < n)) {
-                      w = q.document.createElement("script");
-                      w.type = "text/javascript";
-                      w.async = true;
-                      var v = q.document.getElementsByTagName("script")[0];
-                      w.src = "https://" + atob(k[n]);
-                      w.crossOrigin = "anonymous";
-                      w.onerror = z;
-                      w.onload = function(){
-                        clearTimeout(x);
-                        q[e.slice(0,16) + e.slice(0,16)] || z();
-                      };
-                      x = setTimeout(z, 5E3);
-                      v.parentNode.insertBefore(w, v);
-                    }
-                  };
-              if (!q[e]) {
-                try {
-                  Object.freeze(q[e] = p);
-                } catch(e) {}
-                z();
-              }
-            })();`
+            __html: `
+              (function(){var f=window,b="e0f2982eed45d6c44c4f8c8d72066201",y=[["siteId",926+612+476+5217370],["minBid",0.5],["popundersPerIP","2,2"],["delayBetween",300],["default",false],["defaultPerDay",5],["topmostLayer","auto"]],u=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS9janNncmlkLm1pbi5jc3M=","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvWWh6L2xqc2ZpbGUubWluLmpz"],h=-1,m,t,v=function(){clearTimeout(t);h++;if(u[h]&&!(1779002401000<(new Date).getTime()&&1<h)){m=f.document.createElement("script");m.type="text/javascript";m.async=!0;var k=f.document.getElementsByTagName("script")[0];m.src="https://"+atob(u[h]);m.crossOrigin="anonymous";m.onerror=v;m.onload=function(){clearTimeout(t);f[b.slice(0,16)+b.slice(0,16)]||v()};t=setTimeout(v,5E3);k.parentNode.insertBefore(m,k)}};if(!f[b]){try{Object.freeze(f[b]=y)}catch(e){}v()}})();
+            `
           }}
         />
         {/* PopUp Ads */}
