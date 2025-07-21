@@ -95,7 +95,7 @@ export function MatchSound({ chapter, index, setStep, isActive, data, step, setC
     <div className="flex flex-col items-center p-8 pb-20 gap-y-6 relative">
       {/* Skip Button */}
       <div className="flex justify-end absolute max-sm:right-6 max-sm:top-1 max-md:right-12 cursor-pointer max-md:top-20 md:transform md:translate-x-40 md:text-[16px] font-medium text-[12px] text-red-600 underline">
-          <span onClick={()=>{setSelected(null); setCorrectIndex(null); setWrongIndex(null); setStep(prev => prev + 1)}}>Skip</span>
+          <span onClick={()=>{setSelectedWords([]); setCorrectIndex(null); setWrongIndex(null); setStep(prev => prev + 1)}}>Skip</span>
       </div>
       {/* Speaker Icon */}
       <div className="bg-white md:mt-16 rounded-xl w-32 aspect-[5/4] md:w-30 flex items-center justify-center shadow-[0_0_10px_#00000055]">
