@@ -92,10 +92,10 @@ export default function AiExercise({
           <span className="text-[28px]">{question}</span>
         </div>
       </div>
-      <div className="w-full mt-10">
+      <div className="w-full max-w-md mt-10">
         <input
           type="text"
-          className="border border-gray-500 rounded-xl px-4 py-2 w-full"
+          className="border border-gray-500 rounded-xl  px-4 py-2 w-full"
           placeholder="Type your answer here"
           value={userAnswer}
           onChange={handleInputChange}
