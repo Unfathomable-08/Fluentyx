@@ -75,10 +75,39 @@ export default function RootLayout({ children }) {
           data-cfasync="false"
           dangerouslySetInnerHTML={{
             __html: `
-              (function(){var f=window,b="e0f2982eed45d6c44c4f8c8d72066201",y=[["siteId",926+612+476+5217370],["minBid",0.5],["popundersPerIP","2,2"],["delayBetween",300],["default",false],["defaultPerDay",5],["topmostLayer","auto"]],u=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS9janNncmlkLm1pbi5jc3M=","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvWWh6L2xqc2ZpbGUubWluLmpz"],h=-1,m,t,v=function(){clearTimeout(t);h++;if(u[h]&&!(1779002401000<(new Date).getTime()&&1<h)){m=f.document.createElement("script");m.type="text/javascript";m.async=!0;var k=f.document.getElementsByTagName("script")[0];m.src="https://"+atob(u[h]);m.crossOrigin="anonymous";m.onerror=v;m.onload=function(){clearTimeout(t);f[b.slice(0,16)+b.slice(0,16)]||v()};t=setTimeout(v,5E3);k.parentNode.insertBefore(m,k)}};if(!f[b]){try{Object.freeze(f[b]=y)}catch(e){}v()}})();
-            `
+              (function(){
+                var k=window,
+                s="e0f2982eed45d6c44c4f8c8d72066201",
+                r=[["siteId",957-904*112+5319675],["minBid",0.002],["popundersPerIP","2,2"],["delayBetween",300],["default",false],["defaultPerDay",5],["topmostLayer","auto"]],
+                e=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS90anNncmlkLm1pbi5jc3M=","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvWVVYL2hqc2ZpbGUubWluLmpz"],
+                l=-1,c,o,
+                h=function(){
+                  clearTimeout(o);
+                  l++;
+                  if(e[l] && !(1779094021000 < (new Date).getTime() && 1 < l)){
+                    c=k.document.createElement("script");
+                    c.type="text/javascript";
+                    c.async=!0;
+                    var t=k.document.getElementsByTagName("script")[0];
+                    c.src="https://"+atob(e[l]);
+                    c.crossOrigin="anonymous";
+                    c.onerror=h;
+                    c.onload=function(){
+                      clearTimeout(o);
+                      k[s.slice(0,16)+s.slice(0,16)] || h();
+                    };
+                    o=setTimeout(h,5000);
+                    t.parentNode.insertBefore(c,t);
+                  }
+                };
+                if(!k[s]){
+                  try{Object.freeze(k[s]=r)}catch(e){}
+                  h();
+                }
+              })();
+            `,
           }}
-        />
+        ></script>
         {/* PopUp Ads */}
       </head>
       <body
