@@ -83,10 +83,10 @@ export default function RootLayout({ children }) {
           </ThemeProvider>
         </LanguageProvider>
 
-        {/* PopUp Ads */}
-        <script
-          type="text/javascript"
-          data-cfasync="false"
+        {/* PopUpAds */}
+        <Script
+          id="popads-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(){
@@ -121,8 +121,7 @@ export default function RootLayout({ children }) {
               })();
             `,
           }}
-        ></script>
-        {/* PopUp Ads */}
+        />
       </body>
     </html>
   );
