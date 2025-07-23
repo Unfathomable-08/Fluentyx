@@ -1,0 +1,323 @@
+[
+  {
+    "Negation": [
+      {
+        "id": 3,
+        "arabic": "لا",
+        "english": "no",
+        "roman": "laa",
+        "hindi": "nahi",
+        "type": "negation",
+        "tense": "present",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "لا أريد",
+            "pronounce": "laa ureed",
+            "translate": "No, I don’t want",
+            "urdu": "nahi main nahi chahta",
+            "word2word": [
+              { "word": "لا", "translate": "no", "pronounce": "laa" },
+              { "word": "أريد", "translate": "I want", "pronounce": "ureed" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "لا هو موجود",
+            "pronounce": "laa huwa mawjood",
+            "translate": "No, he is not present",
+            "urdu": "nahi vah maujood nahi hai",
+            "word2word": [
+              { "word": "لا", "translate": "no", "pronounce": "laa" },
+              { "word": "هو", "translate": "he", "pronounce": "huwa" },
+              { "word": "موجود", "translate": "present", "pronounce": "mawjood" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "لا سأذهب",
+            "pronounce": "laa sa-adhhab",
+            "translate": "No, I won’t go",
+            "urdu": "nahi main nahi jaoonga",
+            "word2word": [
+              { "word": "لا", "translate": "no", "pronounce": "laa" },
+              { "word": "سأذهب", "translate": "I will go", "pronounce": "sa-adhhab" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "arabic": "ليس",
+        "english": "is not",
+        "roman": "laysa",
+        "hindi": "nahi hai",
+        "type": "negation",
+        "tense": "present",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "ليس هنا",
+            "pronounce": "laysa huna",
+            "translate": "It is not here",
+            "urdu": "yah yahan nahi hai",
+            "word2word": [
+              { "word": "ليس", "translate": "is not", "pronounce": "laysa" },
+              { "word": "هنا", "translate": "here", "pronounce": "huna" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "ليس طالبا",
+            "pronounce": "laysa taaliban",
+            "translate": "He is not a student",
+            "urdu": "vah taalib nahi hai",
+            "word2word": [
+              { "word": "ليس", "translate": "is not", "pronounce": "laysa" },
+              { "word": "طالبا", "translate": "a student", "pronounce": "taaliban" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "ليس مشغولا",
+            "pronounce": "laysa mashghoolan",
+            "translate": "He is not busy",
+            "urdu": "vah masroof nahi hai",
+            "word2word": [
+              { "word": "ليس", "translate": "is not", "pronounce": "laysa" },
+              { "word": "مشغولا", "translate": "busy", "pronounce": "mashghoolan" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "arabic": "ما",
+        "english": "not (with perfect verbs)",
+        "roman": "maa",
+        "hindi": "nahi",
+        "type": "negation",
+        "tense": "past",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "ما ذهبت",
+            "pronounce": "maa dhahabtu",
+            "translate": "I did not go",
+            "urdu": "main nahi gaya",
+            "word2word": [
+              { "word": "ما", "translate": "not", "pronounce": "maa" },
+              { "word": "ذهبت", "translate": "I went", "pronounce": "dhahabtu" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "ما كتبت",
+            "pronounce": "maa katabtu",
+            "translate": "I did not write",
+            "urdu": "main ne nahi likha",
+            "word2word": [
+              { "word": "ما", "translate": "not", "pronounce": "maa" },
+              { "word": "كتبت", "translate": "I wrote", "pronounce": "katabtu" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "ما رأيت",
+            "pronounce": "maa ra’aytu",
+            "translate": "I did not see",
+            "urdu": "main ne nahi dekha",
+            "word2word": [
+              { "word": "ما", "translate": "not", "pronounce": "maa" },
+              { "word": "رأيت", "translate": "I saw", "pronounce": "ra’aytu" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "arabic": "لم",
+        "english": "not (with past verbs, jussive)",
+        "roman": "lam",
+        "hindi": "nahi",
+        "type": "negation",
+        "tense": "past",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "لم أذهب",
+            "pronounce": "lam adhhab",
+            "translate": "I did not go",
+            "urdu": "main nahi gaya",
+            "word2word": [
+              { "word": "لم", "translate": "not", "pronounce": "lam" },
+              { "word": "أذهب", "translate": "I go", "pronounce": "adhhab" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "لم يكتب",
+            "pronounce": "lam yaktub",
+            "translate": "He did not write",
+            "urdu": "us ne nahi likha",
+            "word2word": [
+              { "word": "لم", "translate": "not", "pronounce": "lam" },
+              { "word": "يكتب", "translate": "he writes", "pronounce": "yaktub" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "لم نر",
+            "pronounce": "lam nara",
+            "translate": "We did not see",
+            "urdu": "hum ne nahi dekha",
+            "word2word": [
+              { "word": "لم", "translate": "not", "pronounce": "lam" },
+              { "word": "نر", "translate": "we see", "pronounce": "nara" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "arabic": "لن",
+        "english": "will not (with subjunctive verbs)",
+        "roman": "lan",
+        "hindi": "nahi karega",
+        "type": "negation",
+        "tense": "future",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "لن أذهب",
+            "pronounce": "lan adhhab",
+            "translate": "I will not go",
+            "urdu": "main nahi jaoonga",
+            "word2word": [
+              { "word": "لن", "translate": "will not", "pronounce": "lan" },
+              { "word": "أذهب", "translate": "I go", "pronounce": "adhhab" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "لن يكتب",
+            "pronounce": "lan yaktub",
+            "translate": "He will not write",
+            "urdu": "vah nahi likhega",
+            "word2word": [
+              { "word": "لن", "translate": "will not", "pronounce": "lan" },
+              { "word": "يكتب", "translate": "he writes", "pronounce": "yaktub" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "لن نرى",
+            "pronounce": "lan nara",
+            "translate": "We will not see",
+            "urdu": "hum nahi dekhein ge",
+            "word2word": [
+              { "word": "لن", "translate": "will not", "pronounce": "lan" },
+              { "word": "نرى", "translate": "we see", "pronounce": "nara" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Affirmation": [
+      {
+        "id": 1,
+        "arabic": "نعم",
+        "english": "yes",
+        "roman": "na'am",
+        "hindi": "haan",
+        "type": "affirmation",
+        "tense": "neutral",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "نعم أنا ذاهب",
+            "pronounce": "na'am ana dhaahib",
+            "translate": "Yes, I am going",
+            "urdu": "haan main jaa raha hoon",
+            "word2word": [
+              { "word": "نعم", "translate": "yes", "pronounce": "na'am" },
+              { "word": "أنا", "translate": "I", "pronounce": "ana" },
+              { "word": "ذاهب", "translate": "am going", "pronounce": "dhaahib" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "نعم الكتاب هنا",
+            "pronounce": "na'am al-kitaab huna",
+            "translate": "Yes, the book is here",
+            "urdu": "haan kitaab yahan hai",
+            "word2word": [
+              { "word": "نعم", "translate": "yes", "pronounce": "na'am" },
+              { "word": "الكتاب", "translate": "the book", "pronounce": "al-kitaab" },
+              { "word": "هنا", "translate": "here", "pronounce": "huna" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "نعم سأفعل",
+            "pronounce": "na'am sa-af'al",
+            "translate": "Yes, I will do it",
+            "urdu": "haan main karoonga",
+            "word2word": [
+              { "word": "نعم", "translate": "yes", "pronounce": "na'am" },
+              { "word": "سأفعل", "translate": "I will do", "pronounce": "sa-af'al" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "arabic": "بلى",
+        "english": "yes (in response to negation)",
+        "roman": "balaa",
+        "hindi": "haan",
+        "type": "affirmation",
+        "tense": "neutral",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "بلى أنا موجود",
+            "pronounce": "balaa ana mawjood",
+            "translate": "Yes, I am present",
+            "urdu": "haan main maujood hoon",
+            "word2word": [
+              { "word": "بلى", "translate": "yes", "pronounce": "balaa" },
+              { "word": "أنا", "translate": "I", "pronounce": "ana" },
+              { "word": "موجود", "translate": "am present", "pronounce": "mawjood" }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "بلى سأحضر",
+            "pronounce": "balaa sa-aḥḍar",
+            "translate": "Yes, I will attend",
+            "urdu": "haan main shirkat karoonga",
+            "word2word": [
+              { "word": "بلى", "translate": "yes", "pronounce": "balaa" },
+              { "word": "سأحضر", "translate": "I will attend", "pronounce": "sa-aḥḍar" }
+            ]
+          },
+          {
+            "id": 3,
+            "sentence": "بلى هو هنا",
+            "pronounce": "balaa huwa huna",
+            "translate": "Yes, he is here",
+            "urdu": "haan vah yahan hai",
+            "word2word": [
+              { "word": "بلى", "translate": "yes", "pronounce": "balaa" },
+              { "word": "هو", "translate": "he", "pronounce": "huwa" },
+              { "word": "هنا", "translate": "here", "pronounce": "huna" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

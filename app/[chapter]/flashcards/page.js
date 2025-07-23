@@ -78,6 +78,12 @@ export default function Flashcards() {
               ...(data[0]?.["Demonstrative Pronouns"] || []),
             ];
             break;
+          case "negation-and-affirmation":
+            allPronouns = [
+              ...(data[0]?.["Negation"] || []),
+              ...(data[1]?.["Affirmation"] || []),
+            ];
+            break;
           default:
             allPronouns = '';
         }
@@ -226,7 +232,14 @@ export default function Flashcards() {
                   <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
                     {currentPronoun.gender}
                   </span>}
-                <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>{currentPronoun.type}</span>
+                {currentPronoun.type && 
+                  <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
+                    {currentPronoun.type}
+                  </span>}
+                {currentPronoun.tense &&
+                  <span className='border border-[var(--secondary)] px-2 py-1 mx-1 rounded '>
+                    {currentPronoun.tense}
+                    </span>}
               </div>
             </div>
           </div>
@@ -251,13 +264,13 @@ export default function Flashcards() {
       <div className="flex gap-4 mt-8">
         <button
           onClick={handlePrevious}
-          className="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-dark)]"
+          className="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--secondary)]"
         >
           Previous
         </button>
         <button
           onClick={handleNext}
-          className="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-dark)]"
+          className="px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--secondary)]"
         >
           Next
         </button>

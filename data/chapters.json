@@ -46,5 +46,12 @@
     "image": "/demonstrative.jpg",
     "stage": "1",
     "desc": "Words used to point out or indicate something (e.g. this, that, these, those)."
+  },
+  {
+    "id": "8",
+    "title": "Negation-and-Affirmation",
+    "image": "/negation.jpg",
+    "stage": "1",
+    "desc": "Words used to express negation (e.g. no, not) and affirmation (e.g. yes)."
   }
 ]

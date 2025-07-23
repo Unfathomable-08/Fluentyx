@@ -39,6 +39,12 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
             1: { key: "Demonstrative Pronouns", data: data[0]?.["Demonstrative Pronouns"] || [] },
           }
           break;
+        case "negation-and-affirmation":
+          pronounCategories = {
+              1: { key: "Negation", data: data[0]?.["Negation"] || [] },
+              2: { key: "Affirmation", data: data[1]?.["Affirmation"] || [] }
+          }
+          break;
         default:
           pronounCategories = '';
       }
@@ -80,6 +86,12 @@ export function MatchPronounSound({ chapter, index, data, setStep, isActive, set
       case "demonstratives":
         otherData = [
             ...(index !== 1 ? data[0]?.["Demonstrative Pronouns"] || [] : [])
+        ].filter(item => item?.id !== correct?.id)
+        break;
+      case "negation-and-affirmation":
+        otherData = [
+            ...(index !== 1 ? data[0]?.["Negation"] || [] : []),
+            ...(index !== 2 ? data[1]?.["Affirmation"] || [] : [])
         ].filter(item => item?.id !== correct?.id)
         break;
       default:

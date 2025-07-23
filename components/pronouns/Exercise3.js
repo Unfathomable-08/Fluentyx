@@ -63,6 +63,12 @@ export function FillBlank({ chapter, index, setStep, isActive, data, step, setCo
             1: { key: "Demonstrative Pronouns", data: data[0]?.["Demonstrative Pronouns"] || [] },
           };
           break;
+        case "negation-and-affirmation":
+          pronounCategories = {
+            1: { key: "Negation", data: data[0]?.["Negation"] || [] },
+            2: { key: "Affirmation", data: data[1]?.["Affirmation"] || [] }
+          };
+          break;
         default:
           pronounCategories = '';
       }

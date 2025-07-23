@@ -40,6 +40,12 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
         1: { key: "Demonstrative Pronouns", data: data[0]?.["Demonstrative Pronouns"] || [] },
       };
       break;
+    case "negation-and-affirmation":
+      pronounCategories = {
+        1: { key: "Negation", data: data[0]?.["Negation"] || [] },
+        2: { key: "Affirmation", data: data[1]?.["Affirmation"] || [] }
+      };
+      break;
     default:
       pronounCategories = '';
   }
@@ -81,6 +87,12 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
         otherData = [
             ...(index !== 1 ? data[0]?.["Demonstrative Pronouns"] || [] : [])
         ];
+        break;
+    case "negation-and-affirmation":
+        otherData = [
+            ...(index !== 1 ? data[0]?.["Negation"] || [] : []),
+            ...(index !== 2 ? data[1]?.["Affirmation"] || [] : [])
+        ]
         break;
     default:
       otherData = '';
