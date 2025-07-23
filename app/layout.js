@@ -69,6 +69,20 @@ export default function RootLayout({ children }) {
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
         {/* PropellerAds */}
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <LanguageProvider>
+          <ThemeProvider>
+            <ScreenSizeProvider>
+              <ToastContainer />
+              <Navbar />
+              {children}
+            </ScreenSizeProvider>
+          </ThemeProvider>
+        </LanguageProvider>
+
         {/* PopUp Ads */}
         <script
           type="text/javascript"
@@ -109,19 +123,6 @@ export default function RootLayout({ children }) {
           }}
         ></script>
         {/* PopUp Ads */}
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <LanguageProvider>
-          <ThemeProvider>
-            <ScreenSizeProvider>
-              <ToastContainer />
-              <Navbar />
-              {children}
-            </ScreenSizeProvider>
-          </ThemeProvider>
-        </LanguageProvider>
       </body>
     </html>
   );
