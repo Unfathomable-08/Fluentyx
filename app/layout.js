@@ -85,7 +85,6 @@ export default function RootLayout({ children }) {
 
         {/* PopUpAds */}
         <Script
-          id="popads-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
