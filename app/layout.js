@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { ScreenSizeProvider } from "../contexts/screenContext";
 import Script from 'next/script';
 import "react-toastify/dist/ReactToastify.css";
+import PropellerAd from "../Ads/monetagAds";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,8 +60,7 @@ export default function RootLayout({ children }) {
               gtag('js', new Date());
               gtag('config', 'G-QZDD1NNBWS');
             `,
-          }}
-        />
+          }}        />
         {/* Google Adsense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986" crossorigin="anonymous"></script>
 
@@ -72,6 +72,8 @@ export default function RootLayout({ children }) {
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
         {/* PropellerAds / monetag */}
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
+        {/* PropellerAds / monetag */}
+        <PropellerAd />
                                                                                                     
       </head>
       <body
