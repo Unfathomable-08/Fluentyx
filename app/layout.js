@@ -63,6 +63,9 @@ export default function RootLayout({ children }) {
         />
         {/* Google Adsense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9928340261693986" crossorigin="anonymous"></script>
+
+        {/* Google Search Console */}
+        <meta name="google-site-verification" content="d4q6fo5MXouBZ_ZztfDaOYu_nMjDqlmEUHF8gQ2SUhA" />
         
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         {/* PropellerAds / monetag */}
