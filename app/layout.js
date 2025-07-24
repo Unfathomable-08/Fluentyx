@@ -72,8 +72,6 @@ export default function RootLayout({ children }) {
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
         {/* PropellerAds / monetag */}
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
-        {/* PropellerAds / monetag */}
-        <script src="https://fpyf8.com/88/tag.min.js" data-zone="159065" async data-cfasync="false"></script>
                                                                                                     
       </head>
       <body
