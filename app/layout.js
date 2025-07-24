@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { ScreenSizeProvider } from "../contexts/screenContext";
 import Script from 'next/script';
 import "react-toastify/dist/ReactToastify.css";
-import PropellerAd from "../Ads/monetagAds";
+import PropellerAa from "../Ads/monetagAds";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
         {/* PropellerAds / monetag */}
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
         {/* PropellerAds / monetag */}
-        <PropellerAd />
+        <PropellerAa />
                                                                                                     
       </head>
       <body

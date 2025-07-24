@@ -2,38 +2,38 @@
 
 import { useEffect } from "react";
 
-const PropellerAd = () => {
+const PropellerAa = () => {
   useEffect(() => {
-    const loadPropellerAd = () => {
+    const loadPropellerAa = () => {
       // Create the PropellerAds script element
-      const adScript = document.createElement("script");
-      adScript.src = "https://fpyf8.com/88/tag.min.js";
-      adScript.setAttribute("data-zone", "159065");
-      adScript.setAttribute("async", "true");
-      adScript.setAttribute("data-cfasync", "false");
+      const aaScript = document.createElement("script");
+      aaScript.src = "https://fpyf8.com/88/tag.min.js";
+      aaScript.setAttribute("data-zone", "159065");
+      aaScript.setAttribute("async", "true");
+      aaScript.setAttribute("data-cfasync", "false");
 
-      // Append script to the ad container
-      const adContainer = document.getElementById("aa-container");
-      if (adContainer) {
-        adContainer.appendChild(adScript);
+      // Append script to the aa container
+      const aaContainer = document.getElementById("aa-container");
+      if (aaContainer) {
+        aaContainer.appendChild(aaScript);
       }
 
-      // Store the timestamp of ad load
-      localStorage.setItem("lastAdTime", Date.now().toString());
+      // Store the timestamp of aa load
+      localStorage.setItem("lastAaTime", Date.now().toString());
     };
 
-    // Check if ad was shown recently
-    const lastAdTime = localStorage.getItem("lastAdTime");
+    // Check if aa was shown recently
+    const lastAaTime = localStorage.getItem("lastAaTime");
     const now = Date.now();
     const fifteenMinutes = 15 * 60 * 1000; // 15 minutes in milliseconds
 
-    if (!lastAdTime || now - parseInt(lastAdTime) >= fifteenMinutes) {
-      // Load ad immediately if no ad was shown or 15 minutes have passed
-      loadPropellerAd();
+    if (!lastAaTime || now - parseInt(lastAaTime) >= fifteenMinutes) {
+      // Load aa immediately if no aa was shown or 15 minutes have passed
+      loadPropellerAa();
     } else {
-      // Schedule ad for remaining time
-      const timeLeft = fifteenMinutes - (now - parseInt(lastAdTime));
-      const timeoutId = setTimeout(loadPropellerAd, timeLeft);
+      // Schedule aa for remaining time
+      const timeLeft = fifteenMinutes - (now - parseInt(lastAaTime));
+      const timeoutId = setTimeout(loadPropellerAa, timeLeft);
       // Cleanup timeout on component unmount
       return () => clearTimeout(timeoutId);
     }
@@ -42,4 +42,4 @@ const PropellerAd = () => {
   return <div id="aa-container"></div>;
 };
 
-export default PropellerAd;
+export default PropellerAa;
