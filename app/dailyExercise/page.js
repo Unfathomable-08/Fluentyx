@@ -111,7 +111,6 @@ export default function DailyExercise () {
 
   useEffect(() => {
     if (!toReview || !toReview.length) return;
-    console.log(toReview)
 
     const fetchChapterData = async () => {
       try {
@@ -146,7 +145,6 @@ export default function DailyExercise () {
 
         let cumulative = 0;
         const stepsPerLesson = calculateSteps(toReview, cumulative);
-        console.log(stepsPerLesson)
         setStepsPerLesson(stepsPerLesson);
         
       } catch (err) {
@@ -206,7 +204,6 @@ export default function DailyExercise () {
 
   useEffect(() => {
     const postStreak = async () => {
-      console.log(step)
       if (parentProgress != 0 && step != 1) {
         const response = await fetch('/api/streak', {
           method: 'POST',
@@ -218,7 +215,6 @@ export default function DailyExercise () {
           }),
         });
         const data = await response.json();
-        console.log(data);
         setParentProgress(0);
         setGetProgress(false);
         router.push('/');

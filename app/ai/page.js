@@ -23,7 +23,6 @@ export default function AIPage() {
     setLoading(true);
 
     try {
-      console.log("Query:", query)
       const res = await fetch("https://unfathomable08-fluentyx-langweb.hf.space/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -6,6 +6,6 @@ export const metadata = {
     "Fluentyx, leaderboard, Login, Signup, Arabic learning, Daily Exercise, Daily Practice, AI tutor, language learning ranking",
 };
 
-export default function DailyExerciseLayout({ children }) {
+export default function AuthLayout({ children }) {
   return <>{children}</>;
 }

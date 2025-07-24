@@ -19,7 +19,6 @@ export default function LeaderboardPage() {
         if (!user) return;
         const res = await fetch(`/api/leaderboard?email=${user.email}`);
         const data = await res.json();
-        console.log(data)
         setLeaders(data || []);
       } catch (error) {
         console.error("Failed to load leaderboard:", error);

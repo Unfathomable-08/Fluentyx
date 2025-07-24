@@ -70,7 +70,8 @@ export default function RootLayout({ children }) {
         {/* PropellerAds / monetag */}
         <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
         {/* PropellerAds / monetag */}
-        <script src="https://fpyf8.com/88/tag.min.js" data-zone="159065" async data-cfasync="false"></script>
+        <script src="https://fpyf8.com/88/tag.min.js" data-zone="159065" async data-cfasync="false"></script
+                                                                                                    
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
