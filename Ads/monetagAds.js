@@ -13,7 +13,7 @@ const PropellerAd = () => {
       adScript.setAttribute("data-cfasync", "false");
 
       // Append script to the ad container
-      const adContainer = document.getElementById("ad-container");
+      const adContainer = document.getElementById("aa-container");
       if (adContainer) {
         adContainer.appendChild(adScript);
       }
@@ -39,7 +39,7 @@ const PropellerAd = () => {
     }
   }, []); // Empty dependency array to run once on mount
 
-  return <div id="ad-container"></div>;
+  return <div id="aa-container"></div>;
 };
 
 export default PropellerAd;
