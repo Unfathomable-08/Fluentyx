@@ -25,7 +25,7 @@ const PropellerAa = () => {
       // Remove script after 1 second
       setTimeout(() => {
         aaScript.remove();
-      }, 3000);
+      }, 1000);
     };
 
     const lastAaTime = localStorage.getItem("lastAaTime");

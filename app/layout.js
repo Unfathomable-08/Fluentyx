@@ -71,8 +71,6 @@ export default function RootLayout({ children }) {
         {/* PropellerAds / monetag */}
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
         {/* PropellerAds / monetag */}
-        <script src="https://couphaithuph.net/act/files/tag.min.js?z=9579214" data-cfasync="false" async></script>
-        {/* PropellerAds / monetag */}
         <PropellerAa />
                                                                                                     
       </head>
