@@ -70,9 +70,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         {/* PropellerAds / monetag */}
         <meta name="monetag" content="28944bee1d3eea24347868a6a9cf8bb6"/>
-        {/* PropellerAds / monetag */}
-        <PropellerAa />
-                                                                                                    
+                                                                      
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
