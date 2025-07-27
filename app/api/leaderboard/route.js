@@ -132,7 +132,7 @@ export async function GET(request) {
     const leaderboard = await Leaderboard
       .find()
       .sort({ weekly_score: -1, updatedAt: -1 }) // Secondary sort for consistency
-      .limit(30)
+      .limit(15)
       .select('name email weekly_score trophies');
 
     if (email && user) {
