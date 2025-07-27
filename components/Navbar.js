@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
 
         {/* Top Navbar Icons */}
-        {screenSize !== "xs" && (
+        {(screenSize !== "xs" && screenSize !== null) && (
           <div className="flex items-center md:gap-6 sm:gap-4 lg:gap-8 sm:text-xl md:text-2xl">
             <button
               onClick={() => router.push('/')}
