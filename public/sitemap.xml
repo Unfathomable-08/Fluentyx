@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>https://fluentyx.vercel.app/sitemap.xml</loc>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Static Pages -->
+  <url>
+    <loc>https://fluentyx.vercel.app/</loc>
     <lastmod>2025-07-27</lastmod>
-  </sitemap>
-</sitemapindex>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/ai</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/account</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/leaderboard</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+
+  <!-- Dynamic Chapters -->
+  <url>
+    <loc>https://fluentyx.vercel.app/alphabets</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/pronouns</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/prepositions</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/objective-pronouns</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/interrogative-words</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/negation-and-affirmation</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+
+  <!-- Stage 2 Chapters -->
+  <url>
+    <loc>https://fluentyx.vercel.app/stage-2/basic-conversation</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://fluentyx.vercel.app/stage-2/basic-conversation/flashcards</loc>
+    <lastmod>2025-07-27</lastmod>
+  </url>
+
+</urlset>
