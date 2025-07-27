@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fluentyx.vercel.app
+
+# Sitemaps
+Sitemap: https://fluentyx.vercel.app/sitemap.xml
