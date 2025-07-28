@@ -6,7 +6,7 @@
         "arabic": "أب",
         "english": "Father",
         "roman": "ab",
-        "hindi": "pita",
+        "hindi": "walid",
         "gender": "masculine",
         "examples": [
           {
@@ -20,7 +20,7 @@
                 "word": "أبي",
                 "translate": "my father",
                 "pronounce": "abi",
-                "hindi": "mera pita"
+                "hindi": "mere walid"
               },
               {
                 "word": "يعمل",
@@ -50,7 +50,7 @@
                 "word": "أبي",
                 "translate": "my father",
                 "pronounce": "abi",
-                "hindi": "mera pita"
+                "hindi": "mere walid"
               },
               {
                 "word": "يحب",
@@ -71,7 +71,7 @@
         "arabic": "أم",
         "english": "Mother",
         "roman": "umm",
-        "hindi": "mata",
+        "hindi": "maa",
         "gender": "feminine",
         "examples": [
           {
@@ -85,7 +85,7 @@
                 "word": "أمي",
                 "translate": "my mother",
                 "pronounce": "ummi",
-                "hindi": "meri mata"
+                "hindi": "meri maa"
               },
               {
                 "word": "تطبخ",
@@ -110,7 +110,7 @@
                 "word": "أمي",
                 "translate": "my mother",
                 "pronounce": "ummi",
-                "hindi": "meri mata"
+                "hindi": "meri maa"
               },
               {
                 "word": "تحب",
@@ -1522,7 +1522,7 @@
         "arabic": "طائر",
         "english": "Bird",
         "roman": "taair",
-        "hindi": "pankhi",
+        "hindi": "parinda",
         "gender": "masculine",
         "examples": [
           {
@@ -1530,13 +1530,13 @@
             "sentence": "الطائر يطير",
             "pronounce": "at-taair yateer",
             "translate": "The bird flies",
-            "urdu": "pankhi udta hai",
+            "urdu": "parinda udta hai",
             "word2word": [
               {
                 "word": "الطائر",
                 "translate": "the bird",
                 "pronounce": "at-taair",
-                "hindi": "pankhi"
+                "hindi": "parinda"
               },
               {
                 "word": "يطير",
@@ -1550,13 +1550,13 @@
             "sentence": "الطائر في الشجرة",
             "pronounce": "at-taair fi ash-shajara",
             "translate": "The bird is in the tree",
-            "urdu": "pankhi darakht par hai",
+            "urdu": "parinda darakht par hai",
             "word2word": [
               {
                 "word": "الطائر",
                 "translate": "the bird",
                 "pronounce": "at-taair",
-                "hindi": "pankhi"
+                "hindi": "parinda"
               },
               {
                 "word": "في",
