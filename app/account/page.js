@@ -10,6 +10,7 @@ import ReviewModal from "../../components/ReviewModal";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 import Image from "next/image";
+import { useScreenSize } from "../../contexts/screenContext"
 
 export default function AccountPage() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -23,6 +24,9 @@ export default function AccountPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [trophies, setTrophies] = useState([]);
   const [reviewModalOpen, setReviewModalOpen] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [showButton, setShowButton] = useState(false);
+  const { screenSize } = useScreenSize();
 
   const handleOpenModal = (type) => {
     setModalType(type);
@@ -108,6 +112,41 @@ export default function AccountPage() {
     };
     fetchTrophies();
   }, [user])
+
+  useEffect(() => {
+    // Listen for the beforeinstallprompt event
+    const handler = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowButton(true);
+    };
+
+    window.addEventListener('beforeinstallprompt', handler);
+
+    // Detect if app is installed
+    window.addEventListener('appinstalled', () => {
+      setShowButton(false);
+      console.log('PWA was installed');
+    });
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler);
+    };
+  }, []);
+
+  const handleAddToHomeScreen = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        console.log('User added to home screen');
+      } else {
+        console.log('User dismissed the prompt');
+      }
+      setDeferredPrompt(null);
+      setShowButton(false);
+    }
+  };
 
   if (!isAuthenticated) {
     return null;
@@ -301,6 +340,18 @@ export default function AccountPage() {
           {theme === 'dark' ? "Light Mode" : "Dark Mode"}
         </button>
       </div>
+      
+      {/* Add to Home Button */}
+      {(screenSize == "xs" && showButton) && (
+        <div className="mt-6 mb-2">
+          <button
+            onClick={handleAddToHomeScreen}
+            className="flex items-center gap-2 px-4 py-2 rounded-full shadow-xl font-medium border-[var(--secondary)] border-1 text-[var(--secondary)] transition hover:scale-105"
+          >
+            Add to Home Screen
+          </button>
+        </div>
+      )}
 
       {/* Language Toggle */}
       <div className="mt-6 flex flex-col items-center">
@@ -321,6 +372,7 @@ export default function AccountPage() {
           ))}
         </div>
       </div>
+
 
       {reviewModalOpen && <ReviewModal isOpen={reviewModalOpen} onClose={setReviewModalOpen} email={user.email} />}
     </div>

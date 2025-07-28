@@ -47,6 +47,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Shortcut */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Flunetyx" />
+        <link rel="apple-touch-icon" href="/fluentyx.png" />
+        {/* Google Fonts */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" />
         {/* Google Analytics Scripts */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZDD1NNBWS"></script>
