@@ -7,7 +7,6 @@ import { ToastContainer } from "react-toastify";
 import { ScreenSizeProvider } from "../contexts/screenContext";
 import Script from 'next/script';
 import "react-toastify/dist/ReactToastify.css";
-import PropellerAa from "../Ads/monetagAds";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
