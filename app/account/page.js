@@ -348,7 +348,7 @@ export default function AccountPage() {
             onClick={handleAddToHomeScreen}
             className="flex items-center gap-2 px-4 py-2 rounded-full shadow-xl font-medium border-[var(--secondary)] border-1 text-[var(--secondary)] transition hover:scale-105"
           >
-            Add to Home Screen
+            Install App
           </button>
         </div>
       )}
