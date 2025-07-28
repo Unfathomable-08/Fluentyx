@@ -53,5 +53,12 @@
     "image": "/negation.jpg",
     "stage": "1",
     "desc": "Words used to express negation (e.g. no, not) and affirmation (e.g. yes)."
+  },
+  {
+    "id": "9",
+    "title": "Everyday-Nouns",
+    "image": "/everyrday-nouns.jpg",
+    "stage": "1",
+    "desc": "Common nouns used in everyday life (e.g. book, table, chair)."
   }
 ]

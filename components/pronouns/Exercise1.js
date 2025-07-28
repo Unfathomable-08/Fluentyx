@@ -46,6 +46,15 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
         2: { key: "Affirmation", data: data[1]?.["Affirmation"] || [] }
       };
       break;
+    case "everyday-nouns":
+      pronounCategories = {
+        1: { key: "People & Family", data: data[0]?.["People & Family"] || [] },
+        2: { key: "Places", data: data[1]?.["Places"] || [] },
+        3: { key: "Objects & Things", data: data[2]?.["Objects & Things"] || [] },
+        4: { key: "Foods & Drinks", data: data[3]?.["Foods & Drinks"] || [] },
+        5: { key: "Animals", data: data[4]?.["Animals"] || [] }
+      };
+      break;
     default:
       pronounCategories = '';
   }
@@ -93,6 +102,15 @@ export function PronounToEn({ chapter, index, data, setStep, isActive, setCorrec
             ...(index !== 1 ? data[0]?.["Negation"] || [] : []),
             ...(index !== 2 ? data[1]?.["Affirmation"] || [] : [])
         ]
+        break;
+    case "everyday-nouns":
+        otherData = [
+            ...(index !== 1 ? data[0]?.["People & Family"] || [] : []),
+            ...(index !== 2 ? data[1]?.["Places"] || [] : []),
+            ...(index !== 3 ? data[2]?.["Objects & Things"] || [] : []),
+            ...(index !== 4 ? data[3]?.["Foods & Drinks"] || [] : []),
+            ...(index !== 5 ? data[4]?.["Animals"] || [] : [])
+        ];
         break;
     default:
       otherData = '';

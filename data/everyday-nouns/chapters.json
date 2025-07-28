@@ -1,0 +1,1692 @@
+[
+  {
+    "People & Family": [
+      {
+        "id": 1,
+        "arabic": "أب",
+        "english": "Father",
+        "roman": "ab",
+        "hindi": "pita",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أبي يعمل في البنك",
+            "pronounce": "abi yaamal fi al-bank",
+            "translate": "My father works in the bank",
+            "urdu": "mere walid bank mein kaam karte hain",
+            "word2word": [
+              {
+                "word": "أبي",
+                "translate": "my father",
+                "pronounce": "abi",
+                "hindi": "mera pita"
+              },
+              {
+                "word": "يعمل",
+                "translate": "works",
+                "pronounce": "yaamal"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "البنك",
+                "translate": "the bank",
+                "pronounce": "al-bank"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أبي يحب القراءة",
+            "pronounce": "abi yuhibbu al-qiraa",
+            "translate": "My father loves reading",
+            "urdu": "mere walid ko parhna pasand hai",
+            "word2word": [
+              {
+                "word": "أبي",
+                "translate": "my father",
+                "pronounce": "abi",
+                "hindi": "mera pita"
+              },
+              {
+                "word": "يحب",
+                "translate": "loves",
+                "pronounce": "yuhibbu"
+              },
+              {
+                "word": "القراءة",
+                "translate": "the reading",
+                "pronounce": "al-qiraa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "arabic": "أم",
+        "english": "Mother",
+        "roman": "umm",
+        "hindi": "mata",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أمي تطبخ الطعام",
+            "pronounce": "ummi tatbukh at-taam",
+            "translate": "My mother cooks the food",
+            "urdu": "meri walida khana pakati hain",
+            "word2word": [
+              {
+                "word": "أمي",
+                "translate": "my mother",
+                "pronounce": "ummi",
+                "hindi": "meri mata"
+              },
+              {
+                "word": "تطبخ",
+                "translate": "cooks",
+                "pronounce": "tatbukh"
+              },
+              {
+                "word": "الطعام",
+                "translate": "the food",
+                "pronounce": "at-taam"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أمي تحب الزهور",
+            "pronounce": "ummi tuhibbu az-zuhur",
+            "translate": "My mother loves flowers",
+            "urdu": "meri walida ko phool pasand hain",
+            "word2word": [
+              {
+                "word": "أمي",
+                "translate": "my mother",
+                "pronounce": "ummi",
+                "hindi": "meri mata"
+              },
+              {
+                "word": "تحب",
+                "translate": "loves",
+                "pronounce": "tuhibbu"
+              },
+              {
+                "word": "الزهور",
+                "translate": "the flowers",
+                "pronounce": "az-zuhur"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "arabic": "أخ",
+        "english": "Brother",
+        "roman": "akh",
+        "hindi": "bhai",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أخي يلعب كرة القدم",
+            "pronounce": "akhi yalab kurat al-qadam",
+            "translate": "My brother plays football",
+            "urdu": "mera bhai football khelta hai",
+            "word2word": [
+              {
+                "word": "أخي",
+                "translate": "my brother",
+                "pronounce": "akhi",
+                "hindi": "mera bhai"
+              },
+              {
+                "word": "يلعب",
+                "translate": "plays",
+                "pronounce": "yalab"
+              },
+              {
+                "word": "كرة القدم",
+                "translate": "football",
+                "pronounce": "kurat al-qadam"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أخي يدرس في المدرسة",
+            "pronounce": "akhi yadrus fi al-madrasa",
+            "translate": "My brother studies at school",
+            "urdu": "mera bhai school mein parhta hai",
+            "word2word": [
+              {
+                "word": "أخي",
+                "translate": "my brother",
+                "pronounce": "akhi",
+                "hindi": "mera bhai"
+              },
+              {
+                "word": "يدرس",
+                "translate": "studies",
+                "pronounce": "yadrus"
+              },
+              {
+                "word": "في",
+                "translate": "at",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المدرسة",
+                "translate": "the school",
+                "pronounce": "al-madrasa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "arabic": "أخت",
+        "english": "Sister",
+        "roman": "ukht",
+        "hindi": "behen",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "أختي تكتب القصص",
+            "pronounce": "ukhti taktub al-qisas",
+            "translate": "My sister writes stories",
+            "urdu": "meri behen kahaniyan likhti hai",
+            "word2word": [
+              {
+                "word": "أختي",
+                "translate": "my sister",
+                "pronounce": "ukhti",
+                "hindi": "meri behen"
+              },
+              {
+                "word": "تكتب",
+                "translate": "writes",
+                "pronounce": "taktub"
+              },
+              {
+                "word": "القصص",
+                "translate": "the stories",
+                "pronounce": "al-qisas"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أختي تحب الرسم",
+            "pronounce": "ukhti tuhibbu ar-rasm",
+            "translate": "My sister loves drawing",
+            "urdu": "meri behen ko drawing pasand hai",
+            "word2word": [
+              {
+                "word": "أختي",
+                "translate": "my sister",
+                "pronounce": "ukhti",
+                "hindi": "meri behen"
+              },
+              {
+                "word": "تحب",
+                "translate": "loves",
+                "pronounce": "tuhibbu"
+              },
+              {
+                "word": "الرسم",
+                "translate": "the drawing",
+                "pronounce": "ar-rasm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "arabic": "طفل",
+        "english": "Child",
+        "roman": "tifl",
+        "hindi": "baccha",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الطفل يلعب في الحديقة",
+            "pronounce": "at-tifl yalab fi al-hadiqa",
+            "translate": "The child plays in the park",
+            "urdu": "baccha park mein khelta hai",
+            "word2word": [
+              {
+                "word": "الطفل",
+                "translate": "the child",
+                "pronounce": "at-tifl",
+                "hindi": "baccha"
+              },
+              {
+                "word": "يلعب",
+                "translate": "plays",
+                "pronounce": "yalab"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الحديقة",
+                "translate": "the park",
+                "pronounce": "al-hadiqa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الطفل يأكل التفاح",
+            "pronounce": "at-tifl yaakul at-tuffah",
+            "translate": "The child eats the apple",
+            "urdu": "baccha seb khaata hai",
+            "word2word": [
+              {
+                "word": "الطفل",
+                "translate": "the child",
+                "pronounce": "at-tifl",
+                "hindi": "baccha"
+              },
+              {
+                "word": "يأكل",
+                "translate": "eats",
+                "pronounce": "yaakul"
+              },
+              {
+                "word": "التفاح",
+                "translate": "the apple",
+                "pronounce": "at-tuffah"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "arabic": "بنت",
+        "english": "Girl",
+        "roman": "bint",
+        "hindi": "ladki",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "البنت تقرأ الكتاب",
+            "pronounce": "al-bint taqra al-kitab",
+            "translate": "The girl reads the book",
+            "urdu": "ladki kitaab parhti hai",
+            "word2word": [
+              {
+                "word": "البنت",
+                "translate": "the girl",
+                "pronounce": "al-bint",
+                "hindi": "ladki"
+              },
+              {
+                "word": "تقرأ",
+                "translate": "reads",
+                "pronounce": "taqra"
+              },
+              {
+                "word": "الكتاب",
+                "translate": "the book",
+                "pronounce": "al-kitab"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "البنت تحب الزهور",
+            "pronounce": "al-bint tuhibbu az-zuhur",
+            "translate": "The girl loves flowers",
+            "urdu": "ladki ko phool pasand hain",
+            "word2word": [
+              {
+                "word": "البنت",
+                "translate": "the girl",
+                "pronounce": "al-bint",
+                "hindi": "ladki"
+              },
+              {
+                "word": "تحب",
+                "translate": "loves",
+                "pronounce": "tuhibbu"
+              },
+              {
+                "word": "الزهور",
+                "translate": "the flowers",
+                "pronounce": "az-zuhur"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Places": [
+      {
+        "id": 7,
+        "arabic": "بيت",
+        "english": "House",
+        "roman": "bayt",
+        "hindi": "ghar",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "البيت كبير",
+            "pronounce": "al-bayt kabeer",
+            "translate": "The house is big",
+            "urdu": "ghar bada hai",
+            "word2word": [
+              {
+                "word": "البيت",
+                "translate": "the house",
+                "pronounce": "al-bayt",
+                "hindi": "ghar"
+              },
+              {
+                "word": "كبير",
+                "translate": "big",
+                "pronounce": "kabeer"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أعيش في البيت",
+            "pronounce": "aeesh fi al-bayt",
+            "translate": "I live in the house",
+            "urdu": "main ghar mein rehta hoon",
+            "word2word": [
+              {
+                "word": "أعيش",
+                "translate": "I live",
+                "pronounce": "aeesh"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "البيت",
+                "translate": "the house",
+                "pronounce": "al-bayt",
+                "hindi": "ghar"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "arabic": "مدرسة",
+        "english": "School",
+        "roman": "madrasa",
+        "hindi": "school",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "المدرسة قريبة",
+            "pronounce": "al-madrasa qareeba",
+            "translate": "The school is near",
+            "urdu": "school qareeb hai",
+            "word2word": [
+              {
+                "word": "المدرسة",
+                "translate": "the school",
+                "pronounce": "al-madrasa",
+                "hindi": "school"
+              },
+              {
+                "word": "قريبة",
+                "translate": "near",
+                "pronounce": "qareeba"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الطلاب في المدرسة",
+            "pronounce": "at-tullaab fi al-madrasa",
+            "translate": "The students are in the school",
+            "urdu": "taalib school mein hain",
+            "word2word": [
+              {
+                "word": "الطلاب",
+                "translate": "the students",
+                "pronounce": "at-tullaab"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المدرسة",
+                "translate": "the school",
+                "pronounce": "al-madrasa",
+                "hindi": "school"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "arabic": "مسجد",
+        "english": "Mosque",
+        "roman": "masjid",
+        "hindi": "masjid",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "المسجد جميل",
+            "pronounce": "al-masjid jameel",
+            "translate": "The mosque is beautiful",
+            "urdu": "masjid khoobsurat hai",
+            "word2word": [
+              {
+                "word": "المسجد",
+                "translate": "the mosque",
+                "pronounce": "al-masjid",
+                "hindi": "masjid"
+              },
+              {
+                "word": "جميل",
+                "translate": "beautiful",
+                "pronounce": "jameel"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أصلي في المسجد",
+            "pronounce": "usalli fi al-masjid",
+            "translate": "I pray in the mosque",
+            "urdu": "main masjid mein namaz parhta hoon",
+            "word2word": [
+              {
+                "word": "أصلي",
+                "translate": "I pray",
+                "pronounce": "usalli"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المسجد",
+                "translate": "the mosque",
+                "pronounce": "al-masjid",
+                "hindi": "masjid"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "arabic": "سوق",
+        "english": "Market",
+        "roman": "suq",
+        "hindi": "bazaar",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "السوق مزدحم",
+            "pronounce": "as-suq muzdahim",
+            "translate": "The market is crowded",
+            "urdu": "bazaar mein bheer hai",
+            "word2word": [
+              {
+                "word": "السوق",
+                "translate": "the market",
+                "pronounce": "as-suq",
+                "hindi": "bazaar"
+              },
+              {
+                "word": "مزدحم",
+                "translate": "crowded",
+                "pronounce": "muzdahim"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أشتري من السوق",
+            "pronounce": "ashtari min as-suq",
+            "translate": "I buy from the market",
+            "urdu": "main bazaar se khareedta hoon",
+            "word2word": [
+              {
+                "word": "أشتري",
+                "translate": "I buy",
+                "pronounce": "ashtari"
+              },
+              {
+                "word": "من",
+                "translate": "from",
+                "pronounce": "min"
+              },
+              {
+                "word": "السوق",
+                "translate": "the market",
+                "pronounce": "as-suq",
+                "hindi": "bazaar"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "arabic": "شارع",
+        "english": "Street",
+        "roman": "shari",
+        "hindi": "sarak",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الشارع طويل",
+            "pronounce": "ash-shari taweel",
+            "translate": "The street is long",
+            "urdu": "sarak lambi hai",
+            "word2word": [
+              {
+                "word": "الشارع",
+                "translate": "the street",
+                "pronounce": "ash-shari",
+                "hindi": "sarak"
+              },
+              {
+                "word": "طويل",
+                "translate": "long",
+                "pronounce": "taweel"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أمشي في الشارع",
+            "pronounce": "amshi fi ash-shari",
+            "translate": "I walk in the street",
+            "urdu": "main sarak par chalta hoon",
+            "word2word": [
+              {
+                "word": "أمشي",
+                "translate": "I walk",
+                "pronounce": "amshi"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الشارع",
+                "translate": "the street",
+                "pronounce": "ash-shari",
+                "hindi": "sarak"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "arabic": "مطبخ",
+        "english": "Kitchen",
+        "roman": "matbakh",
+        "hindi": "rasoi",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "المطبخ نظيف",
+            "pronounce": "al-matbakh nazeef",
+            "translate": "The kitchen is clean",
+            "urdu": "rasoi saaf hai",
+            "word2word": [
+              {
+                "word": "المطبخ",
+                "translate": "the kitchen",
+                "pronounce": "al-matbakh",
+                "hindi": "rasoi"
+              },
+              {
+                "word": "نظيف",
+                "translate": "clean",
+                "pronounce": "nazeef"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أطبخ في المطبخ",
+            "pronounce": "atbukh fi al-matbakh",
+            "translate": "I cook in the kitchen",
+            "urdu": "main rasoi mein khana pakata hoon",
+            "word2word": [
+              {
+                "word": "أطبخ",
+                "translate": "I cook",
+                "pronounce": "atbukh"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المطبخ",
+                "translate": "the kitchen",
+                "pronounce": "al-matbakh",
+                "hindi": "rasoi"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Objects & Things": [
+      {
+        "id": 13,
+        "arabic": "كتاب",
+        "english": "Book",
+        "roman": "kitab",
+        "hindi": "kitaab",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الكتاب على الطاولة",
+            "pronounce": "al-kitab ala at-tawila",
+            "translate": "The book is on the table",
+            "urdu": "kitaab mez par hai",
+            "word2word": [
+              {
+                "word": "الكتاب",
+                "translate": "the book",
+                "pronounce": "al-kitab",
+                "hindi": "kitaab"
+              },
+              {
+                "word": "على",
+                "translate": "on",
+                "pronounce": "ala"
+              },
+              {
+                "word": "الطاولة",
+                "translate": "the table",
+                "pronounce": "at-tawila"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أقرأ الكتاب",
+            "pronounce": "aqra al-kitab",
+            "translate": "I read the book",
+            "urdu": "main kitaab parhta hoon",
+            "word2word": [
+              {
+                "word": "أقرأ",
+                "translate": "I read",
+                "pronounce": "aqra"
+              },
+              {
+                "word": "الكتاب",
+                "translate": "the book",
+                "pronounce": "al-kitab",
+                "hindi": "kitaab"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "arabic": "قلم",
+        "english": "Pen",
+        "roman": "qalam",
+        "hindi": "pen",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "القلم في الحقيبة",
+            "pronounce": "al-qalam fi al-haqiba",
+            "translate": "The pen is in the bag",
+            "urdu": "pen bag mein hai",
+            "word2word": [
+              {
+                "word": "القلم",
+                "translate": "the pen",
+                "pronounce": "al-qalam",
+                "hindi": "pen"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الحقيبة",
+                "translate": "the bag",
+                "pronounce": "al-haqiba"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أكتب بالقلم",
+            "pronounce": "aktub bil-qalam",
+            "translate": "I write with the pen",
+            "urdu": "main pen se likhta hoon",
+            "word2word": [
+              {
+                "word": "أكتب",
+                "translate": "I write",
+                "pronounce": "aktub"
+              },
+              {
+                "word": "بالقلم",
+                "translate": "with the pen",
+                "pronounce": "bil-qalam",
+                "hindi": "pen se"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "arabic": "حقيبة",
+        "english": "Bag",
+        "roman": "haqiba",
+        "hindi": "bag",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الحقيبة ثقيلة",
+            "pronounce": "al-haqiba thaqeela",
+            "translate": "The bag is heavy",
+            "urdu": "bag bhaari hai",
+            "word2word": [
+              {
+                "word": "الحقيبة",
+                "translate": "the bag",
+                "pronounce": "al-haqiba",
+                "hindi": "bag"
+              },
+              {
+                "word": "ثقيلة",
+                "translate": "heavy",
+                "pronounce": "thaqeela"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أحمل الحقيبة",
+            "pronounce": "ahmil al-haqiba",
+            "translate": "I carry the bag",
+            "urdu": "main bag uthata hoon",
+            "word2word": [
+              {
+                "word": "أحمل",
+                "translate": "I carry",
+                "pronounce": "ahmil"
+              },
+              {
+                "word": "الحقيبة",
+                "translate": "the bag",
+                "pronounce": "al-haqiba",
+                "hindi": "bag"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "arabic": "كرسي",
+        "english": "Chair",
+        "roman": "kursi",
+        "hindi": "kursi",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الكرسي في الغرفة",
+            "pronounce": "al-kursi fi al-ghurfa",
+            "translate": "The chair is in the room",
+            "urdu": "kursi kamre mein hai",
+            "word2word": [
+              {
+                "word": "الكرسي",
+                "translate": "the chair",
+                "pronounce": "al-kursi",
+                "hindi": "kursi"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الغرفة",
+                "translate": "the room",
+                "pronounce": "al-ghurfa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أجلس على الكرسي",
+            "pronounce": "ajlis ala al-kursi",
+            "translate": "I sit on the chair",
+            "urdu": "main kursi par baithta hoon",
+            "word2word": [
+              {
+                "word": "أجلس",
+                "translate": "I sit",
+                "pronounce": "ajlis"
+              },
+              {
+                "word": "على",
+                "translate": "on",
+                "pronounce": "ala"
+              },
+              {
+                "word": "الكرسي",
+                "translate": "the chair",
+                "pronounce": "al-kursi",
+                "hindi": "kursi"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "arabic": "هاتف",
+        "english": "Phone",
+        "roman": "hatif",
+        "hindi": "phone",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الهاتف جديد",
+            "pronounce": "al-hatif jadeed",
+            "translate": "The phone is new",
+            "urdu": "phone naya hai",
+            "word2word": [
+              {
+                "word": "الهاتف",
+                "translate": "the phone",
+                "pronounce": "al-hatif",
+                "hindi": "phone"
+              },
+              {
+                "word": "جديد",
+                "translate": "new",
+                "pronounce": "jadeed"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أستخدم الهاتف",
+            "pronounce": "astakhdim al-hatif",
+            "translate": "I use the phone",
+            "urdu": "main phone istemal karta hoon",
+            "word2word": [
+              {
+                "word": "أستخدم",
+                "translate": "I use",
+                "pronounce": "astakhdim"
+              },
+              {
+                "word": "الهاتف",
+                "translate": "the phone",
+                "pronounce": "al-hatif",
+                "hindi": "phone"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "arabic": "طاولة",
+        "english": "Table",
+        "roman": "tawila",
+        "hindi": "mez",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الطاولة في المطبخ",
+            "pronounce": "at-tawila fi al-matbakh",
+            "translate": "The table is in the kitchen",
+            "urdu": "mez rasoi mein hai",
+            "word2word": [
+              {
+                "word": "الطاولة",
+                "translate": "the table",
+                "pronounce": "at-tawila",
+                "hindi": "mez"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المطبخ",
+                "translate": "the kitchen",
+                "pronounce": "al-matbakh"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الكتاب على الطاولة",
+            "pronounce": "al-kitab ala at-tawila",
+            "translate": "The book is on the table",
+            "urdu": "kitaab mez par hai",
+            "word2word": [
+              {
+                "word": "الكتاب",
+                "translate": "the book",
+                "pronounce": "al-kitab"
+              },
+              {
+                "word": "على",
+                "translate": "on",
+                "pronounce": "ala"
+              },
+              {
+                "word": "الطاولة",
+                "translate": "the table",
+                "pronounce": "at-tawila",
+                "hindi": "mez"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Foods & Drinks": [
+      {
+        "id": 19,
+        "arabic": "خبز",
+        "english": "Bread",
+        "roman": "khubz",
+        "hindi": "roti",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الخبز طازج",
+            "pronounce": "al-khubz taazaj",
+            "translate": "The bread is fresh",
+            "urdu": "roti taaza hai",
+            "word2word": [
+              {
+                "word": "الخبز",
+                "translate": "the bread",
+                "pronounce": "al-khubz",
+                "hindi": "roti"
+              },
+              {
+                "word": "طازج",
+                "translate": "fresh",
+                "pronounce": "taazaj"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أكل الخبز",
+            "pronounce": "aakul al-khubz",
+            "translate": "I eat the bread",
+            "urdu": "main roti khaata hoon",
+            "word2word": [
+              {
+                "word": "أكل",
+                "translate": "I eat",
+                "pronounce": "aakul"
+              },
+              {
+                "word": "الخبز",
+                "translate": "the bread",
+                "pronounce": "al-khubz",
+                "hindi": "roti"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "arabic": "ماء",
+        "english": "Water",
+        "roman": "maa",
+        "hindi": "paani",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الماء بارد",
+            "pronounce": "al-maa baarid",
+            "translate": "The water is cold",
+            "urdu": "paani thanda hai",
+            "word2word": [
+              {
+                "word": "الماء",
+                "translate": "the water",
+                "pronounce": "al-maa",
+                "hindi": "paani"
+              },
+              {
+                "word": "بارد",
+                "translate": "cold",
+                "pronounce": "baarid"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أشرب الماء",
+            "pronounce": "ashrab al-maa",
+            "translate": "I drink the water",
+            "urdu": "main paani peeta hoon",
+            "word2word": [
+              {
+                "word": "أشرب",
+                "translate": "I drink",
+                "pronounce": "ashrab"
+              },
+              {
+                "word": "الماء",
+                "translate": "the water",
+                "pronounce": "al-maa",
+                "hindi": "paani"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "arabic": "تفاحة",
+        "english": "Apple",
+        "roman": "tuffaha",
+        "hindi": "seb",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "التفاحة حمراء",
+            "pronounce": "at-tuffaha hamraa",
+            "translate": "The apple is red",
+            "urdu": "seb laal hai",
+            "word2word": [
+              {
+                "word": "التفاحة",
+                "translate": "the apple",
+                "pronounce": "at-tuffaha",
+                "hindi": "seb"
+              },
+              {
+                "word": "حمراء",
+                "translate": "red",
+                "pronounce": "hamraa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أكل التفاحة",
+            "pronounce": "aakul at-tuffaha",
+            "translate": "I eat the apple",
+            "urdu": "main seb khaata hoon",
+            "word2word": [
+              {
+                "word": "أكل",
+                "translate": "I eat",
+                "pronounce": "aakul"
+              },
+              {
+                "word": "التفاحة",
+                "translate": "the apple",
+                "pronounce": "at-tuffaha",
+                "hindi": "seb"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "arabic": "قهوة",
+        "english": "Coffee",
+        "roman": "qahwa",
+        "hindi": "coffee",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "القهوة ساخنة",
+            "pronounce": "al-qahwa saakhina",
+            "translate": "The coffee is hot",
+            "urdu": "coffee garam hai",
+            "word2word": [
+              {
+                "word": "القهوة",
+                "translate": "the coffee",
+                "pronounce": "al-qahwa",
+                "hindi": "coffee"
+              },
+              {
+                "word": "ساخنة",
+                "translate": "hot",
+                "pronounce": "saakhina"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أحب القهوة",
+            "pronounce": "uhibbu al-qahwa",
+            "translate": "I love the coffee",
+            "urdu": "mujhe coffee pasand hai",
+            "word2word": [
+              {
+                "word": "أحب",
+                "translate": "I love",
+                "pronounce": "uhibbu"
+              },
+              {
+                "word": "القهوة",
+                "translate": "the coffee",
+                "pronounce": "al-qahwa",
+                "hindi": "coffee"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "arabic": "شاي",
+        "english": "Tea",
+        "roman": "shay",
+        "hindi": "chai",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الشاي لذيذ",
+            "pronounce": "ash-shay ladheeth",
+            "translate": "The tea is delicious",
+            "urdu": "chai mazedaar hai",
+            "word2word": [
+              {
+                "word": "الشاي",
+                "translate": "the tea",
+                "pronounce": "ash-shay",
+                "hindi": "chai"
+              },
+              {
+                "word": "لذيذ",
+                "translate": "delicious",
+                "pronounce": "ladheeth"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أشرب الشاي",
+            "pronounce": "ashrab ash-shay",
+            "translate": "I drink the tea",
+            "urdu": "main chai peeta hoon",
+            "word2word": [
+              {
+                "word": "أشرب",
+                "translate": "I drink",
+                "pronounce": "ashrab"
+              },
+              {
+                "word": "الشاي",
+                "translate": "the tea",
+                "pronounce": "ash-shay",
+                "hindi": "chai"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "arabic": "بيضة",
+        "english": "Egg",
+        "roman": "bayda",
+        "hindi": "anda",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "البيضة في المطبخ",
+            "pronounce": "al-bayda fi al-matbakh",
+            "translate": "The egg is in the kitchen",
+            "urdu": "anda rasoi mein hai",
+            "word2word": [
+              {
+                "word": "البيضة",
+                "translate": "the egg",
+                "pronounce": "al-bayda",
+                "hindi": "anda"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "المطبخ",
+                "translate": "the kitchen",
+                "pronounce": "al-matbakh"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أطبخ البيضة",
+            "pronounce": "atbukh al-bayda",
+            "translate": "I cook the egg",
+            "urdu": "main anda pakata hoon",
+            "word2word": [
+              {
+                "word": "أطبخ",
+                "translate": "I cook",
+                "pronounce": "atbukh"
+              },
+              {
+                "word": "البيضة",
+                "translate": "the egg",
+                "pronounce": "al-bayda",
+                "hindi": "anda"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animals": [
+      {
+        "id": 25,
+        "arabic": "كلب",
+        "english": "Dog",
+        "roman": "kalb",
+        "hindi": "kutta",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الكلب ينبح",
+            "pronounce": "al-kalb yanbah",
+            "translate": "The dog barks",
+            "urdu": "kutta bhonkta hai",
+            "word2word": [
+              {
+                "word": "الكلب",
+                "translate": "the dog",
+                "pronounce": "al-kalb",
+                "hindi": "kutta"
+              },
+              {
+                "word": "ينبح",
+                "translate": "barks",
+                "pronounce": "yanbah"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الكلب في الحديقة",
+            "pronounce": "al-kalb fi al-hadiqa",
+            "translate": "The dog is in the park",
+            "urdu": "kutta park mein hai",
+            "word2word": [
+              {
+                "word": "الكلب",
+                "translate": "the dog",
+                "pronounce": "al-kalb",
+                "hindi": "kutta"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الحديقة",
+                "translate": "the park",
+                "pronounce": "al-hadiqa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "arabic": "قطة",
+        "english": "Cat",
+        "roman": "qitta",
+        "hindi": "billi",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "القطة نائمة",
+            "pronounce": "al-qitta naaima",
+            "translate": "The cat is sleeping",
+            "urdu": "billi so rahi hai",
+            "word2word": [
+              {
+                "word": "القطة",
+                "translate": "the cat",
+                "pronounce": "al-qitta",
+                "hindi": "billi"
+              },
+              {
+                "word": "نائمة",
+                "translate": "sleeping",
+                "pronounce": "naaima"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "القطة تلعب بالكرة",
+            "pronounce": "al-qitta talab bil-kura",
+            "translate": "The cat plays with the ball",
+            "urdu": "billi ball se khelti hai",
+            "word2word": [
+              {
+                "word": "القطة",
+                "translate": "the cat",
+                "pronounce": "al-qitta",
+                "hindi": "billi"
+              },
+              {
+                "word": "تلعب",
+                "translate": "plays",
+                "pronounce": "talab"
+              },
+              {
+                "word": "بالكرة",
+                "translate": "with the ball",
+                "pronounce": "bil-kura"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "arabic": "حصان",
+        "english": "Horse",
+        "roman": "hisan",
+        "hindi": "ghoda",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الحصان سريع",
+            "pronounce": "al-hisan saree",
+            "translate": "The horse is fast",
+            "urdu": "ghoda teez hai",
+            "word2word": [
+              {
+                "word": "الحصان",
+                "translate": "the horse",
+                "pronounce": "al-hisan",
+                "hindi": "ghoda"
+              },
+              {
+                "word": "سريع",
+                "translate": "fast",
+                "pronounce": "saree"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "أركب الحصان",
+            "pronounce": "arkab al-hisan",
+            "translate": "I ride the horse",
+            "urdu": "main ghoda savar karta hoon",
+            "word2word": [
+              {
+                "word": "أركب",
+                "translate": "I ride",
+                "pronounce": "arkab"
+              },
+              {
+                "word": "الحصان",
+                "translate": "the horse",
+                "pronounce": "al-hisan",
+                "hindi": "ghoda"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "arabic": "طائر",
+        "english": "Bird",
+        "roman": "taair",
+        "hindi": "pankhi",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الطائر يطير",
+            "pronounce": "at-taair yateer",
+            "translate": "The bird flies",
+            "urdu": "pankhi udta hai",
+            "word2word": [
+              {
+                "word": "الطائر",
+                "translate": "the bird",
+                "pronounce": "at-taair",
+                "hindi": "pankhi"
+              },
+              {
+                "word": "يطير",
+                "translate": "flies",
+                "pronounce": "yateer"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الطائر في الشجرة",
+            "pronounce": "at-taair fi ash-shajara",
+            "translate": "The bird is in the tree",
+            "urdu": "pankhi darakht par hai",
+            "word2word": [
+              {
+                "word": "الطائر",
+                "translate": "the bird",
+                "pronounce": "at-taair",
+                "hindi": "pankhi"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الشجرة",
+                "translate": "the tree",
+                "pronounce": "ash-shajara"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "arabic": "سمكة",
+        "english": "Fish",
+        "roman": "samaka",
+        "hindi": "machhli",
+        "gender": "feminine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "السمكة في الماء",
+            "pronounce": "as-samaka fi al-maa",
+            "translate": "The fish is in the water",
+            "urdu": "machhli paani mein hai",
+            "word2word": [
+              {
+                "word": "السمكة",
+                "translate": "the fish",
+                "pronounce": "as-samaka",
+                "hindi": "machhli"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الماء",
+                "translate": "the water",
+                "pronounce": "al-maa"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "السمكة تسبح",
+            "pronounce": "as-samaka tasbah",
+            "translate": "The fish swims",
+            "urdu": "machhli tairti hai",
+            "word2word": [
+              {
+                "word": "السمكة",
+                "translate": "the fish",
+                "pronounce": "as-samaka",
+                "hindi": "machhli"
+              },
+              {
+                "word": "تسبح",
+                "translate": "swims",
+                "pronounce": "tasbah"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "arabic": "جمل",
+        "english": "Camel",
+        "roman": "jamal",
+        "hindi": "oont",
+        "gender": "masculine",
+        "examples": [
+          {
+            "id": 1,
+            "sentence": "الجمل في الصحراء",
+            "pronounce": "al-jamal fi as-sahra",
+            "translate": "The camel is in the desert",
+            "urdu": "oont registan mein hai",
+            "word2word": [
+              {
+                "word": "الجمل",
+                "translate": "the camel",
+                "pronounce": "al-jamal",
+                "hindi": "oont"
+              },
+              {
+                "word": "في",
+                "translate": "in",
+                "pronounce": "fi"
+              },
+              {
+                "word": "الصحراء",
+                "translate": "the desert",
+                "pronounce": "as-sahra"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "sentence": "الجمل يحمل الأمتعة",
+            "pronounce": "al-jamal yahmil al-amtia",
+            "translate": "The camel carries the luggage",
+            "urdu": "oont samaan uthata hai",
+            "word2word": [
+              {
+                "word": "الجمل",
+                "translate": "the camel",
+                "pronounce": "al-jamal",
+                "hindi": "oont"
+              },
+              {
+                "word": "يحمل",
+                "translate": "carries",
+                "pronounce": "yahmil"
+              },
+              {
+                "word": "الأمتعة",
+                "translate": "the luggage",
+                "pronounce": "al-amtia"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

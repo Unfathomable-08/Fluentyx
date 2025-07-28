@@ -67,6 +67,15 @@ export function FillEnBlank({ chapter, index, setStep, isActive, data, step, set
             2: { key: "Affirmation", data: data[1]?.["Affirmation"] || [] }
           };
           break;
+        case "everyday-nouns":
+          pronounCategories = {
+            1: { key: "People & Family", data: data[0]?.["People & Family"] || [] },
+            2: { key: "Places", data: data[1]?.["Places"] || [] },
+            3: { key: "Objects & Things", data: data[2]?.["Objects & Things"] || [] },
+            4: { key: "Foods & Drinks", data: data[3]?.["Foods & Drinks"] || [] },
+            5: { key: "Animals", data: data[4]?.["Animals"] || [] }
+          };
+          break;
         default:
           pronounCategories = '';
       }

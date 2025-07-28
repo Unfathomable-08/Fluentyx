@@ -84,6 +84,15 @@ export default function Flashcards() {
               ...(data[1]?.["Affirmation"] || []),
             ];
             break;
+          case "everyday-nouns":
+            allPronouns = [
+              ...(data[0]?.["People & Family"] || []),
+              ...(data[1]?.["Places"] || []),
+              ...(data[2]?.["Objects & Things"] || []),
+              ...(data[3]?.["Foods & Drinks"] || []),
+              ...(data[4]?.["Animals"] || [])
+            ];
+            break;
           default:
             allPronouns = '';
         }
