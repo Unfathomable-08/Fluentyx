@@ -1,8 +1,7 @@
 import connectDB from "@/lib/db";
-import redis from "@/lib/redis";
 import User from "@/models/user";
-import transporter from "@/lib/mailer"
-
+import VerificationCode from "@/models/verificationCode"; 
+import transporter from "@/lib/mailer";
 import bcrypt from "bcrypt";
 
 export async function POST(req) {
@@ -42,23 +41,27 @@ export async function POST(req) {
     // Generate 6-digit code
     const code = Math.floor(100000 + Math.random() * 900000).toString();
 
-    // Store in Redis with 5 min expiry
-    await redis.setex(`verify:${email}`, 300, code);
+    // Store in MongoDB
+    await VerificationCode.findOneAndUpdate(
+      { email }, // Find by email
+      { email, code, createdAt: new Date() }, // Update or set code and createdAt
+      { upsert: true, new: true } // Create if not exists, return updated document
+    );
 
     // Send Email
     await transporter.sendMail({
-        from: `"Fluentyx" <${process.env.EMAIL_USER}>`,
-        to: email,
-        subject: "Your Verification Code",
-        html: `
-            <div style="font-family: sans-serif; padding: 20px;">
-            <h2>Verify Your Email</h2>
-            <p>Hi <b>${name}</b>,</p>
-            <p>Your verification code is:</p>
-            <h1 style="letter-spacing: 4px;">${code}</h1>
-            <p>This code will expire in 5 minutes.</p>
-            </div>
-        `,
+      from: `"Fluentyx" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: "Your Verification Code",
+      html: `
+        <div style="font-family: sans-serif; padding: 20px;">
+          <h2>Verify Your Email</h2>
+          <p>Hi <b>${name}</b>,</p>
+          <p>Your verification code is:</p>
+          <h1 style="letter-spacing: 4px;">${code}</h1>
+          <p>This code will expire in 5 minutes.</p>
+        </div>
+      `,
     });
 
     return Response.json({

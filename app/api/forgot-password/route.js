@@ -1,6 +1,6 @@
 import connectDB from "@/lib/db";
-import redis from "@/lib/redis";
 import User from "@/models/user";
+import VerificationCode from "@/models/verificationCode"; 
 import transporter from "@/lib/mailer";
 
 export async function POST(req) {
@@ -22,8 +22,12 @@ export async function POST(req) {
     // Generate 6-digit code
     const code = Math.floor(100000 + Math.random() * 900000).toString();
 
-    // Store in Redis with 5 min expiry
-    await redis.setex(`forgot-password:${email}`, 300, code);
+    // Store in MongoDB 
+    await VerificationCode.findOneAndUpdate(
+      { email }, // Find by email
+      { email, code, createdAt: new Date() }, // Update or set code and createdAt
+      { upsert: true, new: true } // Create if not exists, return updated document
+    );
 
     // Send Email
     await transporter.sendMail({

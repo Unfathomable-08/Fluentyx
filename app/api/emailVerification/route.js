@@ -1,6 +1,6 @@
 import connectDB from "@/lib/db";
-import redis from "@/lib/redis";
 import User from "@/models/user";
+import VerificationCode from "@/models/verificationCode"; 
 import jwt from "jsonwebtoken";
 
 export async function POST(req) {
@@ -19,31 +19,31 @@ export async function POST(req) {
       return Response.json({ message: "User not found" }, { status: 404 });
     }
 
-    const storedCode = await redis.get(`verify:${email}`);
+    // Check verification code in MongoDB
+    const verification = await VerificationCode.findOne({ email, code });
 
-    if (!storedCode) {
+    if (!verification) {
       return Response.json({ message: "Verification code expired or not found" }, { status: 410 });
     }
 
-    if (storedCode !== code) {
-      return Response.json({ message: "Invalid verification code" }, { status: 400 });
-    }
-
+    // Mark user as verified
     user.verified = true;
     await user.save();
 
-    await redis.del(`verify:${email}`); // Clean up used code
+    // Clean up the used verification code
+    await VerificationCode.deleteOne({ email });
 
+    // Generate JWT
     const token = jwt.sign(
-          {
-            id: user._id,
-            email: user.email,
-            name: user.name,
-          },
-          process.env.JWT_SECRET,
-          { expiresIn: "7d" }
-        );
-    
+      {
+        id: user._id,
+        email: user.email,
+        name: user.name,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
     // Create cookie
     const cookie = `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${7 * 24 * 60 * 60}`;
 
