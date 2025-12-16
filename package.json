@@ -17,7 +17,7 @@
     "ioredis": "^5.6.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.1",
-    "next": "^15.3.3",
+    "next": "15.3.8",
     "next-seo": "^6.8.0",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.3",
